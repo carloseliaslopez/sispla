@@ -1,0 +1,37 @@
+#principal{
+    height: 25px;
+    color:black;
+    background-color:black;  
+}
+#subprincipal{
+    height: 25px;
+    color:gray;
+    background-color:gray;
+}
+#Text{
+    color: white;
+    font-size: small;                   
+}
+
+#declaraciones{
+    color: black;
+   font-size: medium;
+}
+
+#h1Informe{
+    
+    text-align: center;
+    
+}
+
+#etiqueta{
+    text-align: center;
+    
+    color: black;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
