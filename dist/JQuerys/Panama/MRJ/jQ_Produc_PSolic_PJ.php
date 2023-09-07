@@ -2,8 +2,8 @@
 <?php
 
 $html = '';
-require "./Datos/Conexion.php";
- 
+//require "./Datos/Conexion.php";
+$conexion = new mysqli('localhost','root','CEal2000!','versatec');
 $id_categoria = $_POST['id_categoria'];
  
 $result = $conexion->query(

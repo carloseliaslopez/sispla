@@ -12,7 +12,6 @@ class DtClientes extends Conexion
 			$this->myCon = parent::conectar();
 			$result = array();
 			$querySQL = "SELECT idClientes, nombre,id, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, origen, idEstado FROM Clientes WHERE idEstado<>3 ";
-			//$querySQL = "SELECT idCliente, nombre,id, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') as fechaIngreso, origen FROM Clientes order by fechaIngreso desc limit 250";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 

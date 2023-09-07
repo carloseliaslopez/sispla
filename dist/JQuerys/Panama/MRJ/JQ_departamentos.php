@@ -1,7 +1,7 @@
 <?php
 $html = '';
-require "./Datos/Conexion.php";
-
+//require "./Datos/Conexion.php";
+$conexion = new mysqli('localhost','root','CEal2000!','versatec');
 $id_lugar = $_POST['id_lugar'];
  
 

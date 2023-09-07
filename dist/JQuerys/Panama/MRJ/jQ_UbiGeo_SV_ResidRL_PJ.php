@@ -1,7 +1,7 @@
 <?php
 $html = '';
-require "./Datos/Conexion.php";
- 
+//require "./Datos/Conexion.php";
+$conexion = new mysqli('localhost','root','CEal2000!','versatec');
 $id_pic = $_POST['id_pic'];
 $id_matriz = $_POST['id_matriz'];
  

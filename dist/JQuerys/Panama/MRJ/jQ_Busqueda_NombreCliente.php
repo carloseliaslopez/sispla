@@ -1,8 +1,8 @@
 <?php
 error_reporting(0);
 $html = '';
-require "./Datos/Conexion.php";
- 
+//require "./Datos/Conexion.php";
+$conexion = new mysqli('localhost','root','CEal2000!','versatec');
 $id_cliente = $_POST['id_cliente'];
 $arr = explode(" ",$id_cliente);
 $arr[0];

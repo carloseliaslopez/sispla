@@ -832,7 +832,8 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--Start Black lines-->
+
+                                        <!--Start Black line
                                         <div class="col-md-12" >
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
@@ -842,7 +843,9 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--End black line-->
+                                        End black line-->
+
+                                        <!---
                                         <div class="col-md-12" >
                                             <div class="form-row">
                                                 <div class="form-group col-md-4">
@@ -867,9 +870,9 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                     
                                                     <select  class="form-control form-control-sm" id= "personalidadJ_II" name="personalidadJ_II">
                                                         <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->Combo_PJuridica() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idTipoPerJuridica') ?>"> <?php echo $r->__GET('tipoPersona') ?></option>
-                                                        <?php endforeach; ?>
+                                                        </?php foreach($combos->Combo_PJuridica() as $r): ?>
+                                                            <option value="</?php echo $r->__GET('idTipoPerJuridica') ?>"> <?php echo $r->__GET('tipoPersona') ?></option>
+                                                        </?php endforeach; ?>
                                                     </select>
                                                 </div>
                                                  
@@ -885,9 +888,9 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                 <div class="form-group col-md-3">
                                                     <select  class="form-control form-control-sm" id= "fechaConstitucion_II" name="fechaConstitucion_II">
                                                         <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->Combo_Constitucion() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idConstitucion') ?>"> <?php echo $r->__GET('fechaConstitucion') ?></option>
-                                                        <?php endforeach; ?>
+                                                        </?php foreach($combos->Combo_Constitucion() as $r): ?>
+                                                            <option value="</?php echo $r->__GET('idConstitucion') ?>"> <?php echo $r->__GET('fechaConstitucion') ?></option>
+                                                        </?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -919,9 +922,9 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                 <div class="form-group col-md-3">
                                                     <select id="resultBusqueda_II" name="resultBusqueda_II" class="form-control form-control-sm" required>
                                                         <option selected disabled>Elegir...</option>
-                                                            <?php foreach($combos->Combo_ResBusqueda() as $r): ?>
-                                                                <option value="<?php echo $r->__GET('idBusquedaRes') ?>"> <?php echo $r->__GET('busqueda') ?></option>
-                                                            <?php endforeach; ?>
+                                                            </?php foreach($combos->Combo_ResBusqueda() as $r): ?>
+                                                                <option value="</?php echo $r->__GET('idBusquedaRes') ?>"> <?php echo $r->__GET('busqueda') ?></option>
+                                                            </?php endforeach; ?>
                                                     </select>
                                                 </div> 
                                                  
@@ -939,21 +942,22 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                     
                                                     <select class="form-control form-control-sm"  id="interes_LAE" name="interes_LAE">
                                                         <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboPais() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option>
-                                                        <?php endforeach; ?>
+                                                        </?php foreach($combos->ComboPais() as $r): ?>
+                                                            <option value="</?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option>
+                                                        </?php endforeach; ?>
                                                     </select>
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                    
                                                     <select id="interes_depto_LAE" name="interes_depto_LAE"  class="form-control form-control-sm" >
-                                                        <?php foreach($combos->ComboDepto() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                        <?php endforeach; ?>
+                                                        </?php foreach($combos->ComboDepto() as $r): ?>
+                                                            <option value="</?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option>
+                                                        </?//php endforeach; ?>
                                                     </select>
                                                 </div>                                                
                                             </div>
                                         </div>
+                                                        -->
 
                                         <pre>
                                         </pre>                                        

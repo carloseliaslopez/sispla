@@ -1,9 +1,9 @@
 <?php
 
 $html = '';
-//$conexion = new mysqli('localhost','root','CEal2000!','Versatec');
+$conexion = new mysqli('localhost','root','CEal2000!','Versatec');
 
-require "./Datos/Conexion.php";
+//require "./Datos/Conexion.php";
  
 $id_pic = $_POST['id_pic'];
  
