@@ -27,6 +27,7 @@ $rol = $_SESSION ['idRol'];
         <meta name="author" content="" />
         <title>Nuevo cliente</title>
         <link href="css/styles.css" rel="stylesheet" />
+       
 
         <!-- DATATABLE -->
         <link href="DataTables/DataTables-1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -70,7 +71,7 @@ $rol = $_SESSION ['idRol'];
                                             <div class="col-md-12" >
                                                 <div class="form-group">
                                                     <label class="small mb-1" >Nombre: </label>
-                                                    <input class="form-control py-4" name="nombre" id="nombre"
+                                                    <input class="form-control py-4 " name="nombre" id="nombre"
                                                     type="text" placeholder="Ingrese el nombre de la persona o entidad" title="Ingrese el nombre de la persona o entidad" autocomplete="off" required/>
                                                     <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
                                                 </div>

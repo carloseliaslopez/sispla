@@ -174,11 +174,11 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                             <div class="form-row">
                                                 <div class="form-group col-md-5">
                                                     <label for="nombrePersonaContacto_PJ">Nombre de la persona de  Contacto</label>
-                                                    <input type="text" class="form-control form-control-sm" id="nombrePersonaContacto_PJ" name="nombrePersonaContacto_PJ" placeholder="Nombre de la persona de  Contacto" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="nombrePersonaContacto_PJ" name="nombrePersonaContacto_PJ" placeholder="Nombre de la persona de  Contacto" autocomplete="off">
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="cargoPersonaContacto_PJ">Cargo en la empresa</label>
-                                                    <input type="text" class="form-control form-control-sm" id="cargoPersonaContacto_PJ" name="cargoPersonaContacto_PJ" placeholder="Cargo en la empresa" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="cargoPersonaContacto_PJ" name="cargoPersonaContacto_PJ" placeholder="Cargo en la empresa" autocomplete="off">
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <label for="telefonoPersonaContacto_PJ">Teléfono de contacto</label>
@@ -201,7 +201,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                             <div class="form-row">
                                                 <div class="form-group col-md-4">
                                                     <label for="nombreCompleto_RL">Nombre completo</label>
-                                                    <input type="text" class="form-control form-control-sm" id="nombreCompleto_RL" name="nombreCompleto_RL" placeholder="Nombre completo" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="nombreCompleto_RL" name="nombreCompleto_RL" placeholder="Nombre completo" autocomplete="off">
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label for="paisNacimiento_RL">País de nacimiento</label>
@@ -303,11 +303,11 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 
                                                 <div class="form-group col-md-2">
                                                     <label for="cargo_RL">Cargo que desempeña</label>
-                                                    <input type="text" class="form-control form-control-sm" id="cargo_RL" name="cargo_RL" placeholder="Cargo que desempeña">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="cargo_RL" name="cargo_RL" placeholder="Cargo que desempeña">
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label for="profesion_RL">Profesión/Oficio</label>
-                                                    <input type="text" class="form-control form-control-sm" id="profesion_RL" name="profesion_RL" placeholder="Profesión/Oficio" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="profesion_RL" name="profesion_RL" placeholder="Profesión/Oficio" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
@@ -347,7 +347,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 <div class="form-row">
                                                     <div class="form-group col-md-3">
                                                         <label for="nombre_AC[]">Nombre completo o razón social</label>
-                                                        <input type="text" class="form-control form-control-sm" id="nombre_AC[]" name="nombre_AC[]" placeholder="Nombre completo o razón social" autocomplete="off" required>
+                                                        <input type="text" class="UpperCase form-control form-control-sm" id="nombre_AC[]" name="nombre_AC[]" placeholder="Nombre completo o razón social" autocomplete="off" required>
                                                         <p id="filtracion_AC" name="filtracion_AC" ></p>
                                                       
                                                         
@@ -375,7 +375,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
 
                                                     <div class="form-group col-md-2">
                                                         <label for="id_AC[]">N° de identificación</label>
-                                                        <input type="text" class="form-control form-control-sm" id="id_AC[]" name="id_AC[]" placeholder="N° de identificación" autocomplete="off" > 
+                                                        <input type="text" class="UpperCase form-control form-control-sm" id="id_AC[]" name="id_AC[]" placeholder="N° de identificación" autocomplete="off" > 
                                                     </div>
                                                     
                                                     <div class="form-group col-md-2">
@@ -423,11 +423,11 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 <div class="form-row">
                                                     <div class="form-group col-md-2">
                                                         <label for="nombre_BF[]">Nombres</label>
-                                                        <input type="text" class="form-control form-control-sm" id="nombre_BF[]" name="nombre_BF[]" placeholder="Nombres" autocomplete="off">
+                                                        <input type="text" class="UpperCase form-control form-control-sm" id="nombre_BF[]" name="nombre_BF[]" placeholder="Nombres" autocomplete="off">
                                                     </div>
                                                     <div class="form-group col-md-2">
                                                         <label for="apellido_BF[]">Apellidos</label>
-                                                        <input type="text" class="form-control form-control-sm" id="apellido_BF[]" name="apellido_BF[]" placeholder="Apellidos" autocomplete="off">
+                                                        <input type="text" class="UpperCase form-control form-control-sm" id="apellido_BF[]" name="apellido_BF[]" placeholder="Apellidos" autocomplete="off">
                                                     </div>
 
                                                     <div class="form-group col-md-2">
@@ -451,7 +451,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
 
                                                     <div class="form-group col-md-2">
                                                         <label for="id_BF[]">N° de identificación</label>
-                                                        <input type="text" class="form-control form-control-sm" id="id_BF[]" name="id_BF[]" placeholder="N° de identificación" autocomplete="off" > 
+                                                        <input type="text" class="UpperCase form-control form-control-sm" id="id_BF[]" name="id_BF[]" placeholder="N° de identificación" autocomplete="off" > 
                                                     </div>
 
                                                     <div class="form-group col-md-1">
@@ -520,11 +520,11 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="nombreComercial">Nombre comercial </label>
-                                                    <input type="text" class="form-control form-control-sm" id="nombreComercial" name="nombreComercial" placeholder="Nombre comercial" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="nombreComercial" name="nombreComercial" placeholder="Nombre comercial" autocomplete="off">
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <label for="idTributaria">Identificación tributaria</label>
-                                                    <input type="text" class="form-control form-control-sm" id="idTributaria" name="idTributaria" placeholder="Identificación tributaria" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="idTributaria" name="idTributaria" placeholder="Identificación tributaria" autocomplete="off">
                                                 </div>
 
                                                 <div class="form-group col-md-3">
@@ -537,7 +537,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="DomicilioComercial">Domicilio comercial o físico de la sociedad(Dirección exacta de la ubicación de la sociedad) </label>
-                                                    <input type="text" class="form-control form-control-sm" id="DomicilioComercial" name="DomicilioComercial" placeholder="Domicilio comercial o físico de la sociedad" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="DomicilioComercial" name="DomicilioComercial" placeholder="Domicilio comercial o físico de la sociedad" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
@@ -601,7 +601,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="descripcionEmpresa">*Descripción de la actividad o negocio a la que se dedica la empresa</label>
-                                                    <input type="text" class="form-control form-control-sm" id="descripcionEmpresa"  name="descripcionEmpresa" placeholder="*Descripción de la actividad o negocio a la que se dedica la empresa" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="descripcionEmpresa"  name="descripcionEmpresa" placeholder="*Descripción de la actividad o negocio a la que se dedica la empresa" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
@@ -639,7 +639,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 </div>
                                                 <div class="form-group col-md-5">
                                                     <label for="indicarGrupoEco"><b>Indicar</b></label>
-                                                    <input type="text" class="form-control form-control-sm" id="indicarGrupoEco" name="indicarGrupoEco" placeholder="Indicar" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="indicarGrupoEco" name="indicarGrupoEco" placeholder="Indicar" autocomplete="off">
                                                 </div>                                      
                                             </div>
                                         </div>
@@ -675,7 +675,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 <div class="form-row">
                                                 <div class="form-group col-md-3">
                                                     <label for="nombre_Cli[]">Nombre</label>
-                                                    <input type="text" class="form-control form-control-sm" id="nombre_Cli[]" name="nombre_Cli[]" placeholder="Nombre" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="nombre_Cli[]" name="nombre_Cli[]" placeholder="Nombre" autocomplete="off">
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <label for="domicilio_Cli[]">Domicilio Comercial</label>
@@ -723,11 +723,11 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 <div class="form-row">
                                                     <div class="form-group col-md-3">
                                                         <label for="nombre_Prov[]">Nombre</label>
-                                                        <input type="text" class="form-control form-control-sm" id="nombre_Prov[]" name="nombre_Prov[]" placeholder="Nombre" autocomplete="off">
+                                                        <input type="text" class="UpperCase form-control form-control-sm" id="nombre_Prov[]" name="nombre_Prov[]" placeholder="Nombre" autocomplete="off">
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <label for="servicio_Prov[]">Servicio o Producto</label>
-                                                        <input type="text" class="form-control form-control-sm" id="servicio_Prov[]" name="servicio_Prov[]" placeholder="Servicio o Producto" autocomplete="off">
+                                                        <input type="text" class="UpperCase form-control form-control-sm" id="servicio_Prov[]" name="servicio_Prov[]" placeholder="Servicio o Producto" autocomplete="off">
                                                     </div>
                                                     <div class="form-group col-md-3">
                                                         <label for="domicilio_Prov[]">Domicilio Comercial</label>
@@ -781,7 +781,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                             <div class="form-row">
                                                 <div class="form-group col-md-4">
                                                     <label for="nombre_pep" >Nombre completo</label>
-                                                    <input type="text" class="form-control form-control-sm" id="nombre_pep" name="nombre_pep" placeholder="Nombre completo" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="nombre_pep" name="nombre_pep" placeholder="Nombre completo" autocomplete="off">
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <label for="relacion_pep">Relación con el cliente</label>
@@ -794,7 +794,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 </div>
                                                 <div class="form-group col-md-5">
                                                     <label for="nombreEntidad_pep">Nombre de la entidad</label>
-                                                    <input type="text" class="form-control form-control-sm" id="nombreEntidad_pep" name="nombreEntidad_pep" placeholder="Nombre de la entidad" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="nombreEntidad_pep" name="nombreEntidad_pep" placeholder="Nombre de la entidad" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
@@ -848,7 +848,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                             <div class="form-row">
                                                 <div class="form-group col-md-4">
                                                     <label for="nombre_facta">Nombre completo</label>
-                                                    <input type="text" class="form-control form-control-sm" id="nombre_facta" name="nombre_facta" placeholder="Nombre completo" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="nombre_facta" name="nombre_facta" placeholder="Nombre completo" autocomplete="off">
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <label for="relacionCliente_facta">Relación con el cliente</label>
@@ -1106,7 +1106,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                     if(x < max_fields){ //condicional de limites 
                         x++; //incrementa la cantidad de textbox
                         
-                        $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-3"><input type="text" class="form-control form-control-sm" id="nombre_AC[]" name="nombre_AC[]" placeholder="Nombre completo o razón social" autocomplete="off" required><p id="filtracion_AC" name="filtracion_AC" ></p></div><div class="form-group col-md-2"><select  class="form-control form-control-sm" id="nacionalidad_AC_'+ x +'" name="nacionalidad_AC[]" onchange="getval(this, $i='+ x +')" ><option selected disabled value = "164">Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><select id="depto_nacionalidad_AC_'+ x +'" name="depto_nacionalidad_AC[]"  class="form-control form-control-sm" ><option selected  disabled >Elegir..</option><?php foreach($combos->ComboDepto() as $r): ?><option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="id_AC[]" name="id_AC[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-2"><input type="number" class="form-control form-control-sm" id="acciones_AC[]" name="acciones_AC[]" placeholder="% Acciones" autocomplete="off"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field" > <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
+                        $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-3"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_AC[]" name="nombre_AC[]" placeholder="Nombre completo o razón social" autocomplete="off" required><p id="filtracion_AC" name="filtracion_AC" ></p></div><div class="form-group col-md-2"><select  class="form-control form-control-sm" id="nacionalidad_AC_'+ x +'" name="nacionalidad_AC[]" onchange="getval(this, $i='+ x +')" ><option selected disabled value = "164">Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><select id="depto_nacionalidad_AC_'+ x +'" name="depto_nacionalidad_AC[]"  class="form-control form-control-sm" ><option selected  disabled >Elegir..</option><?php foreach($combos->ComboDepto() as $r): ?><option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="id_AC[]" name="id_AC[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-2"><input type="number" class="form-control form-control-sm" id="acciones_AC[]" name="acciones_AC[]" placeholder="% Acciones" autocomplete="off"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field" > <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
                     }
                 });               
                 $(wrapper).on("click","#remove_field", function(e){ //user click on remove text
@@ -1126,7 +1126,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 e.preventDefault();
                     if(x < max_fields){ //condicional de limites 
                         x++; //incrementa la cantidad de textbox
-                        $(wrapper).append('<div class="col-md-12"><div class="form-row"><div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="nombre_BF[]" name="nombre_BF[]" placeholder="Nombres" autocomplete="off"></div><div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="apellido_BF[]" name="apellido_BF[]" placeholder="Apellidos" autocomplete="off"></div><div class="form-group col-md-2"><select  class="form-control form-control-sm" id="nacionalidad_BF_'+ x +'" name="nacionalidad_BF[]" onchange="getvalBF(this, $i='+ x +')"><option selected disabled value = "164">Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><select id="depto_nacionalidad_BF_'+ x +'" name="depto_nacionalidad_BF[]"  class="form-control form-control-sm" ><option selected  disabled >Elegir..</option><?php foreach($combos->ComboDepto() as $r): ?><option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="id_BF[]" name="id_BF[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-1"><input type="number" class="form-control form-control-sm" id="acciones_BF[]" name="acciones_BF[]" placeholder="% Acciones" autocomplete="off"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_BF"> <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
+                        $(wrapper).append('<div class="col-md-12"><div class="form-row"><div class="form-group col-md-2"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_BF[]" name="nombre_BF[]" placeholder="Nombres" autocomplete="off"></div><div class="form-group col-md-2"><input type="text" class="UpperCase form-control form-control-sm" id="apellido_BF[]" name="apellido_BF[]" placeholder="Apellidos" autocomplete="off"></div><div class="form-group col-md-2"><select  class="form-control form-control-sm" id="nacionalidad_BF_'+ x +'" name="nacionalidad_BF[]" onchange="getvalBF(this, $i='+ x +')"><option selected disabled value = "164">Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><select id="depto_nacionalidad_BF_'+ x +'" name="depto_nacionalidad_BF[]"  class="form-control form-control-sm" ><option selected  disabled >Elegir..</option><?php foreach($combos->ComboDepto() as $r): ?><option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="id_BF[]" name="id_BF[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-1"><input type="number" class="form-control form-control-sm" id="acciones_BF[]" name="acciones_BF[]" placeholder="% Acciones" autocomplete="off"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_BF"> <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
                     }
                 });
                 
@@ -1148,7 +1148,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 e.preventDefault();
                     if(x < max_fields){ //condicional de limites 
                         x++; //incrementa la cantidad de textbox
-                        $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-3"><input type="text" class="form-control form-control-sm" id="nombre_Cli[]" name="nombre_Cli[]" placeholder="Nombre" autocomplete="off"></div><div class="form-group col-md-3"><select  class="form-control form-control-sm" id="domicilio_Cli[]" name="domicilio_Cli[]"><option selected disabled>Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-3"><input type="number" class="form-control form-control-sm" id="telefono_Cli[]" name="telefono_Cli[]" placeholder="Teléfono" autocomplete="off"></div> <div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_PC"> <i class="fas fa-trash-alt" ></i></button></div></div></div>'); //add input box
+                        $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-3"><input type="text" class=" UpperCase form-control form-control-sm" id="nombre_Cli[]" name="nombre_Cli[]" placeholder="Nombre" autocomplete="off"></div><div class="form-group col-md-3"><select  class="form-control form-control-sm" id="domicilio_Cli[]" name="domicilio_Cli[]"><option selected disabled>Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-3"><input type="number" class="form-control form-control-sm" id="telefono_Cli[]" name="telefono_Cli[]" placeholder="Teléfono" autocomplete="off"></div> <div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_PC"> <i class="fas fa-trash-alt" ></i></button></div></div></div>'); //add input box
                     }
                 });
                 
@@ -1169,7 +1169,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 e.preventDefault();
                     if(x < max_fields){ //condicional de limites 
                         x++; //incrementa la cantidad de textbox
-                        $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-3"><input type="text" class="form-control form-control-sm" id="nombre_Prov[]" name="nombre_Prov[]" placeholder="Nombre" autocomplete="off"></div><div class="form-group col-md-3"><input type="text" class="form-control form-control-sm" id="servicio_Prov[]" name="servicio_Prov[]" placeholder="Servicio o Producto" autocomplete="off"></div><div class="form-group col-md-3"><select  class="form-control form-control-sm" id="domicilio_Prov[]" name="domicilio_Prov[]"><option selected disabled value="164">Elegir...</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><input type="number" class="form-control form-control-sm" id="telefono_Prov[]" name="telefono_Prov[]" placeholder="Teléfono" autocomplete="off"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_PP"> <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
+                        $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-3"><input type="text" class=" UpperCase form-control form-control-sm" id="nombre_Prov[]" name="nombre_Prov[]" placeholder="Nombre" autocomplete="off"></div><div class="form-group col-md-3"><input type="text" class="form-control form-control-sm" id="servicio_Prov[]" name="servicio_Prov[]" placeholder="Servicio o Producto" autocomplete="off"></div><div class="form-group col-md-3"><select  class="form-control form-control-sm" id="domicilio_Prov[]" name="domicilio_Prov[]"><option selected disabled value="164">Elegir...</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><input type="number" class="form-control form-control-sm" id="telefono_Prov[]" name="telefono_Prov[]" placeholder="Teléfono" autocomplete="off"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_PP"> <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
                     }
                 });
                 
@@ -1318,6 +1318,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
 
             });
         </script>
+        <!--Script genera un id unico (valor del input) para los Accionistas-->
         <script>
             function getval(sel,x)
                 {
@@ -1336,6 +1337,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                     });	
                 }
         </script>
+        <!--Script genera un id unico (valor del input) para los beneficiarios finales-->
         <script>
             function getvalBF(nac_ID,x)
                 {
@@ -1351,7 +1353,17 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 }
         </script>
 
-
+        <!--Script para cambiar de minuscula a mayuscula-->
+        <script>
+            $(document).ready( function () {
+                    $(".UpperCase").on("keypress", function () {
+                    $input=$(this);
+                    setTimeout(function () {
+                    $input.val($input.val().toUpperCase());
+                    },30);
+                })
+            })
+        </script>
     </body>
 
 </html>

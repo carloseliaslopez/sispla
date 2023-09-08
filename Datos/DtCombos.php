@@ -622,4 +622,44 @@ class DtCombos extends Conexion
 			die($e->getMessage());
 		}
 	}
+
+	//funcion para completar la categoria de cliete la empresa;
+
+	public function ComboCatEmpresa()
+	{
+		try
+		{
+			$this->myCon = parent::conectar();
+			$result = array();
+			$querySQL = "SELECT idEmpresa, razonSocial, idPaisOrigen, idEstado, usuario_creacion, fecha_creacion, usuario_modificacion, fecha_modificacion, usuario_eliminacion, fecha_eliminacion FROM Empresa WHERE idEstado<>3";
+
+			$stm = $this->myCon->prepare($querySQL);
+			$stm->execute();
+
+			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
+			{
+				$emp = new Empresa();
+
+				//_SET(CAMPOBD, atributoEntidad)			
+				$emp->__SET('idEmpresa', $r->idEmpresa);
+				$emp->__SET('razonSocial', $r->razonSocial);
+				$emp->__SET('idPaisOrigen', $r->idPaisOrigen);
+				$emp->__SET('idEstado', $r->idEstado);
+				$emp->__SET('usuario_creacion', $r->usuario_creacion);
+				$emp->__SET('fecha_creacion', $r->fecha_creacion);
+				$emp->__SET('usuario_modificacion', $r->usuario_modificacion);
+				$emp->__SET('usuario_eliminacion', $r->usuario_eliminacion);
+				$emp->__SET('fecha_eliminacion', $r->fecha_eliminacion);
+				$result[] = $emp;
+
+				//var_dump($result);
+			}
+			$this->myCon = parent::desconectar();
+			return $result;
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 }

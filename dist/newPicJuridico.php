@@ -28,9 +28,10 @@ $rol = $_SESSION ['idRol'];
         <meta name="author" content="" />
         <title>PIC-Jurídico</title>
         <link href="css/styles.css" rel="stylesheet" />
-        <!-- <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" /> -->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script> -->
+        <link href="css/NewStyles.css" rel="stylesheet" />
+       
         
+
         <!-- DATATABLE -->
         <link href="DataTables/DataTables-1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
          <!-- DATATABLE buttons -->
@@ -80,13 +81,20 @@ $rol = $_SESSION ['idRol'];
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="small mb-1" ><b>Nombre del cliente:</b></label>
-                                                    <input class="form-control form-control-sm" name="nombreCliente" id="nombreCliente"
+                                                    <input class="UpperCase form-control form-control-sm " name="nombreCliente" id="nombreCliente"
                                                     type="text" placeholder="Nombre del cliente:" title="Nombre del cliente:" autocomplete="off" required/>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="small mb-1" ><b>Número de identificación:</b></label>
                                                     <input class="form-control form-control-sm" name="id" id="id"
                                                     type="text" placeholder="Número de identificación" title="Número de identificación" autocomplete="off" required/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="small mb-1" ><b>Número de identificación:</b></label>
+                                                    <select  class="form-control form-control-sm" id="#" name="#">
+                                                        <option selected disabled>Elegir..</option>
+                                                        
+                                                    </select>
                                                 </div>
 
                                               
@@ -157,7 +165,16 @@ $rol = $_SESSION ['idRol'];
                 window.open ("NewDataPicJuridico.php","_self")
             }
         </script>
-
+        <script>
+            $(document).ready( function () {
+                    $(".UpperCase").on("keypress", function () {
+                    $input=$(this);
+                    setTimeout(function () {
+                    $input.val($input.val().toUpperCase());
+                    },30);
+                })
+            })
+        </script>
 
     </body>
 </html>
