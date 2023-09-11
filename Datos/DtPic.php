@@ -13,7 +13,7 @@ class DtPic extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idpic, DATE_FORMAT(fechaPic, '%d/%m/%Y') AS fechaPic, nombreCliente, id, origen,categoria, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, idEstado  FROM Pic WHERE idEstado<>3 ";
+			$querySQL = "SELECT idPic, DATE_FORMAT(fechaPic, '%d/%m/%Y') AS fechaPic, nombreCliente, id, origen,categoria, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, idEstado  FROM Pic WHERE idEstado<>3 ";
 			
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -23,7 +23,7 @@ class DtPic extends Conexion
 				$emp = new Pic();
 
 				//_SET(CAMPOBD, atributoEntidad)
-				$emp->__SET('idpic', $r->idpic);	
+				$emp->__SET('idPic', $r->idPic);	
 				$emp->__SET('fechaPic', $r->fechaPic);	
 				$emp->__SET('nombreCliente', $r->nombreCliente);
 				$emp->__SET('id', $r->id);
@@ -88,16 +88,20 @@ class DtPic extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO pic (fechaPic,nombreCliente,id,origen,categoria,fechaIngreso,idEstado) 
-		        VALUES (?,?,?,'Clientes',?, CURDATE(),?)";
+			$sql = "INSERT INTO pic (fechaPic,nombreCliente,id,origen,categoria,fechaIngreso,usuario_creacion,fecha_creacion,idEmpresa,idEstado) 
+		        VALUES (?,?,?,'Clientes',?,CURDATE(),?,current_timestamp(),?,?)";
 
 			$this->myCon->prepare($sql)
 			->execute(array(
 			$data->__GET('fechaPic'),
 			$data->__GET('nombreCliente'),
 			$data->__GET('id'),
-			//$data->__GET('origen'),
+			
 			$data->__GET('categoria'),
+			
+			$data->__GET('usuario_creacion'),
+			
+			$data->__GET('idEmpresa'),
 			$data->__SET('idEstado',1)));
 			
 			$this->myCon = parent::desconectar();

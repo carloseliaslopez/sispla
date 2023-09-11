@@ -273,6 +273,8 @@ class DtCombos extends Conexion
 	}
 
 
+	/*
+
 	public function ComboFechaFiltrosMensuales()
 	{
 		try
@@ -305,6 +307,7 @@ class DtCombos extends Conexion
 			die($e->getMessage());
 		}
 	}
+	*/
 
 
 	//COMBOS PARA LA MATRIZ DE EVALUACION GENERAL

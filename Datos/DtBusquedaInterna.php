@@ -1,7 +1,5 @@
 <?php
 
-use LDAP\Result;
-
 include_once("Connect.php");
 
 class DtBusquedaInterna extends Conexion
@@ -12,14 +10,15 @@ class DtBusquedaInterna extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Circular (fechaBusqueda, idOrganismo, subOrganismo,referencia, idEstado)
-					VALUES (CURDATE(),?,?,?,1);";
+			$sql = "INSERT INTO Circular (fechaBusqueda, idOrganismo, subOrganismo,referencia, idEstado, usuario_creacion, fecha_creacion)
+					VALUES (CURDATE(),?,?,?,1,?,current_timestamp());";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
 			 $data->__GET('idOrganismo'),
 			 $data->__GET('subOrganismo'),
-			 $data->__GET('referencia')));
+			 $data->__GET('referencia'),
+			 $data->__GET('usuario_creacion')));
 			 
 			$this->myCon = parent::desconectar();
 		} 
@@ -34,15 +33,16 @@ class DtBusquedaInterna extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO PersonasObligadas (nombre, identificacion,nacionalidad,idCircular)
-					VALUES (?,?,?,?)";
+			$sql = "INSERT INTO PersonasObligadas (nombre, identificacion,nacionalidad,idCircular,usuario_creacion,idEstado, fecha_creacion)
+					VALUES (?,?,?,?,?,1,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
 			 $data->__GET('nombre'),
 			 $data->__GET('identificacion'),
 			 $data->__GET('nacionalidad'),
-			 $data->__GET('idCircular')));
+			 $data->__GET('idCircular'),
+			 $data->__GET('usuario_creacion')));
 			 
 			$this->myCon = parent::desconectar();
 		} 
@@ -136,11 +136,12 @@ class DtBusquedaInterna extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Organismo (nombreOrganismo, idEstado) VALUES(?,1);";
+			$sql = "INSERT INTO Organismo (nombreOrganismo,usuario_creacion,idEstado,fecha_creacion) VALUES(?,?,1,current_timestamp());";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
-			 $data->__GET('nombreOrganismo')));
+			 $data->__GET('nombreOrganismo'),
+			 $data->__GET('usuario_creacion')));
 			 
 			$this->myCon = parent::desconectar();
 		} 

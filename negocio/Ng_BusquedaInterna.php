@@ -26,11 +26,13 @@ if ($_POST)
                 $mon->__SET('idOrganismo', $_POST['id_organismo']);
                 $mon->__SET('subOrganismo', $_POST['sub_organismo']);
                 $mon->__SET('referencia', $_POST['ref_circular']);
+                $mon->__SET('usuario_creacion', $_POST['idUsuario']);
+
                 $dtMon->registrarCircular($mon);
 
                 //sleep(5);
 
-                // iNSERTANDO DATOS DE ACCIONISTAS  
+                // iNSERTANDO DATOS DE de las personas a buscar  
                 $nombre_SO = $_POST['nombre_SO'];
                 $id_SO = $_POST['id_SO'];
                 $acciones_SO = $_POST['acciones_SO'];
@@ -47,13 +49,16 @@ if ($_POST)
                     $po->__SET('nombre', $nombre);
                     $po->__SET('identificacion', $id);
                     $po->__SET('nacionalidad',$nacionalidad);
-                    $po->__SET('idCircular', $_POST['ref_circular']);                  
+                    $po->__SET('idCircular', $_POST['ref_circular']);   
+                    $mon->__SET('usuario_creacion', $_POST['idUsuario']);        
                     $dtMon->registrarPerObligadas($po);
 
                     
                 }
 
                 $ref = $_POST['ref_circular'];
+
+
 
                 header("Location: ../dist/Constancia_list_interna.php?ref=$ref");
                 break;

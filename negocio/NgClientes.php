@@ -1,4 +1,5 @@
-<?php
+
+<//?php
 
 include_once("../Entidades/Clientes.php");
 include_once("../Datos/DtClientes.php");

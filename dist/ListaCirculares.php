@@ -1,16 +1,17 @@
 <?php
-error_reporting(0);
+///error_reporting(0);
 
 include '../Entidades/Busquedas/Circular.php';
 include '../Entidades/Busquedas/Organismo.php';
-include '../Entidades/Busquedas/vw_busquedaInterna.php';
 
 include '../Datos/DtBusquedaInterna.php';
 session_start();
 if (!isset($_SESSION['idUsuario'])){
     header("Location: ../dist/login.php");
 }
+$idUsuario = $_SESSION['idUsuario'];
 $nombre = $_SESSION['usuario'];
+
 $rol = $_SESSION ['idRol'];
 
 $datosCircular = new DtBusquedaInterna();
@@ -23,6 +24,7 @@ if(isset($varMsjNewEmp))
   $varMsjNewEmp = $_GET['msjNewEmp'];
 }
 
+/*
 //variable de control msj Actualizar Empleado
 $varMsjUpdEmp = 0;
 if(isset($varMsjUpdEmp))
@@ -36,6 +38,7 @@ if(isset($varMsjDelEmp))
 { 
   $varMsjDelEmp = $_GET['msjDelEmp'];
 }
+*/
 //fin jalerts
 ?>
 
@@ -180,6 +183,7 @@ if(isset($varMsjDelEmp))
                                                         <input class="form-control py-4" name="nombre_O" id="nombre_O"
                                                         type="text" placeholder="Ingrese el nombre del organismo" autocomplete="off" required/>
                                                         <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
+                                                        <input type="hidden" id="idUsuario" name="idUsuario" value="<?php echo $idUsuario?>"/>
                                                         
                                                             
                                                     </div>
@@ -282,6 +286,22 @@ if(isset($varMsjDelEmp))
                 }              
 
             });
+        </script>
+        
+         <script>
+            $(document).ready(function ()
+            {
+                ////// ASIGNAMOS LOS VALORES A EDITAR EN LOS CONTROLES DEL FORMULARIO
+                setValoresEmp();
+            });
+        </script>
+        <script>
+            function setValoresEmp()
+            {
+                $("#idUsuario").val("<?php  echo $idUsuario ?>");
+                
+
+            }
         </script>
 
     </body>

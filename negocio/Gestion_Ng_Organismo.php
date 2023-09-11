@@ -16,11 +16,12 @@ if ($_POST)
         case '1':
             try 
             {
-                               
+                                
 				if (($dtMon->ExisteOrganismo(($_POST['nombre_O'])) == null)) {
                     //DatosEntidad--datos Input
                     $mon->__SET('nombreOrganismo', $_POST['nombre_O']);
-                   
+                    $mon->__SET('usuario_creacion', $_POST['idUsuario']);
+                    
                     $dtMon->registrarOrganismo($mon);
                     header("Location: ../dist/ListaCirculares.php?msjNewEmp=1");
                     break;

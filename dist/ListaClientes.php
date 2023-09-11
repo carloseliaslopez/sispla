@@ -7,9 +7,6 @@ include '../Datos/DtPic.php';
 
 $datospic = new DtPic();
 
-
-//----------------------------------
-include '../Entidades/Clientes.php';
 include '../Datos/DtClientes.php';
 
 session_start();

@@ -158,11 +158,11 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                     <input type="hidden" name="idCli_PN" id="idCli_PN" />
                                                     <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
                                                     <label for="fechaConstitucion_PJ">Fecha de constitución</label>
-                                                    <input type="date" class="form-control form-control-sm" id="fechaConstitucion_PJ" name=" fechaConstitucion_PJ" placeholder="Fecha de constitución" autocomplete="off">
+                                                    <input type="date" class="form-control form-control-sm" id="fechaConstitucion_PJ" name=" fechaConstitucion_PJ" placeholder="Fecha de constitución" autocomplete="off" max="9999-12-31" >
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label for="fechaInscripcion_PJ">Fecha de inscripción</label>
-                                                    <input type="date" class="form-control form-control-sm" id="fechaInscripcion_PJ" name="fechaInscripcion_PJ" placeholder="Fecha de inscripción">
+                                                    <input type="date" class="form-control form-control-sm" id="fechaInscripcion_PJ" name="fechaInscripcion_PJ" placeholder="Fecha de inscripción" max="9999-12-31" >
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <label for="correoPersonaContacto_PJ">Correo de la persona de  Contacto</label>

@@ -20,9 +20,10 @@ if ($_POST)
                 $mon->__SET('fechaPic', $_POST['fechaPic']);
                 $mon->__SET('nombreCliente', $_POST['nombreCliente']);
                 $mon->__SET('id', $_POST['id']);
-
                 $mon->__SET('categoria', $_POST['txtcategoria']);
-               
+                $mon->__SET('usuario_creacion', $_POST['idUsuario']);
+                $mon->__SET('idEmpresa', $_POST['empresa']);
+                
                 
 				
 				if (($dtMon->ExistePic(($_POST['id'])) == null)) {

@@ -12,7 +12,7 @@ if (!isset($_SESSION['idUsuario'])){
 }
 $nombre = $_SESSION['usuario'];
 $rol = $_SESSION ['idRol'];
-
+$idUsuario = $_SESSION ['idUsuario'];
 $busquedaInterna = new DtBusquedaInterna();
 $combos = new DtCombos();
 
@@ -70,6 +70,8 @@ $combos = new DtCombos();
                                                     <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
                                                     <label for="">Fecha de la busqueda</label>
                                                     <input type="date" class="form-control form-control-sm" id="fecha_busqueda" name="fecha_busqueda"  value="<?php echo (new DateTime())->format('Y-m-d'); ?>" disabled >
+                                                    <input type="hidden" id="idUsuario" name="idUsuario" value="<?php echo $idUsuario?>"/>
+
                                                 </div>
                                                 <div class="form-group col-md-5">
                                                     <label for="id_organismo">Organismo</label>

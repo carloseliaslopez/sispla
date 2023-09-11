@@ -13,7 +13,7 @@ class Conexion
     public function conectar()
 	{
         $serverName = 'localhost';
-        $dbName = 'versatec';
+        $dbName = 'sispla';
         $userName = 'root';
         $pwd = 'CEal2000!';
 

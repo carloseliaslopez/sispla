@@ -1,12 +1,15 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 
 //ENTIDADES
 include '../Entidades/Pic.php';
-
+include '../Entidades/Compartidas/Empresa.php';
 
 //DATOS
 include '../Datos/DtPic.php';
+include '../Datos/DtCombos.php';
+
+$combos = new DtCombos();
 
 //INSTANCIAS
 //$datosLI = new DtListasInternas();
@@ -14,6 +17,7 @@ session_start();
 if (!isset($_SESSION['idUsuario'])){
     header("Location: ../dist/login.php");
 }
+$idUsuario = $_SESSION['idUsuario'];
 $nombre = $_SESSION['usuario'];
 $rol = $_SESSION ['idRol'];
 
@@ -75,9 +79,10 @@ $rol = $_SESSION ['idRol'];
                                                 <div class="form-group">
                                                     <label class="small mb-1" ><b>Fecha de PIC</b></label>
                                                     <input class="form-control form-control-sm" name="fechaPic" id="fechaPic"
-                                                    type="date" placeholder="Fecha de PIC" title="Fecha de PIC" autocomplete="off" required/>
+                                                    type="date" placeholder="Fecha de PIC" title="Fecha de PIC" autocomplete="off" required  max="9999-12-31"/>
                                                     <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
                                                     <input type="hidden" id="txtcategoria" name="txtcategoria" value="Jurídico"/>
+                                                    <input type="hidden" id="idUsuario" name="idUsuario" value="<?php echo $idUsuario?>"/>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="small mb-1" ><b>Nombre del cliente:</b></label>
@@ -90,10 +95,12 @@ $rol = $_SESSION ['idRol'];
                                                     type="text" placeholder="Número de identificación" title="Número de identificación" autocomplete="off" required/>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label class="small mb-1" ><b>Número de identificación:</b></label>
-                                                    <select  class="form-control form-control-sm" id="#" name="#">
+                                                    <label for="empresa">Empresa a la que pertenece</label>
+                                                    <select class="form-control form-control-sm" id="empresa" name="empresa">
                                                         <option selected disabled>Elegir..</option>
-                                                        
+                                                        <?php foreach($combos->ComboCatEmpresa() as $r): ?>
+                                                            <option value="<?php echo $r->__GET('idEmpresa') ?>"> <?php echo $r->__GET('razonSocial') ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
 
