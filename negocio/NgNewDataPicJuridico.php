@@ -113,6 +113,7 @@ if ($_POST)
                 } 
 
                 $pj->__SET('idPic', $_POST['idCli_PN']);
+                $pj->__SET('usuario_creacion', $_POST['idUsuario']);
                 $dtMon->registrarDataPicJuridico($pj);
                  
              
@@ -213,6 +214,7 @@ if ($_POST)
                 }
 
                 $rl->__SET('idPic', $_POST['idCli_PN']);
+                $rl->__SET('usuario_creacion', $_POST['idUsuario']);
                 $dtMon->registrarDatosRL($rl);
                        
                   
@@ -258,6 +260,7 @@ if ($_POST)
                     }
                                         
                     $ac->__SET('idPic', $_POST['idCli_PN']);
+                    $ac->__SET('usuario_creacion', $_POST['idUsuario']);
                     $dtMon->registrarDatosAc($ac);
 
                     
@@ -322,6 +325,7 @@ if ($_POST)
                     }
                                         
                     $bf->__SET('idPic', $_POST['idCli_PN']);
+                    $bf->__SET('usuario_creacion', $_POST['idUsuario']);
                     $dtMon->registrarDatosBf($bf);
 
                     
@@ -334,6 +338,7 @@ if ($_POST)
             
                 //INSERTANDO DATOS ORIGENES DE LOS FONDOS
                 $ofpj->__SET('idPic', $_POST['idCli_PN']);
+                $ofpj->__SET('usuario_creacion', $_POST['idUsuario']);
                 if(empty($_POST['formaPago_OFPJ']))
                 { 
                     $ofpj->__SET('idFormaPago', $formapago);
@@ -456,6 +461,7 @@ if ($_POST)
                     $ae->__SET('indicar', $_POST['indicarGrupoEco']);
                 }
                 $ae->__SET('idPic', $_POST['idCli_PN']);
+                $ae->__SET('usuario_creacion', $_POST['idUsuario']);
                 $dtMon->registrarDatosAE($ae);
 
                     
@@ -491,6 +497,7 @@ if ($_POST)
                     }
                     
                     $pc->__SET('idPic', $_POST['idCli_PN']);
+                    $pc->__SET('usuario_creacion', $_POST['idUsuario']);
                     $dtMon->registrarDatosPC($pc);      
                 }
                            
@@ -540,6 +547,7 @@ if ($_POST)
                     }
                     
                     $pp->__SET('idPic', $_POST['idCli_PN']);
+                    $pp->__SET('usuario_creacion', $_POST['idUsuario']);
                     $dtMon->registrarDatosPP($pp);      
                 }
    
@@ -565,6 +573,7 @@ if ($_POST)
                    $pep->__SET('perido', $_POST['periodo_pep']);
                    $pep->__SET('idPic', $_POST['idCli_PN']);
                    $pep->__SET('riesgoPep', 3);
+                   $pep->__SET('usuario_creacion', $_POST['idUsuario']);
                    $dtCom->registrarFullPep($pep);      
                }
                else{
@@ -577,6 +586,7 @@ if ($_POST)
                    $pep->__SET('perido',$vaciotexto);
                    $pep->__SET('riesgoPep', 1);
                    $pep->__SET('idPic', $_POST['idCli_PN']);
+                   $pep->__SET('usuario_creacion', $_POST['idUsuario']);
                    
                    $dtCom->registrarFullPep($pep);
                }
@@ -600,6 +610,7 @@ if ($_POST)
                    }
                   
                    $facta->__SET('idPic', $_POST['idCli_PN']);
+                   $facta->__SET('usuario_creacion', $_POST['idUsuario']);
                    $dtCom->registrarFullFacta($facta);       
                }
                else{
@@ -608,6 +619,7 @@ if ($_POST)
                    $facta->__SET('idRelacionCliente', $relacion);
                    $facta->__SET('idCausa', $causa);
                    $facta->__SET('idPic', $_POST['idCli_PN']);
+                   $facta->__SET('usuario_creacion', $_POST['idUsuario']);
                    $dtCom->registrarFullFacta($facta);
                }
                 
@@ -646,7 +658,7 @@ if ($_POST)
                     $info->__SET('idDepto', $_POST['interes_depto_LAE']);
                 }
                 $info->__SET('idPic', $_POST['idCli_PN']);
-
+                $info->__SET('usuario_creacion', $_POST['idUsuario']);
                 $dtMon->registrarDatosInteres($info);
               
 

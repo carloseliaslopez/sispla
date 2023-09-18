@@ -10,6 +10,7 @@
         private $nombre_PaisPep;
         private $cargo;
         private $perido;
+        private $riesgoPep;
         private $idPic;
         
         private $usuario_creacion;

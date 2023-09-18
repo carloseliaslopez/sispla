@@ -10,14 +10,15 @@ class DtDataPicCompartidos extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO OrigenesFondos (idPic,idFormaPago,idFuenteFondos)
-		        	VALUES (?,?,?)";
+			$sql = "INSERT INTO OrigenesFondos (idPic,idFormaPago,idFuenteFondos,usuario_creacion,fecha_creacion)
+		        	VALUES (?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
 			 $data->__GET('idPic'),
 			 $data->__GET('idFormaPago'),
-			 $data->__GET('idFuenteFondos')));
+			 $data->__GET('idFuenteFondos'),
+			 $data->__GET('usuario_creacion')));
 			
 			$this->myCon = parent::desconectar();
 		} 
@@ -32,8 +33,8 @@ class DtDataPicCompartidos extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Pep (pep,nombrePep,idRelacionCliente,nombreEntidad,PaisPep,cargo,perido,riesgoPep,idPic)
-		        	VALUES (?,?,?,?,?,?,?,?,?)";
+			$sql = "INSERT INTO Pep (pep,nombrePep,idRelacionCliente,nombreEntidad,PaisPep,cargo,perido,riesgoPep,idPic,usuario_creacion,fecha_creacion)
+		        	VALUES (?,?,?,?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -45,7 +46,8 @@ class DtDataPicCompartidos extends Conexion
 			 $data->__GET('cargo'),
 			 $data->__GET('perido'),
 			 $data->__GET('riesgoPep'),
-			 $data->__GET('idPic')));
+			 $data->__GET('idPic'),
+			 $data->__GET('usuario_creacion')));
 			
 			$this->myCon = parent::desconectar();
 		} 
@@ -62,8 +64,8 @@ class DtDataPicCompartidos extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Facta (Facta,nombreFacta,idRelacionCliente,idCausa,idPic)
-		        	VALUES (?,?,?,?,?)";
+			$sql = "INSERT INTO Facta (Facta,nombreFacta,idRelacionCliente,idCausa,idPic,usuario_creacion,fecha_creacion)
+		        	VALUES (?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -71,7 +73,8 @@ class DtDataPicCompartidos extends Conexion
 			 $data->__GET('nombreFacta'),
 			 $data->__GET('idRelacionCliente'),
 			 $data->__GET('idCausa'),
-			 $data->__GET('idPic')));
+			 $data->__GET('idPic'),
+			 $data->__GET('usuario_creacion')));
 			
 			$this->myCon = parent::desconectar();
 		} 

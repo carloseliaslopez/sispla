@@ -114,7 +114,7 @@ $empEdit = $matrizMRC->obtenerCliente($varIdEmp, $varProd);
                                             <div class="form-group col-md-2">
                                                 <label class="large mb-2" for="monto_ME" ><b>Monto</b></label>
                                                 <input type="number" class="form-control form-control-md" id="monto_ME" name="monto_ME" 
-                                                    placeholder="Monto" autocomplete="off" required>
+                                                    placeholder="Monto" autocomplete="off" min="0" step="0.01" required>
                                             </div>  
                                             <div class="form-group col-md-3">
                                                 <label class="large mb-2" for="fechaRevision_ME" ><b>Fecha de revisión</b></label>
@@ -328,6 +328,7 @@ $empEdit = $matrizMRC->obtenerCliente($varIdEmp, $varProd);
                                             </div>          
                                         </div>
                                     </div>
+                                    <!--
                                     <div class="divcase" id="inputValidation">
                                         <div class="col-md-12" >
                                             <div class="form-row">
@@ -338,6 +339,8 @@ $empEdit = $matrizMRC->obtenerCliente($varIdEmp, $varProd);
                                              </div>
                                         </div>
                                     </div>
+                                    -->
+
 
                                     <!--Start encabezado-->
                                     <div class="col-md-12" >

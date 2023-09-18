@@ -149,20 +149,19 @@ if(isset($varMsjDelEmp))
 
                                                     <td>
                                                     
-                                                        <a href="#" onclick="Ver(<?php echo $r->__GET('idpic'); ?>,'<?php echo $r->__GET('categoria'); ?>')" 
+                                                        <a href="#" onclick="Ver(<?php echo $r->__GET('idPic'); ?>,'<?php echo $r->__GET('categoria'); ?>')" 
                                                         title="Ver PIC">
                                                         <i class="fa-solid fa-eye"></i>
                                                             Ver
                                                         </a>
                                                         <br>
-                                                        <a href="#" onclick="Categoria(<?php echo $r->__GET('idpic'); ?>,'<?php echo $r->__GET('categoria'); ?>')" 
+                                                        <a href="#" onclick="Categoria(<?php echo $r->__GET('idPic'); ?>,'<?php echo $r->__GET('categoria'); ?>')" 
                                                         title="Rellenar Pic">
-                                                            
                                                             Rellenar
                                                         </a>
                                                         <br>
-                                                        <a href="#" onclick="edit(<?php echo $r->__GET('idpic'); ?>,'<?php echo $r->__GET('categoria'); ?>')" 
-                                                        title="Rellenar Pic">
+                                                        <a href="#" onclick="edit(<?php echo $r->__GET('idPic'); ?>,'<?php echo $r->__GET('categoria'); ?>')" 
+                                                        title="Editar Pic">
                                                             Editar
                                                         </a>
                                                         <br>

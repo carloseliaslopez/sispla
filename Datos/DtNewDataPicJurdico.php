@@ -2,7 +2,7 @@
 include_once("Connect.php");
 
 class DtNewDataPicJurdico extends Conexion
-{
+{ 
     private $myCon;
  
 	public function registrarDataPicJuridico(DatosClienteJuridicoPic $data)
@@ -10,8 +10,8 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO DatosClienteJuridicoPic (paisConstitucion, deptoConstitucion, fechaConstitucion,fechaInscripcion,correoPersonaContacto,nombrePersonaContacto,cargoPersonaContacto,telefono,idPic) 
-		        VALUES (?,?,?,?,?,?,?,?,?)";
+			$sql = "INSERT INTO DatosClienteJuridicoPic (paisConstitucion, deptoConstitucion, fechaConstitucion,fechaInscripcion,correoPersonaContacto,nombrePersonaContacto,cargoPersonaContacto,telefono,idPic,usuario_creacion,fecha_creacion) 
+		        VALUES (?,?,?,?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -23,7 +23,8 @@ class DtNewDataPicJurdico extends Conexion
 			 $data->__GET('nombrePersonaContacto'),
 			 $data->__GET('cargoPersonaContacto'),
 			 $data->__GET('telefono'),
-			 $data->__GET('idPic')));
+			 $data->__GET('idPic'),
+			 $data->__GET('usuario_creacion')));
 			
 			$this->myCon = parent::desconectar();
 		} 
@@ -38,8 +39,8 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO DatosRepresentanteLegal (nombreRepresentanteLegal,paisNacimiento,deptoPaisNacimiento,nacionalidad,deptoNacionalidad,tipoIdentificacion, numeroIdentificacion,paisEmision,fechaEmision,fechaVencimiento,paisResidencia,deptoPaisResidencia,celular,correo,cargo,profesion,idPic)
-		        	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			$sql = "INSERT INTO DatosRepresentanteLegal (nombreRepresentanteLegal,paisNacimiento,deptoPaisNacimiento,nacionalidad,deptoNacionalidad,tipoIdentificacion, numeroIdentificacion,paisEmision,fechaEmision,fechaVencimiento,paisResidencia,deptoPaisResidencia,celular,correo,cargo,profesion,idPic,usuario_creacion,fecha_creacion)
+		        	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -59,7 +60,9 @@ class DtNewDataPicJurdico extends Conexion
 			 $data->__GET('correo'),
 			 $data->__GET('cargo'),
 			 $data->__GET('profesion'),
-			 $data->__GET('idPic')));
+			 $data->__GET('idPic'),
+			 $data->__GET('usuario_creacion')
+			));
 
 			$this->myCon = parent::desconectar();
 		} 
@@ -74,8 +77,8 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Accionistas(nombreCompletoAccionistas,nacionalidadAccionistas,deptoNacionalidadAccionistas, numIdAccionistas,Acciones,idPic)
-		        	VALUES (?,?,?,?,?,?)";
+			$sql = "INSERT INTO Accionistas(nombreCompletoAccionistas,nacionalidadAccionistas,deptoNacionalidadAccionistas, numIdAccionistas,Acciones,idPic,usuario_creacion,fecha_creacion)
+		        	VALUES (?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -84,7 +87,8 @@ class DtNewDataPicJurdico extends Conexion
 			 $data->__GET('deptoNacionalidadAccionistas'),
 			 $data->__GET('numIdAccionistas'),
 			 $data->__GET('Acciones'),
-			 $data->__GET('idPic')));
+			 $data->__GET('idPic'),
+			 $data->__GET('usuario_creacion')));
 			
 			$this->myCon = parent::desconectar();
 		} 
@@ -99,8 +103,8 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO BeneficiariosFinales (nombreBeneFinales,ApellidosBeneFinales,nacionalidadBeneFinales,deptoNacionalidadBeneFinales,numIdBeneFinales,AccionesBeneFinales,idPic)
-		        	VALUES (?,?,?,?,?,?,?)";
+			$sql = "INSERT INTO BeneficiariosFinales (nombreBeneFinales,ApellidosBeneFinales,nacionalidadBeneFinales,deptoNacionalidadBeneFinales,numIdBeneFinales,AccionesBeneFinales,idPic,usuario_creacion,fecha_creacion)
+		        	VALUES (?,?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -110,7 +114,8 @@ class DtNewDataPicJurdico extends Conexion
 			 $data->__GET('deptoNacionalidadBeneFinales'),
 			 $data->__GET('numIdBeneFinales'),
 			 $data->__GET('AccionesBeneFinales'),
-			 $data->__GET('idPic')));
+			 $data->__GET('idPic'),
+			 $data->__GET('usuario_creacion')));
 			
 			$this->myCon = parent::desconectar();
 		} 
@@ -125,8 +130,8 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO ActividadEconomica (nombreComercial,idTributaria,anios,domicilioComercial,paisDomicilio,departamento,paginaWeb,telefonoOficina,idAreaGeografica,idActividadNegocio,descripcion,ventasMensual,numEmpleados,numSucursales,grupoEconomico,indicar,idPic)
-		        	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			$sql = "INSERT INTO ActividadEconomica (nombreComercial,idTributaria,anios,domicilioComercial,paisDomicilio,departamento,paginaWeb,telefonoOficina,idAreaGeografica,idActividadNegocio,descripcion,ventasMensual,numEmpleados,numSucursales,grupoEconomico,indicar,idPic,usuario_creacion,fecha_creacion)
+		        	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -146,7 +151,8 @@ class DtNewDataPicJurdico extends Conexion
 			 $data->__GET('numSucursales'),
 			 $data->__GET('grupoEconomico'),
 			 $data->__GET('indicar'),
-			 $data->__GET('idPic')));
+			 $data->__GET('idPic'),
+			 $data->__GET('usuario_creacion')));
 
 			$this->myCon = parent::desconectar();
 		} 
@@ -161,15 +167,16 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO PrincipalesClientes (nombreClientePic,domicilio,telefono,idPic)
-		        	VALUES (?,?,?,?)";
+			$sql = "INSERT INTO PrincipalesClientes (nombreClientePic,domicilio,telefono,idPic,usuario_creacion,fecha_creacion)
+		        	VALUES (?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
 			 $data->__GET('nombreClientePic'),
 			 $data->__GET('domicilio'),
 			 $data->__GET('telefono'),
-			 $data->__GET('idPic')));
+			 $data->__GET('idPic'),
+			 $data->__GET('usuario_creacion')));
 			
 
 
@@ -186,8 +193,8 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO PrincipalesProveedores (nombreProveedor,servicio,domicilio,telefono,IdPic)
-		        	VALUES (?,?,?,?,?)";
+			$sql = "INSERT INTO PrincipalesProveedores (nombreProveedor,servicio,domicilio,telefono,IdPic,usuario_creacion,fecha_creacion)
+		        	VALUES (?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -195,7 +202,8 @@ class DtNewDataPicJurdico extends Conexion
 			 $data->__GET('servicio'),
 			 $data->__GET('domicilio'),
 			 $data->__GET('telefono'),
-			 $data->__GET('idPic')));
+			 $data->__GET('idPic'),
+			 $data->__GET('usuario_creacion')));
 			
 			$this->myCon = parent::desconectar();
 		} 
@@ -210,8 +218,8 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO InteresInfo(idTipoPerJuridica,idConstitucion,idCatalogoAE,idBusquedaRes,idPaisAE,idDepto,idPic)
-					VALUES(?,?,?,?,?,?,?)";
+			$sql = "INSERT INTO InteresInfo(idTipoPerJuridica,idConstitucion,idCatalogoAE,idBusquedaRes,idPaisAE,idDepto,idPic,usuario_creacion,fecha_creacion)
+					VALUES(?,?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -221,7 +229,8 @@ class DtNewDataPicJurdico extends Conexion
 			 $data->__GET('idBusquedaRes'),
 			 $data->__GET('idPaisAE'),
 			 $data->__GET('idDepto'),
-			 $data->__GET('idPic')));
+			 $data->__GET('idPic'),
+			 $data->__GET('usuario_creacion')));
 			 
 			$this->myCon = parent::desconectar();
 		} 

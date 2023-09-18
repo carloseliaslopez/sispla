@@ -28,6 +28,7 @@ if (!isset($_SESSION['idUsuario'])){
 }
 $nombre = $_SESSION['usuario'];
 $rol = $_SESSION ['idRol'];
+$idUsuario = $_SESSION['idUsuario'];
 
 //INSTANCIAS
 $combos = new DtCombos();
@@ -157,12 +158,13 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 <div class="form-group col-md-2">
                                                     <input type="hidden" name="idCli_PN" id="idCli_PN" />
                                                     <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
+                                                    <input type="hidden" id="idUsuario" name="idUsuario" value="<?php echo $idUsuario?>"/>
                                                     <label for="fechaConstitucion_PJ">Fecha de constitución</label>
-                                                    <input type="date" class="form-control form-control-sm" id="fechaConstitucion_PJ" name=" fechaConstitucion_PJ" placeholder="Fecha de constitución" autocomplete="off" max="9999-12-31" >
+                                                    <input type="date" class="form-control form-control-sm" id="fechaConstitucion_PJ" name=" fechaConstitucion_PJ" placeholder="Fecha de constitución" autocomplete="off" max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")));?>">
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label for="fechaInscripcion_PJ">Fecha de inscripción</label>
-                                                    <input type="date" class="form-control form-control-sm" id="fechaInscripcion_PJ" name="fechaInscripcion_PJ" placeholder="Fecha de inscripción" max="9999-12-31" >
+                                                    <input type="date" class="form-control form-control-sm" id="fechaInscripcion_PJ" name="fechaInscripcion_PJ" placeholder="Fecha de inscripción"  max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")));?>" >
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <label for="correoPersonaContacto_PJ">Correo de la persona de  Contacto</label>
@@ -263,11 +265,11 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label for="fechaEmisionId_RL">Fecha de emisión</label>
-                                                    <input type="date" class="form-control form-control-sm" id="fechaEmisionId_RL" name="fechaEmisionId_RL" placeholder="Fecha de emisión">
+                                                    <input type="date" class="form-control form-control-sm" id="fechaEmisionId_RL" name="fechaEmisionId_RL" placeholder="Fecha de emisión" max="9999-12-31">
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label for="fechaVencimientoId_RL">Fecha de vencimiento</label>
-                                                    <input type="date" class="form-control form-control-sm" id="fechaVencimientoId_RL" name="fechaVencimientoId_RL" placeholder="Fecha de vencimiento">
+                                                    <input type="date" class="form-control form-control-sm" id="fechaVencimientoId_RL" name="fechaVencimientoId_RL" placeholder="Fecha de vencimiento" max="9999-12-31">
                                                 </div>
                                             </div>
                                         </div>
@@ -380,7 +382,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                     
                                                     <div class="form-group col-md-2">
                                                         <label for="acciones_AC[]">% Acciones</label>
-                                                        <input type="number" class="form-control form-control-sm" id="acciones_AC[]" name="acciones_AC[]" placeholder="% Acciones" autocomplete="off">
+                                                        <input type="number" class="form-control form-control-sm" id="acciones_AC[]" name="acciones_AC[]" placeholder="% Acciones" autocomplete="off" min="0" step="0.01" >
                                                     </div>
                                                     <div class="form-group col-sm-1">
                                                         <label for="">Eliminar</label>
@@ -456,7 +458,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
 
                                                     <div class="form-group col-md-1">
                                                         <label for="acciones_BF[]">Acciones</label>
-                                                        <input type="number" class="form-control form-control-sm" id="acciones_BF[]" name="acciones_BF[]" placeholder="% Acciones" autocomplete="off">
+                                                        <input type="number" class="form-control form-control-sm" id="acciones_BF[]" name="acciones_BF[]" placeholder="% Acciones" autocomplete="off" min="0" step="0.01">
                                                     </div>
                                                     <div class="form-group col-sm-1">
                                                     <label for="">Eliminar</label>
@@ -612,7 +614,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                         <label for="ventasMensual">Ventas mensuales</label>
                                                         <div class="input-group">
                                                         <div class="input-group-text form-control-sm"><b>U$</b></div>
-                                                            <input type="number" class="form-control form-control-sm" id="ventasMensual" name="ventasMensual" placeholder="Ventas mensuales" autocomplete="off">
+                                                            <input type="number" class="form-control form-control-sm" id="ventasMensual" name="ventasMensual" placeholder="Ventas mensuales" autocomplete="off" min="0" step="0.01">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1106,7 +1108,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                     if(x < max_fields){ //condicional de limites 
                         x++; //incrementa la cantidad de textbox
                         
-                        $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-3"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_AC[]" name="nombre_AC[]" placeholder="Nombre completo o razón social" autocomplete="off" required><p id="filtracion_AC" name="filtracion_AC" ></p></div><div class="form-group col-md-2"><select  class="form-control form-control-sm" id="nacionalidad_AC_'+ x +'" name="nacionalidad_AC[]" onchange="getval(this, $i='+ x +')" ><option selected disabled value = "164">Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><select id="depto_nacionalidad_AC_'+ x +'" name="depto_nacionalidad_AC[]"  class="form-control form-control-sm" ><option selected  disabled >Elegir..</option><?php foreach($combos->ComboDepto() as $r): ?><option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="id_AC[]" name="id_AC[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-2"><input type="number" class="form-control form-control-sm" id="acciones_AC[]" name="acciones_AC[]" placeholder="% Acciones" autocomplete="off"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field" > <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
+                        $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-3"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_AC[]" name="nombre_AC[]" placeholder="Nombre completo o razón social" autocomplete="off" required><p id="filtracion_AC" name="filtracion_AC" ></p></div><div class="form-group col-md-2"><select  class="form-control form-control-sm" id="nacionalidad_AC_'+ x +'" name="nacionalidad_AC[]" onchange="getval(this, $i='+ x +')" ><option selected disabled value = "164">Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><select id="depto_nacionalidad_AC_'+ x +'" name="depto_nacionalidad_AC[]"  class="form-control form-control-sm" ><option selected  disabled >Elegir..</option><?php foreach($combos->ComboDepto() as $r): ?><option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="id_AC[]" name="id_AC[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-2"><input type="number" class="form-control form-control-sm" id="acciones_AC[]" name="acciones_AC[]" placeholder="% Acciones" autocomplete="off" min="0" step="0.01"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field" > <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
                     }
                 });               
                 $(wrapper).on("click","#remove_field", function(e){ //user click on remove text
@@ -1126,7 +1128,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 e.preventDefault();
                     if(x < max_fields){ //condicional de limites 
                         x++; //incrementa la cantidad de textbox
-                        $(wrapper).append('<div class="col-md-12"><div class="form-row"><div class="form-group col-md-2"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_BF[]" name="nombre_BF[]" placeholder="Nombres" autocomplete="off"></div><div class="form-group col-md-2"><input type="text" class="UpperCase form-control form-control-sm" id="apellido_BF[]" name="apellido_BF[]" placeholder="Apellidos" autocomplete="off"></div><div class="form-group col-md-2"><select  class="form-control form-control-sm" id="nacionalidad_BF_'+ x +'" name="nacionalidad_BF[]" onchange="getvalBF(this, $i='+ x +')"><option selected disabled value = "164">Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><select id="depto_nacionalidad_BF_'+ x +'" name="depto_nacionalidad_BF[]"  class="form-control form-control-sm" ><option selected  disabled >Elegir..</option><?php foreach($combos->ComboDepto() as $r): ?><option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="id_BF[]" name="id_BF[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-1"><input type="number" class="form-control form-control-sm" id="acciones_BF[]" name="acciones_BF[]" placeholder="% Acciones" autocomplete="off"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_BF"> <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
+                        $(wrapper).append('<div class="col-md-12"><div class="form-row"><div class="form-group col-md-2"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_BF[]" name="nombre_BF[]" placeholder="Nombres" autocomplete="off"></div><div class="form-group col-md-2"><input type="text" class="UpperCase form-control form-control-sm" id="apellido_BF[]" name="apellido_BF[]" placeholder="Apellidos" autocomplete="off"></div><div class="form-group col-md-2"><select  class="form-control form-control-sm" id="nacionalidad_BF_'+ x +'" name="nacionalidad_BF[]" onchange="getvalBF(this, $i='+ x +')"><option selected disabled value = "164">Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><select id="depto_nacionalidad_BF_'+ x +'" name="depto_nacionalidad_BF[]"  class="form-control form-control-sm" ><option selected  disabled >Elegir..</option><?php foreach($combos->ComboDepto() as $r): ?><option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="id_BF[]" name="id_BF[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-1"><input type="number" class="form-control form-control-sm" id="acciones_BF[]" name="acciones_BF[]" placeholder="% Acciones" autocomplete="off"min="0" step="0.01"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_BF"> <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
                     }
                 });
                 

@@ -79,7 +79,7 @@ $rol = $_SESSION ['idRol'];
                                                 <div class="form-group">
                                                     <label class="small mb-1" ><b>Fecha de PIC</b></label>
                                                     <input class="form-control form-control-sm" name="fechaPic" id="fechaPic"
-                                                    type="date" placeholder="Fecha de PIC" title="Fecha de PIC" autocomplete="off" required  max="9999-12-31"/>
+                                                    type="date" placeholder="Fecha de PIC" title="Fecha de PIC" autocomplete="off" required  max= "<?php echo date("Y-m-d",strtotime(date("Y-m-d")));?>"/>
                                                     <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
                                                     <input type="hidden" id="txtcategoria" name="txtcategoria" value="Jurídico"/>
                                                     <input type="hidden" id="idUsuario" name="idUsuario" value="<?php echo $idUsuario?>"/>
