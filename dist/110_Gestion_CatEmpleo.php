@@ -207,60 +207,64 @@ if(isset($varMsjDelEmp)){
                                             </tr>
                                         </tfoot>
                                     </table>
-                                    <!-- Modal UPDATE -->
-                                    <div class="modal fade " id="exampleModal2" tabindex="-1" role="document" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-                                            <form method="POST" action="../negocio/Gestion_Ng_CatEmpleo.php">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel2">Calibrar un Producto</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    
-                                                        <div class="form-row">
-                                                            <div class="col-md-12" >
-                                                                <div class="form-group">
-                                                                <label class="small mb-1"  for="codigo_E"> <b>Codigo del empleo</b> </label>
-                                                                    <input class="form-control py-4" name="codigo_E" id="codigo_E"
-                                                                    type="text" placeholder="Codigo del empleo" autocomplete="off" required/>
-                                                                    <input type="hidden" id="txtaccion" name="txtaccion" value="2"/>
-                                                                    <input type="hidden" id="idCatalogoOCGO" name="idCatalogoOCGO"/>
-                                                                        
-                                                                </div>
+                                    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header float-right">
+        <h5>User details</h5>
+        <div class="text-right">
+          <i data-dismiss="modal" aria-label="Close" class="fa fa-close"></i>
+        </div>
+      </div>
+      <div class="modal-body">
+          
 
-                                                                <div class="form-group">
-                                                                    <label class="small mb-1" for="descripcion_E"><b>Descripción del empleo</b></label>
-                                                                    <input class="form-control py-4" name="descripcion_E" id="descripcion_E"
-                                                                    type="text" placeholder="Descripción del empleo" autocomplete="off"  required  />
-                                                                </div>
 
-                                                                <div class="form-group">
-                                                                    <label class="small mb-1" for="riesgo_E"><b>Riesgo que pose el empleo</b></label>
-                                                                    <input class="form-control py-4" name="riesgo_E" id="riesgo_E"
-                                                                    type="number" placeholder="Riesgo que pose el empleo" autocomplete="off" min="1" max="3" required  />
-                                                                </div>
-                                                                                                                                
-                                                                
-                                                                <div class="form-group">
-                                                                    <input class="btn btn-primary btn-block" type="submit" value="Guardar"/> &nbsp;
-                                                                    <input class="btn btn-danger btn-block" type="reset" value="Cancelar" data-dismiss="modal"/> &nbsp;
-                                                                </div>     
-                                                            </div>
-                                                        </div>
-                                                </div>
-                                            <!--
-                                                <div class="modal-footer">
-                                                    
-                                                </div>
-                                            -->
-                                            </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- END MODAL INSERT-->
+        <div>
+          
+          <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Samso</td>
+      <td>Natto</td>
+      <td>@samso</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Tinor</td>
+      <td>Horton</td>
+      <td>@tinor_har</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Mythor</td>
+      <td>Bully</td>
+      <td>@myth_tobo</td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
                                 </div>
                             </div>
                         </div>

@@ -1,13 +1,6 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 
-include '../Entidades/ComboFechaCliente.php';
-include '../Entidades/Vw_BusquedaMensual.php';
-include '../Entidades/ComboPic.php';
-
-include '../Datos/DtClientes.php';
-include '../Datos/DtBusquedaMensual.php';
-include '../Datos/DtCombos.php';
 session_start();
 if (!isset($_SESSION['idUsuario'])){
     header("Location: ../dist/login.php");
@@ -15,10 +8,13 @@ if (!isset($_SESSION['idUsuario'])){
 $nombre = $_SESSION['usuario'];
 $rol = $_SESSION ['idRol'];
 
-$comboFechaCliente = new DtClientes();
+include '../Datos/DtBusqueda_100.php';
 
-$busquedaMensual= new DtBusquedaMensual();
-$combos = new DtCombos();
+include '../Entidades/Busquedas/Busqueda_100.php';
+include '../Entidades/Busquedas/vw_consol_nombre.php';
+
+$datosBusq = new DtBusqueda_100();
+
 
 ?>
 
@@ -32,15 +28,20 @@ $combos = new DtCombos();
         <meta name="author" content="" />
         <title>Busquedas Mensuales</title>
         <link href="css/styles.css" rel="stylesheet" />
-        <!-- <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" /> -->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script> -->
-        
+        <link href="css/NewStyles.css" rel="stylesheet" />
+   
         <!-- DATATABLE -->
         <link href="DataTables/DataTables-1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
          <!-- DATATABLE buttons -->
         <link href="DataTables/Buttons-1.6.3/css/buttons.dataTables.min.css" rel="stylesheet">
        <!-- jAlert css  -->
        <link rel="stylesheet" href="jAlert/dist/jAlert.css" />
+        <style>
+            .myDiv{
+            display:none;
+            }  
+        </style>
+
        
     </head>
     <body class="sb-nav-fixed">
@@ -65,110 +66,184 @@ $combos = new DtCombos();
                                 <div class="card-header">
                                    Busquedas mensuales
                                 </div>
-                                <form method="POST" action="BusquedaMensual.php">
                                     <div class="card-body">
                                         <div class="form-group">
-                                                <div class="col-md-12" >
-                                                    <div class="form-row">
-                                                        
-                                                        <div class="form-group col-md-3">
-                                                            <label for="FechaInicio">Fecha de inicio:</label>
-                                                            <input type="date" class="form-control form-control-sm" id="FechaInicio" name="FechaInicio">
-                                                        </div>
-                                                        <div class="form-group col-md-2">
-                                                            
-                                                        </div>
-                                                        <div class="form-group col-md-3">
-                                                            <label for="FechaFin">Fecha Final:</label>
-                                                            <input type="date" class="form-control form-control-sm" id="FechaFin" name="FechaFin">
-                                                        </div>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!--Start buttons-->
-                                        <div class="col-md-12">
+                                            <div class="col-md-12" >
                                                 <div class="form-row">
                                                     <div class="form-group col-md-4">
-                                                        <button type="submit" class="btn btn-primary col-md-8">Buscar</button>
-                                                    </div>
-                                                    <div class="form-group col-md-4">
-                                                        <button type="reset" class="btn btn-danger col-md-8">Borrar</button>
+                                                        <label class="large mb-2" for="matriz" ><b>Seleccione el tipo de resultado</b></label>
+                                                        <select  class="form-control form-control-md" id="matriz" name="matriz">
+                                                            <option selected disabled>Seleccione..</option>
+                                                            <option value="One">Coincidencia Exacta</option>
+                                                            <option value="Two">Falso Positivo</option>  
+                                                            <option value="Three">Sin Coincidencias</option>
+                                                        </select>  
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--End buttons -->  
-                                        
+                                        </div>
                                     </div>
-                                </form>
-                                
                             </div>
-                            
                         </div>
-                        
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table mr-1"></i>
-                               Resultado exacto de cliente
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                                                   
-                                    <table class="table table-bordered" id="TblBusquedaInterna" width="100%" cellspacing="0" >
-                                        <thead>
-                                            <tr>
-                                                <th>Ingreso PIC</th>   
-                                                <th>Cliente</th>
-                                                <th>Coincidencia</th>
-                                                <th>Origen</th>
-                                                <th>Representante/Conyuge</th>
-                                                <th>Coincidencia</th>
-                                                <th>Origen</th>
-                                                <th>Accionistas</th>
-                                                <th>Coincidencia</th>
-                                                <th>Origen</th>
-                                                
-                                                                                           
-                                            </tr>
-                                            
-                                        </thead>
-                                        <tbody id="fbody">
-                                            <?php foreach($busquedaMensual->BusquedaMensual() as $r): ?>
-                                                
-                                                <tr>
-                                                    <td><?php echo $r->__GET('fechaIngreso'); ?></td>
-                                                    <td><?php echo $r->__GET('nombreCliente'); ?></td>
-                                                    <td><?php echo $r->__GET('PosibleCliente'); ?></td>
-                                                    <td><?php echo $r->__GET('origenC'); ?></td>
-                                                    <td><?php echo $r->__GET('Repreconyugue'); ?></td>
-                                                    <td><?php echo $r->__GET('PosibleRepresentante'); ?></td>
-                                                    <td><?php echo $r->__GET('origenRLC'); ?></td>
-                                                    <td><?php echo $r->__GET('accionistas'); ?></td>
-                                                    <td><?php echo $r->__GET('PosibleAccionista'); ?></td>
-                                                    <td><?php echo $r->__GET('origenABF'); ?></td>
-                                                    
-                                                </tr>
-                                            <?php endforeach; ?>       
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Ingreso PIC</th>   
-                                                <th>Cliente</th>
-                                                <th>Coincidencia</th>
-                                                <th>Origen</th>
-                                                <th>Representante/Conyuge</th>
-                                                <th>Coincidencia</th>
-                                                <th>Origen</th>
-                                                <th>Accionistas</th>
-                                                <th>Coincidencia</th>
-                                                <th>Origen</th>                                    
-                                            </tr>
-                                        </tfoot>
-                                    </table>
+                        <!--START BOX TABLA >>-->
+                        <div class="myDiv" id="showOne">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-table mr-1"></i>
+                                    Clientes, empleados y proveedores encontrados con una coincidencia positiva
                                 </div>
-                            </div>
+                                <div class="card-body">
+                                    <div class="table-responsive"> 
+                                        <table class="table table-bordered" id="tbl_Coin_E" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Identificacion</th>
+                                                    <th>Origen</th> 
+                                                    <th>lista Encontrada</th> 
+                                                    <th>Opciones</th>   
+                                                </tr>  
+                                            </thead>
+                                            <tbody> 
+                                                <?php foreach($datosBusq->listarBusqueda_100() as $r): ?>
+                                                    <tr>
+                                                        <td><?php echo $r->__GET('nombre'); ?></td>
+                                                        <td><?php echo $r->__GET('id'); ?></td>
+                                                        <td><?php echo $r->__GET('relacion'); ?></td>
+                                                        <td><?php echo $r->__GET('origen'); ?></td>
+                                                    
+                                                                                                                                                                    
+                                                        <td>
+                                                            <a href="verPosibles.php?editE=<?php echo $r->__GET('nombre'); ?>" 
+                                                            title="Modificar un proveedor">
+                                                                <i class="fas fa-pen-square"></i>
+                                                                Ver
+                                                            </a>
+                                                        </td>   
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>   
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Identificacion</th>
+                                                    <th>Origen</th> 
+                                                    <th>lista Encontrada</th> 
+                                                    <th>Opciones</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>  
                         </div>
+                        <!--END BOX TABLA >>-->
+                        <!--START BOX TABLA >>-->
+                        <div class="myDiv" id="showTwo">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-table mr-1"></i>
+                                    Clientes, empleados y proveedores encontrados con una coincidencia posible
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive"> 
+                                        <table class="table table-bordered" id="tbl_Coin_P" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Identificacion</th>
+                                                    <th>Origen</th> 
+                                                    <th>Posible</th>
+                                                    <th>Lista</th>
+                                                    <th>Opciones</th>
+
+                                                </tr>  
+                                            </thead>
+                                            <tbody> 
+                                                
+                                                    <?php
+                                                        //cadena de conexion
+                                                        $mysqli = new mysqli("localhost", 'root','CEal2000!','sispla'); 
+                                                        $query = "SELECT nombre, id, origen FROM vw_consol_nombre";
+
+                                                        if ($result = $mysqli->query($query)) {
+                                                            while ($row = $result->fetch_assoc()) {
+                                                                $Nombre = $row["nombre"];
+                                                                $Id = $row["id"];
+                                                                $Origen = $row["origen"];
+
+                                                                                                                                
+                                                                ?>
+                                                                <!--
+                                                                <tr>
+                                                                <td rowspan="4"></?php echo $Nombre ?></td>
+                                                                <td rowspan="4"> </?php echo $Id ?></td>
+                                                                <td rowspan="4"></?php echo $Origen ?></td>
+                                                                </tr>
+                                                            -->
+                                                                    
+                                                                <?php
+                                                            
+                                                                    $mysqli = new mysqli("localhost", 'root','CEal2000!','global_risk_lists'); 
+                                                                    $query2 = " SELECT  fullName_I AS 'fullname', origen , MATCH (fullName_I) AGAINST ('$Nombre') AS puntuacion
+                                                                                FROM ofac_list_IN WHERE  MATCH (fullName_I) AGAINST ('$Nombre')
+                                                                                
+                                                                                union all 
+                                                                                SELECT  fullName_E AS 'fullname', origen , MATCH (fullName_E) AGAINST ('$Nombre') AS puntuacion
+                                                                                FROM ofac_list_en WHERE  MATCH (fullName_E) AGAINST ('$Nombre')
+                                                                                
+                                                                                UNION ALL
+                                                                                SELECT  fullName_E AS 'fullname', origen , MATCH (fullName_E) AGAINST ('$Nombre') AS puntuacion
+                                                                                FROM onu_list_en WHERE  MATCH (fullName_E) AGAINST ('$Nombre')
+                                                                                
+                                                                                UNION ALL
+                                                                                SELECT  fullName_I AS 'fullname', origen , MATCH (fullName_I) AGAINST ('$Nombre') AS puntuacion
+                                                                                FROM onu_list_IN WHERE  MATCH (fullName_I) AGAINST ('$Nombre')
+                                                                                ORDER  BY puntuacion DESC LIMIT 1;
+                                                                            
+                                                                            ";
+                                                                    
+                                                                    $result2 = $mysqli->query($query2);
+                                                                                                                                    
+                                                                        while ($row2 = $result2->fetch_assoc()) {
+                                                                            $Nombre2 = $row2["fullname"];
+                                                                            $Origen2 = $row2["origen"];
+                                                                            ?>
+                                                                                    <tr>
+                                                                                    <td rowspan=""><?php echo $Nombre ?></td>
+                                                                                    <td rowspan=""> <?php echo $Id ?></td>
+                                                                                    <td rowspan=""><?php echo $Origen ?></td>
+                                                                                    <td><?php echo $Nombre2 ?></td>
+                                                                                    <td><?php echo $Origen2 ?></td>
+                                                                                    <td></td>
+                                                                                    </tr>                     
+                                                                            <?php       
+                                                                        }
+                                                                        
+                                                                    
+                                                            }
+                                                        } 
+                                                    ?>
+                                                
+                                            </tbody>   
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Identificacion</th>
+                                                    <th>Origen</th> 
+                                                    <th>Posible</th>
+                                                    <th>Lista</th>
+                                                    <th>Opciones</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                        <!--END BOX TABLA >>-->
                     </div>
+                    
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
@@ -183,7 +258,6 @@ $combos = new DtCombos();
                 </footer>
             </div>
         </div>
-
         
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -211,42 +285,10 @@ $combos = new DtCombos();
         <script src="jAlert/dist/jAlert.min.js"></script>
         <script src="jAlert/dist/jAlert-functions.min.js"> //optional!!</script>
 
-
-        <!-- <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script> -->
-        <!-- <script src="assets/demo/datatables-demo.js"></script> -->
-        
+       
         <script>
-            // PRIMERA FORMA
-            function deleteEmp()
-            {
-                window.location.href = "../negocio/NgComunidad.php?delEmp=<?php echo $r->__GET('id_comunidad'); ?>";
-            }
-
-            // SEGUNDA FORMA - INCLUYE EL API DE JALERT
-            function deleteEmp2()
-            {
-            
-            confirm(function(e,btn)
-            { //event + button clicked
-                e.preventDefault();
-                window.location.href = "../negocio/NgComunidad.php?delEmp=<?php echo $r->__GET('id_comunidad'); ?>";
-                //successAlert('Confirmed!');
-            }, 
-            function(e,btn)
-            {
-                e.preventDefault();
-                //errorAlert('Denied!');
-            });
-
-            }
- 
-        </script>
-      
-
-        <script>
-            $(document).ready(function ()
-            {
+            $(document).ready(function (){
+                
                 ////// APLICAMOS FORMATO Y BOTONES A LA TABLA //// INICIAMOS EL PLUGIN DATATABLE
                 $('#TblBusquedaInterna').DataTable({
                     dom: 'Bfrtip',
@@ -257,52 +299,41 @@ $combos = new DtCombos();
                     ]
 
                 });
-
                 
             });
         </script>
 
-<script type="text/javascript">
-	 $("#fecha").change(function () {
-         
-        if(this.value != "")
-		  {
-		  //split the current value of searchInput
-		  var data = this.value.split(" ");
-		    //create a jquery object of the rows
-		  var jo = $("#fbody").find("tr");
-		   
-		 if (this.value == "" || this.value=="all") {
-		        
-		    jo.show();
-		     return;
-		    }
-		    //hide all the rows
-		    jo.hide();
-		    //Recusively filter the jquery object to get results.
-		    jo.filter(function (i, v) {
-		        var $t = $(this);
-		        for (var d = 0; d < data.length; ++d) {
-		            if ($t.is(":contains('" + data[d] + "')")) {
-		                return true;
-		            }
-		        }
-		        return false;
-		    })
-		    //show the rows that match.
-		    .show();
-		      }
-		    }).focus(function () {
-		    this.value = "";
-		    $(this).css({
-		        "color": "black"
-		    });
-		    $(this).unbind('focus');
-		    }).css({
-		    "color": "#C0C0C0"
-		    });
-	</script>
+        <script>
+            $(document).ready(function(){
+                $('#matriz').on('change', function(){
+                    var demovalue = $(this).val(); 
+                    
+                    $("div.myDiv").hide();
+                    $("#show"+demovalue).show();
+                });
 
+                $('#tbl_Coin_P').DataTable({
+                    dom: 'Bfrtip',
+                    buttons: [
+                    'pdf',
+                    'excel',
+                    'print'
+                    ]
+
+                });
+
+                $('#tbl_Coin_E').DataTable({
+                    dom: 'Bfrtip',
+                    buttons: [
+                    'pdf',
+                    'excel',
+                    'print'
+                    ]
+
+                });
+
+            });
+        </script>
 
 
 

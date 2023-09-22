@@ -67,8 +67,7 @@ class DtListasInternas extends Conexion
 			 nombre like'%".$arr[3]."%' and 
 			 nombre like'%".$arr[4]."%' and 
 			 nombre like'%".$arr[5]."%' and
-			 idEstado <> 3
-			 limit 50 ";
+			 idEstado <> 3 ";
            
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -87,7 +86,7 @@ class DtListasInternas extends Conexion
 				$result[] = $emp;
 
 				//var_dump($result);
-			}
+			} 
 			$this->myCon = parent::desconectar();
 			return $result;
 		}

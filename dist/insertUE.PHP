@@ -1,14 +1,15 @@
 <?php
 
 //Se carga el xml
-$xml = simplexml_load_file("./XML_LIST/OFAC_LIST_XML.xml") or die("Error: No se puede cargar el fichero xml");
+$xml = simplexml_load_file("./XML_LIST/UE_LIST_XML.xml") or die("Error: No se puede cargar el fichero xml");
 
 //Se cargan los nodos raices (hijos)
-foreach ($xml->children() as $fila) {
-  $sdnType = $fila->sdnType;
-  if($sdnType == "Entity"){
+foreach ($xml->attributes() as $fila) {
+  $code = $fila->code;
+
+  if($code == "person"){
     //se declaran las variables que se van a utilizar   
-    $fullName_E = trim($fila->lastName); 
+    $wholeName = trim($fila->wholeName); 
     $sdnType_E = $fila->sdnType;
     $program_E = $fila->programList->program;
     //bifurcacion, si no hay registro lo creo
