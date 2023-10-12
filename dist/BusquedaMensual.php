@@ -7,11 +7,13 @@ if (!isset($_SESSION['idUsuario'])){
 }
 $nombre = $_SESSION['usuario'];
 $rol = $_SESSION ['idRol'];
-
+$user = $_SESSION['idUsuario'];
 include '../Datos/DtBusqueda_100.php';
 
 include '../Entidades/Busquedas/Busqueda_100.php';
-include '../Entidades/Busquedas/vw_consol_nombre.php';
+include '../Entidades/Busquedas/Busqueda_80.php';
+
+include '../dist/BusquedaPosibles.php';
 
 $datosBusq = new DtBusqueda_100();
 
@@ -159,72 +161,31 @@ $datosBusq = new DtBusqueda_100();
 
                                                 </tr>  
                                             </thead>
-                                            <tbody> 
-                                                
-                                                    <?php
-                                                        //cadena de conexion
-                                                        $mysqli = new mysqli("localhost", 'root','CEal2000!','sispla'); 
-                                                        $query = "SELECT nombre, id, origen FROM vw_consol_nombre";
-
-                                                        if ($result = $mysqli->query($query)) {
-                                                            while ($row = $result->fetch_assoc()) {
-                                                                $Nombre = $row["nombre"];
-                                                                $Id = $row["id"];
-                                                                $Origen = $row["origen"];
-
-                                                                                                                                
-                                                                ?>
-                                                                <!--
-                                                                <tr>
-                                                                <td rowspan="4"></?php echo $Nombre ?></td>
-                                                                <td rowspan="4"> </?php echo $Id ?></td>
-                                                                <td rowspan="4"></?php echo $Origen ?></td>
-                                                                </tr>
-                                                            -->
-                                                                    
-                                                                <?php
+                                            <tbody>
+                                                <?php foreach($datosBusq->listarBusqueda_80() as $r): ?>
+                                                    <tr>
+                                                        <td><?php echo $r->__GET('Nombre'); ?></td>
+                                                        <td><?php echo $r->__GET('Id'); ?></td>
+                                                        <td><?php echo $r->__GET('Origen'); ?></td>
+                                                        <td><?php echo $r->__GET('Nombre2'); ?></td>
+                                                        <td><?php echo $r->__GET('Origen2'); ?></td>
+                                                                                                                                                                                                                            
+                                                        <td>
+                                                            <a href="#" onclick="Reportar(<?php echo $r->__GET('idPosibles_List'); ?>)" 
+                                                            title="Reportar Coincidente">
+                                                            <i class="fas fa-exclamation-triangle " style="color: #fbff00;"></i>
+                                                               Reportar 
+                                                            </a>
+                                                            <br>
+                                                            <a href="#" onclick="Eliminar(<?php echo $r->__GET('idPosibles_List'); ?>)" 
+                                                            title="Reportar Coincidente">
+                                                            <i class="fas fa-trash " style="color: #ff0000;"></i>  
+                                                            Eliminar
+                                                            </a>
                                                             
-                                                                    $mysqli = new mysqli("localhost", 'root','CEal2000!','global_risk_lists'); 
-                                                                    $query2 = " SELECT  fullName_I AS 'fullname', origen , MATCH (fullName_I) AGAINST ('$Nombre') AS puntuacion
-                                                                                FROM ofac_list_IN WHERE  MATCH (fullName_I) AGAINST ('$Nombre')
-                                                                                
-                                                                                union all 
-                                                                                SELECT  fullName_E AS 'fullname', origen , MATCH (fullName_E) AGAINST ('$Nombre') AS puntuacion
-                                                                                FROM ofac_list_en WHERE  MATCH (fullName_E) AGAINST ('$Nombre')
-                                                                                
-                                                                                UNION ALL
-                                                                                SELECT  fullName_E AS 'fullname', origen , MATCH (fullName_E) AGAINST ('$Nombre') AS puntuacion
-                                                                                FROM onu_list_en WHERE  MATCH (fullName_E) AGAINST ('$Nombre')
-                                                                                
-                                                                                UNION ALL
-                                                                                SELECT  fullName_I AS 'fullname', origen , MATCH (fullName_I) AGAINST ('$Nombre') AS puntuacion
-                                                                                FROM onu_list_IN WHERE  MATCH (fullName_I) AGAINST ('$Nombre')
-                                                                                ORDER  BY puntuacion DESC LIMIT 1;
-                                                                            
-                                                                            ";
-                                                                    
-                                                                    $result2 = $mysqli->query($query2);
-                                                                                                                                    
-                                                                        while ($row2 = $result2->fetch_assoc()) {
-                                                                            $Nombre2 = $row2["fullname"];
-                                                                            $Origen2 = $row2["origen"];
-                                                                            ?>
-                                                                                    <tr>
-                                                                                    <td rowspan=""><?php echo $Nombre ?></td>
-                                                                                    <td rowspan=""> <?php echo $Id ?></td>
-                                                                                    <td rowspan=""><?php echo $Origen ?></td>
-                                                                                    <td><?php echo $Nombre2 ?></td>
-                                                                                    <td><?php echo $Origen2 ?></td>
-                                                                                    <td></td>
-                                                                                    </tr>                     
-                                                                            <?php       
-                                                                        }
-                                                                        
-                                                                    
-                                                            }
-                                                        } 
-                                                    ?>
-                                                
+                                                       </td>   
+                                                    </tr>
+                                                <?php endforeach; ?> 
                                             </tbody>   
                                             <tfoot>
                                                 <tr>
@@ -262,8 +223,8 @@ $datosBusq = new DtBusqueda_100();
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
-        <!-- PLUGIN FONTAWESOME -->
-        <script src="fontawesome5.15.1/js/all.min.js"></script>
+       <!-- PLUGIN FONTAWESOME -->
+       <script src="fontawesome5.15.1/js/all.min.js"></script>
         <!-- DATATABLE -->
         <script src="DataTables/DataTables-1.10.21/js/jquery.dataTables.js"></script>
 
@@ -333,6 +294,28 @@ $datosBusq = new DtBusqueda_100();
                 });
 
             });
+        </script>
+       <script>
+          // SEGUNDA FORMA - INCLUYE EL API DE JALERT
+          function Eliminar($r, $s)
+            {
+            
+            confirm(function(e,btn)
+            { //event + button clicked
+                e.preventDefault();
+                
+                
+                window.location.href = "../negocio/Ng_BusquedaInterna_80.php?delEmp="+$r;
+                
+                //successAlert('Confirmed!');
+            }, 
+            function(e,btn)
+            {
+                e.preventDefault();
+                //errorAlert('Denied!');
+            });
+
+            }
         </script>
 
 

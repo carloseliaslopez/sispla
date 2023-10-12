@@ -83,31 +83,6 @@
                                 
                             </nav>
                         </div>
-                        <!-- end sub-menu Administracion-->
-
-                        <!-- start sub-menu Administracion-->
-                        <!--
-                         <div class="sb-sidenav-menu-heading"> Listas de Riesgos</div>
-                        
-                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Lriesgo" aria-expanded="false" aria-controls="collapseLayouts">
-                             <div class="sb-nav-link-icon"><i class="fas fa-user-cog"></i></div>
-                                 Listas de riesgos
-                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                         </a>
-                         
-                         <div class="collapse" id="Lriesgo" aria-labelledby="headingThree" data-parent="#sidenavAccordion">
-                             <nav class="sb-sidenav-menu-nested nav">
-                                 <a class="nav-link" href="./ListaONU.php">Lista ONU </a>
-                             </nav>
-                         </div>
-                         <div class="collapse" id="Lriesgo" aria-labelledby="headingThree" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="./ListaOFAC.php">Lista OFAC </a>
-                            </nav>
-                        </div>
-                        -->
-                         <!-- end sub-menu Administracion--> 
-
                          
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#security" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-lock"></i></div>

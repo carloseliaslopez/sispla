@@ -49,20 +49,30 @@ class DtBusqueda_100 extends Conexion
 			$this->myCon = parent::conectar();
 			$result = array();
 					
-			$querySQL = "SELECT nombre, id, origen FROM vw_consol_nombre";
+			$querySQL = "SELECT idPosibles_List, Nombre, Id, Origen, Nombre2, Origen2, idEstado, usuario_creacion, fecha_creacion, usuario_modificacion, fecha_modificacion, usuario_eliminacion, fecha_eliminacion FROM Posibles_List WHERE idEstado<>3";
            
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 			
 			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $s)
 			{
-				$emp = new vw_consol_nombre();
+				$emp = new Busqueda_80();
 
 				//_SET(CAMPOBD, atributoEntidad)
-               	$emp->__SET('nombre', $s->nombre);
-				$emp->__SET('id', $s->id);	
-				$emp->__SET('origen', $s->origen);	
-
+               	$emp->__SET('idPosibles_List', $s->idPosibles_List);
+				$emp->__SET('Nombre', $s->Nombre);
+				$emp->__SET('Id', $s->Id);
+				$emp->__SET('Origen', $s->Origen);
+				$emp->__SET('Nombre2', $s->Nombre2);
+				$emp->__SET('Origen2', $s->Origen2);
+				$emp->__SET('idEstado', $s->idEstado);
+				$emp->__SET('usuario_creacion', $s->usuario_creacion);
+				$emp->__SET('fecha_creacion', $s->fecha_creacion);
+				$emp->__SET('usuario_modificacion', $s->usuario_modificacion);
+				$emp->__SET('fecha_modificacion', $s->fecha_modificacion);
+				$emp->__SET('usuario_eliminacion', $s->usuario_eliminacion);
+				$emp->__SET('fecha_eliminacion', $s->fecha_eliminacion);
+					
 				$result[] = $emp;
 
 				//var_dump($result);
@@ -76,35 +86,26 @@ class DtBusqueda_100 extends Conexion
 		}
 	}
 
-
-	public function obtenerListaBusqueda_80($ref)
+	public function EliminarRegistro_80($id, $s)
 	{
-				
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$result = array();
-			$querySQL = "call global_risk_lists.Busqueda_coincidencia(?);";
+			$querySQL = "UPDATE Posibles_List 
+			SET idEstado = 3,
+			usuario_eliminacion = ?,
+			fecha_eliminacion = current_timestamp()
+			WHERE idPosibles_List = ?";
 			$stm = $this->myCon->prepare($querySQL);
-			$stm->execute(array($ref));
-			
-			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
-				{
-					$emp = new Posibles();			
-					//$Result = $emp->__SET('concidencia', $r->concidencia);
-						$emp->__SET('fullname', $r->fullname);
-						$emp->__SET('origen', $r->origen);
-					
-					
-					$result[] = $emp;
-				}
+			$stm->execute(array($id,$s));
 			$this->myCon = parent::desconectar();
-			return $result;
 		} 
 		catch (Exception $e) 
 		{
 			die($e->getMessage());
 		}
 	}
+
+
 		
 }

@@ -7,8 +7,18 @@ $conexion = new mysqli('localhost','root','CEal2000!','sispla');
 session_start();
 
 if ($_POST){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+
+    if (empty($username or $password)){
+
+         $smg_error = "Debe Ingresar un Usuario e ingresar una Clave";
+
+         echo "<script> alert('".$smg_error."'); </script>";
+         
+
+    }
+   
     
     //$sql = "SELECT idUsuario, usuario, pwd, nombres, apellidos, correo, idEstado from Usuario where usuario = '$username' and idEstado<>3";
     $sql = "SELECT idRolUsuario, idUsuario, idRol, idOpciones, usuario, pwd, nombres, apellidos, correo, idEstado,firt_time, RolDescripcion, opcionDescripcion
@@ -40,11 +50,13 @@ if ($_POST){
             }
             
         }else{
-            echo "El Usuario o Contraseña no es Valido";
+            
+           echo ("Credenciales incorrectas - Intentos permitidos [] antes que la cuenta se bloquee.");
         }
-
+        
     }else{
-        echo "El usuario no existe";
+        echo ("Credenciales incorrectas");
+
     }
 
 
@@ -81,14 +93,14 @@ if ($_POST){
                                                 <label class="small mb-1" for="password">Contraseña</label>
                                                 <input class="form-control py-4" id="password" name="password"type="password" placeholder="Contraseña" />
                                             </div>
-                                           
-                                          
+                                            <span span style="color:Red" id="smg_error"></span>                                          
+
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="password.html">¿Olvidó su Contraseña?</a>
+                                                <a class="small" href="#">¿Olvidó su Contraseña?</a>
                                                 <a ></a>
-                                                <button type = "submit" class="btn btn-primary" >Acceder</button>
-                                                
+                                                <button type = "submit" class="btn btn-primary" >Acceder</button>                                                
                                             </div>
+                                            
                                         </form>
                                     </div>
                                     
@@ -116,5 +128,6 @@ if ($_POST){
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
 
+         
     </body>
 </html>

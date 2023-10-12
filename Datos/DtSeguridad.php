@@ -273,14 +273,14 @@ class DtSeguridad extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE Usuario SET pwd = ?, firt_time = 1
-			WHERE idUsuario = ?";
+			$sql = "UPDATE Usuario SET pwd = ?, firt_time = ? WHERE idUsuario = ?";
 
 				$this->myCon->prepare($sql)
 			     ->execute(
 				array(
 					
-					$data->__GET('pwd'), 
+					$data->__GET('pwd'),
+					$data->__GET('firt_time'),  
                     $data->__GET('idUsuario')
 					)
 				);

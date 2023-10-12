@@ -106,9 +106,19 @@ $nombre = $_SESSION['idUsuario'];
             function setValoresEmp()
             {
                 $("#idUsuario").val("<?php echo $nombre ?>");
+            
                
             }
 
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
+                if(e.keyCode == 13) {
+                e.preventDefault();
+                }
+            }))
+            });
         </script>
 
         <script>
@@ -155,6 +165,9 @@ $nombre = $_SESSION['idUsuario'];
         </script>
         <script>
             $(document).ready(function() {
+
+                setValoresEmp();
+                
                 //variables
                 var pass1 = $('[name=newpwd]');
                 var pass2 = $('[name=Cnewpwd]');
@@ -183,6 +196,8 @@ $nombre = $_SESSION['idUsuario'];
                 pass2.keyup(function(){
                 coincidePassword();
                 });
+
+                
             });
         </script>
         

@@ -1068,7 +1068,15 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
 
         <!--SCRIPT PARA LOS ANEXOS DE TABLAS Y OTROS INTERESES-->
         <script type="text/javascript" src="./AnexosMatriz/Juridico/jsLActividadEconomica.js"></script>
-                             
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
+                if(e.keyCode == 13) {
+                e.preventDefault();
+                }
+            }))
+            });
+        </script>              
         
         <script>
             function setValoresEmp()

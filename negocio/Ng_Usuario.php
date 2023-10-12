@@ -72,15 +72,17 @@ if ($_POST)
                 try 
                 {
                     
-                    
-                    $mon->__SET('idUsuario', $_POST['idUsuario']);
-                 
-                    $encript = sha1($_POST['newpwd']);
+                    $Nencript = sha1($_POST['newpwd']);
+                    $test = $_POST['idUsuario'];
 
-                    $mon->__SET('pwd', $encript);
-                    
+
+                    $mon->__SET('pwd', $Nencript);
+                    $mon->__SET('idUsuario', $_POST['idUsuario']);
+                    $mon->__SET('firt_time',1);
+                                   
                     $dtMon->actualizarPwdUsuario($mon);
                     
+                    session_destroy();
                     header("Location: ../dist/login.php");
                     break;
                 } 
