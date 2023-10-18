@@ -135,7 +135,7 @@ if(isset($varMsjDelEmp))
                                                                                                         
                                                     <td>
                                                         <a href="#?editE=<?php echo $r->__GET('idEmpleados'); ?>" 
-                                                        title="Modificar un proveedor">
+                                                        title="Modificar un usuario">
                                                             <i class="fas fa-pen-square"></i>
                                                             Editar
                                                         </a>
@@ -144,7 +144,7 @@ if(isset($varMsjDelEmp))
                                                         <br>
                                                         <!-- SEGUNDA FORMA -->
                                                         <a href="#" onclick="#(<?php echo $r->__GET('idEmpleados'); ?>)" 
-                                                        title="Eliminar un proveedor">
+                                                        title="Eliminar un usuario">
                                                             <i class="fas fa-trash-alt"></i>
                                                             Eliminar
                                                         </a>

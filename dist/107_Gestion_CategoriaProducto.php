@@ -1,5 +1,5 @@
 <?php
-//error_reporting(0);
+error_reporting(0);
 
 include '../Entidades/Evaluacion/CategoriaProducto.php';
 include '../Datos/Gestion_Dt_CatProducto.php';

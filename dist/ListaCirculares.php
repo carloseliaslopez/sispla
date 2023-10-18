@@ -1,5 +1,5 @@
 <?php
-///error_reporting(0);
+error_reporting(0);
 
 include '../Entidades/Busquedas/Circular.php';
 include '../Entidades/Busquedas/Organismo.php';

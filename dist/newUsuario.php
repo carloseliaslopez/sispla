@@ -17,10 +17,13 @@ if ($rol <> 1){
 include '../Entidades/Seguridad/Usuario.php';
 include '../Datos/DtSeguridad.php';
 
-
-
 $datosEmp = new DtSeguridad();
 //variables de jalerts
+
+// Generate Random Password
+$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@$%&*_";
+$password = substr( str_shuffle( $chars ), 0, 8 );
+
 
 
 ?>
@@ -82,6 +85,7 @@ $datosEmp = new DtSeguridad();
                                                     <input class="form-control py-4" name="nombre" id="nombre"
                                                     type="text" placeholder="Nombres " autocomplete="off" required/>
                                                     <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
+                                                    <input type="hidden" id="rand_pwd" name="rand_pwd"  value="<?php echo $password?>"/>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="small mb-1" ><b>Apellidos:</b></label>

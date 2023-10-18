@@ -24,12 +24,12 @@ if ($_POST)
                     $mon->__SET('apellidos', $_POST['apellidos']);
                     $mon->__SET('usuario', $_POST['usuario']);
                     $mon->__SET('correo', $_POST['correo']);
-                    $encript = sha1("Temporal2023*");
+                    $encript = sha1($_POST['rand_pwd']);
                     $mon->__SET('pwd', $encript);
 
-
-
+                    
                     $dtMon->registrarUsuario($mon);
+                    
                     header("Location: ../dist/Usuario.php?msjNewEmp=1");
                     break;
                    
