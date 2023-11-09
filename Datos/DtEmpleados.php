@@ -11,7 +11,7 @@ class DtEmpleados extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idEmpleados, nombre, ubicacion, nombreEmpresa, areaLaboral, puesto, fechaIngreso, idEstado, origen FROM Empleados WHERE idEstado<>3 ";
+			$querySQL = "SELECT idEmpleados, nombre, ubicacion, nombreEmpresa, areaLaboral, puesto,  DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, idEstado, origen FROM Empleados WHERE idEstado<>3 ";
             
             $stm = $this->myCon->prepare($querySQL);
 			$stm->execute();

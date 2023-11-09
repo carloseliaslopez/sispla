@@ -15,8 +15,6 @@ if ($rol <> 1){
     header("Location: ../dist/401.html");
 }
 
-
-
 //entidades y datps
 include '../Entidades/Seguridad/Usuario.php';
 include '../Entidades/Seguridad/Rol.php';
@@ -58,8 +56,14 @@ include '../Datos/DtSeguridad.php';
 
                     <p>
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#Pic" aria-expanded="false" aria-controls="Pic">Componentes del PIC</button>
-                    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#matrizRiesgo" aria-expanded="false" aria-controls="matrizRiesgo">Componentes para matriz de riesgo</button>
+                    
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="Pic matrizRiesgo">Mostrar todos los componentes</button>
+                
+                    </p>
+                    <p>
+                    <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#matrizRiesgo" aria-expanded="false" aria-controls="matrizRiesgo">Componentes para matriz de riesgo</button>
+                    <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#mtrx_factores" aria-expanded="false" aria-controls="mtrx_factores">Calibración de Factores matriz</button>
+                    <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#mtrx_variables" aria-expanded="false" aria-controls="mtrx_variables">Calibración de Variables matriz</button>
                     </p>
                     <div class="row">
                         <div class="col-md-12">
@@ -162,6 +166,52 @@ include '../Datos/DtSeguridad.php';
                                     <div class="col-xl-3 col-md-6">
                                         <div class="card bg-success text-white mb-4">
                                             <div class="card-body"> Actividad Laboral</div>
+                                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                                <a class="small text-white stretched-link" href="./110_Gestion_CatEmpleo.php">Admistrar</a>
+                                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="collapse multi-collapse" id="mtrx_factores">
+                                <ol class="breadcrumb mb-4">
+                                    <li class="breadcrumb-item active"><b>Administación para Calibración de Factores matriz </b></li>
+                                </ol>
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-6">
+                                        <div class="card bg-success text-white mb-4">
+                                            <div class="card-body"> text</div>
+                                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                                <a class="small text-white stretched-link" href="./107_Gestion_CategoriaProducto.php">Admistrar</a>
+                                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-md-6">
+                                        <div class="card bg-success text-white mb-4">
+                                            <div class="card-body"> text</div>
+                                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                                <a class="small text-white stretched-link" href="./108_Gestion_CatSubProducto.php">Admistrar</a>
+                                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-md-6">
+                                        <div class="card bg-success text-white mb-4">
+                                            <div class="card-body"> text</div>
+                                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                                <a class="small text-white stretched-link" href="./109_Gestion_AE.php">Admistrar</a>
+                                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-md-6">
+                                        <div class="card bg-success text-white mb-4">
+                                            <div class="card-body">text</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="./110_Gestion_CatEmpleo.php">Admistrar</a>
                                                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>

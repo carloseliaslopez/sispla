@@ -9,7 +9,6 @@
                             Página principal
                         </a>
                         <!-- start sub-menu Busquedas-->
-                         <!--<div class="sb-sidenav-menu-heading">Busquedas</div>-->
                         
                         <a class="nav-link collapsed" data-target="#Busquedas" href="#" data-toggle="collapse"  aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-search"></i></div>
@@ -24,9 +23,6 @@
                             </nav>
                         </div>
                         <!-- end sub-menu Busquedas-->
-
-                        <!-- start sub-menu listas-->
-                        <!--<div class="sb-sidenav-menu-heading">Listas de datos</div>-->
                         
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Listas" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -43,10 +39,6 @@
                             </nav>
                         </div>
                         <!-- end sub-menu listas-->
-
-                        <!-- start sub-menu Informes-->
-                        <!--<div class="sb-sidenav-menu-heading">Informes y reportes</div>-->
-                        
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Informes" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
                             Informes y reportes
@@ -56,28 +48,20 @@
                         <div class="collapse" id="Informes" aria-labelledby="headingThree" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="./listaInformesIDD.php">Informe IDD</a>
-                                
-                            </nav>
-                        </div>
-                        <div class="collapse" id="Informes" aria-labelledby="headingThree" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="./Matrices.php">Matrices de Riegos</a>
                             </nav>
                         </div>
-                        
                         <!-- end sub-menu Informes-->
                         
                         <!-- start sub-menu Administracion-->
-                        <!--<div class="sb-sidenav-menu-heading"> Gestión Adimistrativa</div>-->
                         <?php if ($rol == 1) { ?>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Admin" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-tools"></i></div>
                                 Administración
-
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         
-                        <div class="collapse" id="Admin" aria-labelledby="headingThree" data-parent="#sidenavAccordion">
+                        <div class="collapse" id="Admin" aria-labelledby="headingFour" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="adminTablasPic.php">Gestiones administrativas</a>
                                 
@@ -87,29 +71,36 @@
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#security" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-user-lock"></i></div>
                                 Seguridad
-
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         
-                        <div class="collapse" id="security" aria-labelledby="headingThree" data-parent="#sidenavAccordion">
+                        <div class="collapse" id="security" aria-labelledby="headingFive" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="./Usuario.php">Usuario</a> 
-                            </nav>
-                        </div>
-                        <div class="collapse" id="security" aria-labelledby="headingThree" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="./Roles.php">Roles</a> 
-                            </nav>
-                        </div>
-                        <div class="collapse" id="security" aria-labelledby="headingThree" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="./Roles.php">Roles</a>
                                 <a class="nav-link" href="#">Permisos</a> 
                             </nav>
                         </div>
+
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#trx_menu" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-exclamation-circle"></i></i></div>
+                                Señales de alerta
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        
+                        <div class="collapse" id="trx_menu" aria-labelledby="headingSix" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="./Trx_alertas_diarias.php">Alertas diarias</a> 
+                                <a class="nav-link" href="#">Informe de Alertas</a> 
+                                <a class="nav-link" href="#">Cargar Alertas</a>
+                            </nav>
+                        </div>
+                        
                     </div>
                     <?php } ?>
                      <!--end sidebar-->
                 </div>
+
                 <div class="sb-sidenav-footer">
                     <div class="small">Registrado como:</div>
                     <?php echo $nombre; ?>

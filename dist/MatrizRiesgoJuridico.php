@@ -1015,7 +1015,7 @@ $combos = new DtCombos();
         <!--SCRIPT PARA LAS FUNCIONES DE CAMBIO-->
         <script type="text/javascript" src="./Jscript/Panama/Juridico/selects.js"></script>
         <script type="text/javascript" src="./Jscript/Panama/Juridico/Reset.js"></script>
-    <script type="text/javascript" src="./Jscript/Panama/Juridico/Multiplicar.js"></script>-->
+    <script type="text/javascript" src="./Jscript/Panama/Juridico/Multiplicar.js"></script>
        
         
     

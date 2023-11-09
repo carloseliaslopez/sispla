@@ -10,56 +10,52 @@ if ($_POST){
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
-    if (empty($username or $password)){
+    if (empty($username )||empty($password)){
 
          $smg_error = "Debe Ingresar un Usuario e ingresar una Clave";
-
          echo "<script> alert('".$smg_error."'); </script>";
-         
 
+    }else{
+
+        $sql = "SELECT idRolUsuario, idUsuario, idRol, idOpciones, usuario, pwd, nombres, apellidos, correo, idEstado,firt_time, RolDescripcion, opcionDescripcion
+            from vw_Usuario_per_opc where usuario = '$username' and idEstado<>3";
+            
+        $resultado = $conexion -> query($sql);
+        $num = $resultado -> num_rows;
+
+
+        if ($num>0){
+            $row = $resultado -> fetch_assoc();
+            $password_bd = $row['pwd'];
+            $pass_c = sha1($password);
+
+                if ($password_bd == $pass_c){
+                    $_SESSION ['idUsuario'] = $row['idUsuario'];
+                    $_SESSION ['usuario'] = $row['usuario'];
+                    $_SESSION ['idRol'] = $row['idRol'];
+                    $_SESSION ['idOpciones'] = $row['idOpciones'];
+                    $_SESSION ['firt_time'] = $row['firt_time'];
+                    
+                    session_start();
+
+                    $first_time = $_SESSION ['firt_time'];
+
+                    if ($first_time == 0){
+                        header("Location: password.php");
+                    }else{
+                        header("Location: index.php");
+                    }
+                    
+                }else{
+                    echo ("Credenciales incorrectas - Intentos permitidos [] antes que la cuenta se bloquee.");
+                }
+
+        }else{
+            echo ("Credenciales incorrectas");
+
+        }
     }
    
-    
-    //$sql = "SELECT idUsuario, usuario, pwd, nombres, apellidos, correo, idEstado from Usuario where usuario = '$username' and idEstado<>3";
-    $sql = "SELECT idRolUsuario, idUsuario, idRol, idOpciones, usuario, pwd, nombres, apellidos, correo, idEstado,firt_time, RolDescripcion, opcionDescripcion
-             from vw_Usuario_per_opc where usuario = '$username' and idEstado<>3";
-    $resultado = $conexion -> query($sql);
-    $num = $resultado -> num_rows;
-    
-
-    if ($num>0){
-        $row = $resultado -> fetch_assoc();
-        $password_bd = $row['pwd'];
-        $pass_c = sha1($password);
-        
-
-        if ($password_bd == $pass_c){
-            $_SESSION ['idUsuario'] = $row['idUsuario'];
-            $_SESSION ['usuario'] = $row['usuario'];
-            $_SESSION ['idRol'] = $row['idRol'];
-            $_SESSION ['idOpciones'] = $row['idOpciones'];
-            $_SESSION ['firt_time'] = $row['firt_time'];
-            
-            session_start();
-
-            $first_time = $_SESSION ['firt_time'];
-            if ($first_time == 0){
-                header("Location: password.php");
-            }else{
-                header("Location: index.php");
-            }
-            
-        }else{
-            
-           echo ("Credenciales incorrectas - Intentos permitidos [] antes que la cuenta se bloquee.");
-        }
-        
-    }else{
-        echo ("Credenciales incorrectas");
-
-    }
-
-
 }
 
 ?>
