@@ -5,6 +5,7 @@ include_once("Connect.php");
 class DtBusquedaInterna extends Conexion
 {
     private $myCon;
+	// funcion que ingresa datos de una circular al la BD
 	public function registrarCircular(Circular $data)
 	{
 		try 
@@ -27,6 +28,8 @@ class DtBusquedaInterna extends Conexion
 			die($e->getMessage());
 		}
 	}
+
+	//registra una a las persona obligadas
 
 	public function registrarPerObligadas(PersonasObligadas $data)
 	{

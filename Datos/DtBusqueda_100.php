@@ -1,11 +1,11 @@
 <?php
 include_once("Connect.php");
 
-
 class DtBusqueda_100 extends Conexion
 {
     private $myCon;
 
+	//funcion para determinar una busqueda exacta  de cliente masivos vs listas ofac/onu
 	public function listarBusqueda_100()
 	{
 		try
@@ -42,6 +42,7 @@ class DtBusqueda_100 extends Conexion
 		}
 	}
 
+	//funcion para la posibles coincidencias masivas de clientes vs lista OFAC,ONU
 	public function listarBusqueda_80()
 	{
 		try
@@ -86,6 +87,7 @@ class DtBusqueda_100 extends Conexion
 		}
 	}
 
+	//Eliminar posibles coincidencia
 	public function EliminarRegistro_80($id, $s)
 	{
 		try 

@@ -8,7 +8,7 @@ class Conexion
     private $dbName;
     private $userName;
     private $pwd;
-
+     // METODOS DE CONEXION A LA BD
     // Metodos
     public function conectar()
 	{
@@ -37,7 +37,7 @@ class Conexion
         try
 		{
             $pdo = null;
-           // echo "Se desconecto de Kermesser DB exitosamente!";
+           // echo "Se desconecto de BD exitosamente!";
             return $pdo; 		        
         }
         catch(PDOException $e)
