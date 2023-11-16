@@ -11,7 +11,7 @@ class DtBusquedaInterna extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Circular (fechaBusqueda, idOrganismo, subOrganismo,referencia, idEstado, usuario_creacion, fecha_creacion)
+			$sql = "INSERT INTO circular (fechaBusqueda, idOrganismo, subOrganismo,referencia, idEstado, usuario_creacion, fecha_creacion)
 					VALUES (CURDATE(),?,?,?,1,?,current_timestamp());";
 
 			$this->myCon->prepare($sql)
@@ -36,7 +36,7 @@ class DtBusquedaInterna extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO PersonasObligadas (nombre, identificacion,nacionalidad,idCircular,usuario_creacion,idEstado, fecha_creacion)
+			$sql = "INSERT INTO personasobligadas (nombre, identificacion,nacionalidad,idCircular,usuario_creacion,idEstado, fecha_creacion)
 					VALUES (?,?,?,?,?,1,current_timestamp())";
 
 			$this->myCon->prepare($sql)
@@ -62,7 +62,7 @@ class DtBusquedaInterna extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT idPersonasObligadas,nombre,identificacion,idCircular,concidencia,origen FROM vw_BusquedaInterna_Res WHERE  idCircular = ?";
+			$querySQL = "SELECT idPersonasObligadas,nombre,identificacion,idCircular,concidencia,origen FROM vw_busquedainterna_res WHERE  idCircular = ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($ref));
 			
@@ -106,7 +106,7 @@ class DtBusquedaInterna extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idCircular,DATE_FORMAT(fechaBusqueda, '%d/%m/%Y') AS fechaBusqueda, referencia, subOrganismo FROM Circular WHERE idEstado<>3 ";
+			$querySQL = "SELECT idCircular,DATE_FORMAT(fechaBusqueda, '%d/%m/%Y') AS fechaBusqueda, referencia, subOrganismo FROM circular WHERE idEstado<>3 ";
 			
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -139,7 +139,7 @@ class DtBusquedaInterna extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Organismo (nombreOrganismo,usuario_creacion,idEstado,fecha_creacion) VALUES(?,?,1,current_timestamp());";
+			$sql = "INSERT INTO organismo (nombreOrganismo,usuario_creacion,idEstado,fecha_creacion) VALUES(?,?,1,current_timestamp());";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -159,7 +159,7 @@ class DtBusquedaInterna extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM Organismo WHERE nombreOrganismo = ? AND idEstado<>3";
+			$querySQL = "SELECT * FROM organismo WHERE nombreOrganismo = ? AND idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));

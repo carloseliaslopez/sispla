@@ -11,7 +11,7 @@ class Gestion_Dt_CatEmpleo extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idCatalogoOCGO, codigoCGO, descripcionCGO, riesgoCGO, idEstado FROM CatalogoOCGO WHERE idEstado <> 3";
+			$querySQL = "SELECT idCatalogoOCGO, codigoCGO, descripcionCGO, riesgoCGO, idEstado FROM catalogoocgo WHERE idEstado <> 3";
             $stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -42,7 +42,7 @@ class Gestion_Dt_CatEmpleo extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO CatalogoOCGO (codigoCGO, descripcionCGO, riesgoCGO, idEstado) VALUES (?,?,?,?)";
+			$sql = "INSERT INTO catalogoocgo (codigoCGO, descripcionCGO, riesgoCGO, idEstado) VALUES (?,?,?,?)";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -66,7 +66,7 @@ class Gestion_Dt_CatEmpleo extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT *  FROM CatalogoOCGO WHERE codigoCGO = ? AND descripcionCGO= ? AND idEstado<> 3";
+			$querySQL = "SELECT *  FROM catalogoocgo WHERE codigoCGO = ? AND descripcionCGO= ? AND idEstado<> 3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a, $b));
@@ -99,7 +99,7 @@ class Gestion_Dt_CatEmpleo extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE CatalogoOCGO SET 
+			$sql = "UPDATE catalogoocgo SET 
 				codigoCGO = ?,
 				descripcionCGO = ?,
 				riesgoCGO = ?,
@@ -130,7 +130,7 @@ class Gestion_Dt_CatEmpleo extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE CatalogoOCGO SET idEstado = 3
+			$querySQL = "UPDATE catalogoocgo SET idEstado = 3
 			WHERE idCatalogoOCGO = ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));

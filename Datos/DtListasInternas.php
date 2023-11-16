@@ -11,7 +11,7 @@ class DtListasInternas extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idListasInternas, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, nombre, origen, idEstado FROM ListasInternas WHERE idEstado<>3 ORDER BY idListasInternas DESC LIMIT 500";
+			$querySQL = "SELECT idListasInternas, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, nombre, origen, idEstado FROM listasinternas WHERE idEstado<>3 ORDER BY idListasInternas DESC LIMIT 500";
            
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -60,7 +60,7 @@ class DtListasInternas extends Conexion
 				$arr[4];
 				$arr[5];
 			$querySQL = "SELECT idListasInternas,nombre,origen,DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso,idEstado
-			FROM ListasInternas
+			FROM listasinternas
 			 WHERE nombre LIKE'%".$arr[0]."%'  and
 			 nombre like'%".$arr[1]."%' and
 			 nombre like'%".$arr[2]."%' and 
@@ -102,7 +102,7 @@ class DtListasInternas extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO ListasInternas (nombre,origen,fechaIngreso,idEstado) 
+			$sql = "INSERT INTO listasinternas (nombre,origen,fechaIngreso,idEstado) 
 		        VALUES (?, ?, CURDATE(),?)";
 
 			$this->myCon->prepare($sql)
@@ -125,7 +125,7 @@ class DtListasInternas extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE ListasInternas SET 
+			$sql = "UPDATE listasinternas SET 
 			nombre = ?, 
 			
 			idEstado = 2
@@ -154,7 +154,7 @@ class DtListasInternas extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$querySQL = "SELECT idListasInternas,nombre,origen,fechaIngreso,idEstado
-			FROM ListasInternas WHERE nombre = ? AND origen = ?  AND idEstado<>3";
+			FROM listasinternas WHERE nombre = ? AND origen = ?  AND idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a,$b));
@@ -190,7 +190,7 @@ class DtListasInternas extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$querySQL = "SELECT idListasInternas,nombre,origen,fechaIngreso,idEstado 
-			FROM ListasInternas WHERE idListasInternas = ?";
+			FROM listasinternas WHERE idListasInternas = ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));
 			
@@ -218,7 +218,7 @@ class DtListasInternas extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE ListasInternas SET idEstado = 3
+			$querySQL = "UPDATE listasinternas SET idEstado = 3
 			WHERE idListasInternas = ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));

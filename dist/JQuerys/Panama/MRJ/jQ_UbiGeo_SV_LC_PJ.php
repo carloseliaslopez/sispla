@@ -1,18 +1,18 @@
 <?php
 $html = '';
 //require "./Datos/Conexion.php";
-$conexion = new mysqli('localhost','root','CEal2000!','versatec');
+$conexion = new mysqli('172.22.1.12','localhost','Cumpl1m1ento2023*','sispla');
 $id_pic = $_POST['id_pic'];
 $id_matriz = $_POST['id_matriz'];
 
 $result1 = $conexion->query(
-    "SELECT paisConstitucion FROM DatosClienteJuridicoPic WHERE idPic = ".$id_pic." and paisConstitucion = ".$id_matriz." "
+    "SELECT paisConstitucion FROM datosclientejuridicopic WHERE idPic = ".$id_pic." and paisConstitucion = ".$id_matriz." "
 );
 
 if ($result1->num_rows > 0){
     $result = $conexion->query(
-        "SELECT dcjp.deptoConstitucion, d.nombreDepartamento, d.calificacion FROM DatosClienteJuridicoPic dcjp
-        INNER JOIN Departamento d ON idDepartamento = deptoConstitucion
+        "SELECT dcjp.deptoConstitucion, d.nombreDepartamento, d.calificacion FROM datosclientejuridicopic dcjp
+        INNER JOIN departamento d ON idDepartamento = deptoConstitucion
         AND idPic = ".$id_pic.";"
     );
     if ($result->num_rows > 0) {
@@ -22,7 +22,7 @@ if ($result1->num_rows > 0){
     }
 }else{
     $result = $conexion->query(
-        "SELECT calificacion,nombrePais,idPic FROM vw_PConstitucion_tbl_DCJP WHERE idPic = ".$id_pic." "
+        "SELECT calificacion,nombrePais,idPic FROM vw_pconstitucion_tbl_dcjp WHERE idPic = ".$id_pic." "
     );
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {                

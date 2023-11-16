@@ -10,7 +10,7 @@ class DtDataPicCompartidos extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO OrigenesFondos (idPic,idFormaPago,idFuenteFondos,usuario_creacion,fecha_creacion)
+			$sql = "INSERT INTO origenesfondos (idPic,idFormaPago,idFuenteFondos,usuario_creacion,fecha_creacion)
 		        	VALUES (?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
@@ -33,7 +33,7 @@ class DtDataPicCompartidos extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Pep (pep,nombrePep,idRelacionCliente,nombreEntidad,PaisPep,cargo,perido,riesgoPep,idPic,usuario_creacion,fecha_creacion)
+			$sql = "INSERT INTO pep (pep,nombrePep,idRelacionCliente,nombreEntidad,PaisPep,cargo,perido,riesgoPep,idPic,usuario_creacion,fecha_creacion)
 		        	VALUES (?,?,?,?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
@@ -64,7 +64,7 @@ class DtDataPicCompartidos extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Facta (Facta,nombreFacta,idRelacionCliente,idCausa,idPic,usuario_creacion,fecha_creacion)
+			$sql = "INSERT INTO facta (Facta,nombreFacta,idRelacionCliente,idCausa,idPic,usuario_creacion,fecha_creacion)
 		        	VALUES (?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
@@ -92,7 +92,7 @@ class DtDataPicCompartidos extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_OrigenesFondos  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_origenesfondos  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -124,7 +124,7 @@ class DtDataPicCompartidos extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_Pep  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_pep  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -161,7 +161,7 @@ class DtDataPicCompartidos extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_Facta  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_facta  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -195,7 +195,7 @@ class DtDataPicCompartidos extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE OrigenesFondos SET
+			$sql = "UPDATE origenesfondos SET
 					idFormaPago= ?,
 					idFuenteFondos=?
 					WHERE idPic = ? ";
@@ -220,7 +220,7 @@ class DtDataPicCompartidos extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE Pep SET
+			$sql = "UPDATE pep SET
 				pep = ?, nombrePep = ?, idRelacionCliente = ?,
 				nombreEntidad = ?, PaisPep = ?, cargo = ?,
 				perido = ?, riesgoPep =? 
@@ -251,7 +251,7 @@ class DtDataPicCompartidos extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE Facta SET
+			$sql = "UPDATE facta SET
 				Facta = ?,
 				nombreFacta = ?,
 				idRelacionCliente = ?,

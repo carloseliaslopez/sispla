@@ -1,24 +1,24 @@
 <?php
 $html = '';
 //require "./Datos/Conexion.php";
-$conexion = new mysqli('localhost','root','CEal2000!','versatec');
+$conexion = new mysqli('172.22.1.12','localhost','Cumpl1m1ento2023*','sispla');
 $id_pic = $_POST['id_pic'];
 $id_matriz = $_POST['id_matriz'];
  
 $resultGene = $conexion->query(
     "SELECT a.nombreCompletoAccionistas, p.calificacion, a.nacionalidadAccionistas, p.nombrePais, a.idPic
-    FROM Accionistas a
+    FROM accionistas a
     INNER JOIN pais p on a.nacionalidadAccionistas = p.Idpais
     AND a.nacionalidadAccionistas= ".$id_matriz."
     AND idPic=".$id_pic." 
-    AND a.acciones = (SELECT MAX(acciones) FROM Accionistas WHERE idPic= ".$id_pic.")"
+    AND a.acciones = (SELECT MAX(acciones) FROM accionistas WHERE idPic= ".$id_pic.")"
 );
 if ($resultGene->num_rows > 0){
     $result = $conexion->query(
-        "SELECT ac.deptoNacionalidadAccionistas, d.nombreDepartamento, d.calificacion FROM Accionistas ac
-        INNER JOIN Departamento d ON idDepartamento = deptoNacionalidadAccionistas
+        "SELECT ac.deptoNacionalidadAccionistas, d.nombreDepartamento, d.calificacion FROM accionistas ac
+        INNER JOIN departamento d ON idDepartamento = deptoNacionalidadAccionistas
         AND idPic = ".$id_pic."
-        AND ac.acciones = (SELECT MAX(acciones) FROM Accionistas WHERE idPic= ".$id_pic.")"
+        AND ac.acciones = (SELECT MAX(acciones) FROM accionistas WHERE idPic= ".$id_pic.")"
         
     );
     if ($result->num_rows > 0) {
@@ -29,10 +29,10 @@ if ($resultGene->num_rows > 0){
 }else{
     $result = $conexion->query(
         "SELECT a.nombreCompletoAccionistas, p.calificacion, a.nacionalidadAccionistas, p.nombrePais, a.idPic
-        FROM Accionistas a
+        FROM accionistas a
         INNER JOIN pais p on a.nacionalidadAccionistas = p.Idpais
         AND idPic=".$id_pic." 
-        AND a.acciones = (SELECT MAX(acciones) FROM Accionistas WHERE idPic= ".$id_pic.")"
+        AND a.acciones = (SELECT MAX(acciones) FROM accionistas WHERE idPic= ".$id_pic.")"
     );
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {   
@@ -41,7 +41,7 @@ if ($resultGene->num_rows > 0){
     }else{
         $result2 = $conexion->query(
             "SELECT a.nombreCompletoAccionistas, p.calificacion, a.nacionalidadAccionistas, p.nombrePais, a.idPic
-            FROM Accionistas a
+            FROM accionistas a
             INNER JOIN pais p on a.nacionalidadAccionistas = p.Idpais
             AND idPic=".$id_pic." "
         );

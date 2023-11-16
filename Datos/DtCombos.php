@@ -12,7 +12,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idPais, nombrePais FROM Pais WHERE idEstado<>3";
+			$querySQL = "SELECT idPais, nombrePais FROM pais WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -45,7 +45,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idFormaPago, nombreFormaPago FROM FormaPago WHERE idEstado<>3";
+			$querySQL = "SELECT idFormaPago, nombreFormaPago FROM formapago WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -79,7 +79,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idFuenteFondos, nombreFuenteFondos FROM FuenteFondos WHERE idEstado<>3";
+			$querySQL = "SELECT idFuenteFondos, nombreFuenteFondos FROM fuentefondos WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -112,7 +112,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idEstadoCivil, descripcion FROM EstadoCivil WHERE idEstado<>3";
+			$querySQL = "SELECT idEstadoCivil, descripcion FROM estadocivil WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -145,7 +145,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idAreaGeografica,nombreAreaGeografica FROM AreaGeografica WHERE idEstado<>3";
+			$querySQL = "SELECT idAreaGeografica,nombreAreaGeografica FROM areageografica WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -179,7 +179,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idActividadNegocio,nombreActividadNegocio FROM ActividadNegocio WHERE idEstado<>3";
+			$querySQL = "SELECT idActividadNegocio,nombreActividadNegocio FROM actividadnegocio WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -212,7 +212,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idRelacionCliente, descripcion, idEstado FROM RelacionCliente WHERE idEstado<>3";
+			$querySQL = "SELECT idRelacionCliente, descripcion, idEstado FROM relacioncliente WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -245,7 +245,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idCausa, descripcion, idEstado FROM Causa WHERE idEstado<>3";
+			$querySQL = "SELECT idCausa, descripcion, idEstado FROM causa WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -273,42 +273,6 @@ class DtCombos extends Conexion
 	}
 
 
-	/*
-
-	public function ComboFechaFiltrosMensuales()
-	{
-		try
-		{
-			$this->myCon = parent::conectar();
-			$result = array();
-			$querySQL = "SELECT  fechaIngreso FROM pic WHERE idEstado<>3 GROUP BY fechaingreso";
-
-			$stm = $this->myCon->prepare($querySQL);
-			$stm->execute();
-
-			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
-			{
-				$emp = new ComboPic();
-
-				//_SET(CAMPOBD, atributoEntidad)			
-				$emp->__SET('fechaIngreso', $r->fechaIngreso);
-				
-				
-				
-				$result[] = $emp;
-
-				//var_dump($result);
-			}
-			$this->myCon = parent::desconectar();
-			return $result;
-		}
-		catch(Exception $e)
-		{
-			die($e->getMessage());
-		}
-	}
-	*/
-
 
 	//COMBOS PARA LA MATRIZ DE EVALUACION GENERAL
 	
@@ -318,7 +282,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idCatalogoSubProducto, nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado FROM vw_CatalogoSubProducto";
+			$querySQL = "SELECT idCatalogoSubProducto, nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado FROM vw_catalogosubproducto";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -356,7 +320,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idDepartamento, nombreDepartamento, calificacion, idEstado, idPais FROM Departamento WHERE idEstado<>3";
+			$querySQL = "SELECT idDepartamento, nombreDepartamento, calificacion, idEstado, idPais FROM departamento WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -391,7 +355,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idPais, nombrePais FROM Pais WHERE idEstado<>3 AND idPais BETWEEN 1 AND 6  ";
+			$querySQL = "SELECT idPais, nombrePais FROM pais WHERE idEstado<>3 AND idPais BETWEEN 1 AND 6  ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -425,7 +389,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idTipoPerJuridica, tipoPersona,calificacion,idEstado FROM TipoPerJuridica WHERE idEstado<>3";
+			$querySQL = "SELECT idTipoPerJuridica, tipoPersona,calificacion,idEstado FROM tipoperjuridica WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -460,7 +424,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idConstitucion, fechaConstitucion,calificacion,idEstado FROM Constitucion WHERE idEstado<>3";
+			$querySQL = "SELECT idConstitucion, fechaConstitucion,calificacion,idEstado FROM constitucion WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -495,7 +459,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idCategoriaSalario, categoria,calificacion,idEstado FROM CategoriaSalario WHERE idEstado<>3";
+			$querySQL = "SELECT idCategoriaSalario, categoria,calificacion,idEstado FROM categoriasalario WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -530,7 +494,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idBusquedaRes, busqueda, calificacion, idEstado FROM BusquedaRes WHERE idEstado<>3";
+			$querySQL = "SELECT idBusquedaRes, busqueda, calificacion, idEstado FROM busquedares WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -565,7 +529,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idOrganismo, nombreOrganismo FROM Organismo WHERE idEstado<>3";
+			$querySQL = "SELECT idOrganismo, nombreOrganismo FROM organismo WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -598,7 +562,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idCategoriaOcupacional, tipoCategoria, calificacion, idEstado FROM CategoriaOcupacional WHERE idEstado<>3";
+			$querySQL = "SELECT idCategoriaOcupacional, tipoCategoria, calificacion, idEstado FROM categoriaocupacional WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -634,7 +598,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idEmpresa, razonSocial, idPaisOrigen, idEstado, usuario_creacion, fecha_creacion, usuario_modificacion, fecha_modificacion, usuario_eliminacion, fecha_eliminacion FROM Empresa WHERE idEstado<>3";
+			$querySQL = "SELECT idEmpresa, razonSocial, idPaisOrigen, idEstado, usuario_creacion, fecha_creacion, usuario_modificacion, fecha_modificacion, usuario_eliminacion, fecha_eliminacion FROM empresa WHERE idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();

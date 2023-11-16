@@ -8,7 +8,7 @@ $id_matriz = $_POST['id_matriz'];
 
  
 $result = $conexion->query(
-    "SELECT * FROM DatosClienteNaturalPic WHERE idPic = ".$id_pic." and idPaisACII = ".$id_matriz." "
+    "SELECT * FROM datosclientenaturalpic WHERE idPic = ".$id_pic." and idPaisACII = ".$id_matriz." "
 );
 if ($result->num_rows > 0) {
     $html .= '<option value="2">Nacional</option>';

@@ -11,7 +11,7 @@ class Dt_trx_monitoreo extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idOficina, nombreOficina, paisOficina, idEstado FROM Trx_oficina WHERE idEstado <>3";
+			$querySQL = "SELECT idOficina, nombreOficina, paisOficina, idEstado FROM trx_oficina WHERE idEstado <>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();

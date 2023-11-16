@@ -13,7 +13,7 @@ class DtMatrizRiesgoNatural extends Conexion
 			$result = array();
 			$querySQL = "SELECT idMatrizRiesgoNatural,cliente, lugarNacimiento,lugarNacionalidad,lugarResidencia,categoria,profesion,actividadEmpleo,lugarActividadEconomica,
 							resultadosBusquedas,condicionPEP,productoSolicitado,monto,formaPago,origenRecursos,riesgoCliente, 
-			 				DATE_FORMAT(fechaRealizacion, '%d/%m/%Y') as 'fechaRealizacion',tipoCliente,paisMatriz,idCliente,idEstado FROM MatrizRiesgoNatural where idEstado<>3 ";
+			 				DATE_FORMAT(fechaRealizacion, '%d/%m/%Y') as 'fechaRealizacion',tipoCliente,paisMatriz,idCliente,idEstado FROM matrizriesgonatural where idEstado<>3 ";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -63,7 +63,7 @@ class DtMatrizRiesgoNatural extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM MatrizRiesgoNatural WHERE idCliente = ? AND productoSolicitado = ?  AND idEstado<>3;";
+			$querySQL = "SELECT * FROM matrizriesgonatural WHERE idCliente = ? AND productoSolicitado = ?  AND idEstado<>3;";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a,$b));
@@ -116,7 +116,7 @@ class DtMatrizRiesgoNatural extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO MatrizRiesgoNatural 
+			$sql = "INSERT INTO matrizriesgonatural 
 				(idCliente,cliente, lugarNacimiento,lugarNacionalidad,lugarResidencia,categoria,profesion,actividadEmpleo,lugarActividadEconomica,
 				resultadosBusquedas,condicionPEP,productoSolicitado,monto,formaPago,origenRecursos,riesgoCliente,
 				fechaRealizacion,tipoCliente,paisMatriz,proximaRevision,idEstado) 
@@ -163,7 +163,7 @@ class DtMatrizRiesgoNatural extends Conexion
 			$querySQL = "SELECT idMatrizRiesgoNatural,cliente, lugarNacimiento,lugarNacionalidad,lugarResidencia,categoria,profesion,actividadEmpleo,lugarActividadEconomica,
 							resultadosBusquedas,condicionPEP,productoSolicitado,monto,formaPago,origenRecursos,riesgoCliente, 
 			 				DATE_FORMAT(fechaRealizacion, '%d/%m/%Y') as 'fechaRealizacion',tipoCliente,paisMatriz,idCliente,idEstado,proximaRevision,diasRestantes
-							FROM vw_MatrizRiesgoNatural 
+							FROM vw_matrizriesgonatural 
 							where idEstado<>3 ";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();

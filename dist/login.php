@@ -1,8 +1,8 @@
-<?php
-error_reporting(0);
-//require "../Datos/Conexion.php";
 
-$conexion = new mysqli('localhost','root','CEal2000!','sispla');
+<?php
+//error_reporting(0);
+require "../Datos/Connect.php";
+
 
 session_start();
 
@@ -20,7 +20,7 @@ if ($_POST){
         $sql = "SELECT idRolUsuario, idUsuario, idRol, idOpciones, usuario, pwd, nombres, apellidos, correo, idEstado,firt_time, RolDescripcion, opcionDescripcion
             from vw_Usuario_per_opc where usuario = '$username' and idEstado<>3";
             
-        $resultado = $conexion -> query($sql);
+        $resultado = $conectar -> query($sql);
         $num = $resultado -> num_rows;
 
 
@@ -59,6 +59,7 @@ if ($_POST){
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>

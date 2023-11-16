@@ -11,7 +11,7 @@ class Gestion_Dt_CatProducto extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idCategoriaProducto, nombreCategoriaProducto, idEstado FROM CategoriaProducto WHERE idEstado<>3";
+			$querySQL = "SELECT idCategoriaProducto, nombreCategoriaProducto, idEstado FROM categoriaproducto WHERE idEstado<>3";
             $stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -40,7 +40,7 @@ class Gestion_Dt_CatProducto extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO CategoriaProducto (nombreCategoriaProducto, idEstado) VALUES (?,?)";
+			$sql = "INSERT INTO categoriaproducto (nombreCategoriaProducto, idEstado) VALUES (?,?)";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -62,7 +62,7 @@ class Gestion_Dt_CatProducto extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM CategoriaProducto WHERE nombreCategoriaProducto = ? AND idEstado<>3;";
+			$querySQL = "SELECT * FROM categoriaproducto WHERE nombreCategoriaProducto = ? AND idEstado<>3;";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -93,7 +93,7 @@ class Gestion_Dt_CatProducto extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE CategoriaProducto SET 
+			$sql = "UPDATE categoriaproducto SET 
             nombreCategoriaProducto = ?,
             idEstado = ?
             WHERE idCategoriaProducto =?";
@@ -120,7 +120,7 @@ class Gestion_Dt_CatProducto extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE CategoriaProducto SET  idEstado = 3
+			$querySQL = "UPDATE categoriaproducto SET  idEstado = 3
             WHERE idCategoriaProducto =?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));

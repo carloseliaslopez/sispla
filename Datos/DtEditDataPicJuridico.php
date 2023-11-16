@@ -10,7 +10,7 @@ class DtEditDataPicJuridico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE DatosClienteJuridicoPic SET  
+			$sql = "UPDATE datosclientejuridicopic SET  
                     paisConstitucion = ?,
                     fechaConstitucion= ?,
                     fechaInscripcion = ?,
@@ -44,7 +44,7 @@ class DtEditDataPicJuridico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE DatosRepresentanteLegal SET
+			$sql = "UPDATE datosrepresentantelegal SET
             nombreRepresentanteLegal = ?,
             paisNacimiento = ?, 
             nacionalidad = ?,
@@ -90,7 +90,7 @@ class DtEditDataPicJuridico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE Accionistas SET
+			$sql = "UPDATE accionistas SET
                     nombreCompletoAccionistas = ?,
                     nacionalidadAccionistas = ?,
                     numIdAccionistas = ?,
@@ -120,7 +120,7 @@ class DtEditDataPicJuridico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE BeneficiariosFinales SET
+			$sql = "UPDATE beneficiariosfinales SET
                     nombreBeneFinales  = ?,
                     ApellidosBeneFinales = ?,
                     nacionalidadBeneFinales = ?,
@@ -152,7 +152,7 @@ class DtEditDataPicJuridico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE  ActividadEconomica SET
+			$sql = "UPDATE  actividadeconomica SET
             nombreComercial = ?, idTributaria = ?, anios=?,
             domicilioComercial = ?, paisDomicilio = ?, departamento = ?,
             paginaWeb = ?, telefonoOficina = ?, idAreaGeografica = ?,
@@ -193,7 +193,7 @@ class DtEditDataPicJuridico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE PrincipalesClientes SET
+			$sql = "UPDATE principalesclientes SET
             nombreClientePic = ?,
             domicilio = ?,
             telefono = ?
@@ -224,7 +224,7 @@ class DtEditDataPicJuridico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE PrincipalesProveedores SET
+			$sql = "UPDATE principalesproveedores SET
             nombreProveedor = ?,
             servicio = ?,
             domicilio = ?,
@@ -255,7 +255,7 @@ class DtEditDataPicJuridico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE InteresInfo SET 
+			$sql = "UPDATE interesinfo SET 
                 idTipoPerJuridica = ?,
                 idConstitucion = ?,
                 idCatalogoAE = ?,

@@ -11,7 +11,7 @@ class Gestion_DtAN extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idActividadNegocio, nombreActividadNegocio, idEstado FROM ActividadNegocio WHERE idEstado<>3 ";
+			$querySQL = "SELECT idActividadNegocio, nombreActividadNegocio, idEstado FROM actividadnegocio WHERE idEstado<>3 ";
             $stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -40,7 +40,7 @@ class Gestion_DtAN extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO ActividadNegocio(nombreActividadNegocio, idEstado) VALUES (?,?)";
+			$sql = "INSERT INTO actividadnegocio(nombreActividadNegocio, idEstado) VALUES (?,?)";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -62,7 +62,7 @@ class Gestion_DtAN extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM ActividadNegocio WHERE nombreActividadNegocio = ? AND idEstado<>3;";
+			$querySQL = "SELECT * FROM actividadnegocio WHERE nombreActividadNegocio = ? AND idEstado<>3;";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -93,7 +93,7 @@ class Gestion_DtAN extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE ActividadNegocio SET 
+			$sql = "UPDATE actividadnegocio SET 
             nombreActividadNegocio = ?,
             idEstado = ?
             WHERE idActividadNegocio = ?";
@@ -120,7 +120,7 @@ class Gestion_DtAN extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE ActividadNegocio SET idEstado = 3
+			$querySQL = "UPDATE actividadnegocio SET idEstado = 3
 			where idActividadNegocio= ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));

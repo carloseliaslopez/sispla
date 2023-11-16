@@ -10,7 +10,7 @@ class DtMatrizEvaluacion extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT fechaRevision, cliente, productoSolicitado, paisCliente,monto,ProximaRevision, riesgo,observaciones,idCliente FROM InformeGeneralIDD ";
+			$querySQL = "SELECT fechaRevision, cliente, productoSolicitado, paisCliente,monto,ProximaRevision, riesgo,observaciones,idCliente FROM informegeneralidd ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -45,7 +45,7 @@ class DtMatrizEvaluacion extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_DocumentacionRecibida  WHERE idCliente = ? AND productoSolicitado = ? ";
+			$querySQL = "SELECT * FROM vw_documentacionrecibida  WHERE idCliente = ? AND productoSolicitado = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a,$b));
@@ -79,7 +79,7 @@ class DtMatrizEvaluacion extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM ControlesAplicados  WHERE idCliente = ? AND productoSolicitado = ?";
+			$querySQL = "SELECT * FROM controlesaplicados  WHERE idCliente = ? AND productoSolicitado = ?";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a,$b));
@@ -121,7 +121,7 @@ class DtMatrizEvaluacion extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idCatalogoDocumentos, descripcion, categoriaCatProducto, idEstado FROM CatalogoDocumentos WHERE idEstado <> 3 AND categoriaCatProducto= 'Jurídico' ";
+			$querySQL = "SELECT idCatalogoDocumentos, descripcion, categoriaCatProducto, idEstado FROM catalogodocumentos WHERE idEstado <> 3 AND categoriaCatProducto= 'Jurídico' ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -153,7 +153,7 @@ class DtMatrizEvaluacion extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idCatalogoDocumentos, descripcion, categoriaCatProducto, idEstado FROM CatalogoDocumentos WHERE idEstado <> 3 AND categoriaCatProducto= 'Natural' ";
+			$querySQL = "SELECT idCatalogoDocumentos, descripcion, categoriaCatProducto, idEstado FROM catalogodocumentos WHERE idEstado <> 3 AND categoriaCatProducto= 'Natural' ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -185,7 +185,7 @@ class DtMatrizEvaluacion extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM InformeGeneralIDD WHERE idCliente = ? AND productoSolicitado = ? ";
+			$querySQL = "SELECT * FROM informegeneralidd WHERE idCliente = ? AND productoSolicitado = ? ";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id,$prod));
 			
@@ -224,7 +224,7 @@ class DtMatrizEvaluacion extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO InformeGeneralIDD (idCliente,cliente,tipoCliente,productoSolicitado,paisCliente,monto,
+			$sql = "INSERT INTO informegeneralidd (idCliente,cliente,tipoCliente,productoSolicitado,paisCliente,monto,
 			fechaRevision, ProximaRevision, riesgo, observaciones,idEstado,inputRiesgo) 
 		        VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -256,7 +256,7 @@ class DtMatrizEvaluacion extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO DocumentacionRecibida (idCliente, productoSolicitado, idCatalogoDocumentos,comentario) 
+			$sql = "INSERT INTO documentacionrecibida (idCliente, productoSolicitado, idCatalogoDocumentos,comentario) 
 		        VALUES (?,?,?,?)";
 
 			$this->myCon->prepare($sql)
@@ -279,7 +279,7 @@ class DtMatrizEvaluacion extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO ControlesAplicados (idCliente,productoSolicitado,motorBusqueda,registroMercantil, poderJudicial,intelichek,interpol,fbi,ofac,listasConsoUNSC,sancionesUE)
+			$sql = "INSERT INTO controlesaplicados (idCliente,productoSolicitado,motorBusqueda,registroMercantil, poderJudicial,intelichek,interpol,fbi,ofac,listasConsoUNSC,sancionesUE)
 		        VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
 			$this->myCon->prepare($sql)
@@ -308,7 +308,7 @@ class DtMatrizEvaluacion extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO DocumentacionExtra (idCliente, productoSolicitado, documento,comentario) 
+			$sql = "INSERT INTO documentacionextra (idCliente, productoSolicitado, documento,comentario) 
 			VALUES (?,?,?,?)";
 
 			$this->myCon->prepare($sql)
@@ -331,7 +331,7 @@ class DtMatrizEvaluacion extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM DocumentacionExtra  WHERE idCliente = ? AND productoSolicitado = ? ";
+			$querySQL = "SELECT * FROM documentacionextra  WHERE idCliente = ? AND productoSolicitado = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a,$b));

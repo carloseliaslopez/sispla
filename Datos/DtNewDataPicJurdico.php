@@ -10,7 +10,7 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO DatosClienteJuridicoPic (paisConstitucion, deptoConstitucion, fechaConstitucion,fechaInscripcion,correoPersonaContacto,nombrePersonaContacto,cargoPersonaContacto,telefono,idPic,usuario_creacion,fecha_creacion) 
+			$sql = "INSERT INTO datosclientejuridicopic (paisConstitucion, deptoConstitucion, fechaConstitucion,fechaInscripcion,correoPersonaContacto,nombrePersonaContacto,cargoPersonaContacto,telefono,idPic,usuario_creacion,fecha_creacion) 
 		        VALUES (?,?,?,?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
@@ -39,7 +39,7 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO DatosRepresentanteLegal (nombreRepresentanteLegal,paisNacimiento,deptoPaisNacimiento,nacionalidad,deptoNacionalidad,tipoIdentificacion, numeroIdentificacion,paisEmision,fechaEmision,fechaVencimiento,paisResidencia,deptoPaisResidencia,celular,correo,cargo,profesion,idPic,usuario_creacion,fecha_creacion)
+			$sql = "INSERT INTO datosrepresentantelegal (nombreRepresentanteLegal,paisNacimiento,deptoPaisNacimiento,nacionalidad,deptoNacionalidad,tipoIdentificacion, numeroIdentificacion,paisEmision,fechaEmision,fechaVencimiento,paisResidencia,deptoPaisResidencia,celular,correo,cargo,profesion,idPic,usuario_creacion,fecha_creacion)
 		        	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
@@ -77,7 +77,7 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Accionistas(nombreCompletoAccionistas,nacionalidadAccionistas,deptoNacionalidadAccionistas, numIdAccionistas,Acciones,idPic,usuario_creacion,fecha_creacion)
+			$sql = "INSERT INTO accionistas(nombreCompletoAccionistas,nacionalidadAccionistas,deptoNacionalidadAccionistas, numIdAccionistas,Acciones,idPic,usuario_creacion,fecha_creacion)
 		        	VALUES (?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
@@ -103,7 +103,7 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO BeneficiariosFinales (nombreBeneFinales,ApellidosBeneFinales,nacionalidadBeneFinales,deptoNacionalidadBeneFinales,numIdBeneFinales,AccionesBeneFinales,idPic,usuario_creacion,fecha_creacion)
+			$sql = "INSERT INTO beneficiariosfinales (nombreBeneFinales,ApellidosBeneFinales,nacionalidadBeneFinales,deptoNacionalidadBeneFinales,numIdBeneFinales,AccionesBeneFinales,idPic,usuario_creacion,fecha_creacion)
 		        	VALUES (?,?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
@@ -130,7 +130,7 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO ActividadEconomica (nombreComercial,idTributaria,anios,domicilioComercial,paisDomicilio,departamento,paginaWeb,telefonoOficina,idAreaGeografica,idActividadNegocio,descripcion,ventasMensual,numEmpleados,numSucursales,grupoEconomico,indicar,idPic,usuario_creacion,fecha_creacion)
+			$sql = "INSERT INTO actividadeconomica (nombreComercial,idTributaria,anios,domicilioComercial,paisDomicilio,departamento,paginaWeb,telefonoOficina,idAreaGeografica,idActividadNegocio,descripcion,ventasMensual,numEmpleados,numSucursales,grupoEconomico,indicar,idPic,usuario_creacion,fecha_creacion)
 		        	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
@@ -167,7 +167,7 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO PrincipalesClientes (nombreClientePic,domicilio,telefono,idPic,usuario_creacion,fecha_creacion)
+			$sql = "INSERT INTO principalesclientes (nombreClientePic,domicilio,telefono,idPic,usuario_creacion,fecha_creacion)
 		        	VALUES (?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
@@ -193,7 +193,7 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO PrincipalesProveedores (nombreProveedor,servicio,domicilio,telefono,IdPic,usuario_creacion,fecha_creacion)
+			$sql = "INSERT INTO principalesproveedores (nombreProveedor,servicio,domicilio,telefono,IdPic,usuario_creacion,fecha_creacion)
 		        	VALUES (?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
@@ -218,7 +218,7 @@ class DtNewDataPicJurdico extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO InteresInfo(idTipoPerJuridica,idConstitucion,idCatalogoAE,idBusquedaRes,idPaisAE,idDepto,idPic,usuario_creacion,fecha_creacion)
+			$sql = "INSERT INTO interesinfo(idTipoPerJuridica,idConstitucion,idCatalogoAE,idBusquedaRes,idPaisAE,idDepto,idPic,usuario_creacion,fecha_creacion)
 					VALUES(?,?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)

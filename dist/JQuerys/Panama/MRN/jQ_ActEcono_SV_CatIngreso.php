@@ -7,7 +7,7 @@ $id_pic = $_POST['id_pic'];
 
 $result = $conexion->query(
     "SELECT idCategoriaOcupacional,tipoCategoria,riesgo_CatOcup, idPic
-     FROM vw_InteresInfoPN WHERE idPic = ".$id_pic.""
+     FROM vw_interesinfopn WHERE idPic = ".$id_pic.""
 );
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {                

@@ -11,7 +11,7 @@ class DtProveedores extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idProveedores, nombre,id,ubicacion,servicio,actividadEconomica, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, idEstado,origen FROM Proveedores WHERE idEstado<>3 ";
+			$querySQL = "SELECT idProveedores, nombre,id,ubicacion,servicio,actividadEconomica, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, idEstado,origen FROM proveedores WHERE idEstado<>3 ";
 			//$querySQL = "SELECT idCliente, nombre,id, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') as fechaIngreso, origen FROM Clientes order by fechaIngreso desc limit 250";
             $stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -49,7 +49,7 @@ class DtProveedores extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Proveedores (nombre,id,ubicacion,servicio,actividadEconomica,fechaIngreso,idEstado,origen) 
+			$sql = "INSERT INTO proveedores (nombre,id,ubicacion,servicio,actividadEconomica,fechaIngreso,idEstado,origen) 
 		        VALUES (?,?,?,?,?, CURDATE(),1,?)";
 
 			$this->myCon->prepare($sql)
@@ -77,7 +77,7 @@ class DtProveedores extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM Proveedores WHERE id = ?  AND idEstado<>3;";
+			$querySQL = "SELECT * FROM proveedores WHERE id = ?  AND idEstado<>3;";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -115,7 +115,7 @@ class DtProveedores extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM Proveedores WHERE idProveedores = ?  AND idEstado<>3";
+			$querySQL = "SELECT * FROM proveedores WHERE idProveedores = ?  AND idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -153,7 +153,7 @@ class DtProveedores extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE Proveedores SET 
+			$sql = "UPDATE proveedores SET 
 			nombre = ?, 
 			id = ?, 
 			ubicacion = ?,
@@ -188,7 +188,7 @@ class DtProveedores extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE Proveedores SET idEstado = 3
+			$querySQL = "UPDATE proveedores SET idEstado = 3
 			where idProveedores= ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));

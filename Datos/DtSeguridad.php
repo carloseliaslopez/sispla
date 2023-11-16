@@ -12,7 +12,7 @@ class DtSeguridad extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idUsuario, usuario, pwd, nombres, apellidos, correo, idEstado from Usuario where  idEstado<>3";
+			$querySQL = "SELECT idUsuario, usuario, pwd, nombres, apellidos, correo, idEstado from usuario where  idEstado<>3";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -50,7 +50,7 @@ class DtSeguridad extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idRol, rolDescripcion, idEstado from Rol where idEstado<>3";
+			$querySQL = "SELECT idRol, rolDescripcion, idEstado from rol where idEstado<>3";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -83,7 +83,7 @@ class DtSeguridad extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idRolUsuario, idUsuario, idRol, rolDescripcion, usuario, pwd, nombres, apellidos, correo, idEstado from vw_RolUsuario ";
+			$querySQL = "SELECT idRolUsuario, idUsuario, idRol, rolDescripcion, usuario, pwd, nombres, apellidos, correo, idEstado from vw_rolusuario ";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -120,7 +120,7 @@ class DtSeguridad extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM rolUsuario WHERE idUsuario= ? AND idRol = ?;";
+			$querySQL = "SELECT * FROM rolusuario WHERE idUsuario= ? AND idRol = ?;";
 		
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a, $b));
@@ -152,7 +152,7 @@ class DtSeguridad extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO RolUsuario (idUsuario,idRol)
+			$sql = "INSERT INTO rolusuario (idUsuario,idRol)
 		        VALUES (?,?)";
 
 			$this->myCon->prepare($sql)
@@ -173,7 +173,7 @@ class DtSeguridad extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE RolUsuario SET 
+			$sql = "UPDATE rolusuario SET 
 			idRol = ?
 			WHERE idRolUsuario = ?";
 
@@ -199,7 +199,7 @@ class DtSeguridad extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "DELETE FROM rolUsuario WHERE idRolUsuario = ?;";
+			$querySQL = "DELETE FROM rolusuario WHERE idRolUsuario = ?;";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));
 			$this->myCon = parent::desconectar();
@@ -216,7 +216,7 @@ class DtSeguridad extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Usuario(nombres,apellidos,usuario,correo, pwd, idEstado) VALUES (?,?,?,?,?,1)";
+			$sql = "INSERT INTO usuario(nombres,apellidos,usuario,correo, pwd, idEstado) VALUES (?,?,?,?,?,1)";
 			
 			$this->myCon->prepare($sql)
 			->execute(array(
@@ -238,7 +238,7 @@ class DtSeguridad extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT idUsuario,usuario,pwd,nombres,apellidos,correo,idEstado FROM Usuario WHERE usuario = ?  AND idEstado <>3;";
+			$querySQL = "SELECT idUsuario,usuario,pwd,nombres,apellidos,correo,idEstado FROM usuario WHERE usuario = ?  AND idEstado <>3;";
 			
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -273,7 +273,7 @@ class DtSeguridad extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE Usuario SET pwd = ?, firt_time = ? WHERE idUsuario = ?";
+			$sql = "UPDATE usuario SET pwd = ?, firt_time = ? WHERE idUsuario = ?";
 
 				$this->myCon->prepare($sql)
 			     ->execute(

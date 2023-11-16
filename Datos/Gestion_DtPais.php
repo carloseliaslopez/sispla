@@ -11,7 +11,7 @@ class Gestion_DtPais extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idPais, nombrePais, calificacion, idEstado FROM Pais WHERE idEstado<>3 ";
+			$querySQL = "SELECT idPais, nombrePais, calificacion, idEstado FROM pais WHERE idEstado<>3 ";
             $stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -42,7 +42,7 @@ class Gestion_DtPais extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Pais (nombrePais,calificacion,idEstado)
+			$sql = "INSERT INTO pais (nombrePais,calificacion,idEstado)
 		        VALUES (?,?,1)";
 
 			$this->myCon->prepare($sql)
@@ -65,7 +65,7 @@ class Gestion_DtPais extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM Pais WHERE nombrePais = ? AND idEstado<>3;";
+			$querySQL = "SELECT * FROM pais WHERE nombrePais = ? AND idEstado<>3;";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -99,7 +99,7 @@ class Gestion_DtPais extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE Pais SET 
+			$sql = "UPDATE pais SET 
 			nombrePais = ?,
 			calificacion = ?,
 			idEstado = ?
@@ -128,7 +128,7 @@ class Gestion_DtPais extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE Pais SET idEstado = 3
+			$querySQL = "UPDATE pais SET idEstado = 3
 			where idPais= ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));

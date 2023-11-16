@@ -11,7 +11,7 @@ class Gestion_DtFormaPago extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idFormaPago, nombreFormaPago, idEstado, riesgoFP FROM FormaPago WHERE idEstado<>3 ";
+			$querySQL = "SELECT idFormaPago, nombreFormaPago, idEstado, riesgoFP FROM formapago WHERE idEstado<>3 ";
             $stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -42,7 +42,7 @@ class Gestion_DtFormaPago extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO FormaPago (nombreFormaPago, idEstado, riesgoFP) 
+			$sql = "INSERT INTO formapago (nombreFormaPago, idEstado, riesgoFP) 
 		        VALUES (?,?,?)";
 
 			$this->myCon->prepare($sql)
@@ -66,7 +66,7 @@ class Gestion_DtFormaPago extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM FormaPago WHERE nombreFormaPago = ? AND idEstado<>3;";
+			$querySQL = "SELECT * FROM formapago WHERE nombreFormaPago = ? AND idEstado<>3;";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -100,7 +100,7 @@ class Gestion_DtFormaPago extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE FormaPago SET
+			$sql = "UPDATE formapago SET
             nombreFormaPago = ?,
             idEstado = ?,
             riesgoFP = ?
@@ -129,7 +129,7 @@ class Gestion_DtFormaPago extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE FormaPago SET idEstado = 3
+			$querySQL = "UPDATE formapago SET idEstado = 3
 			where idFormaPago = ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));

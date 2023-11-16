@@ -7,7 +7,7 @@ $id_lugar = $_POST['id_lugar'];
 
 if ($id_lugar==1){
     $result = $conexion->query(
-        "SELECT calificacion, nombreDepartamento FROM Departamento WHERE idPais = 2 or idDepartamento = 66 or idDepartamento = 67 and idEstado<>3"
+        "SELECT calificacion, nombreDepartamento FROM departamento WHERE idPais = 2 or idDepartamento = 66 or idDepartamento = 67 and idEstado<>3"
     );
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {   

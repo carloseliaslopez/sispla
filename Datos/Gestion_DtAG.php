@@ -11,7 +11,7 @@ class Gestion_DtAG extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idAreaGeografica, nombreAreaGeografica, idEstado FROM AreaGeografica WHERE idEstado<>3 ";
+			$querySQL = "SELECT idAreaGeografica, nombreAreaGeografica, idEstado FROM areageografica WHERE idEstado<>3 ";
             $stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -40,7 +40,7 @@ class Gestion_DtAG extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO AreaGeografica (nombreAreaGeografica, idEstado)
+			$sql = "INSERT INTO areageografica (nombreAreaGeografica, idEstado)
 		        VALUES (?,1)";
 
 			$this->myCon->prepare($sql)
@@ -63,7 +63,7 @@ class Gestion_DtAG extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM AreaGeografica WHERE nombreAreaGeografica = ? AND idEstado<>3;";
+			$querySQL = "SELECT * FROM areageografica WHERE nombreAreaGeografica = ? AND idEstado<>3;";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -95,7 +95,7 @@ class Gestion_DtAG extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE AreaGeografica SET
+			$sql = "UPDATE areageografica SET
             nombreAreaGeografica = ?,
             idEstado = ?
             WHERE idAreaGeografica = ?";
@@ -122,7 +122,7 @@ class Gestion_DtAG extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE AreaGeografica SET idEstado = 3
+			$querySQL = "UPDATE areageografica SET idEstado = 3
 			where idAreaGeografica= ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));

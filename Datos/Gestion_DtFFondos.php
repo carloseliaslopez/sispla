@@ -11,7 +11,7 @@ class Gestion_DtFFondos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idFuenteFondos, nombreFuenteFondos, idEstado, riesgoFF FROM FuenteFondos WHERE idEstado<>3 ";
+			$querySQL = "SELECT idFuenteFondos, nombreFuenteFondos, idEstado, riesgoFF FROM fuentefondos WHERE idEstado<>3 ";
             $stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -41,7 +41,7 @@ class Gestion_DtFFondos extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO FuenteFondos (nombreFuenteFondos, idEstado, riesgoFF) VALUES (?,?,?)";
+			$sql = "INSERT INTO fuentefondos (nombreFuenteFondos, idEstado, riesgoFF) VALUES (?,?,?)";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -64,7 +64,7 @@ class Gestion_DtFFondos extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM FuenteFondos WHERE nombreFuenteFondos = ? AND idEstado<>3;";
+			$querySQL = "SELECT * FROM fuentefondos WHERE nombreFuenteFondos = ? AND idEstado<>3;";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -98,7 +98,7 @@ class Gestion_DtFFondos extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE FuenteFondos SET 
+			$sql = "UPDATE fuentefondos SET 
             nombreFuenteFondos = ?,
             idEstado = ?,
             riesgoFF = ?
@@ -127,7 +127,7 @@ class Gestion_DtFFondos extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE FuenteFondos SET idEstado = 3
+			$querySQL = "UPDATE fuentefondos SET idEstado = 3
 			where idFuenteFondos= ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));

@@ -10,7 +10,7 @@ class DtNewDataPicNatural extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO DatosClienteNaturalPic (fechaNacimiento,paisNacimiento,deptoPaisNacimiento,nacionalidad,deptoNacionalidad,idEstadoCivil,sexo
+			$sql = "INSERT INTO datosclientenaturalpic (fechaNacimiento,paisNacimiento,deptoPaisNacimiento,nacionalidad,deptoNacionalidad,idEstadoCivil,sexo
             ,ndependientes,tipoIdentificacion,numIdentificacion,paisEmision,fechaEmision,fechaVencimiento
             ,direccionDomicilio,PaisDomicilio,deptoPaisDomicilio,telefono,celular,correoPersonaNatural,profesion,idPic)
             VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -52,7 +52,7 @@ class DtNewDataPicNatural extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO DatosLaborales (nombreEmpresa,cargoEmpresa,fechaIngreso,antiguedad,direccionEmpresa,paisEmpresa,telefono,salarioMensual,otrosIngresos,egresosMensuales,fuenteOtrosIngresos,idPic)
+			$sql = "INSERT INTO datoslaborales (nombreEmpresa,cargoEmpresa,fechaIngreso,antiguedad,direccionEmpresa,paisEmpresa,telefono,salarioMensual,otrosIngresos,egresosMensuales,fuenteOtrosIngresos,idPic)
 		        	VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
 			$this->myCon->prepare($sql)
@@ -83,7 +83,7 @@ class DtNewDataPicNatural extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO DatosConyuge (nombreConyugue,fechaNacimiento,paisNacimientoConyuge,nacionalidadConyuge,tipoIdentificacion,numeroIdentificacion
+			$sql = "INSERT INTO datosconyuge (nombreConyugue,fechaNacimiento,paisNacimientoConyuge,nacionalidadConyuge,tipoIdentificacion,numeroIdentificacion
                     ,paisEmision,profesion,celular,empresaLabora,telefono,cargoEmpresa,ingresoMensual,idPic)
 		        	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -117,7 +117,7 @@ class DtNewDataPicNatural extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Fiador (nombreFiador,RelacionDeudor,nacionalidad,tipoIdentificacionFiador,numIdFiador
+			$sql = "INSERT INTO fiador (nombreFiador,RelacionDeudor,nacionalidad,tipoIdentificacionFiador,numIdFiador
 								,paisEmision,correoFiador,celularFiador,direccionFiador,paisDomicilioFiador,telefonoFiador
 								,EmpresaFiador,telefonoEmpresa,cargoFiador,ingresoMensualFiador,idPic)
 		        	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -154,7 +154,7 @@ class DtNewDataPicNatural extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Referencias (nombreReferencia,tipoIdentificacion,numeroIdentificacion,tiempoReferido,celular,telefono,LugarLabora,idPic )
+			$sql = "INSERT INTO referencias (nombreReferencia,tipoIdentificacion,numeroIdentificacion,tiempoReferido,celular,telefono,LugarLabora,idPic )
 		        	VALUES (?,?,?,?,?,?,?,?)";
 
 			$this->myCon->prepare($sql)
@@ -181,7 +181,7 @@ class DtNewDataPicNatural extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO InteresInfoPN(idCategoriaOcupacional,idCatalogoOCGO,idCatalogo_Acti_Economica,idPaisACII,idDeptoACII,idBusquedaRes,idPic) 
+			$sql = "INSERT INTO interesinfopn(idCategoriaOcupacional,idCatalogoOCGO,idCatalogo_Acti_Economica,idPaisACII,idDeptoACII,idBusquedaRes,idPic) 
 		        	VALUES (?,?,?,?,?,?,?)";
 
 			$this->myCon->prepare($sql)

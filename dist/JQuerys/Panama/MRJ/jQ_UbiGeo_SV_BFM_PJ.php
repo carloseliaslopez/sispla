@@ -1,25 +1,25 @@
 <?php
 $html = '';
 //require "./Datos/Conexion.php";
-$conexion = new mysqli('localhost','root','CEal2000!','versatec');
+$conexion = new mysqli('172.22.1.12','localhost','Cumpl1m1ento2023*','sispla');
 $id_pic = $_POST['id_pic'];
 $id_matriz = $_POST['id_matriz'];
 
 $resultGene = $conexion->query(
 
     "SELECT bf.nombreBeneFinales, p.calificacion, bf.nacionalidadBeneFinales, p. nombrePais, bf.idPic
-    FROM BeneficiariosFinales bf
+    FROM beneficiariosfinales bf
     INNER JOIN pais p on bf.nacionalidadBeneFinales = p.Idpais
     AND bf.nacionalidadBeneFinales= ".$id_matriz."
     AND idPic=".$id_pic." 
-    AND bf.AccionesBeneFinales = (SELECT MAX(AccionesBeneFinales) FROM BeneficiariosFinales WHERE idPic= ".$id_pic.") "
+    AND bf.AccionesBeneFinales = (SELECT MAX(AccionesBeneFinales) FROM beneficiariosfinales WHERE idPic= ".$id_pic.") "
 );
 if ($resultGene->num_rows > 0){
     $result = $conexion->query(
-        "SELECT bf.deptoNacionalidadBeneFinales, d.nombreDepartamento, d.calificacion FROM BeneficiariosFinales bf
-        INNER JOIN Departamento d ON idDepartamento = deptoNacionalidadBeneFinales
+        "SELECT bf.deptoNacionalidadBeneFinales, d.nombreDepartamento, d.calificacion FROM beneficiariosfinales bf
+        INNER JOIN departamento d ON idDepartamento = deptoNacionalidadBeneFinales
         AND idPic = ".$id_pic."
-        AND bf.AccionesBeneFinales = (SELECT MAX(AccionesBeneFinales) FROM BeneficiariosFinales WHERE idPic= ".$id_pic.")"
+        AND bf.AccionesBeneFinales = (SELECT MAX(AccionesBeneFinales) FROM beneficiariosfinales WHERE idPic= ".$id_pic.")"
         
     );
     if ($result->num_rows > 0) {
@@ -31,10 +31,10 @@ if ($resultGene->num_rows > 0){
     $result = $conexion->query(
 
         "SELECT bf.nombreBeneFinales, p.calificacion, bf.nacionalidadBeneFinales, p. nombrePais, bf.idPic
-        FROM BeneficiariosFinales bf
+        FROM beneficiariosfinales bf
         INNER JOIN pais p on bf.nacionalidadBeneFinales = p.Idpais
         AND idPic=".$id_pic." 
-        AND bf.AccionesBeneFinales = (SELECT MAX(AccionesBeneFinales) FROM BeneficiariosFinales WHERE idPic= ".$id_pic.") "
+        AND bf.AccionesBeneFinales = (SELECT MAX(AccionesBeneFinales) FROM beneficiariosfinales WHERE idPic= ".$id_pic.") "
     );
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {   
@@ -43,7 +43,7 @@ if ($resultGene->num_rows > 0){
     }else{
         $result2 = $conexion->query(
             "SELECT bf.nombreBeneFinales, p.calificacion, bf.nacionalidadBeneFinales, p. nombrePais, bf.idPic
-            FROM BeneficiariosFinales bf
+            FROM beneficiariosfinales bf
             INNER JOIN pais p on bf.nacionalidadBeneFinales = p.Idpais
             AND bf.nacionalidadBeneFinales<>164
             AND idPic=".$id_pic." "

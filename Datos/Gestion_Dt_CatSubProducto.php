@@ -12,7 +12,7 @@ class Gestion_Dt_CatSubProducto extends Conexion
 			$this->myCon = parent::conectar();
 			$result = array();
 			$querySQL = "SELECT idCatalogoSubProducto, nombreSubProducto, idCategoriaProducto,nombreCategoriaProducto, riesgoSubProducto, idEstado
-                        FROM vw_CatalogoSubProducto_admin";
+                        FROM vw_catalogosubproducto_admin";
             $stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -42,7 +42,7 @@ class Gestion_Dt_CatSubProducto extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO CatalogoSubProducto (nombreSubProducto, idCategoriaProducto, riesgoSubProducto, idEstado)
+			$sql = "INSERT INTO catalogosubproducto (nombreSubProducto, idCategoriaProducto, riesgoSubProducto, idEstado)
                     VALUES (?,?,?,?)";
 
 			$this->myCon->prepare($sql)
@@ -68,7 +68,7 @@ class Gestion_Dt_CatSubProducto extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM CatalogoSubProducto WHERE nombreSubProducto= ? AND idCategoriaProducto = ? AND idEstado<>3;";
+			$querySQL = "SELECT * FROM catalogosubproducto WHERE nombreSubProducto= ? AND idCategoriaProducto = ? AND idEstado<>3;";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a, $b));
@@ -103,7 +103,7 @@ class Gestion_Dt_CatSubProducto extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE CatalogoSubProducto SET
+			$sql = "UPDATE catalogosubproducto SET
             nombreSubProducto = ?,
             idCategoriaProducto = ?,
             riesgoSubProducto = ?,
@@ -134,7 +134,7 @@ class Gestion_Dt_CatSubProducto extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE CatalogoSubProducto SET idEstado  = 3
+			$querySQL = "UPDATE catalogosubproducto SET idEstado  = 3
                         WHERE idCatalogoSubProducto = ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));

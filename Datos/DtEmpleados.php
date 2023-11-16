@@ -11,7 +11,7 @@ class DtEmpleados extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idEmpleados, nombre, ubicacion, nombreEmpresa, areaLaboral, puesto,  DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, idEstado, origen FROM Empleados WHERE idEstado<>3 ";
+			$querySQL = "SELECT idEmpleados, nombre, ubicacion, nombreEmpresa, areaLaboral, puesto,  DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, idEstado, origen FROM empleados WHERE idEstado<>3 ";
             
             $stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -49,7 +49,7 @@ class DtEmpleados extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Empleados(nombre,ubicacion,nombreEmpresa,areaLaboral,puesto,fechaIngreso,idEstado,origen)
+			$sql = "INSERT INTO empleados(nombre,ubicacion,nombreEmpresa,areaLaboral,puesto,fechaIngreso,idEstado,origen)
 		        VALUES (?,?,?,?,?, CURDATE(),1,?)";
 
 			$this->myCon->prepare($sql)
@@ -77,7 +77,7 @@ class DtEmpleados extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM Empleados WHERE nombre = ?  AND idEstado<>3;";
+			$querySQL = "SELECT * FROM empleados WHERE nombre = ?  AND idEstado<>3;";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -116,7 +116,7 @@ class DtEmpleados extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM Empleados WHERE idEmpleados = ?  AND idEstado<>3";
+			$querySQL = "SELECT * FROM empleados WHERE idEmpleados = ?  AND idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -152,7 +152,7 @@ class DtEmpleados extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE Empleados SET nombre = ?, ubicacion = ?, nombreEmpresa = ?,areaLaboral = ?, puesto = ?, idEstado= 2 
+			$sql = "UPDATE empleados SET nombre = ?, ubicacion = ?, nombreEmpresa = ?,areaLaboral = ?, puesto = ?, idEstado= 2 
             WHERE idEmpleados= ?";
 				$this->myCon->prepare($sql)
 			     ->execute(
@@ -181,7 +181,7 @@ class DtEmpleados extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE Empleados SET idEstado = 3
+			$querySQL = "UPDATE empleados SET idEstado = 3
 			where idEmpleados= ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));

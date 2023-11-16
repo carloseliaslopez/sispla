@@ -2,12 +2,12 @@
 
 $html = '';
 //require "./Datos/Conexion.php";
-$conexion = new mysqli('localhost','root','CEal2000!','versatec');
+$conexion = new mysqli('172.22.1.12','localhost','Cumpl1m1ento2023*','sispla');
 $id_pic = $_POST['id_pic'];
 $id_matriz = $_POST['id_matriz'];
  
 $result = $conexion->query(
-    "SELECT * FROM DatosRepresentanteLegal WHERE idPic = ".$id_pic." and paisResidencia = ".$id_matriz." "
+    "SELECT * FROM datosrepresentantelegal WHERE idPic = ".$id_pic." and paisResidencia = ".$id_matriz." "
 );
 if ($result->num_rows > 0) {
     $html .= '<option value="2">Nacional</option>';

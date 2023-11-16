@@ -2,18 +2,18 @@
 
 $html = '';
 //require "./Datos/Conexion.php";
-$conexion = new mysqli('localhost','root','CEal2000!','versatec');
+$conexion = new mysqli('172.22.1.12','localhost','Cumpl1m1ento2023*','sispla');
 $id_pic = $_POST['id_pic'];
 $id_matriz = $_POST['id_matriz'];
  
 $result = $conexion->query(
 
     "SELECT bf.nombreBeneFinales, p.calificacion, bf.nacionalidadBeneFinales, p. nombrePais, bf.idPic
-    FROM BeneficiariosFinales bf
+    FROM beneficiariosfinales bf
     INNER JOIN pais p on bf.nacionalidadBeneFinales = p.Idpais
     AND bf.nacionalidadBeneFinales= ".$id_matriz."
     AND idPic=".$id_pic." 
-    AND bf.AccionesBeneFinales = (SELECT MAX(AccionesBeneFinales) FROM BeneficiariosFinales WHERE idPic= ".$id_pic.") "
+    AND bf.AccionesBeneFinales = (SELECT MAX(AccionesBeneFinales) FROM beneficiariosfinales WHERE idPic= ".$id_pic.") "
 );
 
 if ($result->num_rows >0) {
@@ -22,7 +22,7 @@ if ($result->num_rows >0) {
 
     $result1 = $conexion->query(
         "SELECT bf.nombreBeneFinales, p.calificacion, bf.nacionalidadBeneFinales, p. nombrePais, bf.idPic
-        FROM BeneficiariosFinales bf
+        FROM beneficiariosfinales bf
         INNER JOIN pais p on bf.nacionalidadBeneFinales = p.Idpais
         AND idPic=".$id_pic."
         AND nacionalidadBeneFinales<>164 "

@@ -13,7 +13,7 @@ class DtBusqueda_100 extends Conexion
 			$this->myCon = parent::conectar();
 			$result = array();
 					
-			$querySQL = "SELECT nombre, id, relacion, origen FROM Lista_Coincidencia;";
+			$querySQL = "SELECT nombre, id, relacion, origen FROM lista_coincidencia;";
            
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -50,7 +50,7 @@ class DtBusqueda_100 extends Conexion
 			$this->myCon = parent::conectar();
 			$result = array();
 					
-			$querySQL = "SELECT idPosibles_List, Nombre, Id, Origen, Nombre2, Origen2, idEstado, usuario_creacion, fecha_creacion, usuario_modificacion, fecha_modificacion, usuario_eliminacion, fecha_eliminacion FROM Posibles_List WHERE idEstado<>3";
+			$querySQL = "SELECT idPosibles_List, Nombre, Id, Origen, Nombre2, Origen2, idEstado, usuario_creacion, fecha_creacion, usuario_modificacion, fecha_modificacion, usuario_eliminacion, fecha_eliminacion FROM posibles_list WHERE idEstado<>3";
            
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -93,7 +93,7 @@ class DtBusqueda_100 extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE Posibles_List 
+			$querySQL = "UPDATE posibles_list 
 			SET idEstado = 3,
 			usuario_eliminacion = ?,
 			fecha_eliminacion = current_timestamp()

@@ -11,7 +11,7 @@ class DtMatrizRiesgoCompartida extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idpic, fechaPic, nombreCliente, id, origen,categoria, fechaIngreso, idEstado  FROM Pic where idEstado<>3 and categoria = 'Natural' order by fechaIngreso DESC";
+			$querySQL = "SELECT idpic, fechaPic, nombreCliente, id, origen,categoria, fechaIngreso, idEstado  FROM pic where idEstado<>3 and categoria = 'Natural' order by fechaIngreso DESC";
 			
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -49,7 +49,7 @@ class DtMatrizRiesgoCompartida extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idCategoriaProducto,nombreCategoriaProducto,idEstado  FROM CategoriaProducto where idEstado<>3";
+			$querySQL = "SELECT idCategoriaProducto,nombreCategoriaProducto,idEstado  FROM categoriaproducto where idEstado<>3";
 			
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -82,7 +82,7 @@ class DtMatrizRiesgoCompartida extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idMonto, descripcion, calificacion, idEstado  FROM Monto where idEstado<>3";
+			$querySQL = "SELECT idMonto, descripcion, calificacion, idEstado  FROM monto where idEstado<>3";
 			
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -118,7 +118,7 @@ class DtMatrizRiesgoCompartida extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idpic, fechaPic, nombreCliente, id, origen,categoria, fechaIngreso, idEstado  FROM Pic WHERE idEstado<>3 AND categoria = 'Jurídico' ORDER BY fechaIngreso DESC";
+			$querySQL = "SELECT idpic, fechaPic, nombreCliente, id, origen,categoria, fechaIngreso, idEstado  FROM pic WHERE idEstado<>3 AND categoria = 'Jurídico' ORDER BY fechaIngreso DESC";
 			
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -155,7 +155,7 @@ class DtMatrizRiesgoCompartida extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_informeIDD WHERE idCliente = ? AND productoSolicitado = ? ";
+			$querySQL = "SELECT * FROM vw_informeidd WHERE idCliente = ? AND productoSolicitado = ? ";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id,$prod));
 			

@@ -2,7 +2,7 @@
 error_reporting(0);
 $html = '';
 //require "./Datos/Conexion.php";
-$conexion = new mysqli('localhost','root','CEal2000!','versatec');
+$conexion = new mysqli('172.22.1.12','localhost','Cumpl1m1ento2023*','sispla');
 $id_name_ac = $_POST['id_name_ac'];
 
 $arr = explode(" ",$id_name_ac);
@@ -15,7 +15,7 @@ $arr[4];
  
 $result = $conexion->query(
     "SELECT nombre, origen
-    FROM ListasInternas WHERE 
+    FROM listasinternas WHERE 
             nombre LIKE'%".$arr[0]."%' and
 			nombre like'%".$arr[1]."%' and
             nombre like'%".$arr[2]."%' and

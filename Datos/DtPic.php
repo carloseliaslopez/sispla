@@ -13,7 +13,7 @@ class DtPic extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idPic, DATE_FORMAT(fechaPic, '%d/%m/%Y') AS fechaPic, nombreCliente, id, origen,categoria, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, idEstado  FROM Pic WHERE idEstado<>3 ";
+			$querySQL = "SELECT idPic, DATE_FORMAT(fechaPic, '%d/%m/%Y') AS fechaPic, nombreCliente, id, origen,categoria, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, idEstado  FROM pic WHERE idEstado<>3 ";
 			
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -51,7 +51,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT idpic, DATE_FORMAT(fechaPic, '%d/%m/%Y') as fechaPic, nombreCliente, id, origen,categoria, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, idEstado FROM Pic WHERE idpic = ?  AND idEstado<>3";
+			$querySQL = "SELECT idpic, DATE_FORMAT(fechaPic, '%d/%m/%Y') as fechaPic, nombreCliente, id, origen,categoria, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, idEstado FROM pic WHERE idpic = ?  AND idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -117,7 +117,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT idpic, DATE_FORMAT(fechaPic, '%d/%m/%Y') as fechaPic, nombreCliente, id, origen,categoria, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, idEstado FROM Pic WHERE id = ?  AND idEstado<>3";
+			$querySQL = "SELECT idpic, DATE_FORMAT(fechaPic, '%d/%m/%Y') as fechaPic, nombreCliente, id, origen,categoria, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, idEstado FROM pic WHERE id = ?  AND idEstado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -156,7 +156,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_DatosGenerales  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_datosgenerales  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -195,7 +195,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_datosRL  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_datosrl  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -247,7 +247,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_Accionistas  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_accionistas  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -282,7 +282,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_Benefinales  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_benefinales  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -319,7 +319,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_ActividadEconomica  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_actividadeconomica  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -367,7 +367,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_PrincipalesClientes  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_principalesclientes  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -399,7 +399,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_PrincipalesProveedores  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_principalesproveedores  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -435,7 +435,7 @@ class DtPic extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE Pic SET idEstado = 3
+			$querySQL = "UPDATE pic SET idEstado = 3
 			WHERE idPic = ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));
@@ -455,7 +455,7 @@ class DtPic extends Conexion
 			$querySQL = "SELECT idInteresInfo,idTipoPerJuridica, tipoPersona, idConstitucion, fechaConstitucion, 
 			idCatalogoAE, descripcion, idBusquedaRes, busqueda, idPaisAE, nombrePais, idDepto, 
 			nombreDepartamento, idPic 
-			FROM vw_InteresInfo WHERE idPic = ? ";
+			FROM vw_interesinfo WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -500,7 +500,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_DatosClienteNaturalPic  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_datosclientenaturalpic  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -559,7 +559,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_DatosLaborales  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_datoslaborales  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -600,7 +600,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_DatosConyuge  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_datosconyuge  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -645,7 +645,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM vw_Fiador  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM vw_fiador  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -692,7 +692,7 @@ class DtPic extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM Referencias  WHERE idPic = ? ";
+			$querySQL = "SELECT * FROM referencias  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -733,7 +733,7 @@ class DtPic extends Conexion
 						descripcionCGO, riesgoCGO, idCatalogo_Acti_Economica, codigoCIIU, descripcion, riesgo_AC, idPaisACII,
 						nombrePais, riesgo_Pais, idDeptoACII, nombreDepartamento, riesgo_Depto, idBusquedaRes, busqueda, 
 						riesgo_Busqueda,idPic
-			 FROM vw_InteresInfoPN  WHERE idPic = ? ";
+			 FROM vw_interesinfopn  WHERE idPic = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));

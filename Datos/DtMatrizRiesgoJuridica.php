@@ -15,7 +15,7 @@ class DtMatrizRiesgoJuridica extends Conexion
 			personalidadJuridica,fechaConstitucion,actividadEconomica,lugarActividadEconomica,
 			resultadosBusquedas,condicionPEP,productoSolicitado,monto,formaPago,origenRecursos,riesgoCliente,
 			DATE_FORMAT(fechaRealizacion, '%d/%m/%Y') AS 'fechaRealizacion',tipoCliente,paisMatriz,idCliente,idEstado,proximaRevision
-			FROM MatrizRiesgoJuridico 
+			FROM matrizriesgojuridico 
 			WHERE idEstado<>3 ";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -68,7 +68,7 @@ class DtMatrizRiesgoJuridica extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM MatrizRiesgoJuridico WHERE idCliente = ? AND productoSolicitado = ?  AND idEstado<>3;";
+			$querySQL = "SELECT * FROM matrizriesgojuridico WHERE idCliente = ? AND productoSolicitado = ?  AND idEstado<>3;";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a,$b));
@@ -121,7 +121,7 @@ class DtMatrizRiesgoJuridica extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO MatrizRiesgoJuridico 
+			$sql = "INSERT INTO matrizriesgojuridico 
 				(idCliente, cliente, lugarConstitucion, lugarNacimiento_RL, lugarNacionalidad_RL,lugarResidencia_RL, lugarNacionalidad_ACM, lugarNacionalidad_BFM, 
 				personalidadJuridica,fechaConstitucion,actividadEconomica,lugarActividadEconomica,
 				resultadosBusquedas,condicionPEP,productoSolicitado,monto,formaPago,origenRecursos,riesgoCliente,
@@ -172,7 +172,7 @@ class DtMatrizRiesgoJuridica extends Conexion
 			personalidadJuridica,fechaConstitucion,actividadEconomica,lugarActividadEconomica,
 			resultadosBusquedas,condicionPEP,productoSolicitado,monto,formaPago,origenRecursos,riesgoCliente,
 			DATE_FORMAT(fechaRealizacion, '%d/%m/%Y') AS 'fechaRealizacion',tipoCliente,paisMatriz,idCliente,idEstado,proximaRevision,diasRestantes
-			FROM vw_MatrizRiesgoJuridico 
+			FROM vw_matrizriesgojuridico 
 			WHERE idEstado<>3 ";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();

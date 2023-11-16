@@ -5,7 +5,6 @@ if (!isset($_SESSION['idUsuario'])){
     header("Location: ../dist/login.php");
 }
 
-
 $nombre = $_SESSION['usuario'];
 $rol = $_SESSION ['idRol'];
 
@@ -24,7 +23,6 @@ $rol = $_SESSION ['idRol'];
     <title>Pagina Principal</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script> -->
     <script src="fontawesome5.15.1/js/all.min.js"></script>
 </head>
 
@@ -34,7 +32,6 @@ $rol = $_SESSION ['idRol'];
     <?php require "../dist/LayoutSidenav.php" ?>
     
         
-
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
@@ -119,21 +116,6 @@ $rol = $_SESSION ['idRol'];
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <script src="assets/demo/datatables-demo.js"></script>
 
-
-<!---  
-    <script>
-        $(document).ready(function(){
-           
-            var result = confirm("Go to documents");
-            if (result == true) {
-                doc = "Link HREF";
-            } else {
-                doc = "Cancel was pressed.";
-            }
-        
-        });
-    </script>
--->  
 
 </body>
 

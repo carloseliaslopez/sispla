@@ -11,7 +11,7 @@ class Gestion_DtDepartamento extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idDepartamento,nombreDepartamento,calificacion,idEstado,idPais,nombrePais  FROM vw_Departamento";
+			$querySQL = "SELECT idDepartamento,nombreDepartamento,calificacion,idEstado,idPais,nombrePais  FROM vw_departamento";
             $stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -42,7 +42,7 @@ class Gestion_DtDepartamento extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "INSERT INTO Departamento (nombreDepartamento,calificacion,idEstado,idPais)
+			$sql = "INSERT INTO departamento (nombreDepartamento,calificacion,idEstado,idPais)
 		        VALUES (?,?,1,?)";
 
 			$this->myCon->prepare($sql)
@@ -67,7 +67,7 @@ class Gestion_DtDepartamento extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT * FROM Departamento WHERE nombreDepartamento= ? AND idPais = ? AND idEstado<>3;";
+			$querySQL = "SELECT * FROM departamento WHERE nombreDepartamento= ? AND idPais = ? AND idEstado<>3;";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a, $b));
@@ -102,7 +102,7 @@ class Gestion_DtDepartamento extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$sql = "UPDATE Departamento SET 
+			$sql = "UPDATE departamento SET 
 			nombreDepartamento = ?,
 			calificacion = ?,
 			idEstado = ?,
@@ -133,7 +133,7 @@ class Gestion_DtDepartamento extends Conexion
 		try 
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "UPDATE Departamento SET idEstado = 3
+			$querySQL = "UPDATE departamento SET idEstado = 3
 			where idDepartamento= ?";
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($id));
