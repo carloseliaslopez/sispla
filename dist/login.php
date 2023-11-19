@@ -1,7 +1,7 @@
 
 <?php
 //error_reporting(0);
-require "../Datos/Connect.php";
+require "../Datos/Conexion.php";
 
 
 session_start();

@@ -14,7 +14,7 @@ class Conexion
 	{
         $serverName = '172.22.1.12';
         $dbName = 'sispla';
-        $userName = 'localhost';
+        $userName = 'root';
         $pwd = 'Cumpl1m1ento2023*';
        
 		try
@@ -30,7 +30,7 @@ class Conexion
             echo "La conexion fallo!";
 			die($e->getMessage());
 		}
-        //echo "Se conecto de BD exitosamente!";
+        echo "Se conecto de BD exitosamente!";
     }
 
     public function desconectar()
@@ -49,6 +49,8 @@ class Conexion
     }
 
 }
+$con = new Conexion ();
+$con->conectar();
 
 
 ?>

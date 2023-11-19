@@ -1,9 +1,9 @@
 <?php
 
 $html = '';
-$conexion = new mysqli('172.22.1.12','localhost','Cumpl1m1ento2023*','sispla');
 
-//require "./Datos/Conexion.php";
+require "./Datos/Conexion.php";
+//$conexion = new mysqli('172.22.1.12','localhost','Cumpl1m1ento2023*','sispla');
  
 $id_pic = $_POST['id_pic'];
  

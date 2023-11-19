@@ -7,15 +7,13 @@ include '../Datos/DtPic.php';
 
 $datospic = new DtPic();
 
-include '../Datos/DtClientes.php';
-
 session_start();
 if (!isset($_SESSION['idUsuario'])){
     header("Location: ../dist/login.php");
 }
 $nombre = $_SESSION['usuario'];
 $rol = $_SESSION ['idRol'];
-$datosClientes = new DtClientes();
+$datosClientes = new DtPic();
 //variables de jalerts
 
 
@@ -266,27 +264,7 @@ if(isset($varMsjDelEmp))
             }
             
         </script>
-          
-        <script>
-          // SEGUNDA FORMA - INCLUYE EL API DE JALERT
-          function deleteEmp()
-            {
-            
-            confirm(function(e,btn)
-            { //event + button clicked
-                e.preventDefault();
-                window.location.href = "../negocio/NgControlBonos.php?delEmp=<?php echo $r->__GET('id_bono'); ?>";
-                //successAlert('Confirmed!');
-            }, 
-            function(e,btn)
-            {
-                e.preventDefault();
-                //errorAlert('Denied!');
-            });
-
-            }
-        </script>
-        
+                  
 
         <script>
             $(document).ready(function ()
