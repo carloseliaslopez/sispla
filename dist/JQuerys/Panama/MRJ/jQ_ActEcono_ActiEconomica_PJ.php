@@ -1,9 +1,9 @@
 <?php
 
 $html = '';
-require "./Datos/Conexion.php";
+//require "./Datos/Conexion.php";
          
-//$conexion = new mysqli('172.22.1.12','localhost','Cumpl1m1ento2023*','sispla');
+$conexion = new mysqli('172.22.1.12','localhost','Cumpl1m1ento2023*','sispla');
 $id_empleo = $_POST['id_empleo'];
 $id_matriz = $_POST['id_matriz']; 
  

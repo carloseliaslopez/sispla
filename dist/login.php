@@ -18,7 +18,7 @@ if ($_POST){
     }else{
 
         $sql = "SELECT idRolUsuario, idUsuario, idRol, idOpciones, usuario, pwd, nombres, apellidos, correo, idEstado,firt_time, RolDescripcion, opcionDescripcion
-            from vw_Usuario_per_opc where usuario = '$username' and idEstado<>3";
+            from vw_usuario_per_opc where usuario = '$username' and idEstado<>3";
             
         $resultado = $conectar -> query($sql);
         $num = $resultado -> num_rows;
