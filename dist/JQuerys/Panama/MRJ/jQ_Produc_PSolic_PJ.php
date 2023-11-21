@@ -3,8 +3,9 @@
 
 $html = '';
 
-require "./Datos/Conexion.php";
-//$conexion = new mysqli('172.22.1.12','localhost','Cumpl1m1ento2023*','sispla');
+//require "./Datos/Conexion.php";
+$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+
 $id_categoria = $_POST['id_categoria'];
  
 $result = $conexion->query(

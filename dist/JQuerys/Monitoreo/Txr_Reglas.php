@@ -1,11 +1,12 @@
 <?php
 $html = '';
-$conexion = new mysqli('localhost','root','CEal2000!','sispla');
+
+$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 
 $id_oficina = $_POST['id_oficina'];
 
 $result = $conexion->query(
-    "SELECT idOficinaRegla, idOficina, nombreOficina, idRegla, nombreRegla  FROM vw_oficinaRegla WHERE idOficina = ".$id_oficina." "
+    "SELECT idOficinaRegla, idOficina, nombreOficina, idRegla, nombreRegla  FROM vw_oficinaregla WHERE idOficina = ".$id_oficina." "
 );
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {   

@@ -1,6 +1,7 @@
 
 <?php
 error_reporting(0);
+$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 
 //ENTIDADES
 include '../Entidades/Evaluacion/CatalogoSubProducto.php';
