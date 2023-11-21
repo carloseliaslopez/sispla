@@ -1,6 +1,6 @@
 <?php
 $html = '';
-$conexion = new mysqli('localhost','root','CEal2000!','versatec');
+$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 
 $id_pais = $_POST['id_pais'];
 
