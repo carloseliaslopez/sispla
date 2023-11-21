@@ -37,7 +37,7 @@ $info  =new InteresInfo();
 $dtMon = new DtEditDataPicJuridico();
 $dtCom = new DtDataPicCompartidos();
 
-$vacioPais= 164;
+$vacioPais= 141;
 $vaciotexto ="N/A";
 $valor = 0;
 $origenes = 10;
