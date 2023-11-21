@@ -1,0 +1,13 @@
+INSERT INTO catalogosubproducto (nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('Flota Crédito',1,1,1,1,current_timestamp());
+INSERT INTO catalogosubproducto (nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('Flota Prepago',1,2,1,1,current_timestamp());
+INSERT INTO catalogosubproducto (nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('Tarjetas Desechables',1,2,1,1,current_timestamp());
+INSERT INTO catalogosubproducto (nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('GPS',1,1,1,1,current_timestamp());
+INSERT INTO catalogosubproducto (nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('Procesamiento Tarjetas Flota',1,1,1,1,current_timestamp());
+INSERT INTO catalogosubproducto (nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('ProfitPRO',2,2,1,1,current_timestamp());
+INSERT INTO catalogosubproducto (nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('ProfitPRO Colaterizada',2,3,1,1,current_timestamp());
+INSERT INTO catalogosubproducto (nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('TC Gold',2,2,1,1,current_timestamp());
+INSERT INTO catalogosubproducto (nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('TC Adelantos Salariales',2,1,1,1,current_timestamp());
+INSERT INTO catalogosubproducto (nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('Líneas de Crédito',3,2,1,1,current_timestamp());
+INSERT INTO catalogosubproducto (nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('Préstamos',3,2,1,1,current_timestamp());
+INSERT INTO catalogosubproducto (nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('Descuentos de Factura',3,2,1,1,current_timestamp());
+INSERT INTO catalogosubproducto (nombreSubProducto,idCategoriaProducto,riesgoSubProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('Préstamo de Planilla',3,1,1,1,current_timestamp());

@@ -1,0 +1,3 @@
+INSERT INTO Monto (descripcion,calificacion,idEstado,usuario_creacion,fecha_creacion) VALUES ('Menor a U$10,000',1,1,1,current_timestamp());
+INSERT INTO Monto (descripcion,calificacion,idEstado,usuario_creacion,fecha_creacion) VALUES('Entre U$10,000 y U$50,000',2,1,1,current_timestamp());
+INSERT INTO Monto (descripcion,calificacion,idEstado,usuario_creacion,fecha_creacion) VALUES('Mayor a U$50,000',3,1,1,current_timestamp());

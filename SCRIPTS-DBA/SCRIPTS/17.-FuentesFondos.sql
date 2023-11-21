@@ -1,0 +1,10 @@
+INSERT INTO FuenteFondos (nombreFuenteFondos,riesgoFF,idEstado,usuario_creacion,fecha_creacion) VALUES('Operaciones Actividad Económica',1,2,1,current_timestamp());
+INSERT INTO FuenteFondos (nombreFuenteFondos,riesgoFF,idEstado,usuario_creacion,fecha_creacion) VALUES('Aporte Socios',1,2,1,current_timestamp());
+INSERT INTO FuenteFondos (nombreFuenteFondos,riesgoFF,idEstado,usuario_creacion,fecha_creacion) VALUES('Financiamiento',1,2,1,current_timestamp());
+INSERT INTO FuenteFondos (nombreFuenteFondos,riesgoFF,idEstado,usuario_creacion,fecha_creacion) VALUES('Traslado de Fondos de Otra entidad',1,2,1,current_timestamp());
+INSERT INTO FuenteFondos (nombreFuenteFondos,riesgoFF,idEstado,usuario_creacion,fecha_creacion) VALUES('Salario',1,1,1,current_timestamp());
+INSERT INTO FuenteFondos (nombreFuenteFondos,riesgoFF,idEstado,usuario_creacion,fecha_creacion) VALUES('Subvenciones',1,2,1,current_timestamp());
+INSERT INTO FuenteFondos (nombreFuenteFondos,riesgoFF,idEstado,usuario_creacion,fecha_creacion) VALUES('Donaciones',1,2,1,current_timestamp());
+INSERT INTO FuenteFondos (nombreFuenteFondos,riesgoFF,idEstado,usuario_creacion,fecha_creacion) VALUES('Ahorro',1,2,1,current_timestamp());
+INSERT INTO FuenteFondos (nombreFuenteFondos,riesgoFF,idEstado,usuario_creacion,fecha_creacion) VALUES('Otro',1,3,1,current_timestamp());
+INSERT INTO FuenteFondos (nombreFuenteFondos,riesgoFF,idEstado,usuario_creacion,fecha_creacion) VALUES('N/A',1,0,1,current_timestamp());

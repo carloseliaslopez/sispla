@@ -1,6 +1,6 @@
 
 <?php
-//error_reporting(0);
+error_reporting(0);
 require "../Datos/Conexion.php";
 
 
@@ -20,7 +20,7 @@ if ($_POST){
         $sql = "SELECT idRolUsuario, idUsuario, idRol, idOpciones, usuario, pwd, nombres, apellidos, correo, idEstado,firt_time, RolDescripcion, opcionDescripcion
             from vw_usuario_per_opc where usuario = '$username' and idEstado<>3";
             
-        $resultado = $conectar -> query($sql);
+        $resultado = $conexion -> query($sql);
         $num = $resultado -> num_rows;
 
 

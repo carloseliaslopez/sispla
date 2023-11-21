@@ -1,0 +1,13 @@
+INSERT INTO Empresa (razonSocial,idPaisOrigen,idEstado,usuario_creacion,fecha_creacion) VALUES ('SV Payment Solutions, S.A.P.I. de C.V.',7,1,1,current_timestamp());
+INSERT INTO Empresa (razonSocial,idPaisOrigen,idEstado,usuario_creacion,fecha_creacion) VALUES ('Versatec Processing de México, S.A.P.I. de C.V.',7,1,1,current_timestamp());
+INSERT INTO Empresa (razonSocial,idPaisOrigen,idEstado,usuario_creacion,fecha_creacion) VALUES ('Versatile Tecnology de Guatemala, S.A.',5,1,1,current_timestamp());
+INSERT INTO Empresa (razonSocial,idPaisOrigen,idEstado,usuario_creacion,fecha_creacion) VALUES ('Medios de Pago, FC, S.A.',5,1,1,current_timestamp());
+INSERT INTO Empresa (razonSocial,idPaisOrigen,idEstado,usuario_creacion,fecha_creacion) VALUES ('De Uno a Uno Internacional, S.A.',5,1,1,current_timestamp());
+INSERT INTO Empresa (razonSocial,idPaisOrigen,idEstado,usuario_creacion,fecha_creacion) VALUES ('Versatile Technology de El Salvador, S.A.',3,1,1,current_timestamp());
+INSERT INTO Empresa (razonSocial,idPaisOrigen,idEstado,usuario_creacion,fecha_creacion) VALUES ('Financia Credit, S.A. de C.V.',3,1,1,current_timestamp());
+INSERT INTO Empresa (razonSocial,idPaisOrigen,idEstado,usuario_creacion,fecha_creacion) VALUES ('Versatile Tecnology de Honduras, S.A.',4,1,1,current_timestamp());
+INSERT INTO Empresa (razonSocial,idPaisOrigen,idEstado,usuario_creacion,fecha_creacion) VALUES ('Medios de Pago FC de Costa Rica S.A.',6,1,1,current_timestamp());
+INSERT INTO Empresa (razonSocial,idPaisOrigen,idEstado,usuario_creacion,fecha_creacion) VALUES ('D Uno a Uno S.A.',6,1,1,current_timestamp());
+INSERT INTO Empresa (razonSocial,idPaisOrigen,idEstado,usuario_creacion,fecha_creacion) VALUES ('VersaTech Z.F., S.A.',6,1,1,current_timestamp());
+INSERT INTO Empresa (razonSocial,idPaisOrigen,idEstado,usuario_creacion,fecha_creacion) VALUES ('Financia Credit, S.A.',2,1,1,current_timestamp());
+INSERT INTO Empresa (razonSocial,idPaisOrigen,idEstado,usuario_creacion,fecha_creacion) VALUES ('Versatile Technology Inc.',2,1,1,current_timestamp());

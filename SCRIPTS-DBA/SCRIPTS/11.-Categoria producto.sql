@@ -1,0 +1,3 @@
+INSERT INTO CategoriaProducto (nombreCategoriaProducto,idEstado,usuario_creacion,fecha_creacion) VALUES ('Flota',1,1,current_timestamp());
+INSERT INTO CategoriaProducto (nombreCategoriaProducto,idEstado,usuario_creacion,fecha_creacion) VALUES('Tarjeta',1,1,current_timestamp());
+INSERT INTO CategoriaProducto (nombreCategoriaProducto,idEstado,usuario_creacion,fecha_creacion) VALUES('Convencional',1,1,current_timestamp());

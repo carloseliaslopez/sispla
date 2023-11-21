@@ -17,6 +17,8 @@ class Conexion
         $dbName = 'sispla';
         $userName = 'admin';
         $pwd = 'adminCump123.';
+        //$userName = 'root';
+        //$pwd = 'CEal2000!';
         
 		try
 		{
@@ -25,7 +27,7 @@ class Conexion
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
          
             return $this->pdo; 	
-            echo "Se conecto de BD exitosamente!";
+            //echo "Se conecto de BD exitosamente!";
 		}
 		catch(PDOException $e)
 		{
@@ -40,7 +42,7 @@ class Conexion
         try
 		{
             $pdo = null;
-           echo "Se desconecto de BD exitosamente!";
+           //echo "Se desconecto de BD exitosamente!";
             return $pdo; 		        
         }
         catch(PDOException $e)
@@ -51,6 +53,5 @@ class Conexion
     }
 
 }
-$con = new Conexion ();
-$con->conectar();
+
 ?>
