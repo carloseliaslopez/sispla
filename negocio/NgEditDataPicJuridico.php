@@ -603,7 +603,7 @@ if ($_POST)
                 } 
 
                 if(empty($_POST['interes_LAE'])){
-                    $info->__SET('idPaisAE',164);
+                    $info->__SET('idPaisAE',$vacioPais);
                 }else{
                     $info->__SET('idPaisAE', $_POST['interes_LAE']);
                 }

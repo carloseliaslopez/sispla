@@ -1,0 +1,92 @@
+HALLAZGO 1
+
+actualizacion de expediente
+-sistema por producto (flota, svfinaciero,..)
+-sistema de integracion (sispla) sin aprobacion de sistema (cambio de status), 
+	-revisado (aplico ddc)- 
+	-aprobado por Credito (cliente de aprobacion) 
+	-Denegado por Credito
+	-activo (desde de la utilizacion)
+	-innactivo (lo usa pero no trabaja)
+	-cancelado (deja de ser cliente)
+
+metodologia de trabajo 
+	1- casos de cliente
+Todos los casos de credito -y adicionales (todos)
+
+-revisado (aplico ddc)- 
+
+	-verificacion completa segun el monto
+	-registre al cliente 
+	-genere matriz de riesgo
+	- si es bajo solo se verifica en intelicheck
+	-medio; google, inteluiches, busquedas en google
+
+-APROBADO
+denegado activo innactivo, denegado (Cambio por jefe inmediato inmediato)
+
+
+///////////////////////////////////////////
+Para creditos
+Pic a
+-Campos Obligatorios -- (me los enviará jefe inmediato)
+	-Para agregar en pic (Cotiza en Bolsa) (si/no) (cbx)
+	-Dignatarios/Directores (nombre, id, cargo) de 1 a *
+	-Apoderados (nombre, id, cargo) de 1 a *
+
+-actualizacion y remediacion (clientes si estan actualizado y tienen documentos)
+-verificacion de cliente (datos cliente) (Flota, SVemisor, SVFinanciero) -
+
+
+Generar API REST para conectar todas los Sistemas de Generales ()
+Solo Notificar actualizacion de sistema (); nivel 90%
+
+
+HALLAZGO 2 resolve hallazgo 1
+
+HALLAZGO 3
+-Crear un formato de para clientes de alto riesgo enviar el formato al gerente general para informar y anexar al expediente
+
+
+VERIFICAR 
+
+RAZON SOCIAL
+NOMBRE COMPLETO
+ACCIONISTA
+BENEFICIARIO FINAL
+
+
+DIGNATARIOS/DIRECTORES
+APODERADO
+
+para busquedas
+generar constancia sobre a la verificacion  (OFAC/ONU) 
+# clientes automaticicos,
+# Clientes
+para circulares  (cliente empleados, proveedores/ apoderado,dignatario, repre legal, accionista, beneficiaro final) (80)
+
+H8.
+Posible monitoreo de cliente de flota (monitoreo de flota)
+Revision de Alertas Para cada Oficina
+Alertas de monitoreo
+
+
+
+
+////////////////////
+
+para 17/11/2023
+-Revisar conexion de base de datos 
+-revisar conexion de servidor web
+-revisar conexion de localhost y flujo 
+-integracion de data
+ 
+
+
+
+
+
+
+
+
+

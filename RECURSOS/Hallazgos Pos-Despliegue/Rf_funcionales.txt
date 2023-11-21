@@ -1,0 +1,11 @@
+RF1: Modificar de Estados de Los clientes
+RF2: Agregar de Campos adicionales a la BD, (Cotiza en Bolsa), Dignatarios/DIRECTORES/ Apoderados
+RF3: verificacion de en lista ofac/onu cliente_nat/rz/apoderado/rep/bf
+RF4: Generar constancia de barrido  individuales 
+RF5: Generar reportes de constancia de barridos mensuales (# cliente / hora de barrido / fecha)
+RF6: Integrar a constancia indivuales, (RZ, Cliente_nat, RL, AC, BF, Empleados, Proveedores)
+RF7: Integrar la fecha proxima a vencerse de los Representante Legales
+
+RNF 1: Regla negocio, si el cliente no tiene BF agregar datos de los accionistas, siguiendo la parametrizacion del campo accionista
+RNF 2: 
+
