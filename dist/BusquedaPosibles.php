@@ -4,13 +4,13 @@ session_start();
      $conexion = new mysqli('localhost','admin','adminCump123.','sispla'); 
     $query = "SELECT nombre, id, origen FROM vw_consol_nombre";
 
-        if ($result = $mysqli->query($query)) {
+        if ($result = $conexion->query($query)) {
             while ($row = $result->fetch_assoc()) {
                 $Nombre = $row["nombre"];
                 $Id = $row["id"];
                 $Origen = $row["origen"];
             
-                    $mysqli = new mysqli("localhost", 'admin','adminCump123.','global_risk_lists'); 
+                    $conexion2 = new mysqli("localhost", 'admin','adminCump123.','global_risk_lists'); 
                     $query2 = " SELECT  fullName_I AS 'fullname', origen , MATCH (fullName_I) AGAINST ('$Nombre') AS puntuacion
                                 FROM ofac_list_in WHERE  MATCH (fullName_I) AGAINST ('$Nombre')
                                 
@@ -29,7 +29,7 @@ session_start();
                             
                             ";
                     
-                    $result2 = $mysqli->query($query2);
+                    $result2 = $conexion2->query($query2);
                                                                                     
                         while ($row2 = $result2->fetch_assoc()) {
                             $Nombre = $row["nombre"];
@@ -42,9 +42,9 @@ session_start();
                            
                             
 
-                           $mysqli = new mysqli("localhost", 'admin','adminCump123.','sispla'); 
+                           $conexion3 = new mysqli("localhost", 'admin','adminCump123.','sispla'); 
                            $query3 = "INSERT IGNORE INTO posibles_list (Nombre,Id,Origen,Nombre2,Origen2,idEstado,usuario_creacion,fecha_creacion) VALUES ('$Nombre', '$Id', '$Origen', '$Nombre2','$Origen2',1,$usuario_creacion,current_timestamp());";
-                           $result3 = $mysqli->query($query3);
+                           $result3 = $conexion3->query($query3);
                             
                         }         
             }
