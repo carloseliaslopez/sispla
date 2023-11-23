@@ -1,5 +1,7 @@
+
 <?php
-//error_reporting(0);
+error_reporting(0);
+$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 
 //ENTIDADES
 include '../Entidades/Evaluacion/CatalogoSubProducto.php';
@@ -18,12 +20,6 @@ include '../Datos/DtMatrizEvaluacion.php';
 include '../Datos/DtPic.php';
 include '../Datos/DtMatrizRiesgoCompartida.php';
 
-session_start();
-if (!isset($_SESSION['idUsuario'])){
-    header("Location: ../dist/login.php");
-}
-$nombre = $_SESSION['usuario'];
-$rol = $_SESSION ['idRol'];
 //INSTANCIAS
 $combos = new DtCombos();
 $matrizE = new DtMatrizEvaluacion();
@@ -35,13 +31,20 @@ $matrizE = new DtMatrizEvaluacion();
 $varIdEmp = $_GET['editE'];
 $varProd = $_GET['editProd'];
 
+$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+
 $empEdit;
 $empEdit = $matrizE->obtenerClienteInforme($varIdEmp, $varProd);
 
 $controlAp;
 $controlAp = $matrizE->ListarControlesAplicados($varIdEmp, $varProd);
+session_start();
+if (!isset($_SESSION['idUsuario'])){
+    header("Location: ../dist/login.php");
+}
+$nombre = $_SESSION['usuario'];
+$rol = $_SESSION ['idRol'];
 
-$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,7 +72,6 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 <body class="sb-nav-fixed" >
 <?php require "../dist/navbar.php" ?>
     <div id="layoutSidenav">
-       
     <?php require "../dist/LayoutSidenav.php" ?>
         <div id="layoutSidenav_content">
             <main>
@@ -137,7 +139,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                     <!--Start table Principales clientes-->
                                     <div class="table-responsive">
                                         <table class="table table-bordered" id="tbl_ctrl_bono" width="100%" cellspacing="0">
-                                            <thead class="thead-light">
+                                            <thead>
                                                 <tr>
                                                     <th>Documento </th>
                                                     <th>Comentario</th>       
@@ -220,7 +222,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                    //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                   
                                                     //$varIdEmp = $_GET['editE'];
                                                     //$varProd = $_GET['editProd'];
     
@@ -243,7 +245,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                       
                                                         //$varIdEmp = $_GET['editE'];
                                                         //$varProd = $_GET['editProd'];
                                                         $rRP = $conexion->query("SELECT registroMercantil FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
@@ -265,7 +267,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$conexion = new mysqli('localhost','root','CEal2000!','versatec');
                                                         //$varIdEmp = $_GET['editE'];
                                                         //$varProd = $_GET['editProd'];
                                                         $rPJ = $conexion->query("SELECT poderJudicial FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
@@ -289,7 +291,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$conexion = new mysqli('localhost','root','CEal2000!','versatec');
                                                         //$varIdEmp = $_GET['editE'];
                                                         //$varProd = $_GET['editProd'];
                                                         $rICK = $conexion->query("SELECT intelichek FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
@@ -310,7 +312,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$conexion = new mysqli('localhost','root','CEal2000!','versatec');
                                                         //$varIdEmp = $_GET['editE'];
                                                         //$varProd = $_GET['editProd'];
                                                         $rIPL = $conexion->query("SELECT interpol FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
@@ -330,7 +332,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$conexion = new mysqli('localhost','root','CEal2000!','versatec');
                                                         //$varIdEmp = $_GET['editE'];
                                                         //$varProd = $_GET['editProd'];
                                                         $rFBI = $conexion->query("SELECT fbi FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
@@ -354,7 +356,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$conexion = new mysqli('localhost','root','CEal2000!','versatec');
                                                         //$varIdEmp = $_GET['editE'];
                                                         //$varProd = $_GET['editProd'];
                                                         $rOFAC = $conexion->query("SELECT ofac FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
@@ -374,7 +376,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$conexion = new mysqli('localhost','root','CEal2000!','versatec');
                                                         //$varIdEmp = $_GET['editE'];
                                                         //$varProd = $_GET['editProd'];
                                                         $rUNSC = $conexion->query("SELECT listasConsoUNSC FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
@@ -394,9 +396,9 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$conexion = new mysqli('localhost','root','CEal2000!','versatec');
                                                         //$varIdEmp = $_GET['editE'];
-                                                        //$varProd = $_GET['editProd'];
+                                                       // $varProd = $_GET['editProd'];
                                                         $rUE = $conexion->query("SELECT sancionesUE FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
                                                         $row = mysqli_fetch_array($rUE);                                                       
                                                         if($row[0] == 1){
@@ -413,7 +415,8 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             </div>    
                                         </div>
                                     </div>
-                                    <!--Start encabezado observaciones-->
+                                     <!--
+                                   
                                     <div class="col-md-12" >
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
@@ -421,16 +424,17 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             </div>
                                         </div>
                                     </div>
-                                    <!--End encabezado observaciones-->
+                                   
 
+                                   
                                     <div class="col-md-12" >
                                         <div class="form-row">
                                             <div class="form-group col-md-12">
-                                            <textarea class="form-control" id="observaciones_ME" name="observaciones_ME" rows="3" disabled> <?php echo  str_replace("<br />","",$empEdit->__GET('observaciones'),); ?></textarea>
+                                            <textarea class="form-control" id="observaciones_ME" name="observaciones_ME" rows="3" disabled> </?php echo  str_replace("<br />","",$empEdit->__GET('observaciones'),); ?></textarea>
                                             </div>
-                                                 
                                         </div>
                                     </div>
+                                                    -->
                                 </form>   
                             </div>
                         </div>
@@ -582,9 +586,6 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 
     </script>
     
-
-
-
 </body>
 
 </html>
