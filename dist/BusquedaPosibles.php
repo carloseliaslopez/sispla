@@ -42,8 +42,8 @@ session_start();
                            
                             
 
-                           $mysqli = new mysqli("localhost", 'admin','adminCump123.','global_risk_lists'); 
-                           $query3 = "INSERT IGNORE INTO posibles_List (Nombre,Id,Origen,Nombre2,Origen2,idEstado,usuario_creacion,fecha_creacion) VALUES ('$Nombre', '$Id', '$Origen', '$Nombre2','$Origen2',1,$usuario_creacion,current_timestamp());";
+                           $mysqli = new mysqli("localhost", 'admin','adminCump123.','sispla'); 
+                           $query3 = "INSERT IGNORE INTO posibles_list (Nombre,Id,Origen,Nombre2,Origen2,idEstado,usuario_creacion,fecha_creacion) VALUES ('$Nombre', '$Id', '$Origen', '$Nombre2','$Origen2',1,$usuario_creacion,current_timestamp());";
                            $result3 = $mysqli->query($query3);
                             
                         }         
