@@ -47,7 +47,9 @@ if ($_POST){
                     }
                     
                 }else{
+                    
                     echo ("Credenciales incorrectas - Intentos permitidos [] antes que la cuenta se bloquee.");
+
                 }
 
         }else{

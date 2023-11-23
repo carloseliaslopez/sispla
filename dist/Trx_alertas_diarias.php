@@ -149,7 +149,7 @@ $rol = $_SESSION ['idRol'];
                                                     <td><?php echo $r->__GET('Monto_Total'); ?></td>
                                                     
                                                     <td>
-                                                        <a href="editProveedores.php?editE=</?php echo $r->__GET('codRegla'); ?>" 
+                                                        <a href="#.php?editE=</?php echo $r->__GET('codRegla'); ?>" 
                                                         title="Revisar Señal de alerta">
                                                             <i class="fas fa-pen-square"></i>
                                                             Revisar
