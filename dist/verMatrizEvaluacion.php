@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 
 //ENTIDADES
 include '../Entidades/Evaluacion/CatalogoSubProducto.php';
@@ -17,6 +17,7 @@ include '../Datos/DtCombos.php';
 include '../Datos/DtMatrizEvaluacion.php';
 include '../Datos/DtPic.php';
 include '../Datos/DtMatrizRiesgoCompartida.php';
+
 session_start();
 if (!isset($_SESSION['idUsuario'])){
     header("Location: ../dist/login.php");
@@ -39,6 +40,8 @@ $empEdit = $matrizE->obtenerClienteInforme($varIdEmp, $varProd);
 
 $controlAp;
 $controlAp = $matrizE->ListarControlesAplicados($varIdEmp, $varProd);
+
+$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -217,7 +220,7 @@ $controlAp = $matrizE->ListarControlesAplicados($varIdEmp, $varProd);
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                    $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                   // $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                                     $varIdEmp = $_GET['editE'];
                                                     $varProd = $_GET['editProd'];
     
@@ -262,7 +265,7 @@ $controlAp = $matrizE->ListarControlesAplicados($varIdEmp, $varProd);
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                                         $varIdEmp = $_GET['editE'];
                                                         $varProd = $_GET['editProd'];
                                                         $rPJ = $conexion->query("SELECT poderJudicial FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
@@ -286,7 +289,7 @@ $controlAp = $matrizE->ListarControlesAplicados($varIdEmp, $varProd);
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                                         $varIdEmp = $_GET['editE'];
                                                         $varProd = $_GET['editProd'];
                                                         $rICK = $conexion->query("SELECT intelichek FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
@@ -307,7 +310,7 @@ $controlAp = $matrizE->ListarControlesAplicados($varIdEmp, $varProd);
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                                         $varIdEmp = $_GET['editE'];
                                                         $varProd = $_GET['editProd'];
                                                         $rIPL = $conexion->query("SELECT interpol FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
@@ -327,7 +330,7 @@ $controlAp = $matrizE->ListarControlesAplicados($varIdEmp, $varProd);
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                                         $varIdEmp = $_GET['editE'];
                                                         $varProd = $_GET['editProd'];
                                                         $rFBI = $conexion->query("SELECT fbi FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
@@ -351,7 +354,7 @@ $controlAp = $matrizE->ListarControlesAplicados($varIdEmp, $varProd);
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                                         $varIdEmp = $_GET['editE'];
                                                         $varProd = $_GET['editProd'];
                                                         $rOFAC = $conexion->query("SELECT ofac FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
@@ -371,7 +374,7 @@ $controlAp = $matrizE->ListarControlesAplicados($varIdEmp, $varProd);
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                                         $varIdEmp = $_GET['editE'];
                                                         $varProd = $_GET['editProd'];
                                                         $rUNSC = $conexion->query("SELECT listasConsoUNSC FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
@@ -391,7 +394,7 @@ $controlAp = $matrizE->ListarControlesAplicados($varIdEmp, $varProd);
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        
                                                         $varIdEmp = $_GET['editE'];
                                                         $varProd = $_GET['editProd'];
                                                         $rUE = $conexion->query("SELECT sancionesUE FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
