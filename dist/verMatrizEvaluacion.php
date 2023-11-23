@@ -220,11 +220,11 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                   // $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
-                                                    $varIdEmp = $_GET['editE'];
-                                                    $varProd = $_GET['editProd'];
+                                                    //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                    //$varIdEmp = $_GET['editE'];
+                                                    //$varProd = $_GET['editProd'];
     
-                                                    $rMB = $conexion->query("SELECT motorBusqueda FROM ControlesAplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
+                                                    $rMB = $conexion->query("SELECT motorBusqueda FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
                                                     $row = mysqli_fetch_array($rMB);
                                                                                                         
                                                     if($row[0] == 1){  
@@ -243,9 +243,9 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
-                                                        $varIdEmp = $_GET['editE'];
-                                                        $varProd = $_GET['editProd'];
+                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$varIdEmp = $_GET['editE'];
+                                                        //$varProd = $_GET['editProd'];
                                                         $rRP = $conexion->query("SELECT registroMercantil FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
                                                         $row = mysqli_fetch_array($rRP);                                                      
                                                         if($row[0] == 1){
@@ -266,8 +266,8 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                                 <div class="form-check">
                                                     <?php 
                                                         //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
-                                                        $varIdEmp = $_GET['editE'];
-                                                        $varProd = $_GET['editProd'];
+                                                        //$varIdEmp = $_GET['editE'];
+                                                        //$varProd = $_GET['editProd'];
                                                         $rPJ = $conexion->query("SELECT poderJudicial FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
                                                         $row = mysqli_fetch_array($rPJ);                                                       
                                                         if($row[0] == 1){
@@ -290,8 +290,8 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                                 <div class="form-check">
                                                     <?php 
                                                         //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
-                                                        $varIdEmp = $_GET['editE'];
-                                                        $varProd = $_GET['editProd'];
+                                                        //$varIdEmp = $_GET['editE'];
+                                                        //$varProd = $_GET['editProd'];
                                                         $rICK = $conexion->query("SELECT intelichek FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
                                                         $row = mysqli_fetch_array($rICK);                                                       
                                                         if($row[0] == 1){
@@ -311,8 +311,8 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                                 <div class="form-check">
                                                     <?php 
                                                         //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
-                                                        $varIdEmp = $_GET['editE'];
-                                                        $varProd = $_GET['editProd'];
+                                                        //$varIdEmp = $_GET['editE'];
+                                                        //$varProd = $_GET['editProd'];
                                                         $rIPL = $conexion->query("SELECT interpol FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
                                                         $row = mysqli_fetch_array($rIPL);                                                       
                                                         if($row[0] == 1){
@@ -331,8 +331,8 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                                 <div class="form-check">
                                                     <?php 
                                                         //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
-                                                        $varIdEmp = $_GET['editE'];
-                                                        $varProd = $_GET['editProd'];
+                                                        //$varIdEmp = $_GET['editE'];
+                                                        //$varProd = $_GET['editProd'];
                                                         $rFBI = $conexion->query("SELECT fbi FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
                                                         $row = mysqli_fetch_array($rFBI);                                                       
                                                         if($row[0] == 1){
@@ -355,8 +355,8 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                                 <div class="form-check">
                                                     <?php 
                                                         //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
-                                                        $varIdEmp = $_GET['editE'];
-                                                        $varProd = $_GET['editProd'];
+                                                        //$varIdEmp = $_GET['editE'];
+                                                        //$varProd = $_GET['editProd'];
                                                         $rOFAC = $conexion->query("SELECT ofac FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
                                                         $row = mysqli_fetch_array($rOFAC);                                                       
                                                         if($row[0] == 1){
@@ -375,8 +375,8 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                                 <div class="form-check">
                                                     <?php 
                                                         //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
-                                                        $varIdEmp = $_GET['editE'];
-                                                        $varProd = $_GET['editProd'];
+                                                        //$varIdEmp = $_GET['editE'];
+                                                        //$varProd = $_GET['editProd'];
                                                         $rUNSC = $conexion->query("SELECT listasConsoUNSC FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
                                                         $row = mysqli_fetch_array($rUNSC);                                                       
                                                         if($row[0] == 1){
@@ -394,9 +394,9 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                             <div class="form-group col-md-4">
                                                 <div class="form-check">
                                                     <?php 
-                                                        
-                                                        $varIdEmp = $_GET['editE'];
-                                                        $varProd = $_GET['editProd'];
+                                                        //$conexion = new mysqli('localhost','admin','adminCump123.','sispla');
+                                                        //$varIdEmp = $_GET['editE'];
+                                                        //$varProd = $_GET['editProd'];
                                                         $rUE = $conexion->query("SELECT sancionesUE FROM controlesaplicados WHERE idCliente =".$varIdEmp."  and productoSolicitado = '".$varProd."' ");
                                                         $row = mysqli_fetch_array($rUE);                                                       
                                                         if($row[0] == 1){
