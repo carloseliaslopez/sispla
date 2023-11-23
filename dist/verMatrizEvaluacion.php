@@ -443,9 +443,11 @@ $rol = $_SESSION ['idRol'];
                         <!--Start buttons-->                                              
                         <div class="col-md-12">
                             <div class="form-row">
+                                
                                 <div class="form-group col-md-4">
                                     <button type="submit" class="btn btn-primary col-md-7" onclick="printPageArea('pdf')"> <i class="fas fa-file-pdf"></i> Generar Informe</button>
                                 </div>
+                                
                                 <div class="form-group col-md-4">
                                     <button type="button" class="btn btn-success col-md-7" onclick="regresar()"> Atras</button>
                                 </div>                   
