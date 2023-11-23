@@ -13,7 +13,7 @@ include '../Datos/DtBusqueda_100.php';
 include '../Entidades/Busquedas/Busqueda_100.php';
 include '../Entidades/Busquedas/Busqueda_80.php';
 
-include '../dist/BusquedaPosibles.php';
+//include '../dist/BusquedaPosibles.php';
 
 $datosBusq = new DtBusqueda_100();
 
