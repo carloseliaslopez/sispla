@@ -40,7 +40,7 @@ $info  =new InteresInfo();
 $dtMon = new DtNewDataPicJurdico();
 $dtCom = new DtDataPicCompartidos();
 
-$vacioPais= 164;
+$vacioPais= 141;
 $vacioDepto = 67;
 $vaciotexto ="N/A";
 $valor = 0;
@@ -52,6 +52,7 @@ $depa = 67;
 $relacion = 5;
 $causa = 4;
 $nulo = NULL;
+
 if ($_POST) 
 {
     $varAccion = $_POST['txtaccion'];
@@ -236,13 +237,13 @@ if ($_POST)
                     $ac->__SET('nombreCompletoAccionistas', $nombre);
 
                     if ( $nacionalidad == NULL){
-                        $ac->__SET('nacionalidadAccionistas', 164);
+                        $ac->__SET('nacionalidadAccionistas', $vacioPais);
                     }else{
                         $ac->__SET('nacionalidadAccionistas', $nacionalidad);
                     }
 
                     if ( $deptoNac == NULL){
-                        $ac->__SET('deptoNacionalidadAccionistas', 67);
+                        $ac->__SET('deptoNacionalidadAccionistas', $vacioDepto);
                     }else{
                         $ac->__SET('deptoNacionalidadAccionistas', $deptoNac);
                     }
@@ -301,13 +302,13 @@ if ($_POST)
                    
                                       
                     if ( $nacionalidad_BF == NULL){
-                        $bf->__SET('nacionalidadBeneFinales', 164);
+                        $bf->__SET('nacionalidadBeneFinales', $vacioPais);
                     }else{
                         $bf->__SET('nacionalidadBeneFinales', $nacionalidad_BF);
                     }
 
                     if ( $deptoNac_BF == NULL){
-                        $bf->__SET('deptoNacionalidadBeneFinales', 67);
+                        $bf->__SET('deptoNacionalidadBeneFinales', $vacioDepto);
                     }else{
                         $bf->__SET('deptoNacionalidadBeneFinales', $deptoNac_BF);
                     }
@@ -484,7 +485,7 @@ if ($_POST)
                     }
                     if(empty($domicilio))
                     {
-                        $pc->__SET('domicilio',164);
+                        $pc->__SET('domicilio',$vacioPais);
                     }else{
                         $pc->__SET('domicilio', $domicilio);
                     }
@@ -534,7 +535,7 @@ if ($_POST)
 
                     if(empty($domicilioP))
                     {
-                        $pp->__SET('domicilio',164);
+                        $pp->__SET('domicilio',$vacioPais);
                     }else{
                         $pp->__SET('domicilio', $domicilioP);
                     }
@@ -647,13 +648,13 @@ if ($_POST)
                 } 
 
                 if(empty($_POST['interes_LAE'])){
-                    $info->__SET('idPaisAE',164);
+                    $info->__SET('idPaisAE',$vacioPais);
                 }else{
                     $info->__SET('idPaisAE', $_POST['interes_LAE']);
                 }
 
                 if(empty($_POST['interes_depto_LAE'])){
-                    $info->__SET('idDepto',67);
+                    $info->__SET('idDepto',$vacioDepto);
                 }else{
                     $info->__SET('idDepto', $_POST['interes_depto_LAE']);
                 }
