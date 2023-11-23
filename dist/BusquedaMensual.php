@@ -117,7 +117,7 @@ $datosBusq = new DtBusqueda_100();
                                                                                                                                                                     
                                                         <td>
                                                             <a href="verPosibles.php?editE=<?php echo $r->__GET('nombre'); ?>" 
-                                                            title="Modificar un proveedor">
+                                                            title="Posibles coincidencias">
                                                                 <i class="fas fa-pen-square"></i>
                                                                 Ver
                                                             </a>
