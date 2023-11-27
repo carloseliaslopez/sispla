@@ -8,7 +8,7 @@ $id_pic = $_POST['id_pic'];
 $id_matriz = $_POST['id_matriz']; 
 
 $result1 = $conexion->query(
-    "SELECT nacionalidad FROM datosrepresentantelegal WHERE idPic = ".$id_pic." and nacionalidad = ".$id_matriz." "
+    "SELECT nacionalidad FROM datosrepresentantelegal WHERE idPic = ".$id_pic."  "
 );
 
 if ($result1->num_rows > 0){
