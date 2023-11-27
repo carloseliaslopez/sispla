@@ -241,11 +241,11 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                      <!--End black line-->
                                         <div class="col-md-12" >
                                             <div class="form-row">
-                                                <div class="form-group col-md-4">
+                                                <div class="form-group col-md-3">
                                                     <label for="nombreCompleto_RL">Nombre completo</label>
                                                     <input type="text" class="form-control form-control-sm" id="nombreCompleto_RL" name="nombreCompleto_RL" placeholder="Nombre completo" autocomplete="off">
                                                 </div>
-                                                <div class="form-group col-md-2">
+                                                <div class="form-group col-md-3">
                                                     <label for="paisNacimiento_RL">País de nacimiento</label>
                                                     <select  class="form-control form-control-sm" id= "paisNacimiento_RL" name="paisNacimiento_RL">
                                                         <option selected disabled>Elegir..</option>
@@ -254,7 +254,7 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                         <?php endforeach; ?>
                                                     </select>
                                                 </div>
-                                                <div class="form-group col-md-2">
+                                                <div class="form-group col-md-3">
                                                     <label for="depto_paisNacimiento_RL">Departamento</label>
                                                     <select id="depto_paisNacimiento_RL" name="depto_paisNacimiento_RL"  class="form-control form-control-sm" >
                                                         <option selected  disabled >Elegir..</option>
@@ -263,7 +263,7 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                         <?php endforeach; ?>
                                                     </select>                                                
                                                 </div>
-                                                <div class="form-group col-md-2">
+                                                <div class="form-group col-md-3">
                                                     <label for="nacionalidad_RL">Nacionalidad</label>
                                                     <select class="form-control form-control-sm" id="nacionalidad_RL" name ="nacionalidad_RL">
                                                         <option selected disabled>Elegir..</option>
@@ -272,15 +272,17 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                         <?php endforeach; ?>
                                                     </select>
                                                 </div>
-                                                <div class="form-group col-md-2">
-                                                    <label for="depto_nacionalidad_RL">Departamento</label>
-                                                    <select id="depto_nacionalidad_RL" name="depto_nacionalidad_RL"  class="form-control form-control-sm" >
-                                                        <option selected  disabled >Elegir..</option>
-                                                        <?php foreach($combos->ComboDepto() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
-                                                </div>
+                                                    <!--
+                                                    <div class="form-group col-md-2">
+                                                        <label for="depto_nacionalidad_RL">Departamento</label>
+                                                        <select id="depto_nacionalidad_RL" name="depto_nacionalidad_RL"  class="form-control form-control-sm" >
+                                                            <option selected  disabled >Elegir..</option>
+                                                            <//?php foreach($combos->ComboDepto() as $r): ?>
+                                                                <option value="<//?php echo $r->__GET('idDepartamento') ?>"> <//?php echo $r->__GET('nombreDepartamento') ?></option>
+                                                            <//?php endforeach; ?>
+                                                        </select>                                                
+                                                    </div>
+                                                    -->
                                             </div>
                                         </div>
 
@@ -379,7 +381,6 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                         <tr>
                                                             <th>Nombre completo</th>
                                                             <th>Nacionalidad</th>
-                                                            <th>Departamento (si aplica)</th>
                                                             <th>N° de identificación</th>
                                                             <th>% Acciones</th>
                                                                                                     
@@ -391,9 +392,7 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                             <tr>
                                                             
                                                                 <td><?php echo $r->__GET('nombreCompletoAccionistas'); ?></td>
-                                                                <td><?php echo $r->__GET('nombre_nacionalidadAccionistas'); ?></td>
-                                                                <td><?php echo $r->__GET('nombre_deptoNacionalidadAccionistas'); ?></td>
-                                                                <td><?php echo $r->__GET('numIdAccionistas'); ?></td>
+                                                                <td><?php echo $r->__GET('nombre_nacionalidadAccionistas'); ?></td>                                                                <td><?php echo $r->__GET('numIdAccionistas'); ?></td>
                                                                 <td><?php echo $r->__GET('acciones'); ?></td>
                                                                                                                                                                 
                                                             </tr>
@@ -426,7 +425,6 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                             <th>Nombres</th>
                                                             <th>Apellidos</th>
                                                             <th>Nacionalidad</th>
-                                                            <th>Departamento (si aplica)</th>
                                                             <th>N° de identificación</th>
                                                             <th>% Acciones</th>
                                                                                                     
@@ -440,7 +438,6 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                                 <td><?php echo $r->__GET('nombreBeneFinales'); ?></td>
                                                                 <td><?php echo $r->__GET('ApellidosBeneFinales'); ?></td>
                                                                 <td><?php echo $r->__GET('nombre_nacionalidadBeneFinales'); ?></td>
-                                                                <td><?php echo $r->__GET('nombre_deptoNacionalidadBeneFinales'); ?></td>
                                                                 <td><?php echo $r->__GET('numIdBeneFinales'); ?></td>
                                                                 <td><?php echo $r->__GET('AccionesBeneFinales'); ?></td>                                                                                                 
                                                             </tr>
@@ -1038,7 +1035,6 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                 $("#paisNacimiento_RL").val("<?php echo $datosRL->__GET('paisNacimiento') ?>");
                 $("#depto_paisNacimiento_RL").val("<?php echo $datosRL->__GET('deptoPaisNacimiento') ?>");
                 $("#nacionalidad_RL").val("<?php echo $datosRL->__GET('nacionalidad') ?>");
-                $("#depto_nacionalidad_RL").val("<?php echo $datosRL->__GET('deptoNacionalidad') ?>");
                 $("#tipoId_RL").val("<?php echo $datosRL->__GET('tipoIdentificacion') ?>");  
                 $("#numeroId_RL").val("<?php echo $datosRL->__GET('numeroIdentificacion') ?>"); 
                 $("#paisEmisionId_RL").val("<?php echo $datosRL->__GET('paisEmision') ?>");
