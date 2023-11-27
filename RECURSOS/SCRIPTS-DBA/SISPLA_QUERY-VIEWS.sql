@@ -1,10 +1,8 @@
-
-CREATE VIEW vw_Accionistas as
-select a.idPic, a.nombreCompletoAccionistas, a.nacionalidadAccionistas, p.nombrePais as 'nombre_nacionalidadAccionistas',
-a.deptoNacionalidadAccionistas, d.nombreDepartamento as 'nombre_deptoNacionalidadAccionistas', a.numIdAccionistas, a.acciones
-from Accionistas a 
-inner join Pais p on a.nacionalidadAccionistas = p.idPais
-inner join Departamento d on  a.deptoNacionalidadAccionistas= d.idDepartamento;
+DROP VIEW IF EXISTS vw_accionistas;
+CREATE VIEW vw_accionistas as
+select a.idPic, a.nombreCompletoAccionistas, a.nacionalidadAccionistas, p.nombrePais as 'nombre_nacionalidadAccionistas', a.numIdAccionistas, a.acciones
+from accionistas a 
+inner join pais p on a.nacionalidadAccionistas = p.idPais;
 
 create view vw_ActividadEconomica as
 select ac.IdPic, ac.nombreComercial, ac.idTributaria, ac.anios, ac.domicilioComercial,
@@ -17,15 +15,14 @@ inner join Departamento d on ac.departamento = d.idDepartamento
 inner join AreaGeografica ag on ac.idAreaGeografica = ag.idAreaGeografica
 inner join ActividadNegocio an on ac.idActividadNegocio = an.idActividadNegocio;
 
-CREATE VIEW vw_Benefinales AS
+DROP VIEW IF EXISTS vw_benefinales;
+CREATE VIEW vw_benefinales AS
 SELECT 
 bf.idBeneficiariosFinales, bf.nombreBeneFinales, bf.ApellidosBeneFinales, 
 bf.nacionalidadBeneFinales, p.nombrePais as 'nombre_nacionalidadBeneFinales', 
-bf.deptoNacionalidadBeneFinales, d.nombreDepartamento as 'nombre_deptoNacionalidadBeneFinales',
 bf.numIdBeneFinales, bf.AccionesBeneFinales, bf.idPic
 FROM beneficiariosfinales bf 
-INNER JOIN Pais p ON bf.nacionalidadBeneFinales = p.idPais
-INNER JOIN departamento d ON bf.deptoNacionalidadBeneFinales = d.idDepartamento;
+INNER JOIN pais p ON bf.nacionalidadBeneFinales = p.idPais;
 
 /*Vistas para evaluaciones*/
 Create view vw_CatalogoSubProducto as
@@ -89,21 +86,20 @@ from DatosLaborales dtl
 inner join pais p_em on dtl.paisEmpresa = p_em.idPais;
 
 
-CREATE VIEW vw_datosRL as
+DROP VIEW IF EXISTS vw_datosrl;
+CREATE VIEW vw_datosrl as
 select drl.idPic, drl.nombreRepresentanteLegal,drl.paisNacimiento, p_pn.nombrePais as 'nombre_paisNacimiento', drl.deptoPaisNacimiento, d_naci.nombreDepartamento as 'nombre_deptoPaisNacimiento',
-drl.nacionalidad,p_na.nombrePais as 'nombre_nacionalidad',drl.deptoNacionalidad, d_nac.nombreDepartamento as 'nombre_deptoNacionalidad',drl.tipoIdentificacion,drl.numeroIdentificacion,
+drl.nacionalidad,p_na.nombrePais as 'nombre_nacionalidad',drl.tipoIdentificacion,drl.numeroIdentificacion,
 drl.paisEmision,p_pe.nombrePais as 'nombre_paisEmision', drl.fechaEmision,drl.fechaVencimiento,
 drl.paisResidencia, p_pr.nombrePais as 'nombre_paisResidencia', drl.deptoPaisResidencia, d_resi.nombreDepartamento as 'nombre_deptoPaisResidencia',
 drl.celular, drl.correo, drl.cargo, drl.profesion
-from DatosRepresentanteLegal drl 
-inner join Pais p_pn on drl.paisNacimiento = p_pn.idPais
-inner join Departamento d_naci on drl.deptoPaisNacimiento = d_naci.idDepartamento
-inner join Pais p_na on drl.nacionalidad = p_na.idPais
-inner join Departamento d_nac on drl.deptoNacionalidad = d_nac.idDepartamento
-inner join Pais p_pe on drl.paisEmision = p_pe.idPais
-inner join Pais p_pr on drl.paisResidencia = p_pr.idPais
-inner join Departamento d_resi on drl.deptoPaisResidencia = d_resi.idDepartamento;
-
+from datosrepresentantelegal drl 
+inner join pais p_pn on drl.paisNacimiento = p_pn.idPais
+inner join departamento d_naci on drl.deptoPaisNacimiento = d_naci.idDepartamento
+inner join pais p_na on drl.nacionalidad = p_na.idPais
+inner join pais p_pe on drl.paisEmision = p_pe.idPais
+inner join pais p_pr on drl.paisResidencia = p_pr.idPais
+inner join departamento d_resi on drl.deptoPaisResidencia = d_resi.idDepartamento;
 DROP VIEW IF EXISTS vw_Departamento;
 Create view vw_Departamento as
 select d.idDepartamento, d.nombreDepartamento,d.calificacion, d.idEstado, d.idPais, p.nombrePais

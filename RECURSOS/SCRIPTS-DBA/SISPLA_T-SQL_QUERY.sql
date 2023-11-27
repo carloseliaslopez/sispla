@@ -4,16 +4,16 @@ CREATE DATABASE SISPLA;
 USE SISPLA;
 
 /*TABLA DE CONTROL DE ESTADOS*/
-DROP TABLE IF EXISTS Estado;
-CREATE TABLE Estado(
+DROP TABLE IF EXISTS estado;
+CREATE TABLE estado(
 idEstado int auto_increment not null primary key,
 nombre varchar(15)
 );
 
 /*I. MODULO DE SEGURIDAD*/
 /*01. Usuario*/
-DROP TABLE IF EXISTS Usuario;
-CREATE TABLE Usuario(
+DROP TABLE IF EXISTS usuario;
+CREATE TABLE usuario(
 idUsuario int auto_increment not null primary key,
 usuario varchar(45),
 pwd varchar (150) ,
@@ -314,7 +314,6 @@ nombreRepresentanteLegal varchar (150) not null,
 paisNacimiento int null,
 deptoPaisNacimiento int null,
 nacionalidad int null,
-deptoNacionalidad int null,
 tipoIdentificacion  varchar(150) null,
 numeroIdentificacion varchar(50) null,
 paisEmision int null,
@@ -338,7 +337,6 @@ foreign key (idPic) references Pic(idPic) ON DELETE CASCADE,
 foreign key (paisNacimiento) references Pais(idPais),
 foreign key (deptoPaisNacimiento) references Departamento(idDepartamento),
 foreign key (nacionalidad) references Pais(idPais),
-foreign key (deptoNacionalidad) references Departamento(idDepartamento),
 foreign key (paisEmision) references Pais(idPais),
 foreign key (paisResidencia) references Pais(idPais),
 foreign key (deptoPaisResidencia) references Departamento(idDepartamento),
@@ -353,7 +351,6 @@ CREATE TABLE Accionistas(
 idAccionistas int auto_increment not null primary key,  
 nombreCompletoAccionistas varchar (250) null,
 nacionalidadAccionistas int null,
-deptoNacionalidadAccionistas int null,
 numIdAccionistas varchar(50) null,
 Acciones float null,
 idPic int,
@@ -365,7 +362,6 @@ usuario_eliminacion int null,
 fecha_eliminacion datetime null,
 foreign key (idPic) references Pic(idPic) ON DELETE CASCADE,
 foreign key (nacionalidadAccionistas) references Pais(idPais),
-foreign key (deptoNacionalidadAccionistas) references Departamento(idDepartamento),
 FOREIGN KEY (usuario_creacion) REFERENCES Usuario(idUsuario),
 FOREIGN KEY (usuario_modificacion) REFERENCES Usuario(idUsuario),
 FOREIGN KEY (usuario_eliminacion) REFERENCES Usuario(idUsuario)
@@ -378,7 +374,6 @@ idBeneficiariosFinales int auto_increment not null primary key,
 nombreBeneFinales varchar (150) null,
 ApellidosBeneFinales varchar(150) null,
 nacionalidadBeneFinales int null,
-deptoNacionalidadBeneFinales int null,
 numIdBeneFinales varchar(50) null,
 AccionesBeneFinales float null,
 idPic int,
@@ -391,8 +386,6 @@ fecha_eliminacion datetime null,
 
 foreign key (idPic) references Pic(idPic) ON DELETE CASCADE,
 foreign key (nacionalidadBeneFinales) references Pais(idPais),
-foreign key (deptoNacionalidadBeneFinales) references Departamento(idDepartamento),
-
 FOREIGN KEY (usuario_creacion) REFERENCES Usuario(idUsuario),
 FOREIGN KEY (usuario_modificacion) REFERENCES Usuario(idUsuario),
 FOREIGN KEY (usuario_eliminacion) REFERENCES Usuario(idUsuario)

@@ -201,11 +201,11 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                      <!--End black line-->
                                         <div class="col-md-12" >
                                             <div class="form-row">
-                                                <div class="form-group col-md-4">
+                                                <div class="form-group col-md-3">
                                                     <label for="nombreCompleto_RL">Nombre completo</label>
                                                     <input type="text" class="UpperCase form-control form-control-sm" id="nombreCompleto_RL" name="nombreCompleto_RL" placeholder="Nombre completo" autocomplete="off">
                                                 </div>
-                                                <div class="form-group col-md-2">
+                                                <div class="form-group col-md-3">
                                                     <label for="paisNacimiento_RL">País de nacimiento</label>
                                                     <select  class="form-control form-control-sm" id= "paisNacimiento_RL" name="paisNacimiento_RL">
                                                         <option selected disabled>Elegir..</option>
@@ -214,7 +214,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                         <?php endforeach; ?>
                                                     </select>
                                                 </div>
-                                                <div class="form-group col-md-2">
+                                                <div class="form-group col-md-3">
                                                     <label for="depto_paisNacimiento_RL">Departamento</label>
                                                     <select id="depto_paisNacimiento_RL" name="depto_paisNacimiento_RL"  class="form-control form-control-sm" >
                                                         <option selected  disabled >Elegir..</option>
@@ -223,24 +223,28 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                         <?php endforeach; ?>
                                                     </select>                                                
                                                 </div>
-                                                <div class="form-group col-md-2">
+                                                    
+                                                <div class="form-group col-md-3">
                                                     <label for="nacionalidad_RL">Nacionalidad</label>
                                                     <select class="form-control form-control-sm" id="nacionalidad_RL" name ="nacionalidad_RL">
                                                         <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboPais() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option>
-                                                        <?php endforeach; ?>
+                                                        <//?php foreach($combos->ComboPais() as $r): ?>
+                                                            <option value="<//?php echo $r->__GET('idPais') ?>"> <//?php echo $r->__GET('nombrePais') ?></option>
+                                                        <//?php endforeach; ?>
                                                     </select>
                                                 </div>
+                                                
+                                                <!--
                                                 <div class="form-group col-md-2">
                                                     <label for="depto_nacionalidad_RL">Departamento</label>
                                                     <select id="depto_nacionalidad_RL" name="depto_nacionalidad_RL"  class="form-control form-control-sm" >
                                                         <option selected  disabled >Elegir..</option>
-                                                        <?php foreach($combos->ComboDepto() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                        <?php endforeach; ?>
+                                                        <//?php foreach($combos->ComboDepto() as $r): ?>
+                                                            <option value="<//?php echo $r->__GET('idDepartamento') ?>"> <//?php echo $r->__GET('nombreDepartamento') ?></option>
+                                                        <//?php endforeach; ?>
                                                     </select>                                                
                                                 </div>
+                                                -->
                                             </div>
                                         </div>
 
@@ -347,7 +351,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                         <div class="input_fields_wrap" id ="input_fields_wrap">
                                             <div class="col-md-12" >
                                                 <div class="form-row">
-                                                    <div class="form-group col-md-3">
+                                                    <div class="form-group col-md-4">
                                                         <label for="nombre_AC[]">Nombre completo o razón social</label>
                                                         <input type="text" class="UpperCase form-control form-control-sm" id="nombre_AC[]" name="nombre_AC[]" placeholder="Nombre completo o razón social" autocomplete="off" required>
                                                         <p id="filtracion_AC" name="filtracion_AC" ></p>
@@ -365,17 +369,19 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                         </select>
                                                     </div>
 
-                                                    <div class="form-group col-md-2">
-                                                        <label for="depto_nacionalidad_AC">Departamento</label>
-                                                        <select id="depto_nacionalidad_AC" name="depto_nacionalidad_AC[]"  class="form-control form-control-sm" >
-                                                            <option selected  disabled >Elegir..</option>
-                                                            <?php foreach($combos->ComboDepto() as $r): ?>
-                                                                <option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                            <?php endforeach; ?>
-                                                        </select>                                                
-                                                    </div>
+                                                        <!--
+                                                        <div class="form-group col-md-2">
+                                                            <label for="depto_nacionalidad_AC">Departamento</label>
+                                                            <select id="depto_nacionalidad_AC" name="depto_nacionalidad_AC[]"  class="form-control form-control-sm" >
+                                                                <option selected  disabled >Elegir..</option>
+                                                                <//?php foreach($combos->ComboDepto() as $r): ?>
+                                                                    <option value="<//?php echo $r->__GET('idDepartamento') ?>"> <//?php echo $r->__GET('nombreDepartamento') ?></option>
+                                                                <//?php endforeach; ?>
+                                                            </select>                                                
+                                                        </div>
+                                                        -->
 
-                                                    <div class="form-group col-md-2">
+                                                    <div class="form-group col-md-3">
                                                         <label for="id_AC[]">N° de identificación</label>
                                                         <input type="text" class="UpperCase form-control form-control-sm" id="id_AC[]" name="id_AC[]" placeholder="N° de identificación" autocomplete="off" > 
                                                     </div>
@@ -423,11 +429,11 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                         <div class="input_fields_wrap_BF" id ="input_fields_wrap_BF">
                                             <div class="col-md-12" >
                                                 <div class="form-row">
-                                                    <div class="form-group col-md-2">
+                                                    <div class="form-group col-md-3">
                                                         <label for="nombre_BF[]">Nombres</label>
                                                         <input type="text" class="UpperCase form-control form-control-sm" id="nombre_BF[]" name="nombre_BF[]" placeholder="Nombres" autocomplete="off">
                                                     </div>
-                                                    <div class="form-group col-md-2">
+                                                    <div class="form-group col-md-3">
                                                         <label for="apellido_BF[]">Apellidos</label>
                                                         <input type="text" class="UpperCase form-control form-control-sm" id="apellido_BF[]" name="apellido_BF[]" placeholder="Apellidos" autocomplete="off">
                                                     </div>
@@ -441,16 +447,17 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                             <?php endforeach; ?>
                                                         </select>
                                                     </div>
-                                                    <div class="form-group col-md-2">
-                                                        <label for="depto_nacionalidad_BF">Departamento</label>
-                                                        <select id="depto_nacionalidad_BF" name="depto_nacionalidad_BF[]"  class="form-control form-control-sm" >
-                                                            <option selected  disabled >Elegir..</option>
-                                                            <?php foreach($combos->ComboDepto() as $r): ?>
-                                                                <option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                            <?php endforeach; ?>
-                                                        </select>                                                
-                                                    </div>
-
+                                                        <!--
+                                                        <div class="form-group col-md-2">
+                                                            <label for="depto_nacionalidad_BF">Departamento</label>
+                                                            <select id="depto_nacionalidad_BF" name="depto_nacionalidad_BF[]"  class="form-control form-control-sm" >
+                                                                <option selected  disabled >Elegir..</option>
+                                                                <//?php foreach($combos->ComboDepto() as $r): ?>
+                                                                    <option value="<//?php echo $r->__GET('idDepartamento') ?>"> <//?php echo $r->__GET('nombreDepartamento') ?></option>
+                                                                <//?php endforeach; ?>
+                                                            </select>                                                
+                                                        </div>
+                                                        -->
                                                     <div class="form-group col-md-2">
                                                         <label for="id_BF[]">N° de identificación</label>
                                                         <input type="text" class="UpperCase form-control form-control-sm" id="id_BF[]" name="id_BF[]" placeholder="N° de identificación" autocomplete="off" > 
@@ -1116,7 +1123,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                     if(x < max_fields){ //condicional de limites 
                         x++; //incrementa la cantidad de textbox
                         
-                        $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-3"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_AC[]" name="nombre_AC[]" placeholder="Nombre completo o razón social" autocomplete="off" required><p id="filtracion_AC" name="filtracion_AC" ></p></div><div class="form-group col-md-2"><select  class="form-control form-control-sm" id="nacionalidad_AC_'+ x +'" name="nacionalidad_AC[]" onchange="getval(this, $i='+ x +')" ><option selected disabled value = "164">Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><select id="depto_nacionalidad_AC_'+ x +'" name="depto_nacionalidad_AC[]"  class="form-control form-control-sm" ><option selected  disabled >Elegir..</option><?php foreach($combos->ComboDepto() as $r): ?><option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="id_AC[]" name="id_AC[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-2"><input type="number" class="form-control form-control-sm" id="acciones_AC[]" name="acciones_AC[]" placeholder="% Acciones" autocomplete="off" min="0" step="0.01"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field" > <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
+                        $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-4"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_AC[]" name="nombre_AC[]" placeholder="Nombre completo o razón social" autocomplete="off" required><p id="filtracion_AC" name="filtracion_AC" ></p></div><div class="form-group col-md-2"><select  class="form-control form-control-sm" id="nacionalidad_AC_'+ x +'" name="nacionalidad_AC[]" onchange="getval(this, $i='+ x +')" ><option selected disabled value = "141">Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div> <div class="form-group col-md-3"><input type="text" class="form-control form-control-sm" id="id_AC[]" name="id_AC[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-2"><input type="number" class="form-control form-control-sm" id="acciones_AC[]" name="acciones_AC[]" placeholder="% Acciones" autocomplete="off" min="0" step="0.01"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field" > <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
                     }
                 });               
                 $(wrapper).on("click","#remove_field", function(e){ //user click on remove text
@@ -1136,7 +1143,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 e.preventDefault();
                     if(x < max_fields){ //condicional de limites 
                         x++; //incrementa la cantidad de textbox
-                        $(wrapper).append('<div class="col-md-12"><div class="form-row"><div class="form-group col-md-2"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_BF[]" name="nombre_BF[]" placeholder="Nombres" autocomplete="off"></div><div class="form-group col-md-2"><input type="text" class="UpperCase form-control form-control-sm" id="apellido_BF[]" name="apellido_BF[]" placeholder="Apellidos" autocomplete="off"></div><div class="form-group col-md-2"><select  class="form-control form-control-sm" id="nacionalidad_BF_'+ x +'" name="nacionalidad_BF[]" onchange="getvalBF(this, $i='+ x +')"><option selected disabled value = "164">Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><select id="depto_nacionalidad_BF_'+ x +'" name="depto_nacionalidad_BF[]"  class="form-control form-control-sm" ><option selected  disabled >Elegir..</option><?php foreach($combos->ComboDepto() as $r): ?><option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="id_BF[]" name="id_BF[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-1"><input type="number" class="form-control form-control-sm" id="acciones_BF[]" name="acciones_BF[]" placeholder="% Acciones" autocomplete="off"min="0" step="0.01"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_BF"> <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
+                        $(wrapper).append('<div class="col-md-12"><div class="form-row"><div class="form-group col-md-3"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_BF[]" name="nombre_BF[]" placeholder="Nombres" autocomplete="off"></div><div class="form-group col-md-3"><input type="text" class="UpperCase form-control form-control-sm" id="apellido_BF[]" name="apellido_BF[]" placeholder="Apellidos" autocomplete="off"></div><div class="form-group col-md-2"><select  class="form-control form-control-sm" id="nacionalidad_BF_'+ x +'" name="nacionalidad_BF[]" onchange="getvalBF(this, $i='+ x +')"><option selected disabled value = "141">Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div> <div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="id_BF[]" name="id_BF[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-1"><input type="number" class="form-control form-control-sm" id="acciones_BF[]" name="acciones_BF[]" placeholder="% Acciones" autocomplete="off"min="0" step="0.01"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_BF"> <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
                     }
                 });
                 
@@ -1269,8 +1276,9 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                         });			
                     });
                 });
-
+                
                 //SELECCION DEL DEPARTAMENTO PARA NACIONALIDAD DEL REPRESENTANTE LEGAL
+                /*
                 $("#nacionalidad_RL").on('change', function () {
                     $("#nacionalidad_RL option:selected").each(function () {
                         var id_pais = $(this).val();
@@ -1282,6 +1290,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                         });			
                     });
                 });
+                */
 
                 //SELECCION DEL DEPARTAMENTO PARA LUGAR DE RESIDENCIA DEL REPRESENTANTE LEGA
                 $("#paisResidencia_RL").on('change', function () {
@@ -1297,6 +1306,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 });
 
                 //SELECCION DEL DEPARTAMENTO PARA ACCIONISTAS (1)
+                /*
                 $("#nacionalidad_AC").on('change', function () {
                     $("#nacionalidad_AC option:selected").each(function () {
 
@@ -1310,8 +1320,10 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                         });			
                     }); 
                 }); 
+                */
 
-                //SELECCION DEL DEPARTAMENTO PARA ACCIONISTAS (1)
+                //SELECCION DEL DEPARTAMENTO PARA BENEFICIARIOS FINALES (1)
+                /*
                 $("#nacionalidad_BF").on('change', function () {
                     $("#nacionalidad_BF option:selected").each(function () {
 
@@ -1325,17 +1337,20 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                         });			
                     }); 
                 }); 
+                */
 
             });
         </script>
         <!--Script genera un id unico (valor del input) para los Accionistas-->
+
+        <!--
         <script>
             function getval(sel,x)
                 {
                     var id_pais = sel.value;
-                   // alert ("id-->Pais:"+id_pais)
+                    alert ("idPais:"+id_pais)
                     var i = x;
-                    //alert ("id-->Combobox:"+i)
+                    //alert ("idCombobox:"+i)
                     
                     $.post("./JQ_departamentos.php", { id_pais: id_pais }, function(data) {
                            
@@ -1346,15 +1361,19 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                            
                     });	
                 }
+                */
         </script>
+        -->
+        
         <!--Script genera un id unico (valor del input) para los beneficiarios finales-->
+        <!--
         <script>
             function getvalBF(nac_ID,x)
                 {
                     var id_pais = nac_ID.value;
-                   //alert ("id-->Pais:"+id_pais)
+                   //alert ("idPais:"+id_pais)
                     var i = x;
-                    //alert ("id-->Combobox:"+i)
+                    //alert ("idCombobox:"+i)
                     $.post("./JQ_departamentos.php", { id_pais: id_pais }, function(data) {
                         //alert($('select[id=nacionalidad_AC_'+i+']').val());
                         $("#depto_nacionalidad_BF_"+i).html(data);
@@ -1362,6 +1381,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                     });	
                 }
         </script>
+            -->
 
         <!--Script para cambiar de minuscula a mayuscula-->
         <script>

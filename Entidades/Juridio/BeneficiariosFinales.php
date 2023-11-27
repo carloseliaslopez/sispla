@@ -4,7 +4,7 @@
         private $nombreBeneFinales;
         private $ApellidosBeneFinales;
         private $nacionalidadBeneFinales;
-        private $deptoNacionalidadBeneFinales;
+        //private $deptoNacionalidadBeneFinales;
         private $numIdBeneFinales;
         private $AccionesBeneFinales;
         private $idPic;

@@ -5,7 +5,7 @@
         private $paisNacimiento;
         private $deptoPaisNacimiento;
         private $nacionalidad;
-        private $deptoNacionalidad;
+        //private $deptoNacionalidad;
         private $tipoIdentificacion;
         private $numeroIdentificacion;
         private $paisEmision;

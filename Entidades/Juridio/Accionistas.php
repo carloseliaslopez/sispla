@@ -3,7 +3,7 @@
         private $idAccionistas;
         private $nombreCompletoAccionistas;
         private $nacionalidadAccionistas;
-        private $deptoNacionalidadAccionistas;
+        //private $deptoNacionalidadAccionistas;
         private $numIdAccionistas;
         private $Acciones;
         private $idPic;

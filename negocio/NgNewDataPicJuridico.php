@@ -44,8 +44,8 @@ $vacioPais= 141;
 $vacioDepto = 67;
 $vaciotexto ="N/A";
 $valor = 0;
-$origenes = 10;
-$formapago = 6;
+$origenes = 7;
+$formapago = 7;
 $ag = 6;
 $actividadNegocio = 6;
 $depa = 67;
@@ -142,6 +142,7 @@ if ($_POST)
                 }else{
                     $rl->__SET('nacionalidad', $_POST['nacionalidad_RL']);
                 }
+
                 if(empty($_POST['depto_nacionalidad_RL'])){
                     $rl->__SET('deptoNacionalidad',$vacioDepto);
                 }else{
@@ -154,11 +155,13 @@ if ($_POST)
                     $rl->__SET('tipoIdentificacion', $_POST['tipoId_RL']);
                 }
                 
+                /*
                 if(empty($_POST['numeroId_RL'])){
                     $rl->__SET('numeroIdentificacion',$nulo);
                 }else{
                     $rl->__SET('numeroIdentificacion', $_POST['numeroId_RL']);
                 }
+                */
                 
                 if(empty($_POST['paisEmisionId_RL'])){
                     $rl->__SET('paisEmision',$vacioPais);
@@ -222,7 +225,7 @@ if ($_POST)
                 // iNSERTANDO DATOS DE ACCIONISTAS  
                 $nombreAC = $_POST['nombre_AC'];
                 $nacionalidadAC = $_POST['nacionalidad_AC'];
-                $deptoNacionalidad = $_POST['depto_nacionalidad_AC'];
+                //$deptoNacionalidad = $_POST['depto_nacionalidad_AC'];
                 $idAC = $_POST['id_AC'];
                 $accionesAC = $_POST['acciones_AC'];
 
@@ -230,7 +233,7 @@ if ($_POST)
                     
                     $nombre =$n; 
                     $nacionalidad =$nacionalidadAC[$key]; 
-                    $deptoNac  =$deptoNacionalidad[$key];
+                    //$deptoNac  =$deptoNacionalidad[$key];
                     $id = $idAC [$key];
                     $acciones = $accionesAC [$key];
                    
@@ -242,11 +245,13 @@ if ($_POST)
                         $ac->__SET('nacionalidadAccionistas', $nacionalidad);
                     }
 
+                    /*
                     if ( $deptoNac == NULL){
                         $ac->__SET('deptoNacionalidadAccionistas', $vacioDepto);
                     }else{
                         $ac->__SET('deptoNacionalidadAccionistas', $deptoNac);
                     }
+                    */
 
                     if ( $id == NULL){
                         $ac->__SET('numIdAccionistas', NULL);
@@ -274,7 +279,7 @@ if ($_POST)
                 $nombreBF = $_POST['nombre_BF'];
                 $apellidoBF = $_POST['apellido_BF'];
                 $nacionalidadBF = $_POST['nacionalidad_BF'];
-                $deptoNacionalidadBF = $_POST['depto_nacionalidad_BF'];
+                //$deptoNacionalidadBF = $_POST['depto_nacionalidad_BF'];
                 $idBF = $_POST['id_BF'];
                 $accionesBF = $_POST['acciones_BF'];
 
@@ -283,7 +288,7 @@ if ($_POST)
                     $nombre_BF =$r; 
                     $apellido_BF =$apellidoBF[$key]; 
                     $nacionalidad_BF =$nacionalidadBF[$key]; 
-                    $deptoNac_BF  =$deptoNacionalidadBF[$key];
+                    //$deptoNac_BF  =$deptoNacionalidadBF[$key];
                     $id_BF = $idBF [$key];
                     $acciones_BF = $accionesBF [$key];
 
@@ -307,11 +312,13 @@ if ($_POST)
                         $bf->__SET('nacionalidadBeneFinales', $nacionalidad_BF);
                     }
 
+                    /*
                     if ( $deptoNac_BF == NULL){
                         $bf->__SET('deptoNacionalidadBeneFinales', $vacioDepto);
                     }else{
                         $bf->__SET('deptoNacionalidadBeneFinales', $deptoNac_BF);
                     }
+                    */
 
                     if ( $id_BF == NULL){
                         $bf->__SET('numIdBeneFinales', NULL);
