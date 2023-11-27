@@ -18,7 +18,7 @@ $resultGene = $conexion->query(
 
 if ($resultGene->num_rows > 0){
    
-    while ($row = $result->fetch_assoc()) {   
+    while ($row = $resultGene->fetch_assoc()) {   
         $html .= '<option value="'.$row['calificacion'].'">'.$row['nombrePais'].'</option>';
     }
 

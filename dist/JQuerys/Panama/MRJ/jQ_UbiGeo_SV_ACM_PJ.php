@@ -11,23 +11,13 @@ $resultGene = $conexion->query(
     "SELECT a.nombreCompletoAccionistas, p.calificacion, a.nacionalidadAccionistas, p.nombrePais, a.idPic
     FROM accionistas a
     INNER JOIN pais p on a.nacionalidadAccionistas = p.Idpais
-    
     AND idPic=".$id_pic." 
     AND a.acciones = (SELECT MAX(acciones) FROM accionistas WHERE idPic= ".$id_pic.")"
 );
 
 if ($resultGene->num_rows > 0){
-   /*
-    $result = $conexion->query(
-        "SELECT a.nombreCompletoAccionistas, p.calificacion, a.nacionalidadAccionistas, p.nombrePais, a.idPic
-        FROM accionistas a
-        INNER JOIN pais p on a.nacionalidadAccionistas = p.Idpais
-        AND idPic=".$id_pic." 
-        AND a.acciones = (SELECT MAX(acciones) FROM accionistas WHERE idPic= ".$id_pic.")"
-    );
 
-    */
-    while ($row = $result->fetch_assoc()) {   
+      while ($row = $resultGene->fetch_assoc()) {   
         $html .= '<option value="'.$row['calificacion'].'">'.$row['nombrePais'].'</option>';
     }
 
