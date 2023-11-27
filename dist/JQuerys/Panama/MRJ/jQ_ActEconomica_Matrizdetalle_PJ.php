@@ -7,11 +7,11 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 $id_pic = $_POST['id_pic'];
  
 $result = $conexion->query(
-    "SELECT idCatalogoAE  FROM vw_interesinfo_matriz WHERE idPic = ".$id_pic." "
+    "SELECT idCatalogoAE,codigoCIIU   FROM vw_interesinfo_matriz WHERE idPic = ".$id_pic." "
 );
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {                
-        $html .= '<option value="'.$row['idCatalogoAE'].'">'.$row['idCatalogoAE'].'</option>';
+        $html .= '<option value="'.$row['idCatalogoAE'].'">'.$row['codigoCIIU'].'</option>';
     }
 }
 echo $html;

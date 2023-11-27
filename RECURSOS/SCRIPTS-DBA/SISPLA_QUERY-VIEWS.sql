@@ -100,6 +100,7 @@ inner join pais p_na on drl.nacionalidad = p_na.idPais
 inner join pais p_pe on drl.paisEmision = p_pe.idPais
 inner join pais p_pr on drl.paisResidencia = p_pr.idPais
 inner join departamento d_resi on drl.deptoPaisResidencia = d_resi.idDepartamento;
+
 DROP VIEW IF EXISTS vw_Departamento;
 Create view vw_Departamento as
 select d.idDepartamento, d.nombreDepartamento,d.calificacion, d.idEstado, d.idPais, p.nombrePais
@@ -138,43 +139,45 @@ select idCliente, cliente, tipoCliente, productoSolicitado, paisMatriz, riesgoCl
 union all
 select idCliente, cliente, tipoCliente, productoSolicitado, paisMatriz, riesgoCliente, fechaRealizacion from MatrizRiesgoNatural;
 
+DROP VIEW IF EXISTS vw_InteresInfo;
 CREATE VIEW vw_InteresInfo AS 
 SELECT 
 ii.idInteresInfo,
 ii.idTipoPerJuridica, tpj.tipoPersona,
 ii.idConstitucion, c.fechaConstitucion,
-ii.idCatalogoAE, cae.descripcion,
+ii.idCatalogoAE, cae.descripcion, cae.codigoCIIU,
 ii.idBusquedaRes, br.busqueda,
 ii.idPaisAE, p.nombrePais,
 ii.idDepto, d.nombreDepartamento,
 ii.idPic
-FROM InteresInfo ii
-INNER JOIN  TipoPerJuridica tpj ON ii.idTipoPerJuridica = tpj.idTipoPerJuridica
-INNER JOIN Constitucion c ON ii.idConstitucion = c.idConstitucion
+FROM interesinfo ii
+INNER JOIN  tipoperjuridica tpj ON ii.idTipoPerJuridica = tpj.idTipoPerJuridica
+INNER JOIN constitucion c ON ii.idConstitucion = c.idConstitucion
 INNER JOIN catalogo_acti_economica cae ON ii.idCatalogoAE = cae.idCatalogo_Acti_Economica
-INNER JOIN BusquedaRes br ON ii.idBusquedaRes = br.idBusquedaRes
-INNER JOIN Pais p ON ii.idPaisAE = p.idPais
-INNER JOIN Departamento d ON ii.idDepto = d.idDepartamento
-INNER JOIN Pic pic ON ii.idPic = pic.idPic;
+INNER JOIN busquedares br ON ii.idBusquedaRes = br.idBusquedaRes
+INNER JOIN pais p ON ii.idPaisAE = p.idPais
+INNER JOIN departamento d ON ii.idDepto = d.idDepartamento
+INNER JOIN pic pic ON ii.idPic = pic.idPic;
 
+DROP VIEW IF EXISTS vw_InteresInfo_matriz;
 CREATE VIEW vw_InteresInfo_matriz AS 
 SELECT 
 ii.idInteresInfo,
 ii.idTipoPerJuridica, tpj.tipoPersona, tpj.calificacion as 'riesgoTPJ',
 ii.idConstitucion, c.fechaConstitucion, c.calificacion as 'riesgoC',
-ii.idCatalogoAE, cae.descripcion, cae.calificacion as 'riesgoAE',
+ii.idCatalogoAE, cae.descripcion, cae.codigoCIIU, cae.calificacion as 'riesgoAE',
 ii.idBusquedaRes, br.busqueda, br.calificacion as 'riesgoBR',
 ii.idPaisAE, p.nombrePais, p.calificacion as 'riesgoP',
 ii.idDepto, d.nombreDepartamento, d.calificacion as 'riesgoD',
 ii.idPic
-FROM InteresInfo ii
-INNER JOIN  TipoPerJuridica tpj ON ii.idTipoPerJuridica = tpj.idTipoPerJuridica
-INNER JOIN Constitucion c ON ii.idConstitucion = c.idConstitucion
-INNER JOIN Catalogo_Acti_Economica cae ON ii.idCatalogoAE = cae.idCatalogo_Acti_Economica
-INNER JOIN BusquedaRes br ON ii.idBusquedaRes = br.idBusquedaRes
-INNER JOIN Pais p ON ii.idPaisAE = p.idPais
-INNER JOIN Departamento d ON ii.idDepto = d.idDepartamento
-INNER JOIN Pic pic ON ii.idPic = pic.idPic;
+FROM interesinfo ii
+INNER JOIN  tipoperjuridica tpj ON ii.idTipoPerJuridica = tpj.idTipoPerJuridica
+INNER JOIN constitucion c ON ii.idConstitucion = c.idConstitucion
+INNER JOIN catalogo_acti_economica cae ON ii.idCatalogoAE = cae.idCatalogo_Acti_Economica
+INNER JOIN busquedares br ON ii.idBusquedaRes = br.idBusquedaRes
+INNER JOIN pais p ON ii.idPaisAE = p.idPais
+INNER JOIN departamento d ON ii.idDepto = d.idDepartamento
+INNER JOIN pic pic ON ii.idPic = pic.idPic;
 
 
 CREATE VIEW vw_InteresInfoPN AS 

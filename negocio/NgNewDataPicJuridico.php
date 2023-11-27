@@ -646,7 +646,7 @@ if ($_POST)
                     $info->__SET('idConstitucion', $_POST['fechaConstitucion_II']);
                 } 
 
-                $info->__SET('idCatalogoAE', $_POST['codigo']);
+                $info->__SET('idCatalogoAE', $_POST['codigoDescripcion']);
 
                 if(empty($_POST['resultBusqueda_II'])){
                     $info->__SET('idBusquedaRes',3);
