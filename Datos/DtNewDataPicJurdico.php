@@ -40,7 +40,7 @@ class DtNewDataPicJurdico extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$sql = "INSERT INTO datosrepresentantelegal (nombreRepresentanteLegal,paisNacimiento,deptoPaisNacimiento,nacionalidad,tipoIdentificacion, numeroIdentificacion,paisEmision,fechaEmision,fechaVencimiento,paisResidencia,deptoPaisResidencia,celular,correo,cargo,profesion,idPic,usuario_creacion,fecha_creacion)
-		        	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,current_timestamp())";
+		        	VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -78,7 +78,7 @@ class DtNewDataPicJurdico extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$sql = "INSERT INTO accionistas(nombreCompletoAccionistas,nacionalidadAccionistas, numIdAccionistas,Acciones,idPic,usuario_creacion,fecha_creacion)
-		        	VALUES (?,?,?,?,?,?,?,current_timestamp())";
+		        	VALUES (?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
@@ -104,7 +104,7 @@ class DtNewDataPicJurdico extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$sql = "INSERT INTO beneficiariosfinales (nombreBeneFinales,ApellidosBeneFinales,nacionalidadBeneFinales,numIdBeneFinales,AccionesBeneFinales,idPic,usuario_creacion,fecha_creacion)
-		        	VALUES (?,?,?,?,?,?,?,?,current_timestamp())";
+		        	VALUES (?,?,?,?,?,?,?,current_timestamp())";
 
 			$this->myCon->prepare($sql)
 		     ->execute(array(
