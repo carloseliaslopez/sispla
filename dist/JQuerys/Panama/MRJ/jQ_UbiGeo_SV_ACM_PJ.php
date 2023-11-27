@@ -17,19 +17,6 @@ $resultGene = $conexion->query(
 );
 if ($resultGene->num_rows > 0){
     $result = $conexion->query(
-        "SELECT ac.deptoNacionalidadAccionistas, d.nombreDepartamento, d.calificacion FROM accionistas ac
-        INNER JOIN departamento d ON idDepartamento = deptoNacionalidadAccionistas
-        AND idPic = ".$id_pic."
-        AND ac.acciones = (SELECT MAX(acciones) FROM accionistas WHERE idPic= ".$id_pic.")"
-        
-    );
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {   
-            $html .= '<option value="'.$row['calificacion'].'">'.$row['nombreDepartamento'].'</option>';
-        }
-    }
-}else{
-    $result = $conexion->query(
         "SELECT a.nombreCompletoAccionistas, p.calificacion, a.nacionalidadAccionistas, p.nombrePais, a.idPic
         FROM accionistas a
         INNER JOIN pais p on a.nacionalidadAccionistas = p.Idpais
@@ -58,8 +45,6 @@ if ($resultGene->num_rows > 0){
        
 
     }
-    
 }
-
 echo $html;
 ?>

@@ -1104,7 +1104,7 @@ $combos = new DtCombos();
                                 bandera = $('select[id=sbVariable_NacionalidadBF_MR_J]').val();
 
                                 if (bandera==0){
-                                    //alert("Error al encontrar la nacionalidad del Beneficiario Final, verifique Los campos del pic");
+                                    alert("Error al encontrar la nacionalidad del Beneficiario Final, verifique Los campos del pic");
                                 }
                                 $('#calificacion_NacionalidadBF_MR_J').val($("#sbVariable_NacionalidadBF_MR_J").val());  
                             });

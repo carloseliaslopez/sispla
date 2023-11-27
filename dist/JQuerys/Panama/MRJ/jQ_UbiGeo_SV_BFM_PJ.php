@@ -16,20 +16,8 @@ $resultGene = $conexion->query(
     AND idPic=".$id_pic." 
     AND bf.AccionesBeneFinales = (SELECT MAX(AccionesBeneFinales) FROM beneficiariosfinales WHERE idPic= ".$id_pic.") "
 );
+
 if ($resultGene->num_rows > 0){
-    $result = $conexion->query(
-        "SELECT bf.deptoNacionalidadBeneFinales, d.nombreDepartamento, d.calificacion FROM beneficiariosfinales bf
-        INNER JOIN departamento d ON idDepartamento = deptoNacionalidadBeneFinales
-        AND idPic = ".$id_pic."
-        AND bf.AccionesBeneFinales = (SELECT MAX(AccionesBeneFinales) FROM beneficiariosfinales WHERE idPic= ".$id_pic.")"
-        
-    );
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {   
-            $html .= '<option value="'.$row['calificacion'].'">'.$row['nombreDepartamento'].'</option>';
-        }
-    }
-}else{
     $result = $conexion->query(
 
         "SELECT bf.nombreBeneFinales, p.calificacion, bf.nacionalidadBeneFinales, p. nombrePais, bf.idPic
@@ -47,7 +35,7 @@ if ($resultGene->num_rows > 0){
             "SELECT bf.nombreBeneFinales, p.calificacion, bf.nacionalidadBeneFinales, p. nombrePais, bf.idPic
             FROM beneficiariosfinales bf
             INNER JOIN pais p on bf.nacionalidadBeneFinales = p.Idpais
-            AND bf.nacionalidadBeneFinales<>164
+            AND bf.nacionalidadBeneFinales<>141
             AND idPic=".$id_pic." "
         );
 
@@ -61,8 +49,7 @@ if ($resultGene->num_rows > 0){
        
 
     }
-    
-}
+}else
 
 echo $html;
 ?>
