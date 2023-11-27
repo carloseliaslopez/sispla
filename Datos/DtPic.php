@@ -212,8 +212,8 @@ class DtPic extends Conexion
 				$emp->__SET('nombre_deptoPaisNacimiento', $r->nombre_deptoPaisNacimiento);	
 				$emp->__SET('nacionalidad', $r->nacionalidad);	
 				$emp->__SET('nombre_nacionalidad', $r->nombre_nacionalidad);	
-				$emp->__SET('deptoNacionalidad', $r->deptoNacionalidad);	
-				$emp->__SET('nombre_deptoNacionalidad', $r->nombre_deptoNacionalidad);	
+				//$emp->__SET('deptoNacionalidad', $r->deptoNacionalidad);	
+				//$emp->__SET('nombre_deptoNacionalidad', $r->nombre_deptoNacionalidad);	
 				$emp->__SET('tipoIdentificacion', $r->tipoIdentificacion);	
 				$emp->__SET('numeroIdentificacion', $r->numeroIdentificacion);	
 				$emp->__SET('paisEmision', $r->paisEmision);	
@@ -260,8 +260,8 @@ class DtPic extends Conexion
 				$emp->__SET('nombreCompletoAccionistas', $r->nombreCompletoAccionistas);
 				$emp->__SET('nacionalidadAccionistas', $r->nacionalidadAccionistas);
 				$emp->__SET('nombre_nacionalidadAccionistas', $r->nombre_nacionalidadAccionistas);
-				$emp->__SET('deptoNacionalidadAccionistas', $r->deptoNacionalidadAccionistas);
-				$emp->__SET('nombre_deptoNacionalidadAccionistas', $r->nombre_deptoNacionalidadAccionistas);
+				//$emp->__SET('deptoNacionalidadAccionistas', $r->deptoNacionalidadAccionistas);
+				//$emp->__SET('nombre_deptoNacionalidadAccionistas', $r->nombre_deptoNacionalidadAccionistas);
 				$emp->__SET('numIdAccionistas', $r->numIdAccionistas);
 				$emp->__SET('acciones', $r->acciones);
 			
@@ -295,8 +295,8 @@ class DtPic extends Conexion
 				$emp->__SET('ApellidosBeneFinales', $r->ApellidosBeneFinales);
 				$emp->__SET('nacionalidadBeneFinales', $r->nacionalidadBeneFinales);
 				$emp->__SET('nombre_nacionalidadBeneFinales', $r->nombre_nacionalidadBeneFinales);
-				$emp->__SET('deptoNacionalidadBeneFinales', $r->deptoNacionalidadBeneFinales);
-				$emp->__SET('nombre_deptoNacionalidadBeneFinales', $r->nombre_deptoNacionalidadBeneFinales);
+				//$emp->__SET('deptoNacionalidadBeneFinales', $r->deptoNacionalidadBeneFinales);
+				//$emp->__SET('nombre_deptoNacionalidadBeneFinales', $r->nombre_deptoNacionalidadBeneFinales);
 				$emp->__SET('numIdBeneFinales', $r->numIdBeneFinales);
 				$emp->__SET('AccionesBeneFinales', $r->AccionesBeneFinales);
 				$emp->__SET('idPic', $r->idPic);

@@ -4,8 +4,8 @@
         private $nombreCompletoAccionistas;
         private $nacionalidadAccionistas;
         private $nombre_nacionalidadAccionistas;
-        private $deptoNacionalidadAccionistas;
-        private $nombre_deptoNacionalidadAccionistas;
+        //private $deptoNacionalidadAccionistas;
+        //private $nombre_deptoNacionalidadAccionistas;
         private $numIdAccionistas;
         private $acciones;
           

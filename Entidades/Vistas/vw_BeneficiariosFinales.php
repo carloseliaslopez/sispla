@@ -5,8 +5,8 @@
         private $ApellidosBeneFinales;
         private $nacionalidadBeneFinales;
         private $nombre_nacionalidadBeneFinales;
-        private $deptoNacionalidadBeneFinales;
-        private $nombre_deptoNacionalidadBeneFinales;
+        //private $deptoNacionalidadBeneFinales;
+        //private $nombre_deptoNacionalidadBeneFinales;
         private $numIdBeneFinales;
         private $AccionesBeneFinales;
         private $idPic;

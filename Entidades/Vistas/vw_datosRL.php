@@ -8,8 +8,8 @@
         private $nombre_deptoPaisNacimiento;
         private $nacionalidad;
         private $nombre_nacionalidad;
-        private $deptoNacionalidad;
-        private $nombre_deptoNacionalidad;
+        //private $deptoNacionalidad;
+        //private $nombre_deptoNacionalidad;
         private $tipoIdentificacion;
         private $numeroIdentificacion;
         private $paisEmision;
