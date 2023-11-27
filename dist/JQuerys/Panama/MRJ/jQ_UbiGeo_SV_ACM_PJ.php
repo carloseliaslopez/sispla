@@ -11,7 +11,7 @@ $resultGene = $conexion->query(
     "SELECT a.nombreCompletoAccionistas, p.calificacion, a.nacionalidadAccionistas, p.nombrePais, a.idPic
     FROM accionistas a
     INNER JOIN pais p on a.nacionalidadAccionistas = p.Idpais
-    AND a.nacionalidadAccionistas= ".$id_matriz."
+    
     AND idPic=".$id_pic." 
     AND a.acciones = (SELECT MAX(acciones) FROM accionistas WHERE idPic= ".$id_pic.")"
 );
