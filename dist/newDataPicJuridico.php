@@ -228,9 +228,9 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                     <label for="nacionalidad_RL">Nacionalidad</label>
                                                     <select class="form-control form-control-sm" id="nacionalidad_RL" name ="nacionalidad_RL">
                                                         <option selected disabled>Elegir..</option>
-                                                        <//?php foreach($combos->ComboPais() as $r): ?>
-                                                            <option value="<//?php echo $r->__GET('idPais') ?>"> <//?php echo $r->__GET('nombrePais') ?></option>
-                                                        <//?php endforeach; ?>
+                                                        <?php foreach($combos->ComboPais() as $r): ?>
+                                                            <option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                                 
