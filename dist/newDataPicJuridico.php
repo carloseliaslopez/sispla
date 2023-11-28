@@ -1215,6 +1215,8 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                         });	   
                 });
                 
+                
+                /*
                 $("#fechaInscripcion_PJ").on('keyup', function () {    
                     var fecha = $(this).val();
 
@@ -1232,7 +1234,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                         
                         
                 });
-                
+                */
 
 
             });            
