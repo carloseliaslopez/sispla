@@ -1092,7 +1092,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 $("#fechaPic_PN").val("<?php echo $empEdit->__GET('fechaPic') ?>");
                 $("#idCliente_PN").val("<?php echo $empEdit->__GET('id') ?>");
                 $("#nombreCliente_PN").val("<?php echo $empEdit->__GET('nombreCliente') ?>");  
-                $("#idCliente_PN").val("<?php echo $empEdit->__GET('idTributaria') ?>");                              
+                $("#idTributaria").val("<?php echo $empEdit->__GET('id') ?>");                              
             }
         </script>
         <script>
