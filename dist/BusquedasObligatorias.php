@@ -98,7 +98,7 @@ $busquedaListasInternas = new DtListasInternas();
                                             <?php foreach($busquedaListasInternas->BuscarListaInterna() as $r): ?>
                                                 <tr>
                                                     
-                                                    <td><?php echo $r->__GET('nombre'); ?></td>
+                                                    <td><?php echo $r->__GET('fullName'); ?></td>
                                                     <td><?php echo $r->__GET('origen'); ?></td>
                                                     
 
