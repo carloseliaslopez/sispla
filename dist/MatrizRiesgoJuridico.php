@@ -490,9 +490,7 @@ $combos = new DtCombos();
                                                     <div class="form-group col-md-2">
                                                         <select id="sbVariable_FConstitucion_MR_J" name="sbVariable_FConstitucion_MR_J" class="form-control form-control-sm" required>
                                                             <option selected disabled>Elegir...</option>
-                                                            <option value="3">Menor a 2 años</option>
-                                                            <option value="2">Entre 2 y 5 años</option>
-                                                            <option value="1">Mayor a 5 años</option>
+                                                            
                                                         </select>
                                                     </div> 
                                                     <div class="form-group col-md-2">
@@ -1082,7 +1080,7 @@ $combos = new DtCombos();
                             
                             });	
 
-                            $.post("./JQuerys/Panama/MRJ/jQ_UbiGeo_SV_ACM_PJ.php", { id_pic: id_pic, id_matriz: id_matriz }, function(data) {
+                            $.post("./JQuerys/Panama/MRJ/jQ_UbiGeo_SV_ACM_PJ_.php", { id_pic: id_pic, id_matriz: id_matriz }, function(data) {
                                 $("#sbVariable_NacionalidadAC_MR_J").html(data);
                                 bandera = $('select[id=sbVariable_NacionalidadAC_MR_J]').val();
 
