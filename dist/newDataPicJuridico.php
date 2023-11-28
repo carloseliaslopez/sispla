@@ -1225,7 +1225,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                         $.post("./JQuerys/Panama/MRJ/JQ_anios_negocio.php", { fecha: fecha }, function(data) {
                             $("#aniosNegocio").html(data);
                             
-                            //alert($('select[id=codigoDescripcion]').val());
+                            alert($('text[id=aniosNegocio]').val());
                             
                         });	  
                         
