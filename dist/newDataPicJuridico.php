@@ -1209,10 +1209,32 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                     
                         $.post("./JQuerys/Panama/MRJ/jQ_ActEcono_ActiEconomica_PJ.php", { id_empleo: id_empleo, id_matriz: id_matriz }, function(data) {
                             $("#codigoDescripcion").html(data);
+
                             //alert($('select[id=codigoDescripcion]').val());
                             
                         });	   
-                }); 
+                });
+                
+                $("#fechaInscripcion_PJ").on('keyup', function () {    
+                    var fecha = $(this).val();
+
+                    //var id_matriz = $("#paisContitucion_PJ").val();
+                
+                    //alert($('select[id=paisContitucion_PJ]').val());
+
+                        $.post("./JQuerys/Panama/MRJ/JQ_anios_negocio.php", { fecha: fecha }, function(data) {
+                            $("#aniosNegocio").html(data);
+                            
+                            //alert($('select[id=codigoDescripcion]').val());
+                            
+                        });	  
+                        
+                        
+                        
+                });
+                
+
+
             });            
         </script>
         <script>
