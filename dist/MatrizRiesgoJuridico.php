@@ -1082,11 +1082,15 @@ $combos = new DtCombos();
 
                             $.post("./JQuerys/Panama/MRJ/jQ_UbiGeo_SV_ACM_PJ_.php", { id_pic: id_pic, id_matriz: id_matriz }, function(data) {
                                 $("#sbVariable_NacionalidadAC_MR_J").html(data);
+
                                 bandera = $('select[id=sbVariable_NacionalidadAC_MR_J]').val();
 
+                                /*
                                 if (bandera==0){
                                     alert("Error al encontrar la nacionalidad del Accionista, verifique Los campos del pic");
                                 }
+                                */
+                                alert($('select[id=sbVariable_NacionalidadAC_MR_J]').val());
 
                                 $('#calificacion_NacionalidadAC_MR_J').val($("#sbVariable_NacionalidadAC_MR_J").val());  
                             });
