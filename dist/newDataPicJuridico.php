@@ -533,7 +533,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 </div>
                                                 <div class="form-group col-md-3">
                                                     <label for="idTributaria">Identificación tributaria</label>
-                                                    <input type="text" class="UpperCase form-control form-control-sm" id="idTributaria" name="idTributaria" placeholder="Identificación tributaria" autocomplete="off">
+                                                    <input type="text" class="UpperCase form-control form-control-sm" id="idTributaria" name="idTributaria" placeholder="Identificación tributaria" autocomplete="off" disabled>
                                                 </div>
 
                                                 <div class="form-group col-md-3">
@@ -1091,7 +1091,8 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 $("#idCli_PN").val("<?php echo $varIdEmp ?>");
                 $("#fechaPic_PN").val("<?php echo $empEdit->__GET('fechaPic') ?>");
                 $("#idCliente_PN").val("<?php echo $empEdit->__GET('id') ?>");
-                $("#nombreCliente_PN").val("<?php echo $empEdit->__GET('nombreCliente') ?>");                                
+                $("#nombreCliente_PN").val("<?php echo $empEdit->__GET('nombreCliente') ?>");  
+                $("#idCliente_PN").val("<?php echo $empEdit->__GET('idTributaria') ?>");                              
             }
         </script>
         <script>
