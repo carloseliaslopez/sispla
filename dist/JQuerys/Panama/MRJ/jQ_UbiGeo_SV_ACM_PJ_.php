@@ -71,6 +71,8 @@ if ($resulEmpresa->num_rows > 0){
     $html .= '<option value="0">N/A</option>';
 }
 
+echo $tpersona
+//echo $html;
 
-echo $html;
+
 ?>
