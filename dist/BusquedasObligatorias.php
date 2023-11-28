@@ -89,7 +89,7 @@ $busquedaListasInternas = new DtListasInternas();
                                             <tr>
                                                 <th>Nombre</th>
                                                 <th>Origen</th>
-                                                <th>Fecha de ingreso</th>                                                                                          
+                                                                                                                                  
                                             </tr>
                                             
                                         </thead>
@@ -100,7 +100,7 @@ $busquedaListasInternas = new DtListasInternas();
                                                     
                                                     <td><?php echo $r->__GET('nombre'); ?></td>
                                                     <td><?php echo $r->__GET('origen'); ?></td>
-                                                    <td><?php echo $r->__GET('fechaIngreso'); ?></td>
+                                                    
 
                                                     
                                                 </tr>
@@ -112,8 +112,7 @@ $busquedaListasInternas = new DtListasInternas();
                                             <tr>
                                                 <th>Nombre</th>
                                                 <th>Origen</th>
-                                                <th>Fecha de Ingreso</th>
-                                                                                                                                         
+                                                                                                                                                                                         
                                             </tr>
                                         </tfoot>
                                     </table>

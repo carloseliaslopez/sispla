@@ -11,7 +11,7 @@ class DtListasInternas extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT idListasInternas, DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso, nombre, origen, idEstado FROM listasinternas WHERE idEstado<>3 ORDER BY idListasInternas DESC LIMIT 500";
+			$querySQL = "SELECT fullName, origen FROM vw_con_list_risk LIMIT 500";
            
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -21,11 +21,11 @@ class DtListasInternas extends Conexion
 				$emp = new ListasInternas();
 
 				//_SET(CAMPOBD, atributoEntidad)
-                $emp->__SET('idListasInternas', $r->idListasInternas);
-				$emp->__SET('nombre', $r->nombre);	
+                $emp->__SET('fullName', $r->fullName);
 				$emp->__SET('origen', $r->origen);	
-				$emp->__SET('fechaIngreso', $r->fechaIngreso);
-				$emp->__SET('idEstado', $r->idEstado);
+				//$emp->__SET('origen', $r->origen);	
+				//$emp->__SET('fechaIngreso', $r->fechaIngreso);
+				//$emp->__SET('idEstado', $r->idEstado);
 
 				$result[] = $emp;
 
@@ -59,15 +59,14 @@ class DtListasInternas extends Conexion
 				$arr[3];
 				$arr[4];
 				$arr[5];
-			$querySQL = "SELECT idListasInternas,nombre,origen,DATE_FORMAT(fechaIngreso, '%d/%m/%Y') AS fechaIngreso,idEstado
-			FROM listasinternas
-			 WHERE nombre LIKE'%".$arr[0]."%'  and
-			 nombre like'%".$arr[1]."%' and
-			 nombre like'%".$arr[2]."%' and 
-			 nombre like'%".$arr[3]."%' and 
-			 nombre like'%".$arr[4]."%' and 
-			 nombre like'%".$arr[5]."%' and
-			 idEstado <> 3 ";
+			$querySQL = "SELECT fullName, origen 
+			FROM vw_con_list_risk
+			 WHERE fullName LIKE'%".$arr[0]."%'  and
+			 fullName like'%".$arr[1]."%' and
+			 fullName like'%".$arr[2]."%' and 
+			 fullName like'%".$arr[3]."%' and 
+			 fullName like'%".$arr[4]."%' and 
+			 fullName like'%".$arr[5]."%' ";
            
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
@@ -77,11 +76,11 @@ class DtListasInternas extends Conexion
 				$emp = new ListasInternas();
 
 				//_SET(CAMPOBD, atributoEntidad)
-                $emp->__SET('idListasInternas', $r->idListasInternas);
-				$emp->__SET('nombre', $r->nombre);	
+                $emp->__SET('fullName', $r->fullName);
 				$emp->__SET('origen', $r->origen);	
-				$emp->__SET('fechaIngreso', $r->fechaIngreso);
-				$emp->__SET('idEstado', $r->idEstado);
+				//$emp->__SET('origen', $r->origen);	
+				//$emp->__SET('fechaIngreso', $r->fechaIngreso);
+				//$emp->__SET('idEstado', $r->idEstado);
 
 				$result[] = $emp;
 
