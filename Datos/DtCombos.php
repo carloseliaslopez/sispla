@@ -636,7 +636,7 @@ class DtCombos extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT id_cat_estado_cliente, nombre_estado, descripcion, id_estado FROM cat_estado_cliente WHERE idEstado<>3";
+			$querySQL = "SELECT id_cat_estado_cliente, nombre_estado, descripcion, id_estado FROM cat_estado_cliente WHERE id_estado<>3";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
