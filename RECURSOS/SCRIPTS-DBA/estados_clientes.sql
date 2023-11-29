@@ -1,0 +1,6 @@
+INSERT INTO cat_estado_cliente (nombre_estado, descripcion, id_estado, usuario_creacion, fecha_creacion) VALUES ('Revisado','El Cliente ha sido revisado por el area de Cumplimiento',1,1, current_timestamp());
+INSERT INTO cat_estado_cliente (nombre_estado, descripcion, id_estado, usuario_creacion, fecha_creacion) VALUES ('Activo','El Cliente esta realizando trasacciones de manera regular',1,1, current_timestamp());
+INSERT INTO cat_estado_cliente (nombre_estado, descripcion, id_estado, usuario_creacion, fecha_creacion) VALUES ('Aprobado por Credito','El Cliente fue Aprobado por el área de Crédito',1,1, current_timestamp());
+INSERT INTO cat_estado_cliente (nombre_estado, descripcion, id_estado, usuario_creacion, fecha_creacion) VALUES ('Denegado por Crédito','El Cliente fue Rechazado por el área de Crédito',1,1, current_timestamp());
+INSERT INTO cat_estado_cliente (nombre_estado, descripcion, id_estado, usuario_creacion, fecha_creacion) VALUES ('Innactivo','El Cliente no ha utilizado la su tarjeta durante un periodo mayor a 2 meses',1,1, current_timestamp());
+INSERT INTO cat_estado_cliente (nombre_estado, descripcion, id_estado, usuario_creacion, fecha_creacion) VALUES ('Cancelado','El Cliente ha dado de baja',1,1, current_timestamp());

@@ -295,4 +295,9 @@ Select idMatrizRiesgoNatural,idCliente,cliente, productoSolicitado, riesgoClient
 from MatrizRiesgoNatural
 WHERE idEstado<>3;
 
+create view  consol_matriz_riesgo as
+select idMatrizRiesgoJuridico, cliente, lugarActividadEconomica, resultadosBusquedas, condicionPEP, productoSolicitado, monto, formaPago, origenRecursos, riesgoCliente, fechaRealizacion, tipoCliente, paisMatriz, idCliente, idEstado, proximaRevision from matrizriesgojuridico
+union all 
+select idMatrizRiesgoNatural, cliente,  lugarActividadEconomica, resultadosBusquedas, condicionPEP, productoSolicitado, monto, formaPago, origenRecursos, riesgoCliente, fechaRealizacion, tipoCliente, paisMatriz, idCliente, idEstado, proximaRevision from matrizriesgonatural
+
 

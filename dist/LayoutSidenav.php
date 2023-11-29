@@ -64,7 +64,7 @@
                         <div class="collapse" id="Admin" aria-labelledby="headingFour" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="adminTablasPic.php">Gestiones administrativas</a>
-                                <a class="nav-link" href="#.php">Clientes de Credito</a>
+                                <a class="nav-link" href="EstadoClientes.php">Seguimiento de Clientes</a>
                                 
                             </nav>
                         </div>

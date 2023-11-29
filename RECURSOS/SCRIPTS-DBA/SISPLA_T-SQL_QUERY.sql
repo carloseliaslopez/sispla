@@ -1230,11 +1230,58 @@ FOREIGN KEY (usuario_eliminacion) REFERENCES Usuario(idUsuario),
 foreign key (idEstado) references Estado(idEstado)
 );
 
+/*TABLAS  CORRESPONDIENTE A VERIFICAR LOS ESTADOS DE LA BD*/
+DROP TABLE IF EXISTS cat_estado_cliente;
+CREATE TABLE cat_estado_cliente (
+id_cat_estado_cliente int auto_increment not null primary key,
+nombre_estado varchar (100),
+descripcion varchar (150),
+id_estado int,
+usuario_creacion int,
+fecha_creacion datetime null,
+usuario_modificacion int null,
+fecha_modificacion datetime null,
+usuario_eliminacion int null,
+fecha_eliminacion datetime null,
+
+FOREIGN KEY (usuario_creacion) REFERENCES usuario(idusuario),
+FOREIGN KEY (usuario_modificacion) REFERENCES usuario(idusuario),
+FOREIGN KEY (usuario_eliminacion) REFERENCES usuario(idusuario),
+FOREIGN KEY (id_estado) REFERENCES estado(idestado)
+); 
+
+/*SE CREA LA TABLA INTERMEDIA DE LOS CLIENTE Y EL ESTADO*/
+drop table if exists estado_cliente;
+create table estado_cliente(
+id_estado_cliente int auto_increment not null primary key,
+id_cat_estado_cliente int,
+idPic int,
+
+usuario_creacion int,
+fecha_creacion datetime null,
+usuario_modificacion int null,
+fecha_modificacion datetime null,
+usuario_eliminacion int null,
+fecha_eliminacion datetime null,
+
+FOREIGN KEY (idPic) REFERENCES pic(idPic) ON DELETE CASCADE,
+FOREIGN KEY (usuario_creacion) REFERENCES usuario(idusuario),
+FOREIGN KEY (usuario_modificacion) REFERENCES usuario(idusuario),
+FOREIGN KEY (usuario_eliminacion) REFERENCES usuario(idusuario)
+);
+
+/*SE CREA LA VISTA PARA VISUALIZAR LOS CLIENTES */
+DROP VIEW IF EXISTS vw_estado_cliente;
+CREATE VIEW vw_estado_cliente AS 
+SELECT ec.id_estado_cliente, ec.idPic, p.nombreCliente, p.id, ec.id_cat_estado_cliente, cec.nombre_estado
+FROM estado_cliente ec
+INNER JOIN pic p on p.idPic = ec.idPic
+INNER JOIN cat_estado_cliente  cec on cec.id_cat_estado_cliente = ec.id_cat_estado_cliente;
+
+
 /*TABLAS INDEPENDIENTE*/
 
-
 /*COMIENZO DE SCRIPTS PARA VISTAS_*/
-
 DROP VIEW IF EXISTS vw_Accionistas;
 CREATE VIEW vw_Accionistas as
 select a.idPic, a.nombreCompletoAccionistas, a.nacionalidadAccionistas, p.nombrePais as 'nombre_nacionalidadAccionistas',
@@ -1555,6 +1602,7 @@ union all
 Select idMatrizRiesgoNatural,idCliente,cliente, productoSolicitado, riesgoCliente,tipoCliente,idEstado,proximaRevision,datediff(proximaRevision,now()) as "diasRestantes"
 from MatrizRiesgoNatural
 WHERE idEstado<>3;
+
 
 
 

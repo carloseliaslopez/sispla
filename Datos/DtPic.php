@@ -778,5 +778,43 @@ class DtPic extends Conexion
 		}
 	}
 
+	public function ListarClienteEstado()
+	{
+		try
+		{
+			$this->myCon = parent::conectar();
+			$result = array();
+			$querySQL = "SELECT id_estado_cliente, idPic, nombreCliente, id, id_cat_estado_cliente, nombre_estado FROM vw_estado_cliente ";
+			
+			$stm = $this->myCon->prepare($querySQL);
+			$stm->execute();
+
+			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
+			{
+				$emp = new vw_estado_cliente();
+
+				//_SET(CAMPOBD, atributoEntidad)
+				$emp->__SET('id_estado_cliente', $r->id_estado_cliente);	
+				$emp->__SET('idPic', $r->idPic);	
+				$emp->__SET('nombreCliente', $r->nombreCliente);
+				$emp->__SET('id', $r->id);
+				$emp->__SET('id_cat_estado_cliente', $r->id_cat_estado_cliente);
+                $emp->__SET('nombre_estado', $r->nombre_estado);
+              
+				$result[] = $emp;
+
+				//var_dump($result);
+			}
+			$this->myCon = parent::desconectar();
+			return $result;
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+
+
+
 	
 }

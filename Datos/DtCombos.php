@@ -629,4 +629,38 @@ class DtCombos extends Conexion
 			die($e->getMessage());
 		}
 	}
+
+	public function ComboEstadoCli()
+	{
+		try
+		{
+			$this->myCon = parent::conectar();
+			$result = array();
+			$querySQL = "SELECT id_cat_estado_cliente, nombre_estado, descripcion, id_estado FROM cat_estado_cliente WHERE idEstado<>3";
+
+			$stm = $this->myCon->prepare($querySQL);
+			$stm->execute();
+
+			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
+			{
+				$emp = new cat_estado_cliente();
+
+				//_SET(CAMPOBD, atributoEntidad)			
+				$emp->__SET('id_cat_estado_cliente', $r->id_cat_estado_cliente);
+				$emp->__SET('nombre_estado', $r->nombre_estado);
+				$emp->__SET('descripcion', $r->descripcion);
+				$emp->__SET('id_estado', $r->id_estado);
+				
+				$result[] = $emp;
+
+				//var_dump($result);
+			}
+			$this->myCon = parent::desconectar();
+			return $result;
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 }
