@@ -172,11 +172,11 @@ if ($_POST)
 
                 $dtMon->registrarCtrlAplicados($CtrlAp);
 				
-                header("Location: ../dist/ListaInformesIDD.php?msjNewEmp=1");
+                header("Location: ../dist/listaInformesIDD.php?msjNewEmp=1");
             } 
             catch (Exception $e) 
             {
-                header("Location: ../dist/ListaClientes.php?msjNewEmp=2");
+                header("Location: ../dist/listaInformesIDD.php?msjNewEmp=2");
                 die($e->getMessage());
             }
             break;

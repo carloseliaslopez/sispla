@@ -15,6 +15,7 @@ $datosIDD = new DtMatrizEvaluacion();
 
 
 //variable de control msj Nuevo Empleado
+
 $varMsjNewEmp = 0;
 if(isset($varMsjNewEmp))
 { 
@@ -220,7 +221,6 @@ if(isset($varMsjDelEmp))
                 });
                 
                 /////////// VARIABLES DE CONTROL MSJ ///////////
-
                 
                 var newEmp = 0;
                 newEmp = "<?php echo $varMsjNewEmp ?>";

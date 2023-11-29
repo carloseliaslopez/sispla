@@ -508,7 +508,7 @@ $rol = $_SESSION ['idRol'];
 
     <script>
         function regresar(){
-            window.open ("ListaInformesIDD.php","_self")
+            window.open ("listaInformesIDD.php","_self")
         }
     </script>
 

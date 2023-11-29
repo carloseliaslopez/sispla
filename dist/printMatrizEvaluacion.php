@@ -483,7 +483,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 
     <script>
         function regresar(){
-            window.open ("ListaInformesIDD.php","_self")
+            window.open ("listaInformesIDD.php","_self")
         }
     </script>
 
