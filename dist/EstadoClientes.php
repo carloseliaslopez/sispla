@@ -109,7 +109,7 @@ if(isset($varMsjDelEmp)){
                                                             data-id="<?php echo $r->__GET('id_estado_cliente'); ?>" 
                                                             data-nombre="<?php echo $r->__GET('nombreCliente'); ?>"
                                                             data-calificacion="<?php echo $r->__GET('id'); ?>"
-                                                            data-pais="<?php echo $r->__GET('nombre_estado'); ?>" > 
+                                                            data-pais="<?php echo $r->__GET('id_cat_estado_cliente'); ?>" > 
                                                             <i class="fas fa-pen-square"></i>
                                                                 Modificar 
                                                         </a>
