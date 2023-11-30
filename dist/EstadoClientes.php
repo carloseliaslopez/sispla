@@ -265,7 +265,7 @@ if(isset($varMsjDelEmp)){
             $(document).ready(function ()
             {
                 ////// APLICAMOS FORMATO Y BOTONES A LA TABLA //// INICIAMOS EL PLUGIN DATATABLE
-                /*
+                
                 $('#tbl_ctrl_bono').DataTable({
                     dom: 'Bfrtip',
                     buttons: [
@@ -275,8 +275,8 @@ if(isset($varMsjDelEmp)){
                     ]
 
                 });
-                */
-               
+                
+
                 /////////// VARIABLES DE CONTROL MSJ ///////////
 
                 
