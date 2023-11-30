@@ -136,7 +136,7 @@ if(isset($varMsjDelEmp)){
                                             <div class="modal-content">
                                             <form method="POST" action="../negocio/Gestion_NgDepartamento.php">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel2">Calibrar un Departamento</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel2">Cambiar el estado de un cliente</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -156,7 +156,7 @@ if(isset($varMsjDelEmp)){
                                                                 <div class="form-group">
                                                                     <label class="small mb-1" for="calificacion_E"><b>Identificación:</b></label>
                                                                     <input class="form-control py-4" name="calificacion_E" id="calificacion_E"
-                                                                    type="number" placeholder="Ingrese la calificación/riesgo del pais" autocomplete="off" min="1" max="3" disabled  />
+                                                                    type="text" placeholder="Identificacion de la persona juridica/natural" autocomplete="off"  disabled  />
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label class="small mb-1" for="paisOrigen_E"><b>Estado</b></label>
