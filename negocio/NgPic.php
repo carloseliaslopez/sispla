@@ -2,10 +2,12 @@
 
 include_once("../Entidades/estado_cliente/estado_cliente.php");
 
+include_once("../Entidades/Pic.php");
 include_once("../Datos/DtPic.php");
 
 $mon = new pic();
 $status  = new estado_cliente();
+
 $dtMon = new DtPic();
 
 
@@ -48,6 +50,7 @@ if ($_POST)
         
         case '2':
            break;
+
         case '3':
             try 
             {
@@ -59,9 +62,9 @@ if ($_POST)
                 echo ('EL ESTADO QUE SE PRETENDE:-');
                 echo ( $case1);
                 echo ('EL USUARIO QUE LO INGRESO:-');
-                echo ( $case1);
+                echo ( $case2);
                 echo ('EL ID AL QUE SE VA A REALIZAR CAMBIO:-');
-                echo ( $case1);
+                echo ( $case3);
                 
 
                 //$dtMon->AptClienteEstado($status);
