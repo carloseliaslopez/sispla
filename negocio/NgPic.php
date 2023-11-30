@@ -52,13 +52,21 @@ if ($_POST)
             try 
             {
                 //DatosEntidad--datos Input
-                $status->__SET('id_cat_estado_cliente', $_POST['estado_client']);
-                $status->__SET('usuario_creacion', $_POST['idUsuario']);
-                $status->__SET('id_estado_cliente', $_POST['idEstado_Cli']);
+                $case1 = $status->__SET('id_cat_estado_cliente', $_POST['estado_client']);
+                $case2 = $status->__SET('usuario_creacion', $_POST['idUsuario']);
+                $case3 = $status->__SET('id_estado_cliente', $_POST['idEstado_Cli']);
+                 
+                echo ('EL ESTADO QUE SE PRETENDE:-');
+                echo ( $case1);
+                echo ('EL USUARIO QUE LO INGRESO:-');
+                echo ( $case1);
+                echo ('EL ID AL QUE SE VA A REALIZAR CAMBIO:-');
+                echo ( $case1);
                 
-                
-                $dtMon->AptClienteEstado($status);
-                    header("Location: ../dist/EstadoClientes.php?msjNewEmp=1");
+
+                //$dtMon->AptClienteEstado($status);
+                //header("Location: ../dist/EstadoClientes.php?msjNewEmp=1");
+
                     break;
             } 
             catch (Exception $e) 
