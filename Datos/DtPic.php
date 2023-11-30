@@ -428,8 +428,6 @@ class DtPic extends Conexion
 
 
 
-
-
 	public function EliminarPic($id)
 	{
 		try 
@@ -814,6 +812,36 @@ class DtPic extends Conexion
 		}
 	}
 
+	
+	public function AptClienteEstado(estado_cliente $data)
+	{
+		try 
+		{
+			$this->myCon = parent::conectar();
+			$sql = "UPDATE estado_cliente SET 
+			id_cat_estado_cliente = ?, 
+			usuario_creacion = ?, 
+			fecha_creacion = current_timestamp()
+			
+			where id_estado_cliente= ?";
+
+				$this->myCon->prepare($sql)
+			     ->execute(
+				array(
+					
+					$data->__GET('id_cat_estado_cliente'), 
+					$data->__GET('usuario_creacion'),
+					$data->__GET('id_estado_cliente')
+					)
+				);
+				$this->myCon = parent::desconectar();
+		} 
+		catch (Exception $e) 
+		{
+			var_dump($e);
+			die($e->getMessage());
+		}
+	}
 
 
 	

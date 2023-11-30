@@ -7,6 +7,7 @@ if (!isset($_SESSION['idUsuario'])){
 }
 $nombre = $_SESSION['usuario'];
 $rol = $_SESSION ['idRol'];
+$idUsuario = $_SESSION['idUsuario'];
 
 include '../Entidades/estado_cliente/cat_estado_cliente.php';
 include '../Entidades/estado_cliente/estado_cliente.php';
@@ -108,15 +109,14 @@ if(isset($varMsjDelEmp)){
                                                        <a href="javascript:;" class="addAttr" data-toggle="modal" data-target="#exampleModal2" 
                                                             data-id="<?php echo $r->__GET('id_estado_cliente'); ?>" 
                                                             data-nombre="<?php echo $r->__GET('nombreCliente'); ?>"
-                                                            data-calificacion="<?php echo $r->__GET('id'); ?>"
-                                                            data-pais="<?php echo $r->__GET('id_cat_estado_cliente'); ?>" > 
+                                                            data-identificacion="<?php echo $r->__GET('id'); ?>"
+                                                            data-idCatCliente="<?php echo $r->__GET('id_cat_estado_cliente'); ?>" > 
                                                             <i class="fas fa-pen-square"></i>
                                                                 Modificar 
                                                         </a>
 
                                                         
                                                     </td>
-
                                                     
                                                 </tr>
                                             <?php endforeach; ?>
@@ -134,7 +134,7 @@ if(isset($varMsjDelEmp)){
                                     <div class="modal fade " id="exampleModal2" tabindex="-1" role="document" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                                         <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
-                                            <form method="POST" action="../negocio/Gestion_NgDepartamento.php">
+                                            <form method="POST" action="../negocio/NgPic.php">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel2">Cambiar el estado de un cliente</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -146,21 +146,24 @@ if(isset($varMsjDelEmp)){
                                                         <div class="form-row">
                                                             <div class="col-md-12" >
                                                                 <div class="form-group">
-                                                                <label class="small mb-1"  for="nombreDepto_E"> <b>Nombre del cliente:</b> </label>
-                                                                    <input class="form-control py-4" name="nombreDepto_E" id="nombreDepto_E"
-                                                                    type="text" placeholder="Ingrese el nombre del País" autocomplete="off" disabled/>
-                                                                    <input type="hidden" id="txtaccion" name="txtaccion" value="2"/>
-                                                                    <input type="hidden" id="idDepartamento" name="idDepartamento"/>
+                                                                <label class="small mb-1"  for="nombre_cli"> <b>Nombre del cliente:</b> </label>
+                                                                    <input class="form-control py-4" name="nombre_cli" id="nombre_cli"
+                                                                    type="text" placeholder="Nombre del cliente:" autocomplete="off" disabled/>
+                                                                    <input type="hidden" id="txtaccion" name="txtaccion" value="3"/>
+                                                                    <input type="hidden" id="idUsuario" name="idUsuario" value="<?php echo $idUsuario?>"/>
+
+                                                                    <input type="hidden" id="idEstado_Cli" name="idEstado_Cli"/>
+
                                                                         
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label class="small mb-1" for="calificacion_E"><b>Identificación:</b></label>
-                                                                    <input class="form-control py-4" name="calificacion_E" id="calificacion_E"
+                                                                    <label class="small mb-1" for="identificacion_clie"><b>Identificación:</b></label>
+                                                                    <input class="form-control py-4" name="identificacion_clie" id="identificacion_clie"
                                                                     type="text" placeholder="Identificacion de la persona juridica/natural" autocomplete="off"  disabled  />
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label class="small mb-1" for="paisOrigen_E"><b>Estado</b></label>
-                                                                    <select  class="form-control py-4" id="paisOrigen_E" name="paisOrigen_E">
+                                                                    <label class="small mb-1" for="estado_client"><b>Estado</b></label>
+                                                                    <select  class="form-control py-4" id="estado_client" name="estado_client">
                                                                         <option selected disabled>Elegir..</option>
 
                                                                         <?php foreach($combos->ComboEstadoCli() as $r): ?>
@@ -269,9 +272,9 @@ if(isset($varMsjDelEmp)){
                 $('#tbl_ctrl_bono').DataTable({
                     dom: 'Bfrtip',
                     buttons: [
-                    'pdf',
-                    'excel',
-                    'print'
+                    //'pdf',
+                    //'excel',
+                    //'print'
                     ]
 
                 });
@@ -325,13 +328,13 @@ if(isset($varMsjDelEmp)){
             $('.addAttr').click(function() {
             var id = $(this).data('id');   
             var nombre = $(this).data('nombre'); 
-            var calificacion = $(this).data('calificacion');   
-            var pais = $(this).data('pais');  
+            var identificacion = $(this).data('identificacion');   
+            var idCatCliente = $(this).data('idCatCliente');  
            
-            $('#idDepartamento').val(id); 
-            $('#nombreDepto_E').val(nombre); 
-            $('#calificacion_E').val(calificacion); 
-            $('#paisOrigen_E').val(pais);
+            $('#idEstado_Cli').val(id); 
+            $('#nombre_cli').val(nombre); 
+            $('#identificacion_clie').val(identificacion); 
+            $('#estado_client').val(idCatCliente);
             
             } );
         </script>

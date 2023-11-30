@@ -1,9 +1,11 @@
 <?php
 
-include_once("../Entidades/Pic.php");
+include_once("../Entidades/estado_cliente/estado_cliente.php");
+
 include_once("../Datos/DtPic.php");
 
-$mon = new Pic();
+$mon = new pic();
+$status  = new estado_cliente();
 $dtMon = new DtPic();
 
 
@@ -23,7 +25,7 @@ if ($_POST)
                 $mon->__SET('categoria', $_POST['txtcategoria']);
                 $mon->__SET('usuario_creacion', $_POST['idUsuario']);
                 $mon->__SET('idEmpresa', $_POST['empresa']);
-                
+                                
                 
 				
 				if (($dtMon->ExistePic(($_POST['id'])) == null)) {
@@ -46,6 +48,25 @@ if ($_POST)
         
         case '2':
            break;
+        case '3':
+            try 
+            {
+                //DatosEntidad--datos Input
+                $status->__SET('id_cat_estado_cliente', $_POST['estado_client']);
+                $status->__SET('usuario_creacion', $_POST['idUsuario']);
+                $status->__SET('id_estado_cliente', $_POST['idEstado_Cli']);
+                
+                
+                $dtMon->AptClienteEstado($status);
+                    header("Location: ../dist/EstadoClientes.php?msjNewEmp=1");
+                    break;
+            } 
+            catch (Exception $e) 
+            {
+                header("Location: ../dist/EstadoClientes.php?msjNewEmp=2");
+                die($e->getMessage());
+            }
+        break;
         
         default:
             # code...
