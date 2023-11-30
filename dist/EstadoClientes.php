@@ -24,16 +24,18 @@ $combos = new DtCombos();
 //variables de jalerts
 
 //variable de control msj Nuevo Empleado
-$varMsjNewEmp = 0;
-if(isset($varMsjNewEmp)){ 
-  $varMsjNewEmp = $_GET['msjNewEmp'];
+$varMsjUpdEmp = 0;
+if(isset($varMsjUpdEmp)){ 
+  $varMsjUpdEmp = $_GET['msjNewEmp'];
 }
 
 //variable de control msj Actualizar Empleado
+/*
 $varMsjUpdEmp = 0;
 if(isset($varMsjUpdEmp)){ 
   $varMsjUpdEmp = $_GET['msjEditEmp'];
 }
+*/
 
 //variable de control msj Eliminar Empleado
 $varMsjDelEmp = 0;
@@ -288,7 +290,7 @@ if(isset($varMsjDelEmp)){
 
                 if(newEmp == "1")
                 {
-                    successAlert('Éxito', '¡Un nuevo departamento ha sido registrado !');
+                    successAlert('Éxito', '¡!');
                 }
                 if(newEmp == "2")
                 {
@@ -303,11 +305,11 @@ if(isset($varMsjDelEmp)){
                 updEmp = "<?php echo $varMsjUpdEmp ?>";
                 if(updEmp == "1")
                 {
-                    successAlert('Éxito', '¡Los datos del departamento se actualizarón con éxito!');
+                    successAlert('Éxito', '¡El estado del cliente se actualizó con éxito!');
                 }
                 if(updEmp == "2")
                 {
-                    errorAlert('Error', 'Revise los datos del departamento e intente nuevamente *_*');
+                    errorAlert('Error', 'Revise los datos e intente nuevamente *_*');
                 }
 
                 var delEmp = 0;

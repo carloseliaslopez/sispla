@@ -812,6 +812,29 @@ class DtPic extends Conexion
 		}
 	}
 
+	public function registrarEstadoCliente (estado_cliente $data)
+	{
+		try 
+		{
+			$this->myCon = parent::conectar();
+			$sql = "INSERT INTO estado_cliente (id_cat_estado_cliente,idPic,usuario_creacion,fecha_creacion)
+		        	VALUES (?,?,?,current_timestamp())";
+
+			$this->myCon->prepare($sql)
+		     ->execute(array(
+			 $data->__GET('id_cat_estado_cliente'),
+             $data->__GET('idPic'),
+			 $data->__GET('usuario_creacion')));
+			
+			$this->myCon = parent::desconectar();
+		} 
+		catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+
+
 	
 	public function AptClienteEstado(estado_cliente $data)
 	{
@@ -820,8 +843,8 @@ class DtPic extends Conexion
 			$this->myCon = parent::conectar();
 			$sql = "UPDATE estado_cliente SET 
 			id_cat_estado_cliente = ?, 
-			usuario_creacion = ?, 
-			fecha_creacion = current_timestamp()
+			usuario_modificacion= ?, 
+			fecha_modificacion = current_timestamp()
 			
 			where id_estado_cliente= ?";
 
@@ -830,7 +853,7 @@ class DtPic extends Conexion
 				array(
 					
 					$data->__GET('id_cat_estado_cliente'), 
-					$data->__GET('usuario_creacion'),
+					$data->__GET('usuario_modificacion'),
 					$data->__GET('id_estado_cliente')
 					)
 				);

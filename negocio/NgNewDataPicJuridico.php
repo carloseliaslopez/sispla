@@ -17,6 +17,8 @@ include_once("../Entidades/Anexos/Constitucion.php");
 include_once("../Entidades/Anexos/InteresInfo.php");
 include_once("../Entidades/Anexos/TipoPerJuridica.php");
 
+include_once("../Entidades/estado_cliente/estado_cliente.php");
+
 
 include_once("../Entidades/Vistas/vw_DatosGenerales.php");
 
@@ -40,6 +42,10 @@ $info  =new InteresInfo();
 $dtMon = new DtNewDataPicJurdico();
 $dtCom = new DtDataPicCompartidos();
 
+$status = new estado_cliente();
+$dtPic = new DtPic();
+
+
 $vacioPais= 141;
 $vacioDepto = 67;
 $vaciotexto ="N/A";
@@ -52,6 +58,7 @@ $depa = 67;
 $relacion = 5;
 $causa = 4;
 $nulo = NULL;
+$estadoCliente = 1;//Revisado por Cumplimiento default
 
 if ($_POST) 
 {
@@ -668,7 +675,13 @@ if ($_POST)
                 $info->__SET('idPic', $_POST['idCli_PN']);
                 $info->__SET('usuario_creacion', $_POST['idUsuario']);
                 $dtMon->registrarDatosInteres($info);
-              
+                
+                //insertando los campos para el estado del cliente.
+                $status->__SET('id_cat_estado_cliente', $estadoCliente);
+                $status->__SET('idPic', $_POST['idCli_PN']);
+                $status->__SET('usuario_creacion', $_POST['idUsuario']);
+
+                $dtPic->registrarEstadoCliente($status);
 
                 header("Location: ../dist/ListaClientes.php?msjNewEmp=1");
 

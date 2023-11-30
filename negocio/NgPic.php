@@ -55,9 +55,9 @@ if ($_POST)
             try 
             {
                 //DatosEntidad--datos Input
-                $case1 = $status->__SET('id_cat_estado_cliente', $_POST['estado_client']);
-                $case2 = $status->__SET('usuario_creacion', $_POST['idUsuario']);
-                $case3 = $status->__SET('id_estado_cliente', $_POST['idEstado_Cli']);
+                $status->__SET('id_cat_estado_cliente', $_POST['estado_client']);
+                $status->__SET('usuario_modificacion', $_POST['idUsuario']);
+                $status->__SET('id_estado_cliente', $_POST['idEstado_Cli']);
                  
                /*
                 echo ('EL ESTADO QUE SE PRETENDE:-');
