@@ -155,47 +155,30 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                      <!--End black line-->
                                         <div class="col-md-12" >
                                             <div class="form-row">
-                                                <div class="form-group col-md-2">
-                                                    <label for="fecha_actual">Fecha</label>
-                                                </div>
                                                 <div class="form-group col-md-3">
+                                                    <label for="fecha_actual">Fecha</label>
                                                     <input type="date" class="form-control form-control-md" id="fecha_MR_J" name="fecha_MR_J" 
                                                     value="<?php echo (new DateTime())->format('Y-m-d'); ?>" autocomplete="off" disabled>
-                                                </div> 
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12" >
                                             <div class="form-row">
-                                                <div class="form-group col-md-5">
+                                                <div class="form-group col-md-4">
                                                     <label for="txt_codigo_alerta">Codigo de la señal de alerta</label>
-                                                </div>
-                                                <div class="form-group col-md-7">
                                                     <input type="text" class="form-control form-control-sm" id="txt_codigo_alerta" name="txt_codigo_alerta" placeholder="Codigo de la señal de alerta" autocomplete="off">
                                                 </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-5">
-                                                    <label for="txt_nombre_cliente">Nombre del cliente o transacción</label>                                                
-                                                </div>
-                                                <div class="form-group col-md-7">
+                                                <div class="form-group col-md-4">
+                                                    <label for="txt_nombre_cliente">Nombre del cliente o transacción</label>
                                                     <input type="text" class="form-control form-control-sm" id="txt_nombre_cliente" name="txt_nombre_cliente" placeholder="Nombre del cliente o transacción" autocomplete="off">
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-5">
+                                                <div class="form-group col-md-4">
                                                     <label for="txt_regla_asig">Descripcion de la señal de la alerta</label>
-                                                    
-                                                </div>
-                                                <div class="form-group col-md-7">
                                                     <input type="text" class="form-control form-control-sm" id="txt_regla_asig" name="txt_regla_asig" placeholder="Descripcion de la señal de la alerta" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
+
                                         <!--Start Black lines-->
                                         <div class="col-md-12" >
                                             <div class="form-row">
