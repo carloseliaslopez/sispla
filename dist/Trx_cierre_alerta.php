@@ -1,4 +1,5 @@
 <?php
+/*
 error_reporting(0);
 
 //ENTIDADES
@@ -63,8 +64,9 @@ $varIdEmp = $_GET['dataPIC'];
 
 $empEdit;
 $empEdit = $datospic->ObtenerPic($varIdEmp);
-
+*/
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -145,7 +147,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <div id = "principal">
-                                                        <label id ="Text"><b> 1. Datos Cliente persona júridica</b></label>
+                                                        <label id ="Text"><b> Datos generales de la señal de alerta</b></label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -154,53 +156,44 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                         <div class="col-md-12" >
                                             <div class="form-row">
                                                 <div class="form-group col-md-3">
-                                                    <label for="paisContitucion_PJ">Pais de constitución</label>
-                                                    <select  class="form-control form-control-sm" id="paisContitucion_PJ" name="paisContitucion_PJ" required>
-                                                        <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboPais() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <label for="departamento">Departamento</label>
-                                                    <select id="depto_paisContitucion_PJ" name="depto_paisContitucion_PJ"  class="form-control form-control-sm" >
-                                                        <option selected  disabled >Elegir..</option>
-                                                        <?php foreach($combos->ComboDepto() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
-                                                </div>
-                                                
-                                                <div class="form-group col-md-2">
-                                                    <input type="hidden" name="idCli_PN" id="idCli_PN" />
-                                                    <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
-                                                    <label for="fechaConstitucion_PJ">Fecha de constitución</label>
-                                                    <input type="date" class="form-control form-control-sm" id="fechaConstitucion_PJ" name=" fechaConstitucion_PJ" placeholder="Fecha de constitución" autocomplete="off">
-                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <label for="fechaInscripcion_PJ">Fecha de inscripción</label>
-                                                    <input type="date" class="form-control form-control-sm" id="fechaInscripcion_PJ" name="fechaInscripcion_PJ" placeholder="Fecha de inscripción">
+                                                    <label for="fecha_actual">Fecha</label>
                                                 </div>
                                                 <div class="form-group col-md-3">
-                                                    <label for="correoPersonaContacto_PJ">Correo de la persona de  Contacto</label>
-                                                    <input type="email" class="form-control form-control-sm" id="correoPersonaContacto_PJ" name="correoPersonaContacto_PJ" placeholder="Correo electrónico de la persona de Contacto" autocomplete="off">
+                                                    <input type="date" class="form-control form-control-md" id="fecha_MR_J" name="fecha_MR_J" 
+                                                    value="<?php echo (new DateTime())->format('Y-m-d'); ?>" autocomplete="off" disabled>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12" >
+                                            <div class="form-row">
+                                                <div class="form-group col-md-5">
+                                                    <label for="txt_codigo_alerta">Codigo de la señal de alerta</label>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <input type="text" class="form-control form-control-sm" id="txt_codigo_alerta" name="txt_codigo_alerta" placeholder="Codigo de la señal de alerta" autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-12" >
+                                            <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <label for="txt_nombre_cliente">Nombre del cliente o transacción</label>                                                
+                                                </div>
+                                                <div class="form-group col-md-8">
+                                                    <input type="text" class="form-control form-control-sm" id="txt_nombre_cliente" name="txt_nombre_cliente" placeholder="Nombre del cliente o transacción" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12" >
                                             <div class="form-row">
                                                 <div class="form-group col-md-5">
-                                                    <label for="nombrePersonaContacto_PJ">Nombre de la persona de  Contacto</label>
-                                                    <input type="text" class="form-control form-control-sm" id="nombrePersonaContacto_PJ" name="nombrePersonaContacto_PJ" placeholder="Nombre de la persona de  Contacto" autocomplete="off">
+                                                    <label for="txt_regla_asig">Descripcion de la señal de la alerta</label>
+                                                    
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="cargoPersonaContacto_PJ">Cargo en la empresa</label>
-                                                    <input type="text" class="form-control form-control-sm" id="cargoPersonaContacto_PJ" name="cargoPersonaContacto_PJ" placeholder="Cargo en la empresa" autocomplete="off">
-                                                </div>
-                                                <div class="form-group col-md-3">
-                                                    <label for="telefonoPersonaContacto_PJ">Teléfono de contacto</label>
-                                                    <input type="number" class="form-control form-control-sm" id="telefonoPersonaContacto_PJ" name="telefonoPersonaContacto_PJ" placeholder="Teléfono de contacto" autocomplete="off">
+                                                    <input type="text" class="form-control form-control-sm" id="txt_regla_asig" name="txt_regla_asig" placeholder="Descripcion de la señal de la alerta" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
