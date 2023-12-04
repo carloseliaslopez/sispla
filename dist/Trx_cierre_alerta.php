@@ -372,7 +372,7 @@ $combos = new Dt_trx_monitoreo();
             $(document).ready(function ()
             {
                 ////// ASIGNAMOS LOS VALORES A EDITAR EN LOS CONTROLES DEL FORMULARIO
-                setValoresEmp();
+                //setValoresEmp();
             });
         </script>
 
@@ -402,7 +402,7 @@ $combos = new Dt_trx_monitoreo();
             })
  
         });       
-    </script>
+        </script>
  
      
         
