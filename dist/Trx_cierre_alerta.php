@@ -146,13 +146,14 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                         <div class="col-md-12" >
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <div id = "principal">
-                                                        <label id ="Text"><b> Datos generales de la señal de alerta</b></label>
+                                                    <div id = "subprincipal">
+                                                        <label id ="Text"><b> Datos generales de la alerta</b></label>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                      <!--End black line-->
+
                                         <div class="col-md-12" >
                                             <div class="form-row">
                                                 <div class="form-group col-md-3">
@@ -184,7 +185,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <div id = "subprincipal">
-                                                        <label id ="Text"><b> 1.1 Datos representante legal</b></label>
+                                                        <label id ="Text"><b> Detalles de la Transacción</b></label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -193,113 +194,43 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                         <div class="col-md-12" >
                                             <div class="form-row">
                                                 <div class="form-group col-md-4">
-                                                    <label for="nombreCompleto_RL">Nombre completo</label>
-                                                    <input type="text" class="form-control form-control-sm" id="nombreCompleto_RL" name="nombreCompleto_RL" placeholder="Nombre completo" autocomplete="off">
+                                                    <label for="txt_monto">Monto</label>
+                                                    <input type="text" class="form-control form-control-sm" id="txt_monto" name="txt_monto" placeholder="Monto" >
                                                 </div>
-                                                <div class="form-group col-md-2">
-                                                    <label for="paisNacimiento_RL">País de nacimiento</label>
-                                                    <select  class="form-control form-control-sm" id= "paisNacimiento_RL" name="paisNacimiento_RL">
-                                                        <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboPais() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
+
+                                                <div class="form-group col-md-4">
+                                                    <label for="txt_metodo_pago">Método de pago utilizado</label>
+                                                    <input type="text" class="form-control form-control-sm" id="txt_metodo_pago" name="txt_metodo_pago" placeholder="Método de pago utilizado" >
                                                 </div>
-                                                <div class="form-group col-md-2">
-                                                    <label for="depto_paisNacimiento_RL">Departamento</label>
-                                                    <select id="depto_paisNacimiento_RL" name="depto_paisNacimiento_RL"  class="form-control form-control-sm" >
-                                                        <option selected  disabled >Elegir..</option>
-                                                        <?php foreach($combos->ComboDepto() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
+                                                <div class="form-group col-md-4">
+                                                    <label for="txt_origen_fondo">Origenes de los fondos</label>
+                                                    <input type="text" class="form-control form-control-sm" id="txt_origen_fondo" name="txt_origen_fondo" placeholder="Origenes de los fondos" >                                               
                                                 </div>
-                                                <div class="form-group col-md-2">
-                                                    <label for="nacionalidad_RL">Nacionalidad</label>
-                                                    <select class="form-control form-control-sm" id="nacionalidad_RL" name ="nacionalidad_RL">
-                                                        <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboPais() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <label for="depto_nacionalidad_RL">Departamento</label>
-                                                    <select id="depto_nacionalidad_RL" name="depto_nacionalidad_RL"  class="form-control form-control-sm" >
-                                                        <option selected  disabled >Elegir..</option>
-                                                        <?php foreach($combos->ComboDepto() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12" >
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label for="txt_acti_comercial">Actividad comercial del cliente</label>
+                                                    <input type="text" class="form-control form-control-sm" id="txt_acti_comercial" name="txt_acti_comercial" placeholder="Actividad comercial del cliente" >                                               
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="col-md-12" >
                                             <div class="form-row">
-                                                <div class="form-group col-md-2">
-                                                    <label for="tipoId_RL">Tipo de identificación</label>
-                                                    <input type="text" class="form-control form-control-sm" id="tipoId_RL" name="tipoId_RL" placeholder="Nombre completo" >
+                                                <div class="form-group col-md-4">
+                                                    <label for="txt_cuenta">Número de cuenta o referencia</label>
+                                                    <input type="text" class="form-control form-control-sm" id="txt_cuenta" name="txt_cuenta" placeholder="Número de cuenta o referencia" >
                                                 </div>
-                                                <div class="form-group col-md-3">
-                                                    <label for="numeroId_RL">Número de identificación</label>
-                                                    <input type="text" class="form-control form-control-sm" id="numeroId_RL" name="numeroId_RL" placeholder="País de nacimiento" autocomplete="off">
+                                                <div class="form-group col-md-4">
+                                                    <label for="txt_origen_pais_trx">País de origen de la transacción</label>
+                                                    <input type="text" class="form-control form-control-sm" id="txt_origen_pais_trx" name="txt_origen_pais_trx" placeholder="País de origen de la transacción" autocomplete="off">
                                                 </div>
-                                                <div class="form-group col-md-3">
-                                                    <label for="paisEmisionId_RL">País de emisión</label>
-                                                    <select class="form-control form-control-sm" id="paisEmisionId_RL" name ="paisEmisionId_RL">
-                                                        <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboPais() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <label for="fechaEmisionId_RL">Fecha de emisión</label>
-                                                    <input type="date" class="form-control form-control-sm" id="fechaEmisionId_RL" name="fechaEmisionId_RL" placeholder="Fecha de emisión">
-                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <label for="fechaVencimientoId_RL">Fecha de vencimiento</label>
-                                                    <input type="date" class="form-control form-control-sm" id="fechaVencimientoId_RL" name="fechaVencimientoId_RL" placeholder="vencimiento">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-2">
-                                                    <label for="paisResidencia_RL">País de residencia</label>
-                                                    <select  class="form-control form-control-sm" id="paisResidencia_RL" name="paisResidencia_RL">
-                                                        <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboPais() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                               
-                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <label for="depto_paisResidencia_RL">Departamento</label>
-                                                    <select id="depto_paisResidencia_RL" name="depto_paisResidencia_RL"  class="form-control form-control-sm" >
-                                                        <option selected  disabled >Elegir..</option>
-                                                        <?php foreach($combos->ComboDepto() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
-                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <label for="celular_RL">Celular</label>
-                                                    <input type="number" class="form-control form-control-sm" id="celular_RL" name="celular_RL" placeholder="Celular" autocomplete="off">
-                                                </div>
-
-                                                <div class="form-group col-md-2">
-                                                    <label for="correo_RL">Correo electrónico </label>
-                                                    <input type="email" class="form-control form-control-sm" id="correo_RL" name="correo_RL" placeholder="Correo electrónico" autocomplete="off">
-                                                </div>
-                                                
-                                                <div class="form-group col-md-2">
-                                                    <label for="cargo_RL">Cargo que desempeña</label>
-                                                    <input type="text" class="form-control form-control-sm" id="cargo_RL" name="cargo_RL" placeholder="Nombre completo">
-                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <label for="profesion_RL">Profesión/Oficio</label>
-                                                    <input type="text" class="form-control form-control-sm" id="profesion_RL" name="profesion_RL" placeholder="Nombre completo" autocomplete="off">
+                                                <div class="form-group col-md-4">
+                                                    <label for="txt_destino_pais_trx">País de destino de la transacción</label>
+                                                    <input type="text" class="form-control form-control-sm" id="txt_destino_pais_trx" name="txt_destino_pais_trx" placeholder="País de destino de la transacción" autocomplete="off">
                                                 </div>
                                             </div>
                                         </div>
@@ -308,137 +239,42 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <div id = "subprincipal">
-                                                        <label id ="Text"><b> 1.2 Declaración jurada dueño o beneficiario</b></label>
+                                                        <label id ="Text"><b> Acciones tomadas</b></label>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--End black line-->
-                                        <div class="col-md-12">
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <label for="#"> <b> <i>Accionistas</i></b></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="col-md-12">
-                                            <div class="table-responsive table-sm">
-                                        
-                                                <table class="table table-bordered" id="tbl_ctrl_bono" width="100%" cellspacing="0">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Nombre completo</th>
-                                                            <th>Nacionalidad</th>
-                                                            <th>Departamento (si aplica)</th>
-                                                            <th>N° de identificación</th>
-                                                            <th>% Acciones</th>
-                                                                                                    
-                                                        </tr>
-                                                        
-                                                    </thead>
-                                                    <tbody> 
-                                                        <?php foreach($datospic->DatosAccionistas($varIdEmp) as $r): ?>
-                                                            <tr>
-                                                            
-                                                                <td><?php echo $r->__GET('nombreCompletoAccionistas'); ?></td>
-                                                                <td><?php echo $r->__GET('nombre_nacionalidadAccionistas'); ?></td>
-                                                                <td><?php echo $r->__GET('nombre_deptoNacionalidadAccionistas'); ?></td>
-                                                                <td><?php echo $r->__GET('numIdAccionistas'); ?></td>
-                                                                <td><?php echo $r->__GET('acciones'); ?></td>
-                                                                                                                                                                
-                                                            </tr>
-                                                        <?php endforeach; ?>
-                                                    </tbody>
-                                                    
-                                                </table>
-                                            </div>
-                                        </div>
-                                        
-
-
-                                        <div class="col-md-12">
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <label for="#"> <b><i>Beneficiarios finales</i></b></label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-                                        <!--Start -->
-                                        <div class="col-md-12">
-                                            <div class="table-responsive table-sm">
-                                        
-                                                <table class="table table-bordered" id="tbl_ctrl_bono" width="100%" cellspacing="0">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Nombres</th>
-                                                            <th>Apellidos</th>
-                                                            <th>Nacionalidad</th>
-                                                            <th>Departamento (si aplica)</th>
-                                                            <th>N° de identificación</th>
-                                                            <th>% Acciones</th>
-                                                                                                    
-                                                        </tr>
-                                                        
-                                                    </thead>
-                                                    <tbody> 
-                                                        <?php foreach($datospic->DatosBeneFinales($varIdEmp) as $r): ?>
-                                                            <tr>
-                                                            
-                                                                <td><?php echo $r->__GET('nombreBeneFinales'); ?></td>
-                                                                <td><?php echo $r->__GET('ApellidosBeneFinales'); ?></td>
-                                                                <td><?php echo $r->__GET('nombre_nacionalidadBeneFinales'); ?></td>
-                                                                <td><?php echo $r->__GET('nombre_deptoNacionalidadBeneFinales'); ?></td>
-                                                                <td><?php echo $r->__GET('numIdBeneFinales'); ?></td>
-                                                                <td><?php echo $r->__GET('AccionesBeneFinales'); ?></td>                                                                                                 
-                                                            </tr>
-                                                        <?php endforeach; ?>
-                                                    </tbody>
-                                                    
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <!-- ss-->                                       
-                                        <!--Start Black lines-->
-                                        
-                                       <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <div id = "principal">
-                                                        <label id ="Text"><b> 2. Origenes de los fondos</b></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--End black line-->
-
                                         <div class="col-md-12" >
                                             <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <label for="formaPago_OFPJ">Forma de Pago</label>
-                                                    <select class="form-control form-control-sm" id="formaPago_OFPJ" name="formaPago_OFPJ">
+                                                <div class="form-group col-md-6">
+                                                    <label for="txt_contacto_cliente">Contacto con cliente</label>
+                                                    <select class="form-control form-control-sm"  id="txt_contacto_cliente" name="txt_contacto_cliente">
                                                         <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboFormaPago() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idFormaPago') ?>"> <?php echo $r->__GET('nombreFormaPago') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
-                                                </div>
-                                                <div class="form-group col-md-2">
+                                                        <option value="Se contacto con el cliente" >Si Se contacto con el cliente</option>
+                                                        <option value="No contacto con el cliente" >No Se contacto con el cliente</option>
+                                                    </select>
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <label for="origenesFondos_OFPJ">Fuente y origen de los fondos</label>
-                                                    <select class="form-control form-control-sm" id="origenesFondos_OFPJ" name="origenesFondos_OFPJ" >
+                                                    <label for="txt_sol_adicional">Solicitud de documentación adicional</label>
+                                                    <select class="form-control form-control-sm"  id="txt_sol_adicional" name="txt_sol_adicional">
                                                         <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboOrigenesFondos() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idFuenteFondos') ?>"> <?php echo $r->__GET('nombreFuenteFondos') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
+                                                        <option value="Se solicito documentación adiconal" >Si se solicito documentación adiconal</option>
+                                                        <option value="No se solicito documentación adiconal" >No se solicito documentación adiconal</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-md-12" >
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <div id = "subprincipal">
+                                                        <label id ="Text"><b>Documentación recibida</b></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
                                          <!--Start Black lines-->
                                        <div class="col-md-12" >
                                             <div class="form-row">
@@ -449,340 +285,8 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--End black line-->
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    <label for="nombreComercial">Nombre comercial </label>
-                                                    <input type="text" class="form-control form-control-sm" id="nombreComercial" name="nombreComercial" placeholder="Nombre comercial" autocomplete="off">
-                                                </div>
-                                                <div class="form-group col-md-3">
-                                                    <label for="idTributaria">Identificación tributaria</label>
-                                                    <input type="text" class="form-control form-control-sm" id="idTributaria" name="idTributaria" placeholder="Identificación tributaria" autocomplete="off">
-                                                </div>
+          
 
-                                                <div class="form-group col-md-3">
-                                                    <label for="aniosNegocio">Años de tener el negocio</label>
-                                                    <input type="number" class="form-control form-control-sm" id="aniosNegocio" name="aniosNegocio" placeholder="Años de tener el negocio" autocomplete="off">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <label for="DomicilioComercial">Domicilio comercial o físico de la sociedad(Dirección exacta de la ubicación de la sociedad) </label>
-                                                    <input type="text" class="form-control form-control-sm" id="DomicilioComercial" name="DomicilioComercial" placeholder="Nombre comercial" autocomplete="off">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-3">
-                                                    <label for="paisDominicilio_AE">País de domicilio</label>
-                                                    <select class="form-control form-control-sm"  id="paisDominicilio_AE" name="paisDominicilio_AE">
-                                                        <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboPais() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
-                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <label for="departamento">Departamento</label>
-                                                    <select id="departamento" name="departamento"  class="form-control form-control-sm" >
-                                                        <option selected  disabled >Elegir..</option>
-                                                        <?php foreach($combos->ComboDepto() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idDepartamento') ?>"> <?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
-                                                </div>
-
-                                                <div class="form-group col-md-4">
-                                                    <label for="paginaWeb">Página web </label>
-                                                    <input type="text" class="form-control form-control-sm" id="paginaWeb" name="paginaWeb" placeholder="Página web" autocomplete="off">
-                                                </div>
-                                                
-                                                <div class="form-group col-md-3">
-                                                    <label for="telefonoOficina">Teléfono de oficina</label>
-                                                    <input type="text" class="form-control form-control-sm" id="telefonoOficina" name="telefonoOficina" placeholder="Teléfono de oficina" autocomplete="off">
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <label for="AreaGeografica">Área geográfica del negocio </label>
-                                                    <select id="AreaGeografica" name="AreaGeografica" class="form-control form-control-sm">
-                                                        <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboAreaGeografica() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idAreaGeografica') ?>"> <?php echo $r->__GET('nombreAreaGeografica') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
-                                                </div>
-                                                <div class="form-group col-md-5">
-                                                    
-                                                </div>
-                                                <div class="form-group col-md-3">
-                                                    <label for="ActividadNegocio">Actividad del negocio</label>
-                                                    <select id="ActividadNegocio" name="ActividadNegocio" class="form-control form-control-sm">
-                                                        <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboActividadNegocio() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idActividadNegocio') ?>"> <?php echo $r->__GET('nombreActividadNegocio') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
-                                                </div>                                                
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <label for="descripcionEmpresa">*Descripción de la actividad o negocio a la que se dedica la empresa</label>
-                                                    <input type="text" class="form-control form-control-sm" id="descripcionEmpresa"  name="descripcionEmpresa" placeholder="*Descripción de la actividad o negocio a la que se dedica la empresa" autocomplete="off">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <div class="col-12">
-                                                        <label for="ventasMensual">Ventas mensuales</label>
-                                                        <div class="input-group">
-                                                        <div class="input-group-text form-control-sm"><b>U$</b></div>
-                                                            <input type="number" class="form-control form-control-sm" id="ventasMensual" name="ventasMensual" placeholder="Ventas mensuales" autocomplete="off">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="noEmpleado">No.de empleados</label>
-                                                    <input type="number" class="form-control form-control-sm" id="noEmpleado" name="noEmpleado" placeholder="No.de empleados" autocomplete="off">
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="noSucursal">No. de sucursales</label>
-                                                    <input type="number" class="form-control form-control-sm" id="noSucursal" name="noSucursal" placeholder="No. de sucursales" autocomplete="off">
-                                                </div>                                               
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12" >
-                                            <label for="#"><b>¿Pertenece la empresa a algun grupo economico o Holding?</b></label>
-                                            <div class="form-row">
-                                                <div class="form-group col-md-2">
-                                                    <label for="grupoEco">Elegir</label>
-                                                    <select id="grupoEco" name="grupoEco" class="form-control form-control-sm">
-                                                        <option selected >Elegir..</option>
-                                                        <option value="Si">Si</option>
-                                                        <option value="No">No</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-5">
-                                                    <label for="indicarGrupoEco"><b>Indicar</b></label>
-                                                    <input type="text" class="form-control form-control-sm" id="indicarGrupoEco" name="indicarGrupoEco" placeholder="Indicar" autocomplete="off">
-                                                </div>                                      
-                                            </div>
-                                        </div>
-                                        <!--Start Black lines-->
-                                       <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <div id = "subprincipal">
-                                                        <label id ="Text"><b> 3.1 Clientes y proveedores </b></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--End black line-->
-                                        <div class="col-md-12">
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <label for="#" ><b>Principales Clientes</b></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                         <!--Start table Principales clientes-->
-                                        <div class="table-responsive">
-                                    
-                                            <table class="table table-bordered" id="tbl_ctrl_bono" width="100%" cellspacing="0">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Nombre </th>
-                                                        <th>Domicilio Comercial</th>
-                                                        <th>Telefono</th>
-                                                                           
-                                                    </tr>
-                                                    
-                                                </thead>
-                                                <tbody> 
-                                                    <?php foreach($datospic->DatosPClientes($varIdEmp) as $r): ?>
-                                                        <tr>
-                                                        
-                                                            <td><?php echo $r->__GET('nombreClientePic'); ?></td>
-                                                            <td><?php echo $r->__GET('domicilio'); ?></td>
-                                                            <td><?php echo $r->__GET('telefono'); ?></td>
-                                                            
-                                                                                                                                                            
-                                                        </tr>
-                                                    <?php endforeach; ?>
-                                                </tbody>
-                                                
-                                            </table>
-                                        </div>
-                                        <!-- End table Principales Cliente-->
-                                        <div class="col-md-12">
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <label for="#" ><b>Principales proveedores</b></label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!--Start table Principales clientes-->
-                                        <div class="table-responsive ">
-                                    
-                                            <table class="table table-bordered" id="tbl_ctrl_bono" width="100%" cellspacing="0">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Nombre </th>
-                                                        <th>Servicio o Producto</th>
-                                                        <th>Domicilio Comercial</th>
-                                                        <th>Telefono</th>
-                                                                        
-                                                    </tr>
-                                                    
-                                                </thead>
-                                                <tbody> 
-                                                    <?php foreach($datospic->DatosPProveedores($varIdEmp) as $r): ?>
-                                                        <tr>
-                                                        
-                                                            <td><?php echo $r->__GET('nombreProveedor'); ?></td>
-                                                            <td><?php echo $r->__GET('servicio'); ?></td>
-                                                            <td><?php echo $r->__GET('domicilio'); ?></td>
-                                                            <td><?php echo $r->__GET('telefono'); ?></td>
-                                                            
-                                                                                                                                                            
-                                                        </tr>
-                                                    <?php endforeach; ?>
-                                                </tbody>
-                                                
-                                            </table>
-                                        </div>
-                                        <!-- End table accionista-->
-                                        
-                                        <!--Start Black lines-->
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <div id = "principal">
-                                                        <label id ="Text"><b> 4. Declaración Persona Expuesta Politicamente (PEP*):</b></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                     <!--End black line-->
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-1">
-                                                    <label for="pep">PEP</label>
-                                                    <select id="pep" name="pep" class="form-control form-control-sm" required>
-                                                        <option selected disabled>Elegir..</option>
-                                                        <option value="Si">Si</option>
-                                                        <option Value="No">No</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <label for="nombre_pep" >Nombre completo</label>
-                                                    <input type="text" class="form-control form-control-sm" id="nombre_pep" name="nombre_pep" placeholder="Nombre completo" autocomplete="off">
-                                                </div>
-                                                <div class="form-group col-md-3">
-                                                    <label for="relacion_pep">Relación con el cliente</label>
-                                                    <select id="relacion_pep" name="relacion_pep" class="form-control form-control-sm">
-                                                        <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboRelacionCliente() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idRelacionCliente') ?>"> <?php echo $r->__GET('descripcion') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
-                                                </div>
-                                                <div class="form-group col-md-5">
-                                                    <label for="nombreEntidad_pep">Nombre de la entidad</label>
-                                                    <input type="text" class="form-control form-control-sm" id="nombreEntidad_pep" name="nombreEntidad_pep" placeholder="Nombre de la entidad" autocomplete="off">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-3">
-                                                    <label for="pais_PEP">País </label>
-                                                    <select class="form-control form-control-sm"  id="pais_PEP" name="pais_PEP">
-                                                        <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboPais() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label for="cargo_pep">Cargo</label>
-                                                    <input type="text" class="form-control form-control-sm" id="cargo_pep" name="cargo_pep" placeholder="Cargo" autocomplete="off">
-                                                </div>
-                                                <div class="form-group col-md-3">
-                                                    <label for="periodo_pep">Periodo</label>
-                                                    <input type="text" class="form-control form-control-sm" id="periodo_pep" name="periodo_pep" placeholder="Periodo" autocomplete="off">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--Start Black lines-->
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <div id = "principal">
-                                                        <label id ="Text"><b> 5. Auto certificación FACTA:</b></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                     <!--End black line-->
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-1">
-                                                    <label for="facta">FACTA</label>
-                                                    <select id="facta" name="facta" class="form-control form-control-sm" required>
-                                                        <option selected disabled>Elegir..</option>
-                                                        <option value="Si">Si</option>
-                                                        <option Value="No">No</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <label for="nombre_facta">Nombre completo</label>
-                                                    <input type="text" class="form-control form-control-sm" id="nombre_facta" name="nombre_facta" placeholder="Nombre completo" autocomplete="off">
-                                                </div>
-                                                <div class="form-group col-md-3">
-                                                    <label for="relacionCliente_facta">Relación con el cliente</label>
-                                                    <select id="relacionCliente_facta" name="relacionCliente_facta" class="form-control form-control-sm">
-                                                        <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboRelacionCliente() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idRelacionCliente') ?>"> <?php echo $r->__GET('descripcion') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                                
-                                                </div>
-                                                <div class="form-group col-md-5">
-                                                    <label for="causa_facta">Causa</label>
-                                                    <select id="causa_facta" name="causa_facta" class="form-control form-control-sm" >
-                                                        <option selected disabled>Elegir..</option>
-                                                        <?php foreach($combos->ComboCausaFacta() as $r): ?>
-                                                            <option value="<?php echo $r->__GET('idCausa') ?>"> <?php echo $r->__GET('descripcion') ?></option>
-                                                        <?php endforeach; ?>
-                                                    </select>                                             
-                                                </div>
-                                            </div>
-                                        </div>
 
                                         <pre>
                                         </pre>                                        
@@ -843,6 +347,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
         <script>
             function setValoresEmp()
             {
+                
                 $("#idCli_PN").val("<?php echo $varIdEmp ?>");
                 $("#fechaPic_PN").val("<?php echo $empEdit->__GET('fechaPic') ?>");
                 $("#idCliente_PN").val("<?php echo $empEdit->__GET('id') ?>");
@@ -857,72 +362,8 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 $("#nombrePersonaContacto_PJ").val("<?php echo $datosGlobales->__GET('nombrePersonaContacto') ?>");
                 $("#cargoPersonaContacto_PJ").val("<?php echo $datosGlobales->__GET('cargoPersonaContacto') ?>");
                 $("#telefonoPersonaContacto_PJ").val("<?php echo $datosGlobales->__GET('telefono') ?>");
-
-                //datos Representante legal
-                $("#nombreCompleto_RL").val("<?php echo $datosRL->__GET('nombreRepresentanteLegal') ?>");
-                $("#paisNacimiento_RL").val("<?php echo $datosRL->__GET('paisNacimiento') ?>");
-                $("#depto_paisNacimiento_RL").val("<?php echo $datosRL->__GET('deptoPaisNacimiento') ?>");
-                $("#nacionalidad_RL").val("<?php echo $datosRL->__GET('nacionalidad') ?>");
-                $("#depto_nacionalidad_RL").val("<?php echo $datosRL->__GET('deptoNacionalidad') ?>");
-                $("#tipoId_RL").val("<?php echo $datosRL->__GET('tipoIdentificacion') ?>");  
-                $("#numeroId_RL").val("<?php echo $datosRL->__GET('numeroIdentificacion') ?>"); 
-                $("#paisEmisionId_RL").val("<?php echo $datosRL->__GET('paisEmision') ?>");
-                $("#fechaEmisionId_RL").val("<?php echo $datosRL->__GET('fechaEmision') ?>");
-                $("#fechaVencimientoId_RL").val("<?php echo $datosRL->__GET('fechaVencimiento') ?>");
-                $("#paisResidencia_RL").val("<?php echo $datosRL->__GET('paisResidencia') ?>");  
-                $("#depto_paisResidencia_RL").val("<?php echo $datosRL->__GET('deptoPaisResidencia') ?>");
-                $("#celular_RL").val("<?php echo $datosRL->__GET('celular') ?>");
-                $("#correo_RL").val("<?php echo $datosRL->__GET('correo') ?>");
-                $("#cargo_RL").val("<?php echo $datosRL->__GET('cargo') ?>");
-                $("#profesion_RL").val("<?php echo $datosRL->__GET('profesion') ?>");
-
-                //datos de origenes de los fondos
-                $("#formaPago_OFPJ").val("<?php echo $dtOrigenesFondos->__GET('idFormaPago') ?>");
-                $("#origenesFondos_OFPJ").val("<?php echo $dtOrigenesFondos->__GET('idFuenteFondos') ?>");
-
-                //datos de Actividad Economica
-                $("#nombreComercial").val("<?php echo $datosAc->__GET('nombreComercial') ?>");
-                $("#idTributaria").val("<?php echo $datosAc->__GET('idTributaria') ?>");
-                $("#aniosNegocio").val("<?php echo $datosAc->__GET('anios') ?>");
-                $("#DomicilioComercial").val("<?php echo $datosAc->__GET('domicilioComercial') ?>");
-                $("#paisDominicilio_AE").val("<?php echo $datosAc->__GET('paisDomicilio') ?>");
-                $("#departamento").val("<?php echo $datosAc->__GET('departamento') ?>");
-                $("#paginaWeb").val("<?php echo $datosAc->__GET('paginaWeb') ?>");
-                $("#telefonoOficina").val("<?php echo $datosAc->__GET('telefonoOficina') ?>");
-                $("#AreaGeografica").val("<?php echo $datosAc->__GET('idAreaGeografica') ?>");
-                $("#ActividadNegocio").val("<?php echo $datosAc->__GET('idActividadNegocio') ?>");
-                $("#descripcionEmpresa").val("<?php echo $datosAc->__GET('descripcion') ?>");
-                $("#ventasMensual").val("<?php echo $datosAc->__GET('ventasMensual') ?>");
-                $("#noEmpleado").val("<?php echo $datosAc->__GET('numEmpleados') ?>");
-                $("#noSucursal").val("<?php echo $datosAc->__GET('numSucursales') ?>");
-                $("#grupoEco").val("<?php echo $datosAc->__GET('grupoEconomico') ?>");
-                $("#indicarGrupoEco").val("<?php echo $datosAc->__GET('indicar') ?>");
                 
-                //datos pep
-                $("#pep").val("<?php echo $datosPep->__GET('pep') ?>");
-                $("#nombre_pep").val("<?php echo $datosPep->__GET('nombrePep') ?>");
-                $("#relacion_pep").val("<?php echo $datosPep->__GET('idRelacionCliente') ?>");
-                $("#nombreEntidad_pep").val("<?php echo $datosPep->__GET('nombreEntidad') ?>");
-                $("#pais_PEP").val("<?php echo $datosPep->__GET('PaisPep') ?>");
-                $("#cargo_pep").val("<?php echo $datosPep->__GET('cargo') ?>");
-                $("#periodo_pep").val("<?php echo $datosPep->__GET('perido') ?>");
-
-                //datos facta
-                $("#facta").val("<?php echo $datosFacta->__GET('facta') ?>");
-                $("#nombre_facta").val("<?php echo $datosFacta->__GET('nombreFacta') ?>");
-                $("#relacionCliente_facta").val("<?php echo $datosFacta->__GET('idRelacionCliente') ?>"); 
-                $("#causa_facta").val("<?php echo $datosFacta->__GET('idCausa') ?>");   
                 
-                //Datos de interes
-                $("#personalidadJ_II").val("<?php echo $dtinfo->__GET('idTipoPerJuridica') ?>"); 
-                $("#fechaConstitucion_II").val("<?php echo $dtinfo->__GET('idConstitucion') ?>"); 
-                $("#codigo").val("<?php echo $dtinfo->__GET('idCatalogoAE') ?>"); 
-                $("#codigoDescripcion").val("<?php echo $dtinfo->__GET('descripcion') ?>");
-
-                
-                $("#resultBusqueda_II").val("<?php echo $dtinfo->__GET('idBusquedaRes') ?>"); 
-                $("#interes_LAE").val("<?php echo $dtinfo->__GET('idPaisAE') ?>"); 
-                $("#interes_depto_LAE").val("<?php echo $dtinfo->__GET('idDepto') ?>"); 
             }
 
         </script>
@@ -939,36 +380,8 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 window.open ("ListaClientes.php","_self");
             }
         </script>
-        <script>
-            $(document).ready(function (){
-               //función para determinar La actividad economica
-                
-                var id_empleo = $("#codigo").val();
-                var id_matriz = $("#interes_LAE").val();
-
-                
-                $.post("./JQuerys/Panama/MRJ/viewPic_catalogo_ActEcono.php", { id_empleo: id_empleo, id_matriz: id_matriz }, function(data) {
-                    $("#codigoDescripcion").html(data);
-                    //$('#codigoDescripcion').val($("#").val());       
-                    });	
-            });            
-        </script>
-       <script>
-            $(document).ready(function (){
-               //función para determinar La actividad economica
-                
-                var id_pic = $("#idCli_PN").val();
-                
-                //alert($('input[id=idCli_PN]').val());
-
-                $.post("./JQuerys/Panama/MRJ/viewPic_depto.php", {id_pic: id_pic}, function(data) {
-                    $("#interes_depto_LAE").html(data);
-                    
-                    //alert($('select[id=interes_depto_LAE]').val());
-                    //$('#codigoDescripcion').val($("#").val());       
-                    });	
-            });            
-        </script>
+ 
+     
         
     </body>
 </html>
