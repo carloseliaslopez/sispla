@@ -143,6 +143,37 @@ class Dt_trx_monitoreo extends Conexion
 			die($e->getMessage());
 		}
 	}
+	public function ComboCatDocumentacion()
+	{
+		try
+		{
+			$this->myCon = parent::conectar();
+			$result = array();
+			$querySQL = "SELECT idDocumento, nombreDocumento, idEstado FROM trx_cat_doc_recibida WHERE idEstado <>3;";
+
+			$stm = $this->myCon->prepare($querySQL);
+			$stm->execute();
+
+			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
+			{
+				$emp = new trx_cat_doc_recibida();
+
+				//_SET(CAMPOBD, atributoEntidad)			
+				$emp->__SET('idDocumento', $r->idDocumento);
+				$emp->__SET('nombreDocumento', $r->nombreDocumento);
+				$emp->__SET('idEstado', $r->idEstado);
+				
+				$result[] = $emp;
+
+			}
+			$this->myCon = parent::desconectar();
+			return $result;
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 
 
 

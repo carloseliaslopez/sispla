@@ -1,70 +1,29 @@
 <?php
-/*
+
 error_reporting(0);
-
 //ENTIDADES
-include '../Entidades/ComboPais.php';
-include '../Entidades/ComboFormaPago.php';
-include '../Entidades/ComboOrigenesFondos.php';
-include '../Entidades/ComboAreaGeografica.php';
-include '../Entidades/ComboActividadNegocio.php';
-include '../Entidades/ComboEstadoCivil.php';
-
-//Entidad Central
-include '../Entidades/Pic.php';
-
-include '../Entidades/Compartidas/Departamento.php';
-include '../Entidades/Compartidas/RelacionCliente.php';
-include '../Entidades/Compartidas/Causa.php';
-include '../Entidades/Compartidas/OrigenesFondos.php';
-include '../Entidades/Compartidas/Pep.php';
-include '../Entidades/Compartidas/Facta.php';
-
-//include '../Entidades/Juridio/DatosClienteJuridicoPic.php';
-include '../Entidades/Juridio/DatosRepresentanteLegal.php';
-include '../Entidades/Juridio/Accionistas.php';
-include '../Entidades/Juridio/BeneficiariosFinales.php';
-include '../Entidades/Juridio/ActividadEconomica.php';
-include '../Entidades/Juridio/PrincipalesClientes.php';
-include '../Entidades/Juridio/PrincipalesProveedores.php';
-
-include '../Entidades/Anexos/CategoriaSalario.php';
-include '../Entidades/Anexos/Constitucion.php';
-include '../Entidades/Anexos/TipoPerJuridica.php';
-include '../Entidades/Anexos/BusquedaRes.php';
-include '../Entidades/Anexos/InteresInfo.php';
-include '../Entidades/Anexos/vw_InteresInfo.php';
-
-
-include '../Entidades/Vistas/vw_DatosGenerales.php';
-include '../Entidades/Vistas/vw_datosRL.php';
-include '../Entidades/Vistas/vw_Accionistas.php';
-include '../Entidades/Vistas/vw_BeneficiariosFinales.php';
+include '../Entidades/Trx_monitoreo/Trx_cat_doc_recibida.php';
 
 //DATOS
-include '../Datos/DtCombos.php';
-include '../Datos/DtPic.php';
-include '../Datos/DtDataPicCompartidos.php';
+include '../Datos/Dt_trx_monitoreo.php';
+
 session_start();
 if (!isset($_SESSION['idUsuario'])){
     header("Location: ../dist/login.php");
 }
 $nombre = $_SESSION['usuario'];
 $rol = $_SESSION ['idRol'];
-//INSTANCIAS
-$combos = new DtCombos();
 
-$datospic = new DtPic();
-$datoscompartidos = new DtDataPicCompartidos();
+$combos = new Dt_trx_monitoreo();
 
 //RECUPERAMOS EL VALOR DE NUESTRA VARIABLE PARA BUSCAR EN LA BD
-
 //datos del pic Juridico
-$varIdEmp = $_GET['dataPIC'];
+//$varIdEmp = $_GET['dataPIC'];
 
-$empEdit;
-$empEdit = $datospic->ObtenerPic($varIdEmp);
-*/
+//$combos;
+//$combos = $cat_doc->comb($varIdEmp);
+
+
 ?>
 
 
@@ -250,8 +209,8 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                     <label for="txt_contacto_cliente">Contacto con cliente</label>
                                                     <select class="form-control form-control-sm"  id="txt_contacto_cliente" name="txt_contacto_cliente">
                                                         <option selected disabled>Elegir..</option>
-                                                        <option value="Se contacto con el cliente" >Si Se contacto con el cliente</option>
-                                                        <option value="No contacto con el cliente" >No Se contacto con el cliente</option>
+                                                        <option value="Se contacto con el cliente" >Si se contacto con el cliente</option>
+                                                        <option value="No contacto con el cliente" >No se contacto con el cliente</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group col-md-6">
@@ -273,8 +232,50 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 </div>
                                             </div>
                                         </div>
+                                        <!--START BOX DOCUMENTACIÓN JURIDICA>>-->
+                                         <!--Start encabezado-->
+                                            <div class="col-md-12" >
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-3">
+                                                        <label><b>Documentación Recibida</b></label>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                   
+                                                    </div>
+                                                <div class="form-group col-md-2">
+                                                  <button type="button" class="btn btn-primary col-md-10" id="add_field_button_J"> <i class="fas fa-user-plus"></i> Agregar</button>
+                                                </div>
+                                                </div>
+                                            </div>
+                                         <!--End encabezado-->
 
-                                        
+                                            <div class="input_fields_wrap_J" id ="input_fields_wrap_J">
+                                                <div class="col-md-12" >
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label class="large mb-2" for="nombreDoc_ME_J[]" ><b>Documento</b></label>
+                                                            <select id="nombreDoc_ME_J[]" name="nombreDoc_ME_J[]" class="form-control form-control-sm">
+                                                                <option selected disabled value="164">Elegir..</option>
+                                                                <?php foreach($combos->ComboCatDocumentacion() as $r): ?>
+                                                                    <option value="<?php echo $r->__GET('idDocumento') ?>"> <?php echo $r->__GET('nombreDocumento') ?></option>
+                                                                <?php endforeach; ?>
+                                                            </select>
+                                                        </div>   
+                                                        <div class="form-group col-md-5">
+                                                            <label class="large mb-2" for="comentario_ME_J[]" ><b>Observaciones</b></label>
+                                                            <input type="text" class="form-control form-control-sm" id="comentario_ME_J[]" name="comentario_ME_J[]" 
+                                                                placeholder="Comentario" autocomplete="off" >
+                                                        </div> 
+                                                        
+                                                        <div class="form-group col-sm-1">
+                                                            <label for="">Eliminar</label>
+                                                            <button type="button" class="btn btn-danger btn-sm" id="remove_field_PP" disabled> <i class="fas fa-trash-alt"></i></button>
+                                                        </div>  
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    <!--END BOX DOCUMENTACIÓN JURIDICA>>-->
+
                                          <!--Start Black lines-->
                                        <div class="col-md-12" >
                                             <div class="form-row">
@@ -380,6 +381,27 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 window.open ("ListaClientes.php","_self");
             }
         </script>
+        <script>
+        $(document).ready(function() {
+            var max_fields      = 50; //Cantidad maxima de inputs 
+            var wrapper   		= $(".input_fields_wrap_J"); //atributos 
+            var add_button      = $("#add_field_button_J"); //Boton agregar
+
+            var x = 1; //Contador agregar
+            $(add_button).click(function(e){ //al realizar clia al boton add
+            e.preventDefault();
+                if(x < max_fields){ //condicional de limites 
+                    x++; //incrementa la cantidad de textbox
+                    $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-6"><select id="nombreDoc_ME_J[]" name="nombreDoc_ME_J[]" class="form-control form-control-sm"><option selected disabled> Elegir..</option><?php foreach($combos->ComboCatDocumentacion() as $r): ?><option value="<?php echo $r->__GET('idDocumento') ?>"> <?php echo $r->__GET('nombreDocumento') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-5"><input type="text" class="form-control form-control-sm" id="comentario_ME_J[]" name="comentario_ME_J[]" placeholder="Observaciones" autocomplete="off" ></div> <div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_J" > <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
+                }
+            });
+                
+            $(wrapper).on("click","#remove_field_J", function(e){ //user click on remove text
+            e.preventDefault(); $(this).parent('div').parent('div').remove(); x--;
+            })
+ 
+        });       
+    </script>
  
      
         
