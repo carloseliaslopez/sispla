@@ -381,6 +381,7 @@ $combos = new Dt_trx_monitoreo();
                 window.open ("ListaClientes.php","_self");
             }
         </script>
+        
         <script>
         $(document).ready(function() {
             var max_fields      = 50; //Cantidad maxima de inputs 
