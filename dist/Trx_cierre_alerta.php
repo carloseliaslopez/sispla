@@ -264,7 +264,7 @@ $combos = new Dt_trx_monitoreo();
                                                         <div class="form-group col-md-5">
                                                             <label class="large mb-2" for="comentario_ME_J[]" ><b>Observaciones</b></label>
                                                             <input type="text" class="form-control form-control-sm" id="comentario_ME_J[]" name="comentario_ME_J[]" 
-                                                                placeholder="Comentario" autocomplete="off" >
+                                                                placeholder="Observaciones" autocomplete="off" >
                                                         </div> 
                                                         
                                                         <div class="form-group col-sm-1">
@@ -381,7 +381,7 @@ $combos = new Dt_trx_monitoreo();
                 window.open ("ListaClientes.php","_self");
             }
         </script>
-        
+
         <script>
         $(document).ready(function() {
             var max_fields      = 50; //Cantidad maxima de inputs 
@@ -393,7 +393,7 @@ $combos = new Dt_trx_monitoreo();
             e.preventDefault();
                 if(x < max_fields){ //condicional de limites 
                     x++; //incrementa la cantidad de textbox
-                    $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-6"><select id="nombreDoc_ME_J[]" name="nombreDoc_ME_J[]" class="form-control form-control-sm"><option selected disabled> Elegir..</option><?php foreach($combos->ComboCatDocumentacion() as $r): ?><option value="<?php echo $r->__GET('idDocumento') ?>"> <?php echo $r->__GET('nombreDocumento') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-5"><input type="text" class="form-control form-control-sm" id="comentario_ME_J[]" name="comentario_ME_J[]" placeholder="Observaciones" autocomplete="off" ></div> <div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_J" > <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
+                    $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-6"><select id="nombreDoc_ME_J[]" name="nombreDoc_ME_J[]" class="form-control form-control-sm"><option selected disabled value="164">Elegir..</option><?php foreach($combos->ComboCatDocumentacion() as $r): ?><option value="<?php echo $r->__GET('idDocumento') ?>"> <?php echo $r->__GET('nombreDocumento') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-5"><input type="text" class="form-control form-control-sm" id="comentario_ME_J[]" name="comentario_ME_J[]" placeholder="Observaciones" autocomplete="off" ></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_PP" > <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
                 }
             });
                 
