@@ -157,7 +157,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                             <div class="form-row">
                                                 <div class="form-group col-md-3">
                                                     <label for="fecha_actual">Fecha</label>
-                                                    <input type="date" class="form-control form-control-md" id="fecha_MR_J" name="fecha_MR_J" 
+                                                    <input type="date" class="form-control form-control-sm" id="fecha_MR_J" name="fecha_MR_J" 
                                                     value="<?php echo (new DateTime())->format('Y-m-d'); ?>" autocomplete="off" disabled>
                                                 </div>
                                             </div>
