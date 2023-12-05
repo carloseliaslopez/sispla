@@ -5,7 +5,7 @@ error_reporting(0);
 include '../Entidades/Trx_monitoreo/Trx_oficina.php';
 include '../Entidades/Trx_monitoreo/Trx_regla.php';
 include '../Entidades/Trx_monitoreo/Trx_estadoAlerta.php';
-include '../Entidades/Trx_monitoreo/vw_trx_alertas.php';
+include '../Entidades/Trx_monitoreo/vw_alertas.php';
 
 
 
