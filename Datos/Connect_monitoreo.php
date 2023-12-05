@@ -1,5 +1,5 @@
 <?php
-class Conexion
+class Conexion_monit
 {
     // Atributos
     private $pdo;

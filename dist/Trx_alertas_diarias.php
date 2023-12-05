@@ -14,6 +14,7 @@ include '../Datos/Dt_trx_monitoreo.php';
 
 //INSTANCIAS
 $Dt_monit = new Dt_trx_monitoreo();
+$Dt_alerts = new Dt_Alertas();
 
 session_start();
 if (!isset($_SESSION['idUsuario'])){
@@ -137,7 +138,7 @@ $rol = $_SESSION ['idRol'];
                                         </thead>
                                         <tbody>
 
-                                        <?php foreach($Dt_monit->tbl_TotalAlertas() as $r): ?>
+                                        <?php foreach($Dt_alerts->tbl_TotalAlertas() as $r): ?>
                                                 <tr>
                                                     <td><?php echo $r->__GET('nombre_cliente'); ?></td>
                                                     <td><?php echo $r->__GET('plastico'); ?></td>

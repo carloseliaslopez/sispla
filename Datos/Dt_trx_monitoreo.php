@@ -1,5 +1,6 @@
 <?php
 include_once("Connect.php");
+include_once("Dt_trx_monitoreo.php");
 
 class Dt_trx_monitoreo extends Conexion
 {
@@ -108,40 +109,7 @@ class Dt_trx_monitoreo extends Conexion
 		}
 	}
 
-	public function tbl_TotalAlertas()
-	{
-		try
-		{
-			$this->myCon = parent::conectar();
-			$result = array();
-			$querySQL = "SELECT nombre_cliente, plastico, monto, regla, oficina FROM vw_alertas";
-
-			$stm = $this->myCon->prepare($querySQL);
-			$stm->execute();
-
-			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
-			{
-				$emp = new vw_alertas();
-
-				//_SET(CAMPOBD, atributoEntidad)			
-				$emp->__SET('nombre_cliente', $r->nombre_cliente);
-				$emp->__SET('plastico', $r->plastico);
-				$emp->__SET('monto', $r->monto);
-				$emp->__SET('nombreRegla', $r->nombreRegla);
-				$emp->__SET('regla', $r->regla);
-				$emp->__SET('oficina', $r->oficina);
-								
-				$result[] = $emp;
-
-			}
-			$this->myCon = parent::desconectar();
-			return $result;
-		}
-		catch(Exception $e)
-		{
-			die($e->getMessage());
-		}
-	}
+	
 	public function ComboCatDocumentacion()
 	{
 		try
@@ -242,4 +210,45 @@ class Dt_trx_monitoreo extends Conexion
 		}
 	}
 	*/
+}
+
+class Dt_Alertas extends Conexion_monit
+{
+	private $myCon;
+
+	public function tbl_TotalAlertas()
+	{
+		try
+		{
+			$this->myCon = parent::conectar();
+			$result = array();
+			$querySQL = "SELECT nombre_cliente, plastico, monto, regla, oficina FROM vw_alertas";
+
+			$stm = $this->myCon->prepare($querySQL);
+			$stm->execute();
+
+			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
+			{
+				$emp = new vw_alertas();
+
+				//_SET(CAMPOBD, atributoEntidad)			
+				$emp->__SET('nombre_cliente', $r->nombre_cliente);
+				$emp->__SET('plastico', $r->plastico);
+				$emp->__SET('monto', $r->monto);
+				$emp->__SET('nombreRegla', $r->nombreRegla);
+				$emp->__SET('regla', $r->regla);
+				$emp->__SET('oficina', $r->oficina);
+								
+				$result[] = $emp;
+
+			}
+			$this->myCon = parent::desconectar();
+			return $result;
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+	
 }
