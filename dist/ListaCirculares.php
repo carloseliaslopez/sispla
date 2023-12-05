@@ -128,7 +128,7 @@ if(isset($varMsjDelEmp))
                                             <tr>
                                                 <th>Fecha de busqueda</th>
                                                 <th>Referencia</th>
-                                                <th>Organismo</th>
+                                                <th>País organismo</th>
                                                 <th>Opciones</th>
                                            
                                             </tr>
@@ -156,7 +156,7 @@ if(isset($varMsjDelEmp))
                                             <tr>
                                                 <th>Fecha de busqueda</th>
                                                 <th>Referencia</th>
-                                                <th>Organismo</th>
+                                                <th>País organismo</th>
                                                 <th>Opciones</th>
                                             </tr>
                                         </tfoot>
@@ -185,7 +185,6 @@ if(isset($varMsjDelEmp))
                                                         <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
                                                         <input type="hidden" id="idUsuario" name="idUsuario" value="<?php echo $idUsuario?>"/>
                                                         
-                                                            
                                                     </div>
                                                                                                         
                                                     <div class="form-group">
@@ -193,7 +192,6 @@ if(isset($varMsjDelEmp))
                                                         <input class="btn btn-danger btn-block" type="reset" value="Cancelar" data-dismiss="modal"/> &nbsp;
                                                     </div>
                                                                                                      
-                                                    
                                                 </div>
 
                                             </div>

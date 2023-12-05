@@ -83,8 +83,7 @@ class DtListasInternas extends Conexion
 				//$emp->__SET('idEstado', $r->idEstado);
 
 				$result[] = $emp;
-
-				//var_dump($result);
+								//var_dump($result);
 			} 
 			$this->myCon = parent::desconectar();
 			return $result;

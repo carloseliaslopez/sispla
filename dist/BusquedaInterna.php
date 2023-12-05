@@ -83,7 +83,7 @@ $combos = new DtCombos();
                                                     </select>
                                                 </div>
                                                 <div class="form-group col-md-3">
-                                                    <label for="">SubOrganismo</label>
+                                                    <label for="">Pais del Organismo</label>
                                                     <input type="text" class="form-control form-control-sm" id="sub_organismo" name="sub_organismo"  autocomplete="off" >
                                                 </div>
                                                 
