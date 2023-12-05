@@ -107,7 +107,7 @@
                      <!--end sidebar-->
                 </div>
 
-                <div class="sb-sidenav-footer">
+                <div class="sb-sidenav-footer" style="background-color:#2B3990;">
                     <div class="small">Registrado como:</div>
                     <?php echo $nombre; ?>
                 </div>
