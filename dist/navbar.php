@@ -4,7 +4,7 @@
             <!-- Navbar Search-->
             
             <!-- Navbar-->
-            <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0" >
+            <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0"  style="background-color:#2B3990;">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <?php echo $nombre; ?> <i class="fas fa-user fa-fw"></i></a>
