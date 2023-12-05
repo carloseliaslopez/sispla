@@ -23,6 +23,7 @@ $rol = $_SESSION ['idRol'];
     <title>Pagina Principal</title>
     <link rel="icon" type="./images/icon_versatec.svg">
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/NewStyles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="fontawesome5.15.1/js/all.min.js"></script>
 
@@ -60,7 +61,7 @@ $rol = $_SESSION ['idRol'];
                     </ol>
                     <div class="row">
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
+                            <div class="card bg-primary text-white mb-4 " id ="versa-color-1">
                                 <div class="card-body">Busquedas</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="./menuBusqueda.html">Opciones y Detalles</a>
