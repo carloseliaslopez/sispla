@@ -134,6 +134,7 @@ $rol = $_SESSION ['idRol'];
                                                 <th>Monto Acumulado</th> 
                                                 <th>regla</th> 
                                                 <th>Oficina</th> 
+                                                <th>Opciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -164,6 +165,7 @@ $rol = $_SESSION ['idRol'];
                                                 <th>Monto Acumulado</th> 
                                                 <th>regla</th> 
                                                 <th>Oficina</th> 
+                                                <th>Opciones</th>
                                             </tr>
                                         </tfoot>
                                     </table>

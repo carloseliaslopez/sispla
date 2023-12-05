@@ -222,7 +222,7 @@ class Dt_Alertas extends Conexion_monit
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT nombre_cliente, plastico, monto, regla, oficina FROM vw_alertas";
+			$querySQL = "SELECT nombre_cliente, plastico, monto, regla, oficina FROM vw_alertas;";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
