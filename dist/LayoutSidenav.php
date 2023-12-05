@@ -9,21 +9,6 @@
                             Página principal
                         </a>
                         <!-- start sub-menu Busquedas-->
-                        
-                        <a class="nav-link collapsed" data-target="#Busquedas" href="#" data-toggle="collapse"  aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-search"></i></div>
-                            Busquedas
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="Busquedas" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="./ListaCirculares.php">Busqueda Interna</a>
-                                <a class="nav-link" href="BusquedasObligatorias.php">Busqueda Obligada</a>
-                                <a class="nav-link" href="BusquedaMensual.php">Busqueda Mensual</a>
-                            </nav>
-                        </div>
-                        <!-- end sub-menu Busquedas-->
-                        
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Listas" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Listas de datos
@@ -39,6 +24,8 @@
                             </nav>
                         </div>
                         <!-- end sub-menu listas-->
+
+                        <!-- end sub-menu Informes-->
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Informes" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
                             Informes y reportes
@@ -52,6 +39,36 @@
                             </nav>
                         </div>
                         <!-- end sub-menu Informes-->
+
+                        <!-- Start sub-menu Busquedas-->
+
+                        <a class="nav-link collapsed" data-target="#Busquedas" href="#" data-toggle="collapse"  aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-search"></i></div>
+                            Busquedas
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="Busquedas" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="./ListaCirculares.php">Busqueda Interna</a>
+                                <a class="nav-link" href="BusquedasObligatorias.php">Busqueda Obligada</a>
+                                <a class="nav-link" href="BusquedaMensual.php">Busqueda Mensual</a>
+                            </nav>
+                        </div>
+                        <!-- end sub-menu Busquedas-->
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#trx_menu" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-exclamation-circle"></i></i></div>
+                                Señales de alerta
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        
+                        <div class="collapse" id="trx_menu" aria-labelledby="headingSix" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="./Trx_alertas_diarias.php">Alertas diarias</a> 
+                                <a class="nav-link" href="#">Informe de Alertas</a> 
+                                <a class="nav-link" href="#">Cargar Alertas</a>
+                            </nav>
+                        </div>
+                        
                         
                         <!-- start sub-menu Administracion-->
                         <?php if ($rol == 1) { ?>
@@ -83,19 +100,7 @@
                             </nav>
                         </div>
 
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#trx_menu" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-exclamation-circle"></i></i></div>
-                                Señales de alerta
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
                         
-                        <div class="collapse" id="trx_menu" aria-labelledby="headingSix" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="./Trx_alertas_diarias.php">Alertas diarias</a> 
-                                <a class="nav-link" href="#">Informe de Alertas</a> 
-                                <a class="nav-link" href="#">Cargar Alertas</a>
-                            </nav>
-                        </div>
                         
                     </div>
                     <?php } ?>
