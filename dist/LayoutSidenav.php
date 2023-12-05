@@ -1,5 +1,5 @@
 <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion" style="background-color:#8DC63F;">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion" style="background-color:#606060;">
                 <div class="sb-sidenav-menu">
                     <!--start sidebar-->
                     <div class="nav">
