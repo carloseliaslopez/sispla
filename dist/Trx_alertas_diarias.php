@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 
 //ENTIDADES
 include '../Entidades/Trx_monitoreo/Trx_oficina.php';
