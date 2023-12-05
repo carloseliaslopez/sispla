@@ -31,7 +31,7 @@ $rol = $_SESSION ['idRol'];
 
 <body class="sb-nav-fixed">
 <?php require "../dist/navbar.php" ?>
-    <div id="layoutSidenav" style="background-color:#2B3990;">
+    <div id="layoutSidenav" >
     <?php require "../dist/LayoutSidenav.php" ?>
     
         
