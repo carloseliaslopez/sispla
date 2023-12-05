@@ -52,55 +52,48 @@ $combos = new Dt_trx_monitoreo();
         <?php require "../dist/LayoutSidenav.php" ?>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid">
-                      <!-- cardbody agregar start-->
-                      <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table mr-1"></i>
-                                Información PIC
+                    <form method="POST" action="#">
+                        <div class="container-fluid">
+                            <!-- cardbody agregar start-->
+                            <div class="card mb-4">
+                                <div class="col-md-12" >
+                                    <div class="form-row">  
+                                    </div>
+                                </div>
                             </div>
-                            
+
+                            <!--logos de VERSATEC-->
                             <div class="col-md-12" >
-                                <div class="form-row">                                              
+                                <div class="form-row">  
                                     <div class="form-group col-md-2">
-                                        <label for="fechaPic_PN">Fecha del PIC</label>
-                                        <input type="text" class="form-control form-control-sm" id="fechaPic_PN" name="fechaPic_PN" placeholder="Fecha del PIC" disabled>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-12" >
-                                <div class="form-row">
-                                    <div class="form-group col-md-7">
-                                        <label for="nombreCliente_PN">Nombre del cliente</label>
                                         
-                                        <input type="text" class="form-control form-control-sm" id="nombreCliente_PN" name="nombreCliente_PN" placeholder="Nombre del cliente" disabled>
+                                    </div>                                            
+                                    <div class="form-group col-md-4">
+                                        <label for="fechaPic_PN" style="align-content: center;">Logo Financia</label>
                                     </div>
-                                    <div class="form-group col-md-5">
-                                        <label for="idCliente_PN">Número de identidad</label>
-                                        <input type="text" class="form-control form-control-sm" id="idCliente_PN" name="idCliente_PN" placeholder="Número de identidad" disabled>
+                                    <div class="form-group col-md-4">
+                                        <label for="fechaPic_PN" style="align-content: center;">Logo Versatec</label>
                                     </div>
+                                    <div class="form-group col-md-2">
+                                        
+                                    </div> 
                                 </div>
                             </div>
-
-                        </div>
-                        <!-- cardbody PIC Datos end-->
-                     
-                        <div class="card mb-4">
+                            <!--logos de VERSATEC-->
                             
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <div style="text-align: right;">
-                                        <a href="#" title="Regresar a la página anterior">
-                                            <i class="fas fa-arrow-circle-left"></i>
-                                            Regresar
-                                        </a>
-                                    </div>
-                               
-
-                                    <!--Start form-->
-                                    <hr/>
-                                    
+                           <!--start datos del Pic-->
+                            <div class="card mb-4">
+                                
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <div style="text-align: right;">
+                                            <a href="#" title="Regresar a la página anterior">
+                                                <i class="fas fa-arrow-circle-left"></i>
+                                                Regresar
+                                            </a>
+                                        </div>
+                                        <hr/>
+                                        
                                         <!--Start Black lines-->
                                         <div class="col-md-12" >
                                             <div class="form-row">
@@ -111,7 +104,7 @@ $combos = new Dt_trx_monitoreo();
                                                 </div>
                                             </div>
                                         </div>
-                                     <!--End black line-->
+                                        <!--End black line-->
 
                                         <div class="col-md-12" >
                                             <div class="form-row">
@@ -149,7 +142,7 @@ $combos = new Dt_trx_monitoreo();
                                                 </div>
                                             </div>
                                         </div>
-                                     <!--End black line-->
+                                        <!--End black line-->
                                         <div class="col-md-12" >
                                             <div class="form-row">
                                                 <div class="form-group col-md-4">
@@ -192,7 +185,7 @@ $combos = new Dt_trx_monitoreo();
                                                     <input type="text" class="form-control form-control-sm" id="txt_destino_pais_trx" name="txt_destino_pais_trx" placeholder="País de destino de la transacción" autocomplete="off">
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>                                                          
                                         <!--Start Black lines-->
                                         <div class="col-md-12" >
                                             <div class="form-row">
@@ -233,79 +226,126 @@ $combos = new Dt_trx_monitoreo();
                                             </div>
                                         </div>
                                         <!--START BOX DOCUMENTACIÓN JURIDICA>>-->
-                                         <!--Start encabezado-->
+                                        <!--Start encabezado-->
+                                        <div class="col-md-12" >
+                                            <div class="form-row">
+                                                <div class="form-group col-md-3">
+                                                    
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                            
+                                                </div>
+                                            <div class="form-group col-md-2">
+                                            <button type="button" class="btn btn-primary col-md-10" id="add_field_button_J"> <i class="fas fa-user-plus"></i> Agregar</button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <!--End encabezado-->
+                                        <div class="input_fields_wrap_J" id ="input_fields_wrap_J">
                                             <div class="col-md-12" >
                                                 <div class="form-row">
-                                                    <div class="form-group col-md-3">
-                                                        <label><b>Documentación Recibida</b></label>
-                                                    </div>
                                                     <div class="form-group col-md-6">
-                                                   
-                                                    </div>
-                                                <div class="form-group col-md-2">
-                                                  <button type="button" class="btn btn-primary col-md-10" id="add_field_button_J"> <i class="fas fa-user-plus"></i> Agregar</button>
-                                                </div>
-                                                </div>
-                                            </div>
-                                         <!--End encabezado-->
-
-                                            <div class="input_fields_wrap_J" id ="input_fields_wrap_J">
-                                                <div class="col-md-12" >
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label class="large mb-2" for="nombreDoc_ME_J[]" ><b>Documento</b></label>
-                                                            <select id="nombreDoc_ME_J[]" name="nombreDoc_ME_J[]" class="form-control form-control-sm">
-                                                                <option selected disabled value="164">Elegir..</option>
-                                                                <?php foreach($combos->ComboCatDocumentacion() as $r): ?>
-                                                                    <option value="<?php echo $r->__GET('idDocumento') ?>"> <?php echo $r->__GET('nombreDocumento') ?></option>
-                                                                <?php endforeach; ?>
-                                                            </select>
-                                                        </div>   
-                                                        <div class="form-group col-md-5">
-                                                            <label class="large mb-2" for="comentario_ME_J[]" ><b>Observaciones</b></label>
-                                                            <input type="text" class="form-control form-control-sm" id="comentario_ME_J[]" name="comentario_ME_J[]" 
-                                                                placeholder="Observaciones" autocomplete="off" >
-                                                        </div> 
-                                                        
-                                                        <div class="form-group col-sm-1">
-                                                            <label for="">Eliminar</label>
-                                                            <button type="button" class="btn btn-danger btn-sm" id="remove_field_PP" disabled> <i class="fas fa-trash-alt"></i></button>
-                                                        </div>  
-                                                    </div>
-                                                </div>
-                                            </div>
-                                    <!--END BOX DOCUMENTACIÓN JURIDICA>>-->
-
-                                         <!--Start Black lines-->
-                                       <div class="col-md-12" >
-                                            <div class="form-row">
-                                                <div class="form-group col-md-12">
-                                                    <div id = "principal">
-                                                        <label id ="Text"><b> 3. Actividad económica</b></label>
-                                                    </div>
+                                                        <label class="large mb-2" for="nombreDoc_ME_J[]" ><b>Documento</b></label>
+                                                        <select id="nombreDoc_ME_J[]" name="nombreDoc_ME_J[]" class="form-control form-control-sm">
+                                                            <option selected disabled value="164">Elegir..</option>
+                                                            <?php foreach($combos->ComboCatDocumentacion() as $r): ?>
+                                                                <option value="<?php echo $r->__GET('idDocumento') ?>"> <?php echo $r->__GET('nombreDocumento') ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>   
+                                                    <div class="form-group col-md-5">
+                                                        <label class="large mb-2" for="comentario_ME_J[]" ><b>Observaciones</b></label>
+                                                        <input type="text" class="form-control form-control-sm" id="comentario_ME_J[]" name="comentario_ME_J[]" 
+                                                            placeholder="Observaciones" autocomplete="off" >
+                                                    </div> 
+                                                    
+                                                    <div class="form-group col-sm-1">
+                                                        <label for="">Eliminar</label>
+                                                        <button type="button" class="btn btn-danger btn-sm" id="remove_field_PP" disabled> <i class="fas fa-trash-alt"></i></button>
+                                                    </div>  
                                                 </div>
                                             </div>
                                         </div>
-          
-
-
+                                        <!--END BOX DOCUMENTACIÓN JURIDICA>>-->
+                                        <div class="col-md-12" >
+                                            <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <label for="txt_sol_adicional">Contacto con el cliente</label>
+                                                    <select class="form-control form-control-sm"  id="txt_sol_adicional" name="txt_sol_adicional">
+                                                        <option selected disabled>Elegir..</option>
+                                                        <option value="Si" >Si se contacto con el cliente</option>
+                                                        <option value="No" >No se contacto con el cliente</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label for="txt_sol_adicional">Solicitud de documentación adicional</label>
+                                                    <select class="form-control form-control-sm"  id="txt_sol_adicional" name="txt_sol_adicional">
+                                                        <option selected disabled>Elegir..</option>
+                                                        <option value="Si" >Si se solicito documentación adiconal</option>
+                                                        <option value="No" >No se solicito documentación adiconal</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label for="txt_sol_adicional">Reporte de Transacciones Sospechas</label>
+                                                    <select class="form-control form-control-sm"  id="txt_sol_adicional" name="txt_sol_adicional">
+                                                        <option selected disabled>Elegir..</option>
+                                                        <option value="Si" >Si</option>
+                                                        <option value="No" >No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Start encabezado observaciones-->
+                                        <div class="col-md-12" >
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label><b>Acciones de seguimiento recomendadas</b></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--End encabezado observaciones-->
+                                        <div class="col-md-12" >
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <textarea class="form-control" id="trx_acc_seguim" name="txt_acc_seguim" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12" >
+                                            <div class="form-row">
+                                                <div class="form-group col-md-5">
+                                                    <label for="txt_fecha_rev">Fecha revisión</label>
+                                                    <input type="date" class="form-control form-control-sm" id="txt_fecha_rev" name="txt_fecha_rev" value="" autocomplete="off" >
+                                                </div>
+                                                <div class="form-group col-md-7">
+                                                    <label for="txt_oficina">Oficina</label>
+                                                    <input type="text" class="form-control form-control-sm" id="txt_oficina" name="txt_oficina" placeholder="País de origen de la transacción" autocomplete="off">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
                                         <pre>
                                         </pre>                                        
                                         <!--Start buttons-->
                                         <div class="col-md-12">
                                             <div class="form-row">
-                                                <input type="button"  class="btn btn-primary col-md-12" onclick="regresar()" value="Volver"/>
+                                                <div class="form-group col-md-4">
+                                                    <button type="submit" class="btn btn-primary col-md-8">Guardar</button>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <button type="reset" class="btn btn-danger col-md-8">Borrar</button>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <button type="button" class="btn btn-success col-md-7" onclick="regresar()">Regresar</button>
+                                                </div>
                                             </div>
                                         </div>
-                                        <!--End buttons -->  
-                                   
-
-                                      <!--End form-->
-                                   
+                                        <!--End buttons-->
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
@@ -385,7 +425,7 @@ $combos = new Dt_trx_monitoreo();
                 }
             });
                 
-            $(wrapper).on("click","#remove_field_J", function(e){ //user click on remove text
+            $(wrapper).on("click","#remove_field_PP", function(e){ //user click on remove text
             e.preventDefault(); $(this).parent('div').parent('div').remove(); x--;
             })
  
