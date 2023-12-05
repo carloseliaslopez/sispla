@@ -1,4 +1,4 @@
-    <nav class="sb-topnav navbar navbar-expand navbar-dark " style="background-color:#2B3990;">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark " style="background-color:#8DC63F;">
             <a class="navbar-brand" href="index.php">SISPLA</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
