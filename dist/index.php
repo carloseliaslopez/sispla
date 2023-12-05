@@ -21,9 +21,11 @@ $rol = $_SESSION ['idRol'];
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Pagina Principal</title>
+    <link rel="icon" type="./images/icon_versatec.svg">
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="fontawesome5.15.1/js/all.min.js"></script>
+
 </head>
 
 <body class="sb-nav-fixed">
@@ -35,7 +37,24 @@ $rol = $_SESSION ['idRol'];
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <h1 class="mt-4">Página principal</h1>
+                    <!--logos de VERSATEC-->
+                    <div class="col-md-12" >
+                        <div class="form-row">  
+                            <div class="form-group col-md-2">
+                                
+                            </div>                                            
+                            <div class="form-group col-md-4">
+                                <img src="./images/logo_fc.png" />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <img src="./images/logo_versatec.png" />
+                            </div>
+                            <div class="form-group col-md-2">
+                                
+                            </div> 
+                        </div>
+                    </div>
+                    <!--logos de VERSATEC-->
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Sistemas de prevención de lavado de activos V.1.1</li>
                     </ol>

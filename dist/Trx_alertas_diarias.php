@@ -129,10 +129,10 @@ $rol = $_SESSION ['idRol'];
                                     <table class="table table-bordered" id="busquedaInterna" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>TarjetaHabiente</th>
+                                                <th>Tarjetahabiente</th>
                                                 <th>Plastico</th>      
-                                                <th>Monto Acumulado</th> 
-                                                <th>regla</th> 
+                                                <th>Monto</th> 
+                                                <th>Regla</th> 
                                                 <th>Oficina</th> 
                                                 <th>Opciones</th>
                                             </tr>
@@ -160,10 +160,10 @@ $rol = $_SESSION ['idRol'];
                                     
                                         <tfoot>
                                             <tr>
-                                                <th>TarjetaHabiente</th>
+                                                <th>Tarjetahabiente</th>
                                                 <th>Plastico</th>      
-                                                <th>Monto Acumulado</th> 
-                                                <th>regla</th> 
+                                                <th>Monto</th> 
+                                                <th>Regla</th> 
                                                 <th>Oficina</th> 
                                                 <th>Opciones</th>
                                             </tr>

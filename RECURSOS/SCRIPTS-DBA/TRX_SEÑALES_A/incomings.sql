@@ -52,12 +52,18 @@ CREATE TABLE trx_incoming_dsy(
  cod_pais varchar (5)
 );
 
-
 /*VISTAS PARA GENERAR LAS ALERTAS*/
 CREATE view central_trx as
 select nombre_cliente,plastico, tipo_transaccion,codigo_mcc,riesgo_pais,empresa,pais,cod_pais, fecha_proceso, sum(monto) as 'monto', 'Abierta ' as 'Estado' 
 from trx_incoming_dsy group by plastico, month(fecha_proceso) order by monto desc;
 
-select * from central_trx;
+DROP view if exists vw_alertas ;
+CREATE VIEW  vw_alertas AS
+SELECT nombre_cliente, plastico, format(monto, 2) as 'monto', 'Compras Mayores a 100K'  as 'regla', 'VSYSTEM_PANAMA'  as 'oficina' from  central_trx where monto >= 100000
+UNION ALL
+SELECT nombre_cliente, plastico, format(monto, 2) as 'monto', 'Retiros Mayores a 10K' as 'regla','VSYSTEM_PANAMA'  as 'oficina' from  central_trx where monto >= 20000 and tipo_transaccion = '07| RETIROS'
+UNION ALL 
+SELECT nombre_cliente, plastico, format(sum(monto), 2) as 'monto', 'Transacciones en Paises de riesgo Alto' as 'regla','VSYSTEM_PANAMA'  as 'oficina' from  trx_incoming_dsy where riesgo_pais = 'Alto' group by plastico
+UNION ALL 
+SELECT nombre_cliente, plastico, format(sum(monto), 2) as 'monto', 'Operaciones de criptoactivos' as 'regla','VSYSTEM_PANAMA'  as 'oficina' from  trx_incoming_dsy where codigo_mcc = '6051' group by plastico
 
-													  		  	
