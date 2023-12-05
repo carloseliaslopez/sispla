@@ -68,11 +68,11 @@ $combos = new Dt_trx_monitoreo();
                                     <div class="form-group col-md-2">
                                         
                                     </div>                                            
-                                    <div class="form-group col-md-4">
-                                        <label for="fechaPic_PN" style="align-content: center;">Logo Financia</label>
+                                    <div class="form-group col-md-4" style="align-content: center; padding: 20px 50px;">
+                                        <img src="./images/logo_fc.png"  style="max-width:100%;width:auto;height:auto;"/>
                                     </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="fechaPic_PN" style="align-content: center;">Logo Versatec</label>
+                                    <div class="form-group col-md-4"  style="align-content: center; padding: 20px 50px;">
+                                        <img src="./images/logo_versatec.png" style="max-width:100%;width:auto;height:auto;" />
                                     </div>
                                     <div class="form-group col-md-2">
                                         
