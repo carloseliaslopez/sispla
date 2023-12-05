@@ -44,10 +44,10 @@ $rol = $_SESSION ['idRol'];
                                 
                             </div>                                            
                             <div class="form-group col-md-4">
-                                <img src="./images/logo_fc.png" />
+                                <img src="./images/logo_fc.png"  style="max-width:100%;width:auto;height:auto;"/>
                             </div>
                             <div class="form-group col-md-4">
-                                <img src="./images/logo_versatec.png" />
+                                <img src="./images/logo_versatec.png" style="max-width:100%;width:auto;height:auto;" />
                             </div>
                             <div class="form-group col-md-2">
                                 
