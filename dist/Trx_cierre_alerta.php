@@ -1,6 +1,6 @@
 <?php
 
-//error_reporting(0);
+error_reporting(0);
 //ENTIDADES
 include '../Entidades/Trx_monitoreo/Trx_cat_doc_recibida.php';
 
@@ -345,29 +345,17 @@ $combos = new Dt_trx_monitoreo();
         <script src="DataTables/JSZip-2.5.0/jszip.min.js"></script>
 
 
+        <!--
         <script>
             function setValoresEmp()
-            {
-                
-                $("#idCli_PN").val("<?php echo $varIdEmp ?>");
-                $("#fechaPic_PN").val("<?php echo $empEdit->__GET('fechaPic') ?>");
-                $("#idCliente_PN").val("<?php echo $empEdit->__GET('id') ?>");
-                $("#nombreCliente_PN").val("<?php echo $empEdit->__GET('nombreCliente') ?>");  
-                
-                //datos generales 
-                $("#paisContitucion_PJ").val("<?php echo $datosGlobales->__GET('paisConstitucion') ?>");
-                $("#depto_paisContitucion_PJ").val("<?php echo $datosGlobales->__GET('deptoConstitucion') ?>");
-                $("#fechaConstitucion_PJ").val("<?php echo $datosGlobales->__GET('fechaConstitucion') ?>");
-                $("#fechaInscripcion_PJ").val("<?php echo $datosGlobales->__GET('fechaInscripcion') ?>");
-                $("#correoPersonaContacto_PJ").val("<?php echo $datosGlobales->__GET('correoPersonaContacto') ?>");
-                $("#nombrePersonaContacto_PJ").val("<?php echo $datosGlobales->__GET('nombrePersonaContacto') ?>");
-                $("#cargoPersonaContacto_PJ").val("<?php echo $datosGlobales->__GET('cargoPersonaContacto') ?>");
-                $("#telefonoPersonaContacto_PJ").val("<?php echo $datosGlobales->__GET('telefono') ?>");
-                
+            {               
+              
                 
             }
 
         </script>
+        -->
+<!--
         <script>
             $(document).ready(function ()
             {
@@ -375,7 +363,7 @@ $combos = new Dt_trx_monitoreo();
                 //setValoresEmp();
             });
         </script>
-
+-->
         <script>
             function regresar(){
                 window.open ("ListaClientes.php","_self");
