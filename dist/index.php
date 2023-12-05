@@ -61,7 +61,7 @@ $rol = $_SESSION ['idRol'];
                     </ol>
                     <div class="row">
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4 " id ="versa-color-1">
+                            <div class="card bg-primary text-white mb-4 " style="background-color:#2B3990;">
                                 <div class="card-body">Busquedas</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="./menuBusqueda.html">Opciones y Detalles</a>
@@ -79,7 +79,7 @@ $rol = $_SESSION ['idRol'];
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-success text-white mb-4">
+                            <div class="card bg-success text-white mb-4" style="background-color:#8DC63F;">
                                 <div class="card-body">informes</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="menuInformes.html">Opciones y Detalles</a>
@@ -88,7 +88,7 @@ $rol = $_SESSION ['idRol'];
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
+                            <div class="card bg-primary text-white mb-4" style="background-color:#2B3990;">
                                 <div class="card-body">Administración</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="./adminTablasPic.php">Opciones y Detalles</a>
@@ -97,7 +97,7 @@ $rol = $_SESSION ['idRol'];
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
+                            <div class="card bg-primary text-white mb-4" style="background-color:#606060;">
                                 <div class="card-body">Listas de riesgos</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="#">Opciones y Detalles</a>
