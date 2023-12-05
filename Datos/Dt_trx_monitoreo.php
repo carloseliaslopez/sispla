@@ -235,7 +235,7 @@ class Dt_Alertas extends Conexion_monit
 				$emp->__SET('nombre_cliente', $r->nombre_cliente);
 				$emp->__SET('plastico', $r->plastico);
 				$emp->__SET('monto', $r->monto);
-				$emp->__SET('nombreRegla', $r->nombreRegla);
+				
 				$emp->__SET('regla', $r->regla);
 				$emp->__SET('oficina', $r->oficina);
 								
