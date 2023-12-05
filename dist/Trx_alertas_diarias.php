@@ -128,28 +128,25 @@ $rol = $_SESSION ['idRol'];
                                     <table class="table table-bordered" id="busquedaInterna" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>Empresa</th>
                                                 <th>TarjetaHabiente</th>
-                                                <th>Codigo Regla</th>      
-                                                <th>Nombre Regla</th>  
-                                                <th>Monto Acumulado</th>   
-                                                <th>Opciones</th>                                                                                      
+                                                <th>Plastico</th>      
+                                                <th>Monto Acumulado</th> 
+                                                <th>regla</th> 
+                                                <th>Oficina</th> 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                     
 
-                                      
                                         <?php foreach($Dt_monit->tbl_TotalAlertas() as $r): ?>
                                                 <tr>
-                                                    <td><?php echo $r->__GET('cliente'); ?></td>
-                                                    <td><?php echo $r->__GET('usuario'); ?></td>
-                                                    <td><?php echo $r->__GET('codRegla'); ?></td>
-                                                    <td><?php echo $r->__GET('nombreRegla'); ?></td>
-                                                    <td><?php echo $r->__GET('Monto_Total'); ?></td>
+                                                    <td><?php echo $r->__GET('nombre_cliente'); ?></td>
+                                                    <td><?php echo $r->__GET('plastico'); ?></td>
+                                                    <td><?php echo $r->__GET('monto'); ?></td>
+                                                    <td><?php echo $r->__GET('regla'); ?></td>
+                                                    <td><?php echo $r->__GET('oficina'); ?></td>
                                                     
                                                     <td>
-                                                        <a href="#.php?editE=</?php echo $r->__GET('codRegla'); ?>" 
+                                                        <a href="#.php?editE=</?php echo $r->__GET('plastico'); ?>" 
                                                         title="Revisar Señal de alerta">
                                                             <i class="fas fa-pen-square"></i>
                                                             Revisar
@@ -161,12 +158,11 @@ $rol = $_SESSION ['idRol'];
                                     
                                         <tfoot>
                                             <tr>
-                                                <th>Empresa</th>
                                                 <th>TarjetaHabiente</th>
-                                                <th>Codigo Regla</th>      
-                                                <th>Nombre Regla</th>  
-                                                <th>Monto Acumulado</th>   
-                                                <th>Opciones</th>
+                                                <th>Plastico</th>      
+                                                <th>Monto Acumulado</th> 
+                                                <th>regla</th> 
+                                                <th>Oficina</th> 
                                             </tr>
                                         </tfoot>
                                     </table>

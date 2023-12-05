@@ -114,24 +114,23 @@ class Dt_trx_monitoreo extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT  cliente, usuario, codRegla, nombreRegla, nombreOficina, nombreEstado, format(sum(MONTO),2) as 'Monto_Total' FROM vw_trx_alertas GROUP BY codRegla";
+			$querySQL = "SELECT nombre_cliente, plastico, monto, regla, oficina FROM vw_alertas";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
 			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
 			{
-				$emp = new vw_trx_alertas();
+				$emp = new vw_alertas();
 
 				//_SET(CAMPOBD, atributoEntidad)			
-				$emp->__SET('cliente', $r->cliente);
-				$emp->__SET('usuario', $r->usuario);
-				$emp->__SET('codRegla', $r->codRegla);
+				$emp->__SET('nombre_cliente', $r->nombre_cliente);
+				$emp->__SET('plastico', $r->plastico);
+				$emp->__SET('monto', $r->monto);
 				$emp->__SET('nombreRegla', $r->nombreRegla);
-				$emp->__SET('nombreOficina', $r->nombreOficina);
-				$emp->__SET('nombreEstado', $r->nombreEstado);
-				$emp->__SET('Monto_Total', $r->Monto_Total);
-				
+				$emp->__SET('regla', $r->regla);
+				$emp->__SET('oficina', $r->oficina);
+								
 				$result[] = $emp;
 
 			}
