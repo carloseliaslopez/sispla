@@ -78,7 +78,7 @@ if(isset($varMsjNewEmp))
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-primary text-white mb-4">
+                                        <div class="card  text-white mb-4" style="background-color:#2B3990;">
                                             <div class="card-body">Evaluación de riesgo de clientes Jurídico</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="MatrizRiesgoJuridico.php">Realizar Evaluación</a>
@@ -87,7 +87,7 @@ if(isset($varMsjNewEmp))
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-success text-white mb-4">
+                                        <div class="card b text-white mb-4" style="background-color:#8DC63F;">
                                             <div class="card-body">Evaluación de riesgo de clientes Natural </div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="MatrizRiesgoNatural.php">Realizar Evaluación</a>
@@ -96,7 +96,7 @@ if(isset($varMsjNewEmp))
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-info text-white mb-4">
+                                        <div class="card  text-white mb-4" style="background-color:#606060;">
                                             <div class="card-body">Documentación proxima a expirar</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="#">Realizar actualizacion</a>

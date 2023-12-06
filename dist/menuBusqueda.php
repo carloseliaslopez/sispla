@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 if (!isset($_SESSION['idUsuario'])){
@@ -12,7 +11,7 @@ $rol = $_SESSION ['idRol'];
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -20,93 +19,53 @@ $rol = $_SESSION ['idRol'];
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Pagina Principal</title>
-    <link rel="icon" type="./images/icon_versatec.svg">
+    <title>Menu de busquedas</title>
     <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/NewStyles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script> -->
     <script src="fontawesome5.15.1/js/all.min.js"></script>
-
 </head>
 
 <body class="sb-nav-fixed">
     <?php require "../dist/navbar.php" ?>
-    <div id="layoutSidenav" >
-    <?php require "../dist/LayoutSidenav.php" ?>
-    
-        
+    <div id="layoutSidenav">
+        <?php require "../dist/LayoutSidenav.php" ?>
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <!--logos de VERSATEC-->
-                    <div class="col-md-12" >
-                        <div class="form-row">  
-                                                                        
-                            <div class="form-group col-md-4" style="align-content: center; padding: 50px 30px;">
-                                <img src="./images/logo_fc.png"  style="max-width:100%;width:auto;height:auto; "/>
-                            </div>
-                            <div class="form-group col-md-2">
-                                
-                            </div>
-                            <div class="form-group col-md-2">
-                                
-                            </div> 
-                            <div class="form-group col-md-4"  style="align-content: center; ">
-                                <img src="./images/logo_versatec.png" style="max-width:100%;width:auto;height:auto;" />
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <!--logos de VERSATEC-->
+                    <h1 class="mt-4">Menu de Busquedas</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Sistemas de prevención de lavado de activos V.1.1</li>
                     </ol>
                     <div class="row">
                         <div class="col-xl-3 col-md-6">
-                            <div class="card  text-white mb-4 " style="background-color:#2B3990;">
-                                <div class="card-body">Busquedas</div>
+                            <div class="card  text-white mb-4" style="background-color:#2B3990;">
+                                <div class="card-body">Busqueda Interna</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="./menuBusqueda.php">Opciones y Detalles</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-warning text-white mb-4">
-                                <div class="card-body">Listas</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="menuLista.html">Opciones y Detalles</a>
+                                    <a class="small text-white stretched-link" href="./ListaCirculares.php">Opciones y Detalles</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="card  text-white mb-4" style="background-color:#8DC63F;">
-                                <div class="card-body">informes</div>
+                                <div class="card-body">Busqueda Obligada</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="menuInformes.html">Opciones y Detalles</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card text-white mb-4" style="background-color:#2B3990;">
-                                <div class="card-body">Administración</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="./adminTablasPic.php">Opciones y Detalles</a>
+                                    <a class="small text-white stretched-link" href="./BusquedasObligatorias.php">Opciones y Detalles</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="card  text-white mb-4" style="background-color:#606060;">
-                                <div class="card-body">Listas de riesgos</div>
+                                <div class="card-body">Busqueda Mensual</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">Opciones y Detalles</a>
+                                    <a class="small text-white stretched-link" href="./BusquedaMensual.php">Opciones y Detalles</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
 
                    
@@ -125,9 +84,6 @@ $rol = $_SESSION ['idRol'];
             </footer>
         </div>
     </div>
-    <!-- PLUGIN FONTAWESOME -->
-    <script src="fontawesome5.15.1/js/all.min.js"></script>
-    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
@@ -137,8 +93,6 @@ $rol = $_SESSION ['idRol'];
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <script src="assets/demo/datatables-demo.js"></script>
-
-
 </body>
 
 </html>
