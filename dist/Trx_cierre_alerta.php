@@ -408,7 +408,7 @@ $combos = new Dt_trx_monitoreo();
 -->
         <script>
             function regresar(){
-                window.open ("ListaClientes.php","_self");
+                window.open ("Trx_alertas_diarias.php","_self");
             }
         </script>
 

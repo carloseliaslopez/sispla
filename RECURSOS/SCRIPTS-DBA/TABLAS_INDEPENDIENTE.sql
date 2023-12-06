@@ -80,3 +80,27 @@ drop view if exists vw_BusquedaInterna_Res;
 CREATE VIEW vw_BusquedaInterna_Res AS
 select po.idPersonasObligadas,po.nombre,po.identificacion,po.nacionalidad,po.idCircular, bi.nombre as 'concidencia', bi.origen from PersonasObligadas po
 left join vw_busquedaInterna bi on po.nombre = bi.nombre;
+
+
+/*2.3 Datos de los Accionistas*/
+DROP TABLE IF EXISTS listas_riesgo;
+CREATE TABLE listas_riesgo(
+id_listas_riesgo int auto_increment not null primary key,
+fechaIngreso datetime,
+nombre varchar (150),
+origen  varchar (50),
+razon varchar (100),
+idEstado int,
+
+usuario_creacion int,
+fecha_creacion datetime null,
+usuario_modificacion int null,
+fecha_modificacion datetime null,
+usuario_eliminacion int null,
+fecha_eliminacion datetime null,
+
+FOREIGN KEY (usuario_creacion) REFERENCES usuario(idUsuario),
+FOREIGN KEY (usuario_modificacion) REFERENCES usuario(idUsuario),
+FOREIGN KEY (usuario_eliminacion) REFERENCES usuario(idUsuario),
+foreign key (idEstado) references estado(idEstado)
+);

@@ -11,8 +11,9 @@ class DtListasInternas extends Conexion
 		{
 			$this->myCon = parent::conectar();
 			$result = array();
-			$querySQL = "SELECT fullName, origen FROM vw_con_list_risk LIMIT 500";
-           
+			$querySQL = "SELECT id_listas_riesgo, fechaIngreso,nombre,origen,razon,idEstado  FROM listas_riesgo WHERE idEstado<>3";
+			
+
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
@@ -21,11 +22,11 @@ class DtListasInternas extends Conexion
 				$emp = new ListasInternas();
 
 				//_SET(CAMPOBD, atributoEntidad)
-                $emp->__SET('fullName', $r->fullName);
-				$emp->__SET('origen', $r->origen);	
-				//$emp->__SET('origen', $r->origen);	
-				//$emp->__SET('fechaIngreso', $r->fechaIngreso);
-				//$emp->__SET('idEstado', $r->idEstado);
+                $emp->__SET('id_listas_riesgo', $r->id_listas_riesgo);
+				$emp->__SET('fechaIngreso', $r->fechaIngreso);	
+				$emp->__SET('nombre', $r->nombre);	
+				$emp->__SET('razon', $r->razon);
+				$emp->__SET('idEstado', $r->idEstado);
 
 				$result[] = $emp;
 				//var_dump($result);

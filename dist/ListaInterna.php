@@ -118,8 +118,8 @@ if(isset($varMsjDelEmp))
                                             <tr>
                                                 <th>Ingreso</th>
                                                 <th>Nombre</th>
-                                                
                                                 <th>Origen</th>
+                                                <th>Razón</th>
                                                 <th>Opciones</th>
                                            
                                             </tr>
@@ -130,11 +130,11 @@ if(isset($varMsjDelEmp))
                                                 <tr>
                                                     <td><?php echo $r->__GET('fechaIngreso'); ?></td>
                                                     <td><?php echo $r->__GET('nombre'); ?></td>
-                                                    
                                                     <td><?php echo $r->__GET('origen'); ?></td>
+                                                    <td><?php echo $r->__GET('razon'); ?></td>
 
                                                     <td>
-                                                        <a href="editListaInterna.php?editE=<?php echo $r->__GET('idListasInternas'); ?>" 
+                                                        <a href="#editListaInterna.php?editE=<?php echo $r->__GET('idListasInternas'); ?>" 
                                                         title="Modificar elemento">
                                                             <i class="fas fa-pen-square"></i>
                                                             Editar
@@ -157,8 +157,8 @@ if(isset($varMsjDelEmp))
                                             <tr>
                                                 <th>Ingreso</th>
                                                 <th>Nombre</th>
-                                                <th>Identificación</th>
-                                                
+                                                <th>Origen</th>
+                                                <th>Razón</th>
                                                 <th>Opciones</th>
                                             </tr>
                                         </tfoot>
