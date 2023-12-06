@@ -70,33 +70,38 @@ class DtListasInternas extends Conexion
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute();
 
-			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
-			{
+			$count = $stm->rowCount();
+
+			if ($count == 0){
+				foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
+				{
+					$emp = new ListasInternas();
+	
+					//_SET(CAMPOBD, atributoEntidad)
+					$emp->__SET('fullName', $r->fullName);
+					$emp->__SET('origen', $r->origen);	
+					//$emp->__SET('origen', $r->origen);	
+					//$emp->__SET('fechaIngreso', $r->fechaIngreso);
+					//$emp->__SET('idEstado', $r->idEstado);
+	
+					$result[] = $emp;
+					//var_dump($result);
+				} 
+				$this->myCon = parent::desconectar();
+			}
+			else{
 				$emp = new ListasInternas();
 
 				//_SET(CAMPOBD, atributoEntidad)
-                $emp->__SET('fullName', $r->fullName);
-				$emp->__SET('origen', $r->origen);	
-				//$emp->__SET('origen', $r->origen);	
-				//$emp->__SET('fechaIngreso', $r->fechaIngreso);
-				//$emp->__SET('idEstado', $r->idEstado);
-
-				$result[] = $emp;
-								//var_dump($result);
-			} 
-			$this->myCon = parent::desconectar();
-			if ($result == 0){
-				$emp = new ListasInternas();
-
-				//_SET(CAMPOBD, atributoEntidad)
-                $emp->__SET('Sin resultados', $r->fullName);
-				$emp->__SET('Sin resultados', $r->origen);	
+                $emp->__SET('fullName', 'Sin Resultados');
+				$emp->__SET('origen', 'Sin Resultados');	
 				//$emp->__SET('origen', $r->origen);	
 				//$emp->__SET('fechaIngreso', $r->fechaIngreso);
 				//$emp->__SET('idEstado', $r->idEstado);
 				$result[] = $emp;
 
 			}
+
 			return $result;
 		}
 		catch(Exception $e)
