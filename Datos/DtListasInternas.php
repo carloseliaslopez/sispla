@@ -72,7 +72,7 @@ class DtListasInternas extends Conexion
 
 			$count = $stm->rowCount();
 
-			if ($count == 0){
+			if ($count > 0){
 				foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
 				{
 					$emp = new ListasInternas();
