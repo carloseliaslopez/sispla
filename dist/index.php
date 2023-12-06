@@ -74,7 +74,7 @@ $rol = $_SESSION ['idRol'];
                             <div class="card text-white mb-4" style="background-color:#606060;">
                                 <div class="card-body">Listas</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="menuLista.html">Opciones y Detalles</a>
+                                    <a class="small text-white stretched-link" href="menuLista.php">Opciones y Detalles</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>

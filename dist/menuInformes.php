@@ -48,7 +48,7 @@ $rol = $_SESSION ['idRol'];
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-info text-white mb-4" style="background-color:#8DC63F;"> 
+                            <div class="card text-white mb-4" style="background-color:#8DC63F;"> 
                                 <div class="card-body">Evaluación de riesgos</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="./Matrices.php">Opciones y Detalles</a>

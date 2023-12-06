@@ -73,7 +73,7 @@ include '../Datos/DtSeguridad.php';
                             </ol>
                                 <div class="row">
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-primary text-white mb-4">
+                                        <div class="card text-white mb-4" style="background-color:#2B3990;">
                                             <div class="card-body">Paises</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="./101_Gestion_Pais.php">Admistrar</a>
@@ -82,7 +82,7 @@ include '../Datos/DtSeguridad.php';
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-primary text-white mb-4">
+                                        <div class="card text-white mb-4" style="background-color:#2B3990;">
                                             <div class="card-body">Departamentos</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="./102_Gestion_Departamento.php">Admistrar</a>
@@ -91,7 +91,7 @@ include '../Datos/DtSeguridad.php';
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-primary text-white mb-4">
+                                        <div class="card text-white mb-4" style="background-color:#2B3990;">
                                             <div class="card-body"> Formas de Pago</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="./103_Gestion_FormaPago.php">Admistrar</a>
@@ -100,7 +100,7 @@ include '../Datos/DtSeguridad.php';
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-primary text-white mb-4">
+                                        <div class="card text-white mb-4" style="background-color:#2B3990;">
                                             <div class="card-body"> Fuente de los Fondos</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="./105_Gestion_FF.php">Admistrar</a>
@@ -109,7 +109,7 @@ include '../Datos/DtSeguridad.php';
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-primary text-white mb-4">
+                                        <div class="card text-white mb-4" style="background-color:#2B3990;">
                                             <div class="card-body"> Área Geografica</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="./104_Gestion_AreaGeografica.php">Admistrar</a>
@@ -118,7 +118,7 @@ include '../Datos/DtSeguridad.php';
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-primary text-white mb-4">
+                                        <div class="card text-white mb-4" style="background-color:#2B3990;">
                                             <div class="card-body"> Actividad del Negocio</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="./106_Gestion_ActividadNegocio.php">Admistrar</a>
@@ -137,7 +137,7 @@ include '../Datos/DtSeguridad.php';
                                 </ol>
                                 <div class="row">
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-success text-white mb-4">
+                                        <div class="card  text-white mb-4" style="background-color:#606060;">
                                             <div class="card-body"> Categoria de un Producto</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="./107_Gestion_CategoriaProducto.php">Admistrar</a>
@@ -146,7 +146,7 @@ include '../Datos/DtSeguridad.php';
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-success text-white mb-4">
+                                        <div class="card  text-white mb-4" style="background-color:#606060;">
                                             <div class="card-body"> Producto</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="./108_Gestion_CatSubProducto.php">Admistrar</a>
@@ -155,7 +155,7 @@ include '../Datos/DtSeguridad.php';
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-success text-white mb-4">
+                                        <div class="card  text-white mb-4" style="background-color:#606060;">
                                             <div class="card-body"> Actividad Económica</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="./109_Gestion_AE.php">Admistrar</a>
@@ -164,7 +164,7 @@ include '../Datos/DtSeguridad.php';
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-success text-white mb-4">
+                                        <div class="card  text-white mb-4" style="background-color:#606060;">
                                             <div class="card-body"> Actividad Laboral</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="./110_Gestion_CatEmpleo.php">Admistrar</a>
