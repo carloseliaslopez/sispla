@@ -86,7 +86,7 @@ left join vw_busquedaInterna bi on po.nombre = bi.nombre;
 DROP TABLE IF EXISTS listas_riesgo;
 CREATE TABLE listas_riesgo(
 id_listas_riesgo int auto_increment not null primary key,
-fechaIngreso datetime,
+fechaIngreso date,
 nombre varchar (150),
 origen  varchar (50),
 razon varchar (100),

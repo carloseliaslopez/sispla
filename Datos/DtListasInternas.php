@@ -25,6 +25,7 @@ class DtListasInternas extends Conexion
                 $emp->__SET('id_listas_riesgo', $r->id_listas_riesgo);
 				$emp->__SET('fechaIngreso', $r->fechaIngreso);	
 				$emp->__SET('nombre', $r->nombre);	
+				$emp->__SET('origen', $r->origen);
 				$emp->__SET('razon', $r->razon);
 				$emp->__SET('idEstado', $r->idEstado);
 
