@@ -148,7 +148,7 @@ $rol = $_SESSION ['idRol'];
                                                     <td><?php echo $r->__GET('oficina'); ?></td>
                                                     
                                                     <td>
-                                                        <a href="Trx_cierre_alerta.php>" 
+                                                        <a href="Trx_cierre_alerta.php" 
                                                         title="Revisar Señal de alerta">
                                                             <i class="fas fa-pen-square"></i>
                                                             Revisar
