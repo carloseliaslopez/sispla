@@ -301,3 +301,5 @@ union all
 select idMatrizRiesgoNatural, cliente,  lugarActividadEconomica, resultadosBusquedas, condicionPEP, productoSolicitado, monto, formaPago, origenRecursos, riesgoCliente, fechaRealizacion, tipoCliente, paisMatriz, idCliente, idEstado, proximaRevision from matrizriesgonatural
 
 
+
+

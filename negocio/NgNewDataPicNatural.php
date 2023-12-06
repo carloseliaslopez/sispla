@@ -31,10 +31,10 @@ $facta = new Facta();
 $dtMon = new DtNewDataPicNatural();
 $dtCom = new DtDataPicCompartidos();
 
-$vacioPais = 164;
+$vacioPais = 141;
 $vaciotexto = "N/A";
 $valor = 0;
-$origenes = 10;
+$origenes = 7;
 $formapago = 6;
 $depa = 67;
 $relacion = 5;
@@ -51,8 +51,6 @@ if ($_POST)
         case '1':
             try 
             {
-                
-                
                 //DatosEntidad--datosInputs -->DATOS GENERALES
               
                 //INSERTANDO DATOS GENERALES DEL PIC

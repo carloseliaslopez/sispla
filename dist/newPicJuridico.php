@@ -41,7 +41,6 @@ $rol = $_SESSION ['idRol'];
          <!-- DATATABLE buttons -->
         <link href="DataTables/Buttons-1.6.3/css/buttons.dataTables.min.css" rel="stylesheet">
        
-       
     </head>
     <body class="sb-nav-fixed">
     <?php require "../dist/navbar.php" ?>
