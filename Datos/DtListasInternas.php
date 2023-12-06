@@ -28,10 +28,22 @@ class DtListasInternas extends Conexion
 				//$emp->__SET('idEstado', $r->idEstado);
 
 				$result[] = $emp;
-
 				//var_dump($result);
 			}
 			$this->myCon = parent::desconectar();
+
+			if ($result == 0){
+				$emp = new ListasInternas();
+
+				//_SET(CAMPOBD, atributoEntidad)
+                $emp->__SET('Sin resultados', $r->fullName);
+				$emp->__SET('Sin resultados', $r->origen);	
+				//$emp->__SET('origen', $r->origen);	
+				//$emp->__SET('fechaIngreso', $r->fechaIngreso);
+				//$emp->__SET('idEstado', $r->idEstado);
+				$result[] = $emp;
+
+			}
 			return $result;
 		}
 		catch(Exception $e)
