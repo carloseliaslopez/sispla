@@ -34,8 +34,8 @@
                         
                         <div class="collapse" id="Informes" aria-labelledby="headingThree" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="./listaInformesIDD.php">Informe IDD</a>
                                 <a class="nav-link" href="./Matrices.php">Matrices de Riegos</a>
+                                <a class="nav-link" href="./listaInformesIDD.php">Informe IDD</a>
                             </nav>
                         </div>
                         <!-- end sub-menu Informes-->

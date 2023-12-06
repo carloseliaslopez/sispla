@@ -63,23 +63,25 @@ $combos = new Dt_trx_monitoreo();
                             </div>
 
                             <!--logos de VERSATEC-->
-                            <div class="col-md-12" >
-                                <div class="form-row">  
-                                    <div class="form-group col-md-2">
-                                        
-                                    </div>                                            
-                                    <div class="form-group col-md-4" style="align-content: center; padding: 20px 50px;">
-                                        <img src="./images/logo_fc.png"  style="max-width:100%;width:auto;height:auto;"/>
-                                    </div>
-                                    <div class="form-group col-md-4"  style="align-content: center; padding: 20px 50px;">
-                                        <img src="./images/logo_versatec.png" style="max-width:100%;width:auto;height:auto;" />
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        
-                                    </div> 
-                                </div>
+                    <div class="col-md-12" >
+                        <div class="form-row">  
+                                                                        
+                            <div class="form-group col-md-4" style="align-content: center; padding: 60px 30px;">
+                                <img src="./images/logo_fc.png"  style="max-width:100%;width:auto;height:auto;"/>
                             </div>
-                            <!--logos de VERSATEC-->
+                            <div class="form-group col-md-2">
+                                
+                            </div>
+                            <div class="form-group col-md-2">
+                                
+                            </div> 
+                            <div class="form-group col-md-4"  style="align-content: center; ">
+                                <img src="./images/logo_versatec.png" style="max-width:100%;width:auto;height:auto;" />
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!--logos de VERSATEC-->
                             
                            <!--start datos del Pic-->
                             <div class="card mb-4">

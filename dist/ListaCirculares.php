@@ -91,7 +91,7 @@ if(isset($varMsjDelEmp))
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-success text-white mb-4">
+                                        <div class="card text-white mb-4" style="background-color:#2B3990;">
                                             <div class="card-body">Realizar una nueva busqueda</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" href="BusquedaInterna.php">Buscar</a>
@@ -100,7 +100,7 @@ if(isset($varMsjDelEmp))
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-md-6">
-                                        <div class="card bg-info text-white mb-4">
+                                        <div class="card  text-white mb-4" style="background-color:#8DC63F;">
                                             <div class="card-body">Agregar Organismo</div>
                                             <div class="card-footer d-flex align-items-center justify-content-between">
                                                 <a class="small text-white stretched-link" data-toggle="modal" data-target="#exampleModal" href="#">Agregar </a>
