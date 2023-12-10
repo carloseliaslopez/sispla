@@ -52,6 +52,37 @@ CREATE TABLE trx_incoming_dsy(
  cod_pais varchar (5)
 );
 
+use sispla;
+DROP TABLE IF EXISTS alertas_diarias;
+CREATE TABLE alertas_diarias(
+id_alertas_diarias int auto_increment not null primary key,
+nombre_cliente varchar(100), 
+plastico varchar(35),
+fecha_proceso date,
+monto double,
+regla varchar(150),
+oficina varchar(50),
+estado_regla varchar (15),
+idEstado int,
+cod_alert_temp varchar (250) unique,
+
+usuario_creacion int,
+fecha_creacion datetime null,
+usuario_modificacion int null,
+fecha_modificacion datetime null,
+usuario_eliminacion int null,
+fecha_eliminacion datetime null,
+
+FOREIGN KEY (usuario_creacion) REFERENCES usuario(idUsuario),
+FOREIGN KEY (usuario_modificacion) REFERENCES usuario(idUsuario),
+FOREIGN KEY (usuario_eliminacion) REFERENCES usuario(idUsuario),
+FOREIGN KEY (idEstado) references estado(idEstado)
+);
+
+
+
+
+
 /*VISTAS PARA GENERAR LAS ALERTAS*/
 CREATE view central_trx as
 select nombre_cliente,plastico, tipo_transaccion,codigo_mcc,riesgo_pais,empresa,pais,cod_pais, fecha_proceso, sum(monto) as 'monto', 'Abierta ' as 'Estado' 

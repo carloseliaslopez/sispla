@@ -1,20 +1,23 @@
 <?php
-//error_reporting(0);
+error_reporting(0);
 
 //ENTIDADES
 include '../Entidades/Trx_monitoreo/Trx_oficina.php';
 include '../Entidades/Trx_monitoreo/Trx_regla.php';
 include '../Entidades/Trx_monitoreo/Trx_estadoAlerta.php';
 include '../Entidades/Trx_monitoreo/vw_alertas.php';
+include '../Entidades/Trx_monitoreo/alertas_diarias.php';
 
 
 
 //DATOS
 include '../Datos/Dt_trx_monitoreo.php';
 
+include '../dist/script_alertas_diarias.php';
+
 //INSTANCIAS
 $Dt_monit = new Dt_trx_monitoreo();
-$Dt_alerts = new Dt_Alertas();
+
 
 session_start();
 if (!isset($_SESSION['idUsuario'])){
@@ -72,31 +75,23 @@ $rol = $_SESSION ['idRol'];
                                                 <div class="form-row">
                                                     <div class="form-group col-md-4">
                                                         <label class="large mb-2" for="cbxOficina" ><b>Oficina</b></label>
-                                                        <select  class="form-control form-control-md" id="cbxOficina" name="cbxOficina" >
+                                                        <select  class="form-control form-control-sm" id="cbxOficina" name="cbxOficina" >
                                                             <option selected disabled>Selecione un elemento </option>
                                                                 <?php foreach($Dt_monit->ComboOficina() as $r): ?>
-                                                                    <option value="<?php echo $r->__GET('idOficina') ?>"> <?php echo $r->__GET('nombreOficina') ?></option>
+                                                                    <option value="<?php echo $r->__GET('nombreOficina') ?>"> <?php echo $r->__GET('nombreOficina') ?></option>
                                                                 <?php endforeach; ?>
                                                         </select> 
                                                     </div> 
-
                                                     <div class="form-group col-md-4">
-                                                        <label class="large mb-2" for="cbxRegla" ><b>Regla</b></label>
-                                                        <select  class="form-control form-control-md" id="cbxRegla" name="cbxRegla" >
-                                                            <option selected disabled>Selecione un elemento </option>
-                                                                <?php foreach($Dt_monit->ComboRegla() as $r): ?>
-                                                                    <option value="<?php echo $r->__GET('idRegla') ?>"> <?php echo $r->__GET('nombreRegla') ?></option>
-                                                                <?php endforeach; ?>
-                                                        </select> 
+                                                       
+                                                        <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
+                                                        <input type="hidden" id="idUsuario" name="idUsuario" value="<?php echo $idUsuario?>"/>
+                                                        <label for="fechaConstitucion_PJ">Fecha de inicio </label>
+                                                        <input type="date" class="form-control form-control-sm" id="fechaConstitucion_PJ" name=" fechaConstitucion_PJ" placeholder="Fecha de constitución" autocomplete="off" max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d"))-3);?>">
                                                     </div>
                                                     <div class="form-group col-md-4">
-                                                        <label class="large mb-2" for="bcxEstadoS" ><b>Estado de Señal</b></label>
-                                                        <select  class="form-control form-control-md" id="bcxEstadoS" name="bcxEstadoS" >
-                                                            <option selected disabled>Selecione un elemento </option>
-                                                            <?php foreach($Dt_monit->ComboEstadoAlerta() as $r): ?>
-                                                                    <option value="<?php echo $r->__GET('idEstadoAlerta') ?>"> <?php echo $r->__GET('nombreEstado') ?></option>
-                                                            <?php endforeach; ?>
-                                                        </select> 
+                                                        <label for="fechaInscripcion_PJ">fecha Finalización</label>
+                                                        <input type="date" class="form-control form-control-sm" id="fechaInscripcion_PJ" name="fechaInscripcion_PJ" placeholder="Fecha de inscripción"  max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d"))-3);?>" >
                                                     </div>
                                                 </div>
                                             </div>
@@ -126,7 +121,7 @@ $rol = $_SESSION ['idRol'];
                             <div class="card-body">
                                 <div class="table-responsive">
                                                                    
-                                    <table class="table table-bordered" id="busquedaInterna" width="100%" cellspacing="0">
+                                    <table class="table table-bordered" id="busquedaInterna"  width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Tarjetahabiente</th>
@@ -139,7 +134,7 @@ $rol = $_SESSION ['idRol'];
                                         </thead>
                                         <tbody>
 
-                                        <?php foreach($Dt_alerts->tbl_TotalAlertas() as $r): ?>
+                                            <?php foreach($Dt_monit->tbl_TotalAlertas() as $r): ?>
                                                 <tr>
                                                     <td><?php echo $r->__GET('nombre_cliente'); ?></td>
                                                     <td><?php echo $r->__GET('plastico'); ?></td>
@@ -148,10 +143,10 @@ $rol = $_SESSION ['idRol'];
                                                     <td><?php echo $r->__GET('oficina'); ?></td>
                                                     
                                                     <td>
-                                                        <a href="Trx_cierre_alerta.php" 
-                                                        title="Revisar Señal de alerta">
-                                                            <i class="fas fa-pen-square"></i>
-                                                            Revisar
+                                
+                                                        <a href="" onclick="revisar(<?php echo $r->__GET('id_alertas_diarias'); ?>)" 
+                                                        title="Revisar Señal de alerta"> <i class="fas fa-pen-square"></i>
+                                                        Revisar
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -169,7 +164,6 @@ $rol = $_SESSION ['idRol'];
                                             </tr>
                                         </tfoot>
                                     </table>
-
                                 </div>
                             </div>
                         </div>
@@ -297,8 +291,12 @@ $rol = $_SESSION ['idRol'];
             });
         </script>
 
-
-
-
+    <script>
+          // Tratatando de realizar el cambio 
+          function revisar($id)
+            {
+                window.open("Trx_cierre_alerta.php?trx="+$id, "self");
+            }
+        </script>
     </body>
 </html>

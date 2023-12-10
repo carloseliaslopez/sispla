@@ -162,15 +162,8 @@ if(isset($varMsjDelEmp))
                                                         title="Editar Pic">
                                                             Editar
                                                         </a>
-                                                        <br>
-                                                        <!--
-                                                        <a href="#" onclick="deleteEmp();" 
-                                                        title="Eliminar Pic">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                            Eliminar
-                                                        </a>
-                                                     -->
-
+                                                        
+                                            
                                                     </td>
 
                                                     

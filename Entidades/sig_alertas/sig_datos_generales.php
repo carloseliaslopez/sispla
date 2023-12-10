@@ -1,19 +1,16 @@
 <?php
-    class Trx_senial{
-        private $idSenial;
-        private $autorizacion;
-        private $cliente;
-        private $usuario;
-        private $cuenta;
-        private $fechaProceso;
-        private $operacion;
+    class sig_datos_generales{
+        private $id_sig_datos_generales;
         private $monto;
-        private $codRegla;
-        private $paisTrx;
-        private $idRegla;
-        private $idOficina;
-        private $idEstadoAlerta;
-    
+        private $tipo_pago;
+        private $origenes_fondo;
+        private $actividad_comercial;
+        private $plastico;
+        private $pais_origen;
+        private $pais_destino;
+        private $id_alertas_diarias;
+
+          
         private $usuario_creacion;
         private $fecha_creacion;
         private $usuario_modificacion;
