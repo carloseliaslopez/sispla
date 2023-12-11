@@ -518,7 +518,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
         function printPageArea(divID) {
             var divContent = document.getElementById(divID);
             var WinPrint = window.open('', '', 'width=800,height=600');
-            WinPrint.document.write('<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">');
+            WinPrint.document.write('<link rel="stylesheet" type="text/css" href="css/styles.css">');
             WinPrint.document.write(divContent.innerHTML);
             WinPrint.document.close();
             WinPrint.focus();
