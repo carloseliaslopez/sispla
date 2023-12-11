@@ -65,7 +65,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
         }  
     </style>
 </head>
-<body class="sb-nav-fixed" >
+<body >
 <main>
                 <div class="container-fluid">
                     
