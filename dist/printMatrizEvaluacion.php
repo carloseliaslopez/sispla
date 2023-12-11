@@ -490,7 +490,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
     <script>
         function printPageArea(elem)
             {
-                var mywindow = window.open('', 'PRINT', 'height=500,width=700');
+                var mywindow = window.open('', 'PRINT', 'height=612,width=792');
                 //setValoresEmp();
                 mywindow.document.write('<html><head>');
                 mywindow.document.write("<link href=\"./css/styles.css\" rel=\"stylesheet\"><link href=\"./css/NewStyles.css\" rel=\"stylesheet\">")
