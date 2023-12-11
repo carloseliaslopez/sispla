@@ -197,7 +197,7 @@ if(isset($varMsjDelEmp))
             }
             function Print($id, $ct)
             {
-                window.open("printMatrizEvaluacion.php?editE="+$id+"&editProd="+$ct, "self");
+                window.open("print_test.php?editE="+$id+"&editProd="+$ct, "self");
                 
 
             }
