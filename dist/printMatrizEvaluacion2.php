@@ -74,7 +74,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                     <hr>
                     <div class="justify-content-md-center" >
                         <div class="form-row">
-                            <div class="form-group col-sm-9">
+                            <div class="form-group col-sm-6">
                                 <input type="hidden" name="idCli_PN" id="idCli_PN" />
                                 <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
 
