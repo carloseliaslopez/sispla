@@ -77,8 +77,8 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                     
                     <div class="card mb-4">
                         <div class="card-body" id= "pdf">
-                        <h4 id="h1Informe" name= "h1Informe"  >Informe de Debida Diligencia</h4>
-                        <hr>
+                            <h4 id="h1Informe" name= "h1Informe"  >Informe de Debida Diligencia</h4>
+                            <hr>
                             <div class="table-responsive">
                                 <form method="#" action="#" >
                                     <div class="col-md-12" >
@@ -487,6 +487,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
         }
     </script>
 
+<!--
     <script>
         function printPageArea(elem)
             {
@@ -511,6 +512,21 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                 return true;
             }
     </script>
+-->
+
+    <script type="text/javascript">
+        function printPageArea(divID) {
+            var divContent = document.getElementById(divID);
+            var WinPrint = window.open('', '', 'width=800,height=600');
+            WinPrint.document.write('<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">');
+            WinPrint.document.write(divContent.innerHTML);
+            WinPrint.document.close();
+            WinPrint.focus();
+            WinPrint.print();
+            WinPrint.close();
+        }
+    </script>
+
     <script>
         function setTextareaHeight(textareas) {
             textareas.each(function () {
