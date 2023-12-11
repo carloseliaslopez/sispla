@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
 --
--- Host: localhost    Database: monitoreo
+-- Host: 127.0.0.1    Database: monitoreo
 -- ------------------------------------------------------
--- Server version	8.0.32
+-- Server version	8.0.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -36,6 +36,29 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `monto`,
  1 AS `Estado`*/;
 SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `estado`
+--
+
+DROP TABLE IF EXISTS `estado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `estado` (
+  `idEstado` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`idEstado`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `estado`
+--
+
+LOCK TABLES `estado` WRITE;
+/*!40000 ALTER TABLE `estado` DISABLE KEYS */;
+/*!40000 ALTER TABLE `estado` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `trx_incoming_dsy`
@@ -138,10 +161,37 @@ SET @saved_cs_client     = @@character_set_client;
 /*!50001 CREATE VIEW `vw_alertas` AS SELECT 
  1 AS `nombre_cliente`,
  1 AS `plastico`,
+ 1 AS `fecha_proceso`,
  1 AS `monto`,
  1 AS `regla`,
  1 AS `oficina`*/;
 SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `vw_alertas_`
+--
+
+DROP TABLE IF EXISTS `vw_alertas_`;
+/*!50001 DROP VIEW IF EXISTS `vw_alertas_`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `vw_alertas_` AS SELECT 
+ 1 AS `cod_alert_temp`,
+ 1 AS `nombre_cliente`,
+ 1 AS `plastico`,
+ 1 AS `monto`,
+ 1 AS `fecha_proceso`,
+ 1 AS `regla`,
+ 1 AS `oficina`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping events for database 'monitoreo'
+--
+
+--
+-- Dumping routines for database 'monitoreo'
+--
 
 --
 -- Final view structure for view `central_trx`
@@ -174,7 +224,25 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`admin`@`%` SQL SECURITY DEFINER */
-/*!50001 VIEW `vw_alertas` AS select `central_trx`.`nombre_cliente` AS `nombre_cliente`,`central_trx`.`plastico` AS `plastico`,format(`central_trx`.`monto`,2) AS `monto`,'Compras Mayores a 100K' AS `regla`,'VSYSTEM_PANAMA' AS `oficina` from `central_trx` where (`central_trx`.`monto` >= 100000) union all select `central_trx`.`nombre_cliente` AS `nombre_cliente`,`central_trx`.`plastico` AS `plastico`,format(`central_trx`.`monto`,2) AS `monto`,'Retiros Mayores a 10K' AS `regla`,'VSYSTEM_PANAMA' AS `oficina` from `central_trx` where ((`central_trx`.`monto` >= 20000) and (`central_trx`.`tipo_transaccion` = '07| RETIROS')) union all select `trx_incoming_dsy`.`nombre_cliente` AS `nombre_cliente`,`trx_incoming_dsy`.`plastico` AS `plastico`,format(sum(`trx_incoming_dsy`.`monto`),2) AS `monto`,'Transacciones en Paises de riesgo Alto' AS `regla`,'VSYSTEM_PANAMA' AS `oficina` from `trx_incoming_dsy` where (`trx_incoming_dsy`.`riesgo_pais` = 'Alto') group by `trx_incoming_dsy`.`plastico` union all select `trx_incoming_dsy`.`nombre_cliente` AS `nombre_cliente`,`trx_incoming_dsy`.`plastico` AS `plastico`,format(sum(`trx_incoming_dsy`.`monto`),2) AS `monto`,'Operaciones de criptoactivos' AS `regla`,'VSYSTEM_PANAMA' AS `oficina` from `trx_incoming_dsy` where (`trx_incoming_dsy`.`codigo_mcc` = '6051') group by `trx_incoming_dsy`.`plastico` */;
+/*!50001 VIEW `vw_alertas` AS select `central_trx`.`nombre_cliente` AS `nombre_cliente`,`central_trx`.`plastico` AS `plastico`,`central_trx`.`fecha_proceso` AS `fecha_proceso`,format(`central_trx`.`monto`,2) AS `monto`,'Compras Mayores a 100K' AS `regla`,'DSYSTEM' AS `oficina` from `central_trx` where (`central_trx`.`monto` >= 100000) union all select `central_trx`.`nombre_cliente` AS `nombre_cliente`,`central_trx`.`plastico` AS `plastico`,`central_trx`.`fecha_proceso` AS `fecha_proceso`,format(`central_trx`.`monto`,2) AS `monto`,'Retiros Mayores a 10K' AS `regla`,'DSYSTEM' AS `oficina` from `central_trx` where ((`central_trx`.`monto` >= 20000) and (`central_trx`.`tipo_transaccion` = '07| RETIROS')) union all select `trx_incoming_dsy`.`nombre_cliente` AS `nombre_cliente`,`trx_incoming_dsy`.`plastico` AS `plastico`,`trx_incoming_dsy`.`fecha_proceso` AS `fecha_proceso`,format(sum(`trx_incoming_dsy`.`monto`),2) AS `monto`,'Transacciones en Paises de riesgo Alto' AS `regla`,'DSYSTEM' AS `oficina` from `trx_incoming_dsy` where (`trx_incoming_dsy`.`riesgo_pais` = 'Alto') group by `trx_incoming_dsy`.`plastico` union all select `trx_incoming_dsy`.`nombre_cliente` AS `nombre_cliente`,`trx_incoming_dsy`.`plastico` AS `plastico`,`trx_incoming_dsy`.`fecha_proceso` AS `fecha_proceso`,format(sum(`trx_incoming_dsy`.`monto`),2) AS `monto`,'Operaciones de criptoactivos' AS `regla`,'DSYSTEM' AS `oficina` from `trx_incoming_dsy` where (`trx_incoming_dsy`.`codigo_mcc` = '6051') group by `trx_incoming_dsy`.`plastico` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `vw_alertas_`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vw_alertas_`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`admin`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `vw_alertas_` AS select concat_ws('',`central_trx`.`nombre_cliente`,'-',`central_trx`.`plastico`,'-',`central_trx`.`monto`) AS `cod_alert_temp`,`central_trx`.`nombre_cliente` AS `nombre_cliente`,`central_trx`.`plastico` AS `plastico`,`central_trx`.`monto` AS `monto`,`central_trx`.`fecha_proceso` AS `fecha_proceso`,'Compras Mayores a 100K' AS `regla`,'VSYSTEM_PANAMA' AS `oficina` from `central_trx` where (`central_trx`.`monto` >= 100000) union all select concat_ws('',`central_trx`.`nombre_cliente`,'-',`central_trx`.`plastico`,'-',`central_trx`.`monto`) AS `cod_alert_temp`,`central_trx`.`nombre_cliente` AS `nombre_cliente`,`central_trx`.`plastico` AS `plastico`,`central_trx`.`monto` AS `monto`,`central_trx`.`fecha_proceso` AS `fecha_proceso`,'Retiros Mayores a 10K' AS `regla`,'VSYSTEM_PANAMA' AS `oficina` from `central_trx` where ((`central_trx`.`monto` >= 20000) and (`central_trx`.`tipo_transaccion` = '07| RETIROS')) union all select concat_ws('',`trx_incoming_dsy`.`nombre_cliente`,'-',`trx_incoming_dsy`.`plastico`,'-',`trx_incoming_dsy`.`monto`) AS `cod_alert_temp`,`trx_incoming_dsy`.`nombre_cliente` AS `nombre_cliente`,`trx_incoming_dsy`.`plastico` AS `plastico`,sum(`trx_incoming_dsy`.`monto`) AS `monto`,`trx_incoming_dsy`.`fecha_proceso` AS `fecha_proceso`,'Transacciones en Paises de riesgo Alto' AS `regla`,'VSYSTEM_PANAMA' AS `oficina` from `trx_incoming_dsy` where (`trx_incoming_dsy`.`riesgo_pais` = 'Alto') group by `trx_incoming_dsy`.`plastico` union all select concat_ws('',`trx_incoming_dsy`.`nombre_cliente`,'-',`trx_incoming_dsy`.`plastico`,'-',`trx_incoming_dsy`.`monto`) AS `cod_alert_temp`,`trx_incoming_dsy`.`nombre_cliente` AS `nombre_cliente`,`trx_incoming_dsy`.`plastico` AS `plastico`,sum(`trx_incoming_dsy`.`monto`) AS `monto`,`trx_incoming_dsy`.`fecha_proceso` AS `fecha_proceso`,'Operaciones de criptoactivos' AS `regla`,'VSYSTEM_PANAMA' AS `oficina` from `trx_incoming_dsy` where (`trx_incoming_dsy`.`codigo_mcc` = '6051') group by `trx_incoming_dsy`.`plastico` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -188,4 +256,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-05 16:58:03
+-- Dump completed on 2023-12-10 18:22:35
