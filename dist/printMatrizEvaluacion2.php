@@ -67,7 +67,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 </head>
 <body class="sb-nav-fixed" >
 <main>
-                <div class="container-fluid">
+                <div class="container">
                     
                     <div class="card mb-4">
                         <div class="card-body" id= "pdf">
