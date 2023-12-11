@@ -48,7 +48,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=default" />
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Informe IDD</title>
@@ -67,7 +67,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 </head>
 <body class="sb-nav-fixed" >
 <main>
-                <div class="container">
+                <div class="container-fluid">
                     
                     <div class="card mb-4">
                         <div class="card-body" id= "pdf">
