@@ -69,27 +69,27 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
     <main>
         <div class="container-fluid">   
             <div class="card mb-4">
-                <div class="card-body" id= "pdf">
+                <div class="card-body">
                     <h4 id="h1Informe" name= "h1Informe"  >Informe de Debida Diligencia</h4>
                     <hr>
-                    <div class="col-md-12" >
-                                <div class="form-row">
-                                    <div class="form-group col-md-9">
-                                        <input type="hidden" name="idCli_PN" id="idCli_PN" />
-                                        <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
+                    <div class="justify-content-md-center" >
+                        <div class="form-row">
+                            <div class="form-group col-sm-9">
+                                <input type="hidden" name="idCli_PN" id="idCli_PN" />
+                                <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
 
-                                        <label class="large mb-2" for="razonSocial_ME" ><b>Razón Social o Nombre Completo del Cliente</b></label>
-                                        <input type="text" class="form-control form-control-sm" id="razonSocial_ME" name="razonSocial_ME" 
-                                        placeholder="Razón Social o Nombre Completo del Cliente"  value="<?php echo $empEdit->__GET('cliente') ?>" disabled>
-                                    </div>  
-                                    <div class="form-group col-md-3">
-                                        <label class="large mb-2" for="tipoCliente_ME" ><b>Tipo de Cliente</b></label>
-                                            
-                                        <input type="text" class="form-control form-control-sm" id="tipoCliente_ME" name="tipoCliente_ME" 
-                                            placeholder="Tipo de Cliente" value="<?php echo $empEdit->__GET('tipoCliente') ?>" disabled>
-                                    </div>          
-                                </div>
-                            </div>
+                                <label class="large mb-2" for="razonSocial_ME" ><b>Razón Social o Nombre Completo del Cliente</b></label>
+                                <input type="text" class="form-control form-control-sm" id="razonSocial_ME" name="razonSocial_ME" 
+                                placeholder="Razón Social o Nombre Completo del Cliente"  value="<?php echo $empEdit->__GET('cliente') ?>" disabled>
+                            </div>  
+                            <div class="form-group col-md-3">
+                                <label class="large mb-2" for="tipoCliente_ME" ><b>Tipo de Cliente</b></label>
+                                    
+                                <input type="text" class="form-control form-control-sm" id="tipoCliente_ME" name="tipoCliente_ME" 
+                                    placeholder="Tipo de Cliente" value="<?php echo $empEdit->__GET('tipoCliente') ?>" disabled>
+                            </div>          
+                        </div>
+                    </div>
                             <div class="col-md-12" >
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
