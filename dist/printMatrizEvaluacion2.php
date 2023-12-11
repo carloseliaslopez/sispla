@@ -68,22 +68,24 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
 <body class="sb-nav-fixed" >
     <main>
         <div class="container-fluid">   
-            <div class="card mb-4">
                 <div class="card-body">
                     <h4 id="h1Informe" name= "h1Informe"  >Informe de Debida Diligencia</h4>
                     <hr>
-                    <div class="justify-content-sm-center" >
-                        <div class="row">
-                            <div class="col-sm">
-                                <label  for="razonSocial_ME" ><b>Nombre del Cliente</b></label>
-                                <input type="text" class="form-control-sm" id="razonSocial_ME" name="razonSocial_ME" 
-                                placeholder="Razón Social o Nombre Completo del Cliente"  value="<?php echo $empEdit->__GET('cliente') ?>" disabled>
-                            </div>  
-                            <div class="col-sm">
-                                <label for="tipoCliente_ME" ><b>Tipo de Cliente</b></label>
-                                <input type="text" class="form-control-sm" id="tipoCliente_ME" name="tipoCliente_ME" 
-                                    placeholder="Tipo de Cliente" value="<?php echo $empEdit->__GET('tipoCliente') ?>" disabled>
-                            </div>          
+                    <div class="justify-content-md-center" >
+                        <div class="form-row">
+                            <div class="col-sm-12" >
+                                <div class="form-group col col-sm-9">
+
+                                    <label  for="razonSocial_ME" ><b> Nombre del Cliente</b></label>
+                                    <input type="text" class="form-control form-control-sm" id="razonSocial_ME" name="razonSocial_ME" 
+                                    placeholder="Razón Social o Nombre Completo del Cliente"  value="<?php echo $empEdit->__GET('cliente') ?>" disabled>
+                                </div>  
+                                <div class="form-group col col-sm-3">
+                                    <label for="tipoCliente_ME" ><b>Tipo de Cliente</b></label>
+                                    <input type="text" class="form-control form-control-sm" id="tipoCliente_ME" name="tipoCliente_ME" 
+                                        placeholder="Tipo de Cliente" value="<?php echo $empEdit->__GET('tipoCliente') ?>" disabled>
+                                </div>
+                            </div>    
                         </div>
                     </div>
                             <div class="col-md-12" >
@@ -400,7 +402,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                                 </div>
                             </div>
                 </div>
-            </div>
+          
         
         </div>
     </main>
