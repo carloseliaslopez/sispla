@@ -415,26 +415,7 @@ $rol = $_SESSION ['idRol'];
                                             </div>    
                                         </div>
                                     </div>
-                                     <!--
-                                   
-                                    <div class="col-md-12" >
-                                        <div class="form-row">
-                                            <div class="form-group col-md-12">
-                                                <label><b>IV. Observaciones</b></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                   
-
-                                   
-                                    <div class="col-md-12" >
-                                        <div class="form-row">
-                                            <div class="form-group col-md-12">
-                                            <textarea class="form-control" id="observaciones_ME" name="observaciones_ME" rows="3" disabled> </?php echo  str_replace("<br />","",$empEdit->__GET('observaciones'),); ?></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                                    -->
+                                     
                                 </form>   
                             </div>
                         </div>
@@ -443,10 +424,7 @@ $rol = $_SESSION ['idRol'];
                         <!--Start buttons-->                                              
                         <div class="col-md-12">
                             <div class="form-row">
-                                
-                                <div class="form-group col-md-4">
-                                    <button type="submit" class="btn btn-primary col-md-7" onclick="printPageArea('pdf')"> <i class="fas fa-file-pdf"></i> Generar Informe</button>
-                                </div>
+                               
                                 
                                 <div class="form-group col-md-4">
                                     <button type="button" class="btn btn-success col-md-7" onclick="regresar()"> Atras</button>
@@ -512,30 +490,7 @@ $rol = $_SESSION ['idRol'];
         }
     </script>
 
-    <script>
-        function printPageArea(elem)
-            {
-                var mywindow = window.open('', 'PRINT', 'height=500,width=700');
-                //setValoresEmp();
-                mywindow.document.write('<html><head>');
-                mywindow.document.write("<link href=\"./css/styles.css\" rel=\"stylesheet\"><link href=\"./css/NewStyles.css\" rel=\"stylesheet\">")
-                mywindow.document.write("<link href=\"./css/styles.css\" rel=\"stylesheet\"><link href=\"./css/NewStyles.css\" rel=\"stylesheet\">")
-
-                mywindow.document.write('</head><body>');
-                mywindow.document.write(document.getElementById('pdf').innerHTML);
-                mywindow.document.write('</body></html>');
-
-                mywindow.document.close(); // necessary for IE >= 10
-                mywindow.focus(); // necessary for IE >= 10*/
-
-
-                setTimeout(function () {
-                mywindow.print();
-                mywindow.close();
-                }, 1000)
-                return true;
-            }
-    </script>
+    
     <script>
         function setTextareaHeight(textareas) {
             textareas.each(function () {
