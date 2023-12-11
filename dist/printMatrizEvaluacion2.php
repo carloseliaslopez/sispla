@@ -55,7 +55,6 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/NewStyles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script> -->
     <script src="fontawesome5.15.1/js/all.min.js"></script>
     <style>
         .myDiv{
@@ -411,20 +410,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <!--Start buttons-->                                              
-                        <div class="col-md-12">
-                            <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <button type="submit" class="btn btn-primary col-md-7" onclick="printPageArea('pdf')"> <i class="fas fa-file-pdf"></i> Generar Informe</button>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <button type="button" class="btn btn-success col-md-7" onclick="regresar()"> Atras</button>
-                                </div>                   
-                            </div>
-                        </div>
-                        <!--End buttons --> 
-                    </div>
+               
                 </div>
             </main>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
