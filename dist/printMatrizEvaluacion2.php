@@ -56,14 +56,7 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
     <link href="css/NewStyles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="fontawesome5.15.1/js/all.min.js"></script>
-    <style>
-        .myDiv{
-        display:none;
-        }
-        .divcase{
-            display:none; 
-        }  
-    </style>
+    
 </head>
 <body class="sb-nav-fixed" >
     <main>
