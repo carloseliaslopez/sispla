@@ -96,5 +96,15 @@ SELECT nombre_cliente, plastico, format(monto, 2) as 'monto', 'Retiros Mayores a
 UNION ALL 
 SELECT nombre_cliente, plastico, format(sum(monto), 2) as 'monto', 'Transacciones en Paises de riesgo Alto' as 'regla','VSYSTEM_PANAMA'  as 'oficina' from  trx_incoming_dsy where riesgo_pais = 'Alto' group by plastico
 UNION ALL 
-SELECT nombre_cliente, plastico, format(sum(monto), 2) as 'monto', 'Operaciones de criptoactivos' as 'regla','VSYSTEM_PANAMA'  as 'oficina' from  trx_incoming_dsy where codigo_mcc = '6051' group by plastico
+SELECT nombre_cliente, plastico, format(sum(monto), 2) as 'monto', 'Operaciones de criptoactivos' as 'regla','VSYSTEM_PANAMA'  as 'oficina' from  trx_incoming_dsy where codigo_mcc = '6051' group by plastico;
 
+DROP VIEW IF EXISTS vw_informe_alertas;
+CREATE VIEW vw_informe_alertas AS
+SELECT ad.id_alertas_diarias, dc.fecha, dc.estado_señal, ad.nombre_cliente, ad.regla, ad.monto, dg.tipo_pago, dg.origenes_fondo,
+	   dg.actividad_comercial, ad.plastico, dg.pais_origen, dg.pais_destino, act.contacto_cliente, act.solicitud_info, act.reporte_ros,
+	   ad.fecha_proceso, apf.acc_seguimiento, apf.fecha_revision, ad.oficina 
+FROM alertas_diarias ad
+INNER JOIN sig_datos_centrales dc ON  dc.id_alertas_diarias = ad.id_alertas_diarias
+INNER JOIN sig_datos_generales dg ON dg.id_alertas_diarias = ad.id_alertas_diarias
+INNER JOIN sig_acc_tomadas act ON act.id_alertas_diarias = ad.id_alertas_diarias
+INNER JOIN sig_aspectos_finales apf ON apf.id_alertas_diarias = ad.id_alertas_diarias;

@@ -186,7 +186,7 @@ class Dt_trx_monitoreo extends Conexion
 		try
 		{
 			$this->myCon = parent::conectar();
-			$querySQL = "SELECT id_alertas_diarias, nombre_cliente, plastico,fecha_proceso, format (monto, 2) as 'monto' , regla, oficina FROM alertas_diarias WHERE id_alertas_diarias = ? ";
+			$querySQL = "SELECT id_alertas_diarias, nombre_cliente, plastico,fecha_proceso, monto , regla, oficina FROM alertas_diarias WHERE id_alertas_diarias = ? ";
 
 			$stm = $this->myCon->prepare($querySQL);
 			$stm->execute(array($a));
@@ -217,10 +217,6 @@ class Dt_trx_monitoreo extends Conexion
 			die($e->getMessage());
 		}
 	}
-
-
-
-
 
 }
 

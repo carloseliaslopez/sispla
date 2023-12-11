@@ -26,6 +26,14 @@ if (!isset($_SESSION['idUsuario'])){
 $nombre = $_SESSION['usuario'];
 $rol = $_SESSION ['idRol'];
 
+//variable de control msj Nuevo Empleado
+$varMsjNewEmp = 0;
+if(isset($varMsjNewEmp))
+{ 
+  $varMsjNewEmp = $_GET['msjNewEmp'];
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -258,35 +266,28 @@ $rol = $_SESSION ['idRol'];
 
                 if(newEmp == "1")
                 {
-                    successAlert('Éxito', 'La Comunidad ha sido registrada!!!');
+                    successAlert('Éxito', 'Señal de alerta cerrada con éxito');
                 }
                 if(newEmp == "2")
                 {
-                    errorAlert('Error', 'Revise los datos de la comunidad e intente nuevamente *_*');
+                    errorAlert('Error', 'Revise los datos  e intente nuevamente');
                 }
 
                 var updEmp = 0;
                 updEmp = "<?php echo $varMsjUpdEmp ?>";
                 if(updEmp == "1")
                 {
-                    successAlert('Éxito', 'Los datos de la comunidad se actualizarón!!!');
+                    successAlert('Éxito', 'Señal de alerta modificada con éxito');
                 }
                 if(updEmp == "2")
                 {
-                    errorAlert('Error', 'Revise los datos de la comunidad e intente nuevamente *_*');
+                    errorAlert('Error', 'Revise los datos e intente nuevamente');
                 }
 
                 var delEmp = 0;
                 delEmp = "<?php echo $varMsjDelEmp ?>";
 
-                if(delEmp == "1")
-                {
-                    successAlert('Éxito', 'La comunidad ha sido dado de baja !!!');
-                }
-                if(delEmp == "2")
-                {
-                    errorAlert('Error', 'Revise los datos de la comunidad e intente nuevamente *_*');
-                }
+               
 
             });
         </script>

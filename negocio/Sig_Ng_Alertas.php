@@ -27,8 +27,7 @@ if ($_POST)
         case '1':
             try 
             {
-                /*
-
+            
                 // --> INSERTANDO DATOS GENERALES
                 $dc->__SET('fecha', $_POST['fecha_MR_J']);
                 $dc->__SET('estado_señal', $_POST['bcxEstadoS']);
@@ -83,13 +82,13 @@ if ($_POST)
                 $aspf->__SET('usuario_creacion', $_POST['idUsuario']);
                 $dtMon->registrar_d_asp_fin($aspf);
 
-                */
+                
                 $alert->__SET('id_alertas_diarias', $_POST['id_senial_alert']);
                 $alert->__SET('usuario_modificacion', $_POST['idUsuario']);
                 $dtMon->Apt_alert($alert);
 
 
-                header("Location: ../dist/Trx_alertas_diarias.php");
+                header("Location: ../dist/Trx_alertas_diarias.php?msjNewEmp=1");
 
 			
             } 

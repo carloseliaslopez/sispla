@@ -152,6 +152,55 @@ class Dt_sig_Alertas extends Conexion
 		}
 	}
 
+	public function listar_informe()
+	{
+		try
+		{
+
+
+			$this->myCon = parent::conectar();
+			$result = array();
+			$querySQL = "SELECT id_alertas_diarias, fecha, estado_señal, nombre_cliente, regla, monto, tipo_pago, origenes_fondo, actividad_comercial, plastico, pais_origen, pais_destino, contacto_cliente, solicitud_info, reporte_ros, fecha_proceso, acc_seguimiento, fecha_revision, oficina FROM vw_informe_alertas;";
+
+			$stm = $this->myCon->prepare($querySQL);
+			$stm->execute();
+
+			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
+			{
+				$emp = new vw_informe_alertas();
+
+				//_SET(CAMPOBD, atributoEntidad)			
+				$emp->__SET('id_alertas_diarias', $r->id_alertas_diarias);
+				$emp->__SET('fecha', $r->fecha);
+				$emp->__SET('estado_señal', $r->estado_señal);
+				$emp->__SET('nombre_cliente', $r->nombre_cliente);
+				$emp->__SET('regla', $r->regla);
+				$emp->__SET('monto', $r->monto);
+				$emp->__SET('tipo_pago', $r->tipo_pago);
+				$emp->__SET('origenes_fondo', $r->origenes_fondo);
+				$emp->__SET('actividad_comercial', $r->actividad_comercial);
+				$emp->__SET('plastico', $r->plastico);
+				$emp->__SET('pais_origen', $r->pais_origen);
+				$emp->__SET('pais_destino', $r->pais_destino);
+				$emp->__SET('contacto_cliente', $r->contacto_cliente);
+				$emp->__SET('solicitud_info', $r->solicitud_info);
+				$emp->__SET('reporte_ros', $r->reporte_ros);
+				$emp->__SET('fecha_proceso', $r->fecha_proceso);
+				$emp->__SET('acc_seguimiento', $r->acc_seguimiento);
+				$emp->__SET('fecha_revision', $r->fecha_revision);
+				$emp->__SET('oficina', $r->oficina);		
+								
+				$result[] = $emp;
+			}
+			$this->myCon = parent::desconectar();
+			return $result;
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+
 
 
 }
