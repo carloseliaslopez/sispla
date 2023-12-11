@@ -72,17 +72,16 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                 <div class="card-body">
                     <h4 id="h1Informe" name= "h1Informe"  >Informe de Debida Diligencia</h4>
                     <hr>
-                    <div class="justify-content-md-center" >
+                    <div class="justify-content-sm-center" >
                         <div class="row">
-                            <div class="form-group col-sm-6">
-                                <label class="large mb-2" for="razonSocial_ME" ><b>Nombre del Cliente</b></label>
-                                <input type="text" class="form-control form-control-sm" id="razonSocial_ME" name="razonSocial_ME" 
+                            <div class="col-sm">
+                                <label  for="razonSocial_ME" ><b>Nombre del Cliente</b></label>
+                                <input type="text" class="form-control-sm" id="razonSocial_ME" name="razonSocial_ME" 
                                 placeholder="Razón Social o Nombre Completo del Cliente"  value="<?php echo $empEdit->__GET('cliente') ?>" disabled>
                             </div>  
-                            <div class="form-group col-sm-3">
-                                <label class="large mb-2" for="tipoCliente_ME" ><b>Tipo de Cliente</b></label>
-                                    
-                                <input type="text" class="form-control form-control-sm" id="tipoCliente_ME" name="tipoCliente_ME" 
+                            <div class="col-sm">
+                                <label for="tipoCliente_ME" ><b>Tipo de Cliente</b></label>
+                                <input type="text" class="form-control-sm" id="tipoCliente_ME" name="tipoCliente_ME" 
                                     placeholder="Tipo de Cliente" value="<?php echo $empEdit->__GET('tipoCliente') ?>" disabled>
                             </div>          
                         </div>
