@@ -2,7 +2,7 @@
 require_once 'dompdf/autoload.inc.php';
 
 use Dompdf\Dompdf;
-$dompdf = new Dompdf();
+$dompdf = new Dompdf(['chroot' => __DIR__]);
 ob_start();
 include "./printMatrizEvaluacion2.php";
 $html = ob_get_clean();
