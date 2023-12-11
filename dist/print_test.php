@@ -5,8 +5,8 @@ use Dompdf\Dompdf;
 
 $dompdf = new Dompdf();
 ob_start();
-include "./printMatrizEvaluacion.php";
-$html = ob_get_clean();
+
+$html = "hello world";
 $dompdf->loadHtml($html);
 $dompdf->render();
 header("Content-type: application/pdf");
