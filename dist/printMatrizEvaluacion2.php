@@ -73,11 +73,8 @@ $conexion = new mysqli('localhost','admin','adminCump123.','sispla');
                     <h4 id="h1Informe" name= "h1Informe"  >Informe de Debida Diligencia</h4>
                     <hr>
                     <div class="justify-content-md-center" >
-                        <div class="form-row">
+                        <div class="row">
                             <div class="form-group col-sm-6">
-                                <input type="hidden" name="idCli_PN" id="idCli_PN" />
-                                <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
-
                                 <label class="large mb-2" for="razonSocial_ME" ><b>Nombre del Cliente</b></label>
                                 <input type="text" class="form-control form-control-sm" id="razonSocial_ME" name="razonSocial_ME" 
                                 placeholder="Razón Social o Nombre Completo del Cliente"  value="<?php echo $empEdit->__GET('cliente') ?>" disabled>
