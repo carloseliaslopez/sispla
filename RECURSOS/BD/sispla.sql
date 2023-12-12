@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.21, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: sispla
+-- Host: localhost    Database: sispla
 -- ------------------------------------------------------
--- Server version	8.0.21
+-- Server version	8.0.32
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -214,7 +214,7 @@ CREATE TABLE `alertas_diarias` (
   CONSTRAINT `alertas_diarias_ibfk_2` FOREIGN KEY (`usuario_modificacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `alertas_diarias_ibfk_3` FOREIGN KEY (`usuario_eliminacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `alertas_diarias_ibfk_4` FOREIGN KEY (`idEstado`) REFERENCES `estado` (`idEstado`)
-) ENGINE=InnoDB AUTO_INCREMENT=5491 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5552 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -225,6 +225,47 @@ LOCK TABLES `alertas_diarias` WRITE;
 /*!40000 ALTER TABLE `alertas_diarias` DISABLE KEYS */;
 INSERT INTO `alertas_diarias` VALUES (1,'MENACHEM GAVRIEL','420849******7349','2023-12-01',128570.26999999999,'Compras Mayores a 100K','VSYSTEM_PANAMA','Abierta',3,'MENACHEM GAVRIEL-420849******7349-128570.26999999999',1,'2023-12-09 20:05:03',1,'2023-12-10 16:08:54',NULL,NULL),(2,'LOURDES','420849******9100','2023-12-01',32.95,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'LOURDES-420849******9100-12.64',1,'2023-12-09 20:05:03',NULL,NULL,NULL,NULL),(3,'AMALIARODRIGUEZ','420849******7495','2023-12-01',62.79,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'AMALIARODRIGUEZ-420849******7495-6.64',1,'2023-12-09 20:05:04',NULL,NULL,NULL,NULL),(4,'HARBINDER SETHI','420849******4110','2023-12-01',128.06,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'HARBINDER SETHI-420849******4110-128.06',1,'2023-12-09 20:05:04',NULL,NULL,NULL,NULL),(5,'SHANE','404931******4371','2023-12-01',1733.29,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'SHANE-404931******4371-8.06',1,'2023-12-09 20:05:04',NULL,NULL,NULL,NULL),(6,'JORGE G LOPEZ','404931******2963','2023-12-01',63.870000000000005,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'JORGE G LOPEZ-404931******2963-33.2',1,'2023-12-09 20:05:04',NULL,NULL,NULL,NULL),(7,'JOSE','404931******1670','2023-12-01',7.88,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'JOSE-404931******1670-7.88',1,'2023-12-09 20:05:04',NULL,NULL,NULL,NULL),(8,'MARCBELASKY','404931******0527','2023-12-01',83.34,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'MARCBELASKY-404931******0527-83.34',1,'2023-12-09 20:05:05',NULL,NULL,NULL,NULL),(9,'KATARZYNA','404931******4330','2023-12-01',158.7,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'KATARZYNA-404931******4330-158.7',1,'2023-12-09 20:05:05',NULL,NULL,NULL,NULL),(10,'ARTEMTIKHONOV','420849******7669','2023-12-01',460.34000000000003,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'ARTEMTIKHONOV-420849******7669-30.28',1,'2023-12-09 20:05:05',NULL,NULL,NULL,NULL),(11,'PETERSKERL','420849******5272','2023-12-01',2403.35,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'PETERSKERL-420849******5272-2403.35',1,'2023-12-09 20:05:05',NULL,NULL,NULL,NULL),(12,'ALEXANDER BUGGE','404931******6742','2023-12-01',365.07,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'ALEXANDER BUGGE-404931******6742-0.28',1,'2023-12-09 20:05:05',NULL,NULL,NULL,NULL),(13,'KATARZYNA','404931******4322','2023-12-01',11.89,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'KATARZYNA-404931******4322-11.89',1,'2023-12-09 20:05:05',NULL,NULL,NULL,NULL),(14,'MELANIEBUCHHOLZ','404931******3188','2023-12-01',16.55,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'MELANIEBUCHHOLZ-404931******3188-10.3',1,'2023-12-09 20:05:05',NULL,NULL,NULL,NULL),(15,'DANIELESESTAGALLI','420849******7506','2023-12-01',11.41,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'DANIELESESTAGALLI-420849******7506-11.41',1,'2023-12-09 20:05:05',NULL,NULL,NULL,NULL),(16,'IMANE EL AZAOUI AIT KHOUYA','491434******7118','2023-12-01',19,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'IMANE EL AZAOUI AIT KHOUYA-491434******7118-19',1,'2023-12-09 20:05:06',NULL,NULL,NULL,NULL),(17,'KAROL CARVAJAL','491434******8652','2023-12-01',92.78999999999999,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'KAROL CARVAJAL-491434******8652-80.57',1,'2023-12-09 20:05:06',NULL,NULL,NULL,NULL),(18,'MAURICIO CABRERA VATTUONE','491434******0709','2023-12-01',172.68,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'MAURICIO CABRERA VATTUONE-491434******0709-63.89',1,'2023-12-09 20:05:06',NULL,NULL,NULL,NULL),(19,'LISED BRIGITH CUSGUEN FARFAN','420849******5098','2023-12-01',578.1700000000001,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'LISED BRIGITH CUSGUEN FARFAN-420849******5098-18.47',1,'2023-12-09 20:05:06',NULL,NULL,NULL,NULL),(20,'JUAN MARIO BERNAL','420849******1253','2023-12-01',366.61,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'JUAN MARIO BERNAL-420849******1253-366.61',1,'2023-12-09 20:05:06',NULL,NULL,NULL,NULL),(21,'MAXIMILIAN LALOSEVICH','420849******6700','2023-12-01',685.67,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'MAXIMILIAN LALOSEVICH-420849******6700-106',1,'2023-12-09 20:05:06',NULL,NULL,NULL,NULL),(22,'TARIK AGRI','420849******6443','2023-12-01',332.09,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'TARIK AGRI-420849******6443-1.59',1,'2023-12-09 20:05:06',NULL,NULL,NULL,NULL),(23,'DYLAN KYTE','420849******4133','2023-12-01',37.94,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'DYLAN KYTE-420849******4133-28.21',1,'2023-12-09 20:05:06',NULL,NULL,NULL,NULL),(24,'LEONARDO GOMEZ QP','420849******7106','2023-12-01',141.76,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'LEONARDO GOMEZ QP-420849******7106-141.76',1,'2023-12-09 20:05:06',NULL,NULL,NULL,NULL),(25,'RON FOX','420849******9026','2023-12-01',8609.49,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'RON FOX-420849******9026-8609.49',1,'2023-12-09 20:05:07',NULL,NULL,NULL,NULL),(26,'KASTRIOT MUSTAFI','420849******1162','2023-12-01',81.16999999999999,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'KASTRIOT MUSTAFI-420849******1162-16.62',1,'2023-12-09 20:05:07',NULL,NULL,NULL,NULL),(27,'SUMERGIDA TEJEDA','420849******1501','2023-12-01',4484.78,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'SUMERGIDA TEJEDA-420849******1501-4484.78',1,'2023-12-09 20:05:07',NULL,NULL,NULL,NULL),(28,'ATURINDA LUCKY','420849******2608','2023-12-01',750.9300000000001,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'ATURINDA LUCKY-420849******2608-146.68',1,'2023-12-09 20:05:07',NULL,NULL,NULL,NULL),(29,'BRAYAN STIVEN JIMENEZ BAYONA','420849******5106','2023-12-01',281.25,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'BRAYAN STIVEN JIMENEZ BAYONA-420849******5106-26.39',1,'2023-12-09 20:05:07',NULL,NULL,NULL,NULL),(30,'CARLOS RUEDA','420849******2054','2023-12-01',857.4799999999999,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'CARLOS RUEDA-420849******2054-15.14',1,'2023-12-09 20:05:07',NULL,NULL,NULL,NULL),(31,'JASSON GUZMAN','420849******1410','2023-12-01',379.19,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'JASSON GUZMAN-420849******1410-365.3',1,'2023-12-09 20:05:07',NULL,NULL,NULL,NULL),(32,'ANAND GREWAL','420849******0594','2023-12-01',21.96,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'ANAND GREWAL-420849******0594-21.96',1,'2023-12-09 20:05:07',NULL,NULL,NULL,NULL),(33,'NAKIMERA ZULAH','420849******5750','2023-12-01',7888.840000000001,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'NAKIMERA ZULAH-420849******5750-8.61',1,'2023-12-09 20:05:07',NULL,NULL,NULL,NULL),(34,'EDWIN JIMENEZ','420849******1691','2023-12-01',33.61,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'EDWIN JIMENEZ-420849******1691-4.45',1,'2023-12-09 20:05:08',NULL,NULL,NULL,NULL),(35,'JUAN SEBASTIAN VILLAMIL MORENO','420849******5490','2023-12-01',527.82,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'JUAN SEBASTIAN VILLAMIL MORENO-420849******5490-527.82',1,'2023-12-09 20:05:08',NULL,NULL,NULL,NULL),(36,'OME MONEY','420849******3565','2023-12-01',1158.12,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'OME MONEY-420849******3565-1158.12',1,'2023-12-09 20:05:08',NULL,NULL,NULL,NULL),(37,'ANA    MARIA JAIMES','420849******9679','2023-12-01',85.7,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'ANA    MARIA JAIMES-420849******9679-85.7',1,'2023-12-09 20:05:08',NULL,NULL,NULL,NULL),(38,'MARY HIBETH DOMINGUEZ  PINTO','420849******1659','2023-12-01',25.65,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'MARY HIBETH DOMINGUEZ  PINTO-420849******1659-25.65',1,'2023-12-09 20:05:08',NULL,NULL,NULL,NULL),(39,'VICTOR MONTESINO CHASOY','420849******9406','2023-12-01',10.41,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'VICTOR MONTESINO CHASOY-420849******9406-10.41',1,'2023-12-09 20:05:08',NULL,NULL,NULL,NULL),(40,'DANIELE','404931******0971','2023-12-01',164.26,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'DANIELE-404931******0971-31.75',1,'2023-12-09 20:05:08',NULL,NULL,NULL,NULL),(41,'NG','404931******8153','2023-12-01',65.98,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'NG-404931******8153-65.98',1,'2023-12-09 20:05:09',NULL,NULL,NULL,NULL),(42,'JEREL','404931******7393','2023-12-01',269.82000000000005,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'JEREL-404931******7393-66.68',1,'2023-12-09 20:05:09',NULL,NULL,NULL,NULL),(43,'ERWINDOKTER','420849******5454','2023-12-01',38.69,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'ERWINDOKTER-420849******5454-21.04',1,'2023-12-09 20:05:09',NULL,NULL,NULL,NULL),(44,'MIGUELNUNEZ','404931******4181','2023-12-01',10.28,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'MIGUELNUNEZ-404931******4181-10.28',1,'2023-12-09 20:05:09',NULL,NULL,NULL,NULL),(45,'STANISLOVAS JARUSEVICIU','404931******9784','2023-12-01',20.56,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'STANISLOVAS JARUSEVICIU-404931******9784-20.56',1,'2023-12-09 20:05:09',NULL,NULL,NULL,NULL),(46,'DANIELE','404931******0237','2023-12-01',369.42999999999995,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'DANIELE-404931******0237-66.33',1,'2023-12-09 20:05:09',NULL,NULL,NULL,NULL),(47,'BENEDICT','404931******1114','2023-12-01',8.12,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'BENEDICT-404931******1114-8.12',1,'2023-12-09 20:05:10',NULL,NULL,NULL,NULL),(48,'BENEDICT','404931******1106','2023-12-01',8.12,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'BENEDICT-404931******1106-8.12',1,'2023-12-09 20:05:10',NULL,NULL,NULL,NULL),(49,'SOK ENG','404931******3120','2023-12-01',6.4,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'SOK ENG-404931******3120-1.2',1,'2023-12-09 20:05:10',NULL,NULL,NULL,NULL),(50,'PEDRO LUIS','404931******9372','2023-12-01',1.7,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'PEDRO LUIS-404931******9372-1.7',1,'2023-12-09 20:05:10',NULL,NULL,NULL,NULL),(51,'ELIANARACHETTI','420849******6265','2023-12-01',58.98,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'ELIANARACHETTI-420849******6265-58.98',1,'2023-12-09 20:05:10',NULL,NULL,NULL,NULL),(52,'RALFMIERSWA','404931******6801','2023-12-01',48.59,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'RALFMIERSWA-404931******6801-8.13',1,'2023-12-09 20:05:11',NULL,NULL,NULL,NULL),(53,'ELENALEONTEVA','420849******0442','2023-12-01',193.13,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'ELENALEONTEVA-420849******0442-100.1',1,'2023-12-09 20:05:11',NULL,NULL,NULL,NULL),(54,'SHANE','404931******3811','2023-12-01',72.57,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'SHANE-404931******3811-43.54',1,'2023-12-09 20:05:11',NULL,NULL,NULL,NULL),(55,'IVAN VAVILOV','404931******1043','2023-12-01',6.71,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'IVAN VAVILOV-404931******1043-6.71',1,'2023-12-09 20:05:12',NULL,NULL,NULL,NULL),(56,'BRAEDEN NICHOLSON','420849******7848','2023-12-01',1056.8,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'BRAEDEN NICHOLSON-420849******7848-1056.8',1,'2023-12-09 20:05:12',NULL,NULL,NULL,NULL),(57,'RAMOWTARMATABADAL','420849******3252','2023-12-01',730,'Transacciones en Paises de riesgo Alto','VSYSTEM_PANAMA','Abierta',1,'RAMOWTARMATABADAL-420849******3252-730',1,'2023-12-09 20:05:13',NULL,NULL,NULL,NULL),(58,'CAMILO YATE','491434******5815','2023-12-01',4.17,'Operaciones de criptoactivos','VSYSTEM_PANAMA','Abierta',1,'CAMILO YATE-491434******5815-4.17',1,'2023-12-09 20:05:13',NULL,NULL,NULL,NULL),(59,'MENACHEM GAVRIEL','420849******7349','2023-12-01',113774.98,'Operaciones de criptoactivos','VSYSTEM_PANAMA','Abierta',1,'MENACHEM GAVRIEL-420849******7349-56887.49',1,'2023-12-09 20:05:14',NULL,NULL,NULL,NULL),(60,'ALENNEDELKOVSKI','404931******2669','2023-12-01',500,'Operaciones de criptoactivos','VSYSTEM_PANAMA','Abierta',3,'ALENNEDELKOVSKI-404931******2669-500',1,'2023-12-09 20:05:14',1,'2023-12-10 16:06:40',NULL,NULL),(61,'JORGE G LOPEZ','404931******2963','2023-12-01',1430,'Operaciones de criptoactivos','VSYSTEM_PANAMA','Abierta',1,'JORGE G LOPEZ-404931******2963-1430',1,'2023-12-09 20:05:14',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `alertas_diarias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `apoderados`
+--
+
+DROP TABLE IF EXISTS `apoderados`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `apoderados` (
+  `idApoderados` int NOT NULL AUTO_INCREMENT,
+  `nombreCompletoApoderados` varchar(250) DEFAULT NULL,
+  `numIdApoderados` varchar(50) DEFAULT NULL,
+  `cargo` varchar(150) DEFAULT NULL,
+  `idPic` int DEFAULT NULL,
+  `usuario_creacion` int DEFAULT NULL,
+  `fecha_creacion` datetime DEFAULT NULL,
+  `usuario_modificacion` int DEFAULT NULL,
+  `fecha_modificacion` datetime DEFAULT NULL,
+  `usuario_eliminacion` int DEFAULT NULL,
+  `fecha_eliminacion` datetime DEFAULT NULL,
+  PRIMARY KEY (`idApoderados`),
+  KEY `idPic` (`idPic`),
+  KEY `usuario_creacion` (`usuario_creacion`),
+  KEY `usuario_modificacion` (`usuario_modificacion`),
+  KEY `usuario_eliminacion` (`usuario_eliminacion`),
+  CONSTRAINT `apoderados_ibfk_1` FOREIGN KEY (`idPic`) REFERENCES `pic` (`idPic`) ON DELETE CASCADE,
+  CONSTRAINT `apoderados_ibfk_2` FOREIGN KEY (`usuario_creacion`) REFERENCES `usuario` (`idUsuario`),
+  CONSTRAINT `apoderados_ibfk_3` FOREIGN KEY (`usuario_modificacion`) REFERENCES `usuario` (`idUsuario`),
+  CONSTRAINT `apoderados_ibfk_4` FOREIGN KEY (`usuario_eliminacion`) REFERENCES `usuario` (`idUsuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `apoderados`
+--
+
+LOCK TABLES `apoderados` WRITE;
+/*!40000 ALTER TABLE `apoderados` DISABLE KEYS */;
+INSERT INTO `apoderados` VALUES (1,'LOREM IPSUM','000-00000-000','REPRESENTANTE LEGAL',2,1,'2023-12-12 15:22:37',NULL,NULL,NULL,NULL),(2,'LOREM IPSUM 2','012-3456-789','PRESIDENTE DE JUNTA',2,1,'2023-12-12 15:23:32',NULL,NULL,NULL,NULL),(3,'IPSUM LOREM','9876-543-210','SECRETARIO DE JUNTA',3,1,'2023-12-12 15:24:53',NULL,NULL,NULL,NULL),(4,'LOREM IPSUM 2','197-221252-258','APODERADO GENERALISIMO',3,1,'2023-12-12 15:24:55',NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `apoderados` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -2239,7 +2280,7 @@ CREATE TABLE `pic` (
 
 LOCK TABLES `pic` WRITE;
 /*!40000 ALTER TABLE `pic` DISABLE KEYS */;
-INSERT INTO `pic` VALUES (1,'2020-12-12','LOREM IPSUM','00-000-000','Clientes','Jurídico','2023-09-11',1,1,'2023-09-11 14:26:52',NULL,NULL,NULL,NULL,7),(2,'2020-02-12','LOREM IPSUM_V2','000-00-00','Clientes','Jurídico','2023-09-11',1,1,'2023-09-11 16:42:43',NULL,NULL,NULL,NULL,2),(3,'2023-11-03','AL FORNO, S.A. DE C.V.','0614-150110-109-0','Clientes','Jurídico','2023-11-21',1,1,'2023-11-21 14:41:39',NULL,NULL,NULL,NULL,6),(4,'2023-10-30','AGROINDUSTRIAS SUCCESSO, S.A','37396919','Clientes','Jurídico','2023-11-29',1,1,'2023-11-29 14:41:42',NULL,NULL,NULL,NULL,3);
+INSERT INTO `pic` VALUES (1,'2020-12-12','LOREM IPSUM','00-000-000','Clientes','Jurídico','2023-09-11',3,1,'2023-09-11 14:26:52',NULL,NULL,NULL,NULL,7),(2,'2020-02-12','LOREM IPSUM_V2','000-00-00','Clientes','Jurídico','2023-09-11',1,1,'2023-09-11 16:42:43',NULL,NULL,NULL,NULL,2),(3,'2023-11-03','AL FORNO, S.A. DE C.V.','0614-150110-109-0','Clientes','Jurídico','2023-11-21',1,1,'2023-11-21 14:41:39',NULL,NULL,NULL,NULL,6);
 /*!40000 ALTER TABLE `pic` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4115,14 +4156,6 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = @saved_cs_client;
 
 --
--- Dumping events for database 'sispla'
---
-
---
--- Dumping routines for database 'sispla'
---
-
---
 -- Final view structure for view `alertamatrizevaluacion`
 --
 
@@ -4153,7 +4186,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `lista_coincidencia` AS select `i`.`nombre` AS `nombre`,`i`.`id` AS `id`,`i`.`origen` AS `relacion`,`j`.`origen` AS `origen` from (`vw_consol_nombre` `i` join `global_risk_lists`.`vw_con_list_risk` `j` on((`i`.`nombre` = `j`.`fullName`))) */;
+/*!50001 VIEW `lista_coincidencia` AS select `i`.`nombre` AS `nombre`,`i`.`id` AS `id`,`i`.`origen` AS `relacion`,`global_risk_lists`.`j`.`origen` AS `origen` from (`vw_consol_nombre` `i` join `global_risk_lists`.`vw_con_list_risk` `j` on((`i`.`nombre` = `global_risk_lists`.`j`.`fullName`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -4941,4 +4974,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-10 18:23:24
+-- Dump completed on 2023-12-12 16:41:56
