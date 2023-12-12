@@ -461,12 +461,10 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                         
                                         <div class="col-md-12">
                                             <div class="form-row">
-                                                <div class="form-group col-md-2">
+                                                <div class="form-group col-md-8">
                                                     <label for="#"> <b> <i>Dignatarios, Directores y/o Apoderados</i></b></label>
                                                 </div>
-                                                <div class="form-group col-md-6">
-                                                   
-                                                </div>
+                                                
                                                 
                                                 <div class="form-group col-md-2">
                                                    
@@ -1194,11 +1192,11 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 e.preventDefault();
                     if(x < max_fields){ //condicional de limites 
                         x++; //incrementa la cantidad de textbox
-                        $(wrapper).append('<div class="input_fields_wrap_DG" id ="input_fields_wrap_DG"><div class="col-md-12" ><div class="form-row"><div class="form-group col-md-4"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_DG[]" name="nombre_DG[]" placeholder="Nombre completo " autocomplete="off" required></div><div class="form-group col-md-3"><input type="text" class="UpperCase form-control form-control-sm" id="id_DG[]" name="id_DG[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-4"><input type="text" class="form-control form-control-sm" id="cargo_DG[]" name="cargo_DG[]" placeholder="Cargo" autocomplete="off"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" > <i class="fas fa-trash-alt"></i></button></div></div></div></div>'); //add input box
+                        $(wrapper).append('<div class="input_fields_wrap_DG" id ="input_fields_wrap_DG"><div class="col-md-12" ><div class="form-row"><div class="form-group col-md-4"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_DG[]" name="nombre_DG[]" placeholder="Nombre completo " autocomplete="off" required></div><div class="form-group col-md-3"><input type="text" class="UpperCase form-control form-control-sm" id="id_DG[]" name="id_DG[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-4"><input type="text" class="form-control form-control-sm" id="cargo_DG[]" name="cargo_DG[]" placeholder="Cargo" autocomplete="off"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm"id="remove_field_DG" > <i class="fas fa-trash-alt"></i></button></div></div></div></div>'); //add input box
                     }
                 });
                 
-                $(wrapper).on("click","#remove_field_BF", function(e){ //user click on remove text
+                $(wrapper).on("click","#remove_field_DG", function(e){ //user click on remove text
                     e.preventDefault(); $(this).parent('div').parent('div').remove(); x--;
                     })
  
