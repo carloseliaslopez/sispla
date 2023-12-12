@@ -709,11 +709,11 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                         <div class="input_fields_wrap_PC" id ="input_fields_wrap_PC">
                                             <div class="col-md-12" >
                                                 <div class="form-row">
-                                                <div class="form-group col-md-3">
+                                                <div class="form-group col-md-4">
                                                     <label for="nombre_Cli[]">Nombre</label>
                                                     <input type="text" class="UpperCase form-control form-control-sm" id="nombre_Cli[]" name="nombre_Cli[]" placeholder="Nombre" autocomplete="off">
                                                 </div>
-                                                <div class="form-group col-md-3">
+                                                <div class="form-group col-md-4">
                                                     <label for="domicilio_Cli[]">Domicilio Comercial</label>
                                                     <select  class="form-control form-control-sm" id="domicilio_Cli[]" name="domicilio_Cli[]">
                                                         <option selected disabled>Elegir..</option>
@@ -1212,7 +1212,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 e.preventDefault();
                     if(x < max_fields){ //condicional de limites 
                         x++; //incrementa la cantidad de textbox
-                        $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-3"><input type="text" class=" UpperCase form-control form-control-sm" id="nombre_Cli[]" name="nombre_Cli[]" placeholder="Nombre" autocomplete="off"></div><div class="form-group col-md-3"><select  class="form-control form-control-sm" id="domicilio_Cli[]" name="domicilio_Cli[]"><option selected disabled>Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-3"><input type="number" class="form-control form-control-sm" id="telefono_Cli[]" name="telefono_Cli[]" placeholder="Teléfono" autocomplete="off"></div> <div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_PC"> <i class="fas fa-trash-alt" ></i></button></div></div></div>'); //add input box
+                        $(wrapper).append('<div class="col-md-12" ><div class="form-row"><div class="form-group col-md-4"><input type="text" class=" UpperCase form-control form-control-sm" id="nombre_Cli[]" name="nombre_Cli[]" placeholder="Nombre" autocomplete="off"></div><div class="form-group col-md-4"><select  class="form-control form-control-sm" id="domicilio_Cli[]" name="domicilio_Cli[]"><option selected disabled>Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div><div class="form-group col-md-3"><input type="number" class="form-control form-control-sm" id="telefono_Cli[]" name="telefono_Cli[]" placeholder="Teléfono" autocomplete="off"></div> <div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_PC"> <i class="fas fa-trash-alt" ></i></button></div></div></div>'); //add input box
                     }
                 });
                 

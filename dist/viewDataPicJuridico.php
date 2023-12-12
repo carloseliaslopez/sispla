@@ -26,6 +26,7 @@ include '../Entidades/Juridio/BeneficiariosFinales.php';
 include '../Entidades/Juridio/ActividadEconomica.php';
 include '../Entidades/Juridio/PrincipalesClientes.php';
 include '../Entidades/Juridio/PrincipalesProveedores.php';
+include '../Entidades/Juridio/Apoderados.php';
 
 include '../Entidades/Anexos/CategoriaSalario.php';
 include '../Entidades/Anexos/Constitucion.php';
@@ -403,8 +404,6 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                             </div>
                                         </div>
                                         
-
-
                                         <div class="col-md-12">
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
@@ -412,8 +411,6 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                 </div>
                                             </div>
                                         </div>
-
-
 
                                         <!--Start -->
                                         <div class="col-md-12">
@@ -447,9 +444,38 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                 </table>
                                             </div>
                                         </div>
-                                        <!-- ss-->                                       
                                         <!--Start Black lines-->
-                                        
+
+                                        <div class="col-md-12">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label for="#"> <b><i>Dignatarios, directores y/o Apoderados</i></b></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="table-responsive table-sm">
+                                                <table class="table table-bordered" id="tbl_ctrl_bono" width="100%" cellspacing="0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Nombre completo</th>
+                                                            <th>N° de identificación</th>
+                                                            <th>Cargo</th>
+                                                        </tr>
+                                                        
+                                                    </thead>
+                                                    <tbody> 
+                                                        <?php foreach($datospic->DatosApoderados($varIdEmp) as $r): ?>
+                                                            <tr>
+                                                                <td><?php echo $r->__GET('nombreCompletoApoderados'); ?></td>
+                                                                <td><?php echo $r->__GET('numIdApoderados'); ?></td>                                                                <td><?php echo $r->__GET('numIdAccionistas'); ?></td>
+                                                                <td><?php echo $r->__GET('cargo'); ?></td>
+                                                            </tr>
+                                                        <?php endforeach; ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
                                        <div class="col-md-12" >
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">

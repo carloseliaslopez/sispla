@@ -313,6 +313,37 @@ class DtPic extends Conexion
 			die($e->getMessage());
 		}
 	}
+	public function DatosApoderados($a)
+	{
+		try
+		{
+			$this->myCon = parent::conectar();
+			$querySQL = "SELECT idApoderados, nombreCompletoApoderados, numIdApoderados, cargo, idPic FROM apoderados WHERE idPic = ?";
+
+			$stm = $this->myCon->prepare($querySQL);
+			$stm->execute(array($a));
+
+			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
+			{
+				$emp = new Apoderados();
+
+				$emp->__SET('idApoderados', $r->idApoderados);	
+				$emp->__SET('nombreCompletoApoderados', $r->nombreCompletoApoderados);
+				$emp->__SET('numIdApoderados', $r->numIdApoderados);
+				$emp->__SET('cargo', $r->cargo);
+				$emp->__SET('idPic', $r->idPic);
+			
+				$result[] = $emp;
+				//var_dump($result);
+			}
+			$this->myCon = parent::desconectar();
+			return $result;
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 
 	public function ActividadEconomica($a)
 	{

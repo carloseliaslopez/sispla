@@ -73,7 +73,7 @@ if ($_POST)
             {
                 
                 // --> INSERTANDO DATOS GENERALES
-/*                
+              
                 if(empty($_POST['paisContitucion_PJ'])){
                     $pj->__SET('paisConstitucion',$vacioPais);
                 }else{
@@ -250,13 +250,13 @@ if ($_POST)
                  
 
                     if ( $id == NULL){
-                        $ac->__SET('numIdAccionistas', NULL);
+                        $ac->__SET('numIdAccionistas', $vaciotexto);
                     }else{
                         $ac->__SET('numIdAccionistas', $id);
                     }
 
                     if ( $acciones == NULL){
-                        $ac->__SET('Acciones', NULL);
+                        $ac->__SET('Acciones', $valor);
                     }else{
                         $ac->__SET('Acciones', $acciones);
                     }
@@ -287,13 +287,13 @@ if ($_POST)
 
                     
                     if ( $nombre_BF == NULL){
-                        $bf->__SET('nombreBeneFinales', "N/A");
+                    $bf->__SET('nombreBeneFinales', $vaciotexto);
                     }else{
                         $bf->__SET('nombreBeneFinales', $nombre_BF);
                     }
 
                     if ( $apellido_BF == NULL){
-                        $bf->__SET('ApellidosBeneFinales', NULL);
+                        $bf->__SET('ApellidosBeneFinales', $vaciotexto);
                     }else{
                         $bf->__SET('ApellidosBeneFinales', $apellido_BF);
                     }
@@ -306,13 +306,13 @@ if ($_POST)
                     }
 
                     if ( $id_BF == NULL){
-                        $bf->__SET('numIdBeneFinales', NULL);
+                        $bf->__SET('numIdBeneFinales', $vaciotexto);
                     }else{
                         $bf->__SET('numIdBeneFinales', $id_BF);
                     }
 
                     if ( $acciones_BF == NULL){
-                        $bf->__SET('AccionesBeneFinales', NULL);
+                        $bf->__SET('AccionesBeneFinales', $valor);
                     }else{
                         $bf->__SET('AccionesBeneFinales', $acciones_BF);
                     }
@@ -325,14 +325,12 @@ if ($_POST)
                 }
                 //END inserciones multiples a la tabla BENEFICIAROS FINALES
                 
-*/
-
                  // iNSERTANDO DATOS DIGNATARIOS, APODERADOS Y DIRECTORES 
-                 $nombreDG = $_POST['nombre_DG'];
-                 $idDG = $_POST['id_DG'];
-                 $cargoDG = $_POST['cargo_DG'];
+                $nombreDG = $_POST['nombre_DG'];
+                $idDG = $_POST['id_DG'];
+                $cargoDG = $_POST['cargo_DG'];
  
-                 foreach ($nombreDG as $key => $n){
+                foreach ($nombreDG as $key => $n){
                      
                     $nombre =$n; 
                     $id = $idDG [$key];
@@ -350,18 +348,18 @@ if ($_POST)
                         $dg->__SET('numIdApoderados', $id);
                     }
  
-                     if ( $cargo == NULL){
+                    if ( $cargo == NULL){
                          $dg->__SET('cargo', $vaciotexto);
-                     }else{
+                    }else{
                          $dg->__SET('cargo', $cargo);
-                     }
-                     $dg->__SET('idPic', $_POST['idCli_PN']);
-                     $dg->__SET('usuario_creacion', $_POST['idUsuario']);
-                     $dtMon->registrarDatosDG($dg);  
-                 }
+                    }
+                     
+                    $dg->__SET('idPic', $_POST['idCli_PN']);
+                    $dg->__SET('usuario_creacion', $_POST['idUsuario']);
+                    $dtMon->registrarDatosDG($dg);  
+                }
                 // END iNSERTANDO DATOS DIGNATARIOS, APODERADOS Y DIRECTORES
 
-/*
                 //INSERTANDO DATOS ORIGENES DE LOS FONDOS
                 $ofpj->__SET('idPic', $_POST['idCli_PN']);
                 $ofpj->__SET('usuario_creacion', $_POST['idUsuario']);
@@ -504,7 +502,7 @@ if ($_POST)
                                        
                     if(empty($nombre))
                     {
-                        $pc->__SET('nombreClientePic','N/A');
+                        $pc->__SET('nombreClientePic',$vaciotexto);
                     }else{
                         $pc->__SET('nombreClientePic', $nombre);
                     }
@@ -517,7 +515,7 @@ if ($_POST)
 
                     if(empty($telefono))
                     {
-                        $pc->__SET('telefono',NULL);
+                        $pc->__SET('telefono',$vaciotexto);
                     }else{
                         $pc->__SET('telefono', $telefono);
                     }
@@ -541,14 +539,14 @@ if ($_POST)
                                        
                     if(empty($nombreP))
                     {
-                        $pp->__SET('nombreProveedor', 'N/A');
+                        $pp->__SET('nombreProveedor', $vaciotexto);
                     }else{
                         $pp->__SET('nombreProveedor', $nombreP);
                     }
                     
                     if(empty($servicioP))
                     {
-                        $pp->__SET('servicio', NULL);
+                        $pp->__SET('servicio', $vaciotexto);
                     }else{
                         $pp->__SET('servicio', $servicioP);
                     }
@@ -562,7 +560,7 @@ if ($_POST)
 
                     if(empty($telefonoP))
                     {
-                        $pp->__SET('telefono',NULL);
+                        $pp->__SET('telefono',$vaciotexto);
                     }else{
                         $pp->__SET('telefono', $telefonoP);
                     }
@@ -596,8 +594,7 @@ if ($_POST)
                    $pep->__SET('riesgoPep', 3);
                    $pep->__SET('usuario_creacion', $_POST['idUsuario']);
                    $dtCom->registrarFullPep($pep);      
-               }
-               else{
+               }else{
                    $pep->__SET('pep', 'No');
                    $pep->__SET('nombrePep', $vaciotexto);
                    $pep->__SET('idRelacionCliente', $relacion);
@@ -633,8 +630,7 @@ if ($_POST)
                    $facta->__SET('idPic', $_POST['idCli_PN']);
                    $facta->__SET('usuario_creacion', $_POST['idUsuario']);
                    $dtCom->registrarFullFacta($facta);       
-               }
-               else{
+               }else{
                    $facta->__SET('Facta', 'No');
                    $facta->__SET('nombreFacta', $vaciotexto);
                    $facta->__SET('idRelacionCliente', $relacion);
@@ -689,9 +685,7 @@ if ($_POST)
 
                 $dtPic->registrarEstadoCliente($status);
 
-*/
                 header("Location: ../dist/ListaClientes.php?msjNewEmp=1");
-
 			
             } 
             catch (Exception $e) 
