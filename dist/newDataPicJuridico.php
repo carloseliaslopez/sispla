@@ -234,17 +234,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                     </select>
                                                 </div>
                                                 
-                                                <!--
-                                                <div class="form-group col-md-2">
-                                                    <label for="depto_nacionalidad_RL">Departamento</label>
-                                                    <select id="depto_nacionalidad_RL" name="depto_nacionalidad_RL"  class="form-control form-control-sm" >
-                                                        <option selected  disabled >Elegir..</option>
-                                                        <//?php foreach($combos->ComboDepto() as $r): ?>
-                                                            <option value="<//?php echo $r->__GET('idDepartamento') ?>"> <//?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                        <//?php endforeach; ?>
-                                                    </select>                                                
-                                                </div>
-                                                -->
+                                                
                                             </div>
                                         </div>
 
@@ -369,17 +359,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                         </select>
                                                     </div>
 
-                                                        <!--
-                                                        <div class="form-group col-md-2">
-                                                            <label for="depto_nacionalidad_AC">Departamento</label>
-                                                            <select id="depto_nacionalidad_AC" name="depto_nacionalidad_AC[]"  class="form-control form-control-sm" >
-                                                                <option selected  disabled >Elegir..</option>
-                                                                <//?php foreach($combos->ComboDepto() as $r): ?>
-                                                                    <option value="<//?php echo $r->__GET('idDepartamento') ?>"> <//?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                                <//?php endforeach; ?>
-                                                            </select>                                                
-                                                        </div>
-                                                        -->
+                                                        
 
                                                     <div class="form-group col-md-3">
                                                         <label for="id_AC[]">N° de identificación</label>
@@ -447,17 +427,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                             <?php endforeach; ?>
                                                         </select>
                                                     </div>
-                                                        <!--
-                                                        <div class="form-group col-md-2">
-                                                            <label for="depto_nacionalidad_BF">Departamento</label>
-                                                            <select id="depto_nacionalidad_BF" name="depto_nacionalidad_BF[]"  class="form-control form-control-sm" >
-                                                                <option selected  disabled >Elegir..</option>
-                                                                <//?php foreach($combos->ComboDepto() as $r): ?>
-                                                                    <option value="<//?php echo $r->__GET('idDepartamento') ?>"> <//?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                                <//?php endforeach; ?>
-                                                            </select>                                                
-                                                        </div>
-                                                        -->
+                                                        
                                                     <div class="form-group col-md-2">
                                                         <label for="id_BF[]">N° de identificación</label>
                                                         <input type="text" class="UpperCase form-control form-control-sm" id="id_BF[]" name="id_BF[]" placeholder="N° de identificación" autocomplete="off" > 
@@ -476,9 +446,66 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                             </div>
                                         </div>
                                         <!--END- IMPLEMENTACION DE DEL SCRIPT DE BENEFICIARIO FINAL -->
+
+                                         <!--Start Black lines-->
+                                         <div class="col-md-12" >
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <div id = "subprincipal">
+                                                        <label id ="Text"><b> Dignatarios, Directores y/o Apoderados </b></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--End black line-->
+                                        
+                                        <div class="col-md-12">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-2">
+                                                    <label for="#"> <b> <i>Dignatarios, Directores y/o Apoderados</i></b></label>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                   
+                                                </div>
+                                                
+                                                <div class="form-group col-md-2">
+                                                   
+                                                </div>
+                                                <div class="form-group col-md-2">
+                                                  <button type="button" class="btn btn-primary col-md-10" id="add_field_button_DG"> <i class="fas fa-user-plus"></i> Agregar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Start- IMPLEMENTACION  DEL SCRIPT DE DIGNATARIOS  Y APODERADOS-->
+                                        <div class="input_fields_wrap_DG" id ="input_fields_wrap_DG">
+                                            <div class="col-md-12" >
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="nombre_DG[]">Nombre completo </label>
+                                                        <input type="text" class="UpperCase form-control form-control-sm" id="nombre_DG[]" name="nombre_DG[]" placeholder="Nombre completo o razón social" autocomplete="off" required>                                                    
+                                                    </div>                                                       
+
+                                                    <div class="form-group col-md-3">
+                                                        <label for="id_DG[]">N° de identificación</label>
+                                                        <input type="text" class="UpperCase form-control form-control-sm" id="id_DG[]" name="id_DG[]" placeholder="N° de identificación" autocomplete="off" > 
+                                                    </div>
+                                                    
+                                                    <div class="form-group col-md-4">
+                                                        <label for="cargo_DG[]">Cargo</label>
+                                                        <input type="text" class="form-control form-control-sm" id="cargo_DG[]" name="cargo_DG[]" placeholder="Cargo" autocomplete="off">
+                                                    </div>
+                                                    <div class="form-group col-sm-1">
+                                                        <label for="">Eliminar</label>
+                                                        <button type="button" class="btn btn-danger btn-sm" disabled> <i class="fas fa-trash-alt"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--END- IMPLEMENTACION   SCRIPT DE DIGNATARIOS  Y APODERADOS -->
+
+
                                         
                                         <!--Start Black lines-->
-                                        
                                        <div class="col-md-12" >
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
@@ -514,6 +541,8 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 </div>
                                             </div>
                                         </div>
+
+                                        
                                          <!--Start Black lines-->
                                        <div class="col-md-12" >
                                             <div class="form-row">
@@ -1145,6 +1174,27 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                     if(x < max_fields){ //condicional de limites 
                         x++; //incrementa la cantidad de textbox
                         $(wrapper).append('<div class="col-md-12"><div class="form-row"><div class="form-group col-md-3"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_BF[]" name="nombre_BF[]" placeholder="Nombres" autocomplete="off"></div><div class="form-group col-md-3"><input type="text" class="UpperCase form-control form-control-sm" id="apellido_BF[]" name="apellido_BF[]" placeholder="Apellidos" autocomplete="off"></div><div class="form-group col-md-2"><select  class="form-control form-control-sm" id="nacionalidad_BF_'+ x +'" name="nacionalidad_BF[]" onchange="getvalBF(this, $i='+ x +')"><option selected disabled value = "141">Elegir..</option><?php foreach($combos->ComboPais() as $r): ?><option value="<?php echo $r->__GET('idPais') ?>"> <?php echo $r->__GET('nombrePais') ?></option><?php endforeach; ?></select></div> <div class="form-group col-md-2"><input type="text" class="form-control form-control-sm" id="id_BF[]" name="id_BF[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-1"><input type="number" class="form-control form-control-sm" id="acciones_BF[]" name="acciones_BF[]" placeholder="% Acciones" autocomplete="off"min="0" step="0.01"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" id="remove_field_BF"> <i class="fas fa-trash-alt"></i></button></div></div></div>'); //add input box
+                    }
+                });
+                
+                $(wrapper).on("click","#remove_field_BF", function(e){ //user click on remove text
+                    e.preventDefault(); $(this).parent('div').parent('div').remove(); x--;
+                    })
+ 
+            });       
+        </script>
+        <script>
+            $(document).ready(function() {
+                var max_fields      = 50; //Cantidad maxima de inputs 
+                var wrapper   		= $(".input_fields_wrap_DG"); //atributos 
+                var add_button      = $("#add_field_button_DG"); //Boton agregar
+
+                var x = 1; //Contador agregar
+                $(add_button).click(function(e){ //al realizar clia al boton add
+                e.preventDefault();
+                    if(x < max_fields){ //condicional de limites 
+                        x++; //incrementa la cantidad de textbox
+                        $(wrapper).append('<div class="input_fields_wrap_DG" id ="input_fields_wrap_DG"><div class="col-md-12" ><div class="form-row"><div class="form-group col-md-4"><input type="text" class="UpperCase form-control form-control-sm" id="nombre_DG[]" name="nombre_DG[]" placeholder="Nombre completo " autocomplete="off" required></div><div class="form-group col-md-3"><input type="text" class="UpperCase form-control form-control-sm" id="id_DG[]" name="id_DG[]" placeholder="N° de identificación" autocomplete="off" > </div><div class="form-group col-md-4"><input type="text" class="form-control form-control-sm" id="cargo_DG[]" name="cargo_DG[]" placeholder="Cargo" autocomplete="off"></div><div class="form-group col-sm-1"><button type="button" class="btn btn-danger btn-sm" > <i class="fas fa-trash-alt"></i></button></div></div></div></div>'); //add input box
                     }
                 });
                 
