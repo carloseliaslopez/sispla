@@ -376,7 +376,6 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                         
                                         <div class="col-md-12">
                                             <div class="table-responsive table-sm">
-                                        
                                                 <table class="table table-bordered" id="tbl_ctrl_bono" width="100%" cellspacing="0">
                                                     <thead>
                                                         <tr>
@@ -461,8 +460,8 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                             <th>Nombre completo</th>
                                                             <th>N° de identificación</th>
                                                             <th>Cargo</th>
+
                                                         </tr>
-                                                        
                                                     </thead>
                                                     <tbody> 
                                                         <?php foreach($datospic->DatosApoderados($varIdEmp) as $r): ?>
@@ -475,7 +474,7 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                     </tbody>
                                                 </table>
                                             </div>
-                                        </div>                                       
+                                        </div>                                      
                                        <div class="col-md-12" >
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
