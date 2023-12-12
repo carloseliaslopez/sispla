@@ -475,7 +475,7 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                     </tbody>
                                                 </table>
                                             </div>
-                                        </div>
+                                        </div>                                       
                                        <div class="col-md-12" >
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
