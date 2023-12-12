@@ -125,6 +125,30 @@ class DtNewDataPicJurdico extends Conexion
 		}
 	}
 
+	public function registrarDatosDG(Apoderados $data)
+	{
+		try 
+		{
+			$this->myCon = parent::conectar();
+			$sql = "INSERT INTO apoderados (nombreCompletoApoderados, numIdApoderados, cargo, idPic, usuario_creacion, fecha_creacion)
+		        	VALUES (?,?,?,?,?,current_timestamp())";
+
+			$this->myCon->prepare($sql)
+		     ->execute(array(
+			 $data->__GET('nombreCompletoApoderados'),
+			 $data->__GET('numIdApoderados'),
+			 $data->__GET('cargo'),
+			 $data->__GET('idPic'),
+			 $data->__GET('usuario_creacion')));
+			
+			$this->myCon = parent::desconectar();
+		} 
+		catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+
 	public function registrarDatosAE(ActividadEconomica $data)
 	{
 		try 

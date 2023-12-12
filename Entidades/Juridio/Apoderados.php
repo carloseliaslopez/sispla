@@ -1,10 +1,9 @@
 <?php
-    class Accionistas{
-        private $idAccionistas;
-        private $nombreCompletoAccionistas;
-        private $nacionalidadAccionistas;
-        private $numIdAccionistas;
-        private $Acciones;
+    class Apoderados{
+        private $idApoderados;
+        private $nombreCompletoApoderados;
+        private $numIdApoderados;
+        private $cargo;
         private $idPic;
 
         private $usuario_creacion;
@@ -18,4 +17,3 @@
 	    public function __SET($k, $v){ return $this->$k = $v; }
     }
 ?>
- 

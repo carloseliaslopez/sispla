@@ -480,7 +480,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 <div class="form-row">
                                                     <div class="form-group col-md-4">
                                                         <label for="nombre_DG[]">Nombre completo </label>
-                                                        <input type="text" class="UpperCase form-control form-control-sm" id="nombre_DG[]" name="nombre_DG[]" placeholder="Nombre completo o razón social" autocomplete="off" required>                                                    
+                                                        <input type="text" class="UpperCase form-control form-control-sm" id="nombre_DG[]" name="nombre_DG[]" placeholder="Nombre completo " autocomplete="off" required>                                                    
                                                     </div>                                                       
 
                                                     <div class="form-group col-md-3">
@@ -938,7 +938,6 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                                                 </div>  
                                                 
                                                 <div class="form-group col-md-3">
-                                                    
                                                     <select  class="form-control form-control-sm" id= "personalidadJ_II" name="personalidadJ_II">
                                                         <option selected disabled>Elegir..</option>
                                                         <?php foreach($combos->Combo_PJuridica() as $r): ?>
@@ -1104,11 +1103,11 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
         <script type="text/javascript" src="./AnexosMatriz/Juridico/jsLActividadEconomica.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
-                if(e.keyCode == 13) {
-                e.preventDefault();
-                }
-            }))
+                document.querySelectorAll('input[type=text]').forEach( node => node.addEventListener('keypress', e => {
+                    if(e.keyCode == 13) {
+                    e.preventDefault();
+                    }
+                }))
             });
         </script>              
         
@@ -1177,8 +1176,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 
                 $(wrapper).on("click","#remove_field_BF", function(e){ //user click on remove text
                     e.preventDefault(); $(this).parent('div').parent('div').remove(); x--;
-                    })
- 
+                })
             });       
         </script>
         <script>
@@ -1198,7 +1196,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 
                 $(wrapper).on("click","#remove_field_DG", function(e){ //user click on remove text
                     e.preventDefault(); $(this).parent('div').parent('div').remove(); x--;
-                    })
+                })
  
             });       
         </script>
@@ -1220,7 +1218,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 
                 $(wrapper).on("click","#remove_field_PC", function(e){ //user click on remove text
                     e.preventDefault(); $(this).parent('div').parent('div').remove(); x--;
-                    })
+                })
  
             });       
         </script>
@@ -1241,7 +1239,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 
                 $(wrapper).on("click","#remove_field_PP", function(e){ //user click on remove text
                     e.preventDefault(); $(this).parent('div').parent('div').remove(); x--;
-                    })
+                })
  
             });       
         </script>
@@ -1251,47 +1249,19 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 $("#codigo").on('change', function () {    
                     var id_empleo = $(this).val();
                     var id_matriz = $("#paisContitucion_PJ").val();
-                
-                    //alert($('select[id=paisContitucion_PJ]').val());
 
-                    
-                        $.post("./JQuerys/Panama/MRJ/jQ_ActEcono_ActiEconomica_PJ.php", { id_empleo: id_empleo, id_matriz: id_matriz }, function(data) {
-                            $("#codigoDescripcion").html(data);
+                    $.post("./JQuerys/Panama/MRJ/jQ_ActEcono_ActiEconomica_PJ.php", { id_empleo: id_empleo, id_matriz: id_matriz }, function(data) {
+                        $("#codigoDescripcion").html(data);
 
-                            //alert($('select[id=codigoDescripcion]').val());
-                            
-                        });	   
+                        //alert($('select[id=codigoDescripcion]').val());
+                    });	   
                 });
-                
-                
-                /*
-                $("#fechaInscripcion_PJ").on('keyup', function () {    
-                    var fecha = $(this).val();
-
-                    //var id_matriz = $("#paisContitucion_PJ").val();
-                
-                    //alert($('select[id=paisContitucion_PJ]').val());
-
-                        $.post("./JQuerys/Panama/MRJ/JQ_anios_negocio.php", { fecha: fecha }, function(data) {
-                            $("#aniosNegocio").html(data);
-                            
-                            alert($('text[id=aniosNegocio]').val());
-                            
-                        });	  
-                        
-                        
-                        
-                });
-                */
-
-
             });            
         </script>
         <script>
             $(document).ready(function (){
                //función para determinar La actividad economica
                 $("#nombreCompleto_RL").on('change', function () {
-                        
                     var id_name = $(this).val();
                     $.post("./JQuerys/Panama/MRJ/jQ_Busqueda_NombreRL.php", { id_name : id_name }, function(data) {
                         $("#filtracion").html(data);
@@ -1302,16 +1272,13 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 var id_cliente = $("#nombreCliente_PN").val();
                 //alert($('input[id=nombreCliente_PN]').val());
                 $.post("./JQuerys/Panama/MRJ/jQ_Busqueda_NombreCliente.php", { id_cliente : id_cliente }, function(data) {
-                    
                     $("#filtracion_Cli").html(data);
                         //$('#codigoDescripcion').val($("#").val());
                 });	
 
                 $("#nombre_AC_2").on('change', function () {
-                    
                     var id_name_ac = $("#nombre_AC_2").val();
                     $.post("./JQuerys/Panama/MRJ/jQ_Busqueda_NombreAC.php", { id_name_ac : id_name_ac }, function(data) {
-                    
                     $("#filtracion_AC_2").html(data);
                         //$('#codigoDescripcion').val($("#").val());
                     });		
@@ -1328,9 +1295,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 $("#paisContitucion_PJ").on('change', function () {
                     $("#paisContitucion_PJ option:selected").each(function () {
                         var id_pais = $(this).val();
-                        
                         $.post("./JQ_departamentos.php", { id_pais: id_pais }, function(data) {
-                        
                             $("#depto_paisContitucion_PJ").html(data);
                         // alert($('select[id=depto_paisContitucion_PJ]').val());
                         });			
@@ -1341,102 +1306,26 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
                 $("#paisNacimiento_RL").on('change', function () {
                     $("#paisNacimiento_RL option:selected").each(function () {
                         var id_pais = $(this).val();
-                        
                         $.post("./JQ_departamentos.php", { id_pais: id_pais }, function(data) {
-                        
                             $("#depto_paisNacimiento_RL").html(data);
                         // alert($('select[id=depto_paisContitucion_PJ]').val());
                         });			
                     });
                 });
-                
-                //SELECCION DEL DEPARTAMENTO PARA NACIONALIDAD DEL REPRESENTANTE LEGAL
-                /*
-                $("#nacionalidad_RL").on('change', function () {
-                    $("#nacionalidad_RL option:selected").each(function () {
-                        var id_pais = $(this).val();
-                        
-                        $.post("./JQ_departamentos.php", { id_pais: id_pais }, function(data) {
-                        
-                            $("#depto_nacionalidad_RL").html(data);
-                        // alert($('select[id=depto_paisContitucion_PJ]').val());
-                        });			
-                    });
-                });
-                */
 
                 //SELECCION DEL DEPARTAMENTO PARA LUGAR DE RESIDENCIA DEL REPRESENTANTE LEGA
                 $("#paisResidencia_RL").on('change', function () {
                     $("#paisResidencia_RL option:selected").each(function () {
                         var id_pais = $(this).val();
-                        
                         $.post("./JQ_departamentos.php", { id_pais: id_pais }, function(data) {
-                        
                             $("#depto_paisResidencia_RL").html(data);
                         // alert($('select[id=depto_paisContitucion_PJ]').val());
                         });			
                     });
                 });
-
-                //SELECCION DEL DEPARTAMENTO PARA ACCIONISTAS (1)
-                /*
-                $("#nacionalidad_AC").on('change', function () {
-                    $("#nacionalidad_AC option:selected").each(function () {
-
-                        //alert($('select[id=nacionalidad_AC]').val());
-
-                        var id_pais = $(this).val();
-                        $.post("./JQ_departamentos.php", { id_pais: id_pais }, function(data) {
-                            
-                            $("#depto_nacionalidad_AC").html(data);
-                            //alert($('select[id=depto_nacionalidad_AC]').val());
-                        });			
-                    }); 
-                }); 
-                */
-
-                //SELECCION DEL DEPARTAMENTO PARA BENEFICIARIOS FINALES (1)
-                /*
-                $("#nacionalidad_BF").on('change', function () {
-                    $("#nacionalidad_BF option:selected").each(function () {
-
-                        //alert($('select[id=nacionalidad_AC]').val());
-
-                        var id_pais = $(this).val();
-                        $.post("./JQ_departamentos.php", { id_pais: id_pais }, function(data) {
-                            
-                            $("#depto_nacionalidad_BF").html(data);
-                            //alert($('select[id=depto_nacionalidad_AC]').val());
-                        });			
-                    }); 
-                }); 
-                */
-
             });
         </script>
-        <!--Script genera un id unico (valor del input) para los Accionistas-->
-
-        <!--
-        <script>
-            function getval(sel,x)
-                {
-                    var id_pais = sel.value;
-                    alert ("idPais:"+id_pais)
-                    var i = x;
-                    //alert ("idCombobox:"+i)
-                    
-                    $.post("./JQ_departamentos.php", { id_pais: id_pais }, function(data) {
-                           
-                        //alert($('select[id=nacionalidad_AC_'+i+']').val());
-
-                        $("#depto_nacionalidad_AC_"+i).html(data);
-                          // alert($('select[id=depto_nacionalidad_AC_'+i+']').val());
-                           
-                    });	
-                }
-                */
-        </script>
-        -->
+ 
         
         <!--Script genera un id unico (valor del input) para los beneficiarios finales-->
         <!--

@@ -7,6 +7,7 @@ include_once("../Entidades/Juridio/BeneficiariosFinales.php");
 include_once("../Entidades/Juridio/ActividadEconomica.php");
 include_once("../Entidades/Juridio/PrincipalesClientes.php");
 include_once("../Entidades/Juridio/PrincipalesProveedores.php");
+include_once("../Entidades/Juridio/Apoderados.php");
 
 include_once("../Entidades/Compartidas/Pep.php");
 include_once("../Entidades/Compartidas/Facta.php");
@@ -31,6 +32,7 @@ $pj = new DatosClienteJuridicoPic();
 $rl = new DatosRepresentanteLegal();
 $ac = new Accionistas();
 $bf = new BeneficiariosFinales();
+$dg = new Apoderados();
 $ofpj = new OrigenesFondos();
 $ae = new ActividadEconomica();
 $pc = new PrincipalesClientes();
@@ -71,7 +73,7 @@ if ($_POST)
             {
                 
                 // --> INSERTANDO DATOS GENERALES
-                
+/*                
                 if(empty($_POST['paisContitucion_PJ'])){
                     $pj->__SET('paisConstitucion',$vacioPais);
                 }else{
@@ -161,14 +163,7 @@ if ($_POST)
                 }else{
                     $rl->__SET('tipoIdentificacion', $_POST['tipoId_RL']);
                 }
-                
-                /*
-                if(empty($_POST['numeroId_RL'])){
-                    $rl->__SET('numeroIdentificacion',$nulo);
-                }else{
-                    $rl->__SET('numeroIdentificacion', $_POST['numeroId_RL']);
-                }
-                */
+
                 
                 if(empty($_POST['paisEmisionId_RL'])){
                     $rl->__SET('paisEmision',$vacioPais);
@@ -252,13 +247,7 @@ if ($_POST)
                         $ac->__SET('nacionalidadAccionistas', $nacionalidad);
                     }
 
-                    /*
-                    if ( $deptoNac == NULL){
-                        $ac->__SET('deptoNacionalidadAccionistas', $vacioDepto);
-                    }else{
-                        $ac->__SET('deptoNacionalidadAccionistas', $deptoNac);
-                    }
-                    */
+                 
 
                     if ( $id == NULL){
                         $ac->__SET('numIdAccionistas', NULL);
@@ -279,10 +268,7 @@ if ($_POST)
                     
                 }
                 
-                
-
                 //INSERTANDO DATOS DE BENEFICIARIOS FINALES
-
                 $nombreBF = $_POST['nombre_BF'];
                 $apellidoBF = $_POST['apellido_BF'];
                 $nacionalidadBF = $_POST['nacionalidad_BF'];
@@ -319,14 +305,6 @@ if ($_POST)
                         $bf->__SET('nacionalidadBeneFinales', $nacionalidad_BF);
                     }
 
-                    /*
-                    if ( $deptoNac_BF == NULL){
-                        $bf->__SET('deptoNacionalidadBeneFinales', $vacioDepto);
-                    }else{
-                        $bf->__SET('deptoNacionalidadBeneFinales', $deptoNac_BF);
-                    }
-                    */
-
                     if ( $id_BF == NULL){
                         $bf->__SET('numIdBeneFinales', NULL);
                     }else{
@@ -345,12 +323,45 @@ if ($_POST)
 
                     
                 }
-            
                 //END inserciones multiples a la tabla BENEFICIAROS FINALES
-                   
+                
+*/
 
+                 // iNSERTANDO DATOS DIGNATARIOS, APODERADOS Y DIRECTORES 
+                 $nombreDG = $_POST['nombre_DG'];
+                 $idDG = $_POST['id_DG'];
+                 $cargoDG = $_POST['cargo_DG'];
+ 
+                 foreach ($nombreDG as $key => $n){
+                     
+                    $nombre =$n; 
+                    $id = $idDG [$key];
+                    $cargo = $cargoDG [$key];
+                    
+                    if ( $nombre == NULL){
+                        $dg->__SET('nombreCompletoApoderados', $vaciotexto);
+                    }else{
+                        $dg->__SET('nombreCompletoApoderados', $nombre);
+                    }
     
-            
+                    if ( $id == NULL){
+                        $dg->__SET('numIdApoderados', $vaciotexto);
+                    }else{
+                        $dg->__SET('numIdApoderados', $id);
+                    }
+ 
+                     if ( $cargo == NULL){
+                         $dg->__SET('cargo', $vaciotexto);
+                     }else{
+                         $dg->__SET('cargo', $cargo);
+                     }
+                     $dg->__SET('idPic', $_POST['idCli_PN']);
+                     $dg->__SET('usuario_creacion', $_POST['idUsuario']);
+                     $dtMon->registrarDatosDG($dg);  
+                 }
+                // END iNSERTANDO DATOS DIGNATARIOS, APODERADOS Y DIRECTORES
+
+/*
                 //INSERTANDO DATOS ORIGENES DE LOS FONDOS
                 $ofpj->__SET('idPic', $_POST['idCli_PN']);
                 $ofpj->__SET('usuario_creacion', $_POST['idUsuario']);
@@ -514,20 +525,15 @@ if ($_POST)
                     $pc->__SET('idPic', $_POST['idCli_PN']);
                     $pc->__SET('usuario_creacion', $_POST['idUsuario']);
                     $dtMon->registrarDatosPC($pc);      
-                }
-                           
-               
-                             
+                }                             
                 // INSERTANDO DATOS DE -->  PRINCIPALES PROVEEDORES
 
-          
                 $nombrePP = $_POST['nombre_Prov'];
                 $servicioPP = $_POST['servicio_Prov'];
                 $domicilioPP = $_POST['domicilio_Prov'];
                 $telefonoPP = $_POST['telefono_Prov'];
                 
                 foreach ($nombrePP as $key => $ppv){
-                     
                     $nombreP =$ppv; 
                     $servicioP = $servicioPP[$key];
                     $domicilioP = $domicilioPP[$key]; 
@@ -683,6 +689,7 @@ if ($_POST)
 
                 $dtPic->registrarEstadoCliente($status);
 
+*/
                 header("Location: ../dist/ListaClientes.php?msjNewEmp=1");
 
 			
