@@ -25,7 +25,7 @@ $datosEmp = new Dt_sig_Alertas();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Empleados</title>
+        <title>Informe Alertas</title>
         <link rel="icon" href="./images/icon_versatec.png">
         <link href="css/styles.css" rel="stylesheet" />
         <!-- <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" /> -->
@@ -46,7 +46,7 @@ $datosEmp = new Dt_sig_Alertas();
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                      <h1 class="mt-4">Empleados</h1>
+                      <h1 class="mt-4">Informe de alertas</h1>
                          <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="./Trx_alertas_diarias.php">Alertas </a></li>
                             <li class="breadcrumb-item active">Bitacora de señales de alertas </li>
