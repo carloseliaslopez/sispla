@@ -1132,7 +1132,7 @@ $empEdit = $datospic->ObtenerPic($varIdEmp);
 
         <script>
             function regresar(){
-                window.open ("menuBusqueda.html","_self")
+                window.open ("ListaClientes.php","_self")
             }
         </script>
 
