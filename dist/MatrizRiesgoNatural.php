@@ -52,6 +52,7 @@ $matrizERG = new DtMatrizRiesgoCompartida();
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Matriz de Riesgo</title>
+    <link rel="icon" href="./images/icon_versatec.png">
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/NewStyles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />

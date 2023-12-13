@@ -22,6 +22,7 @@ $busquedaListasInternas = new DtListasInternas();
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Busquedas Obligatorias</title>
+        <link rel="icon" href="./images/icon_versatec.png">
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 

@@ -33,6 +33,7 @@ if(isset($varMsjNewEmp))
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Matriz</title>
+        <link rel="icon" href="./images/icon_versatec.png">
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/NewStyles.css" rel="stylesheet" />
         <script src="./fontawesome5.15.1/js/all.min.js"></script>

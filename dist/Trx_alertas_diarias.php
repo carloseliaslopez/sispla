@@ -45,6 +45,7 @@ if(isset($varMsjNewEmp))
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Señales de Alertas</title>
+        <link rel="icon" href="./images/icon_versatec.png">
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/NewStyles.css" rel="stylesheet" />
 

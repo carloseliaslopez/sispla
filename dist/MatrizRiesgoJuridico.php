@@ -63,6 +63,7 @@ $combos = new DtCombos();
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Matriz de Riesgo</title>
+        <link rel="icon" href="./images/icon_versatec.png">
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/NewStyles.css" rel="stylesheet" />
        

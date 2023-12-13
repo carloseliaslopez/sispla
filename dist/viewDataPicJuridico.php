@@ -98,6 +98,7 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>PIC</title>
+        <link rel="icon" href="./images/icon_versatec.png">
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/NewStyles.css" rel="stylesheet" />
         <!-- <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" /> -->
@@ -273,17 +274,7 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                         <?php endforeach; ?>
                                                     </select>
                                                 </div>
-                                                    <!--
-                                                    <div class="form-group col-md-2">
-                                                        <label for="depto_nacionalidad_RL">Departamento</label>
-                                                        <select id="depto_nacionalidad_RL" name="depto_nacionalidad_RL"  class="form-control form-control-sm" >
-                                                            <option selected  disabled >Elegir..</option>
-                                                            <//?php foreach($combos->ComboDepto() as $r): ?>
-                                                                <option value="<//?php echo $r->__GET('idDepartamento') ?>"> <//?php echo $r->__GET('nombreDepartamento') ?></option>
-                                                            <//?php endforeach; ?>
-                                                        </select>                                                
-                                                    </div>
-                                                    -->
+                                
                                             </div>
                                         </div>
 
@@ -383,7 +374,6 @@ $dtinfo = $datospic->DatosInteres($varIdEmp);
                                                             <th>Nacionalidad</th>
                                                             <th>N° de identificación</th>
                                                             <th>% Acciones</th>
-                                                                                                    
                                                         </tr>
                                                         
                                                     </thead>

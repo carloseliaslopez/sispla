@@ -29,13 +29,6 @@ if(isset($varMsjUpdEmp)){
   $varMsjUpdEmp = $_GET['msjNewEmp'];
 }
 
-//variable de control msj Actualizar Empleado
-/*
-$varMsjUpdEmp = 0;
-if(isset($varMsjUpdEmp)){ 
-  $varMsjUpdEmp = $_GET['msjEditEmp'];
-}
-*/
 
 //variable de control msj Eliminar Empleado
 $varMsjDelEmp = 0;
@@ -54,6 +47,7 @@ if(isset($varMsjDelEmp)){
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Gestión de Clientes</title>
+        <link rel="icon" href="./images/icon_versatec.png">
         <link href="css/styles.css" rel="stylesheet" />
 
         <!-- DATATABLE -->

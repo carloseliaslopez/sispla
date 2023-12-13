@@ -59,6 +59,7 @@ if(isset($varMsjDelEmp)){
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Gestión de roles</title>
+        <link rel="icon" href="./images/icon_versatec.png">
         <link href="css/styles.css" rel="stylesheet" />
 
         <!-- DATATABLE -->

@@ -43,6 +43,7 @@ $rol = $_SESSION ['idRol'];
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Lista Consolidada ONU</title>
+        <link rel="icon" href="./images/icon_versatec.png">
         <link href="css/styles.css" rel="stylesheet" />
         
         <!-- DATATABLE -->

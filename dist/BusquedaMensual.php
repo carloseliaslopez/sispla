@@ -29,6 +29,7 @@ $datosBusq = new DtBusqueda_100();
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Busquedas Mensuales</title>
+        <link rel="icon" href="./images/icon_versatec.png">
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/NewStyles.css" rel="stylesheet" />
    
