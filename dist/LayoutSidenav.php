@@ -64,8 +64,8 @@
                         <div class="collapse" id="trx_menu" aria-labelledby="headingSix" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="./Trx_alertas_diarias.php">Alertas diarias</a> 
-                                <a class="nav-link" href="InformeAlerta.php">Informe de Alertas</a> 
-                                <a class="nav-link" href="#">Cargar Alertas</a>
+                                <a class="nav-link" href="./InformeAlerta.php">Informe de Alertas</a> 
+                                <a class="nav-link" href="./subirAlertas.php">Cargar Alertas</a>
                             </nav>
                         </div>
                         

@@ -1,0 +1,61 @@
+
+/***STYLE PARA EL FILE***/
+.zmdi-upload{
+    padding: 0px 15px 0px 0px;
+}
+.zmdi-upload:hover{
+    color: black;
+    transition: color 0.2s linear 0.2s;
+}
+
+.file-input__input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-input__label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  padding: 10px 23px;
+  background-color: #4245a8;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+}
+/*******/
+
+.btn-enviar{
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 45px;
+  background-color: #606060;
+  border: none;
+  border-radius: 2px;
+}
+.btn-enviar:hover{
+  color: #333;
+}
+
+h3{
+    font-size: 25px;
+    font-weight: 800;
+    color: #2B3990;
+    /*margin-top: 150px;*/
+}
+span{
+    padding-left: 10px;
+
+}
+.bg-alerts{
+    background-color: #8DC63F;
+}
+.bg-alerts-label{
+    color: #000;
+}
