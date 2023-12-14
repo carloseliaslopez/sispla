@@ -61,7 +61,7 @@ if(isset($varMsjNewEmp))
                     <div class="container-fluid">
                       <h1 class="mt-4">Matrices de riesgos</h1>
                          <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="./menuInformes.html">Menu de informes </a></li>
+                            <li class="breadcrumb-item"><a href="./menuInformes.php">Menu de informes </a></li>
                             <li class="breadcrumb-item active">Matrices de riesgos </li>
                           </ol>
                         <div class="card mb-4">

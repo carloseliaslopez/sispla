@@ -1,11 +1,12 @@
 <?php
 include_once("Connect.php");
-include_once("Connect_monitoreo.php");
+
 
 class Dt_trx_monitoreo extends Conexion
 {
     private $myCon;
 
+	
     public function ComboOficina()
 	{
 		try

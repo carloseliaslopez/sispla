@@ -70,7 +70,7 @@ if(isset($varMsjDelEmp))
                       <h1 class="mt-4">Clientes</h1>
                       <link rel="icon" href="./images/icon_versatec.png">
                          <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="./menuInformes.html">Listas </a></li>
+                            <li class="breadcrumb-item"><a href="./menuInformes.php">Listas </a></li>
                             <li class="breadcrumb-item active">Lista de informes de cliente </li>
                           </ol>
                         <div class="card mb-4">

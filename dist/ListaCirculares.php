@@ -73,7 +73,7 @@ if(isset($varMsjDelEmp))
                     <div class="container-fluid">
                       <h1 class="mt-4">Circulares</h1>
                          <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="./menuBusqueda.html">Busquedas </a></li>
+                            <li class="breadcrumb-item"><a href="./menuBusqueda.php">Busquedas </a></li>
                             <li class="breadcrumb-item active">Lista de circulares </li>
                           </ol>
                         <div class="card mb-4">

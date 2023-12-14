@@ -56,7 +56,7 @@ $rol = $_SESSION ['idRol'];
     </head>
     <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">SISPLA</a>
+            <a class="navbar-brand" href="index.php">SISPLA</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -70,7 +70,7 @@ $rol = $_SESSION ['idRol'];
                       <a class="dropdown-item" href="#">Configuración</a>
                       <a class="dropdown-item" href="#">Registro de actividades</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="login.html">Cerrar sesión</a>
+                      <a class="dropdown-item" href="login.php">Cerrar sesión</a>
                     </div>
                 </li>
             </ul>
@@ -82,7 +82,7 @@ $rol = $_SESSION ['idRol'];
                      <!--start sidebar-->
                      <div class="nav">
                         <div class="sb-sidenav-menu-heading">Página principal</div>
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="index.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Página principal
                         </a>
@@ -197,7 +197,7 @@ $rol = $_SESSION ['idRol'];
                     <div class="container-fluid">
                       <h1 class="mt-4">ONU</h1>
                          <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="./menuLista.html">Listas </a></li>
+                            <li class="breadcrumb-item"><a href="./menuLista.php">Listas </a></li>
                             <li class="breadcrumb-item active">Lista de persona y entides </li>
                           </ol>
                         <div class="card mb-4">

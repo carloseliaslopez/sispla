@@ -214,7 +214,7 @@ CREATE TABLE `alertas_diarias` (
   CONSTRAINT `alertas_diarias_ibfk_2` FOREIGN KEY (`usuario_modificacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `alertas_diarias_ibfk_3` FOREIGN KEY (`usuario_eliminacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `alertas_diarias_ibfk_4` FOREIGN KEY (`idEstado`) REFERENCES `estado` (`idEstado`)
-) ENGINE=InnoDB AUTO_INCREMENT=5552 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6223 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1834,6 +1834,48 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Table structure for table `listas_riesgo`
+--
+
+DROP TABLE IF EXISTS `listas_riesgo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `listas_riesgo` (
+  `id_listas_riesgo` int NOT NULL AUTO_INCREMENT,
+  `fechaIngreso` date DEFAULT NULL,
+  `nombre` varchar(150) DEFAULT NULL,
+  `origen` varchar(50) DEFAULT NULL,
+  `razon` varchar(100) DEFAULT NULL,
+  `idEstado` int DEFAULT NULL,
+  `usuario_creacion` int DEFAULT NULL,
+  `fecha_creacion` datetime DEFAULT NULL,
+  `usuario_modificacion` int DEFAULT NULL,
+  `fecha_modificacion` datetime DEFAULT NULL,
+  `usuario_eliminacion` int DEFAULT NULL,
+  `fecha_eliminacion` datetime DEFAULT NULL,
+  PRIMARY KEY (`id_listas_riesgo`),
+  KEY `usuario_creacion` (`usuario_creacion`),
+  KEY `usuario_modificacion` (`usuario_modificacion`),
+  KEY `usuario_eliminacion` (`usuario_eliminacion`),
+  KEY `idEstado` (`idEstado`),
+  CONSTRAINT `listas_riesgo_ibfk_1` FOREIGN KEY (`usuario_creacion`) REFERENCES `usuario` (`idUsuario`),
+  CONSTRAINT `listas_riesgo_ibfk_2` FOREIGN KEY (`usuario_modificacion`) REFERENCES `usuario` (`idUsuario`),
+  CONSTRAINT `listas_riesgo_ibfk_3` FOREIGN KEY (`usuario_eliminacion`) REFERENCES `usuario` (`idUsuario`),
+  CONSTRAINT `listas_riesgo_ibfk_4` FOREIGN KEY (`idEstado`) REFERENCES `estado` (`idEstado`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `listas_riesgo`
+--
+
+LOCK TABLES `listas_riesgo` WRITE;
+/*!40000 ALTER TABLE `listas_riesgo` DISABLE KEYS */;
+INSERT INTO `listas_riesgo` VALUES (1,'2021-09-23','GUSTAVO ALBERTO PEREZ','ENGEL_HN','Actores corruptos y antidemocráticos',1,1,'2023-12-13 15:07:31',NULL,NULL,NULL,NULL),(2,'2021-09-23','MARCO ANTONIO BOGRAN CORRALES','ENGEL_HN','Actores corruptos y antidemocráticos',1,1,'2023-12-13 15:07:31',NULL,NULL,NULL,NULL),(3,'2021-09-23','ROSA ELENA BONILLA DE LOBO','ENGEL_HN','Actores corruptos y antidemocráticos',1,1,'2023-12-13 15:07:31',NULL,NULL,NULL,NULL),(4,'2021-09-23','WALTER RENE ARAUJO MORALES','ENGEL_SLV','Actores corruptos y antidemocráticos',1,1,'2023-12-13 15:07:31',NULL,NULL,NULL,NULL),(5,'2021-09-23','PABLO SALVADOR ANLIKER INFANTE','ENGEL_SLV','Actores corruptos y antidemocráticos',1,1,'2023-12-13 15:07:32',NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `listas_riesgo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `matrizriesgojuridico`
 --
 
@@ -2315,7 +2357,7 @@ CREATE TABLE `posibles_list` (
   CONSTRAINT `posibles_list_ibfk_2` FOREIGN KEY (`usuario_modificacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `posibles_list_ibfk_3` FOREIGN KEY (`usuario_eliminacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `posibles_list_ibfk_4` FOREIGN KEY (`idEstado`) REFERENCES `estado` (`idEstado`)
-) ENGINE=InnoDB AUTO_INCREMENT=12621 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12842 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2624,7 +2666,7 @@ CREATE TABLE `rolusuario` (
 
 LOCK TABLES `rolusuario` WRITE;
 /*!40000 ALTER TABLE `rolusuario` DISABLE KEYS */;
-INSERT INTO `rolusuario` VALUES (1,1,1),(2,2,1),(5,6,2);
+INSERT INTO `rolusuario` VALUES (1,1,1),(2,2,1),(5,6,1);
 /*!40000 ALTER TABLE `rolusuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3257,7 +3299,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'carlos','2dc1c1c59f2ae9c02311ac2092eb0134fba24694','Carlos Elias','Acuña Lopez','carloseliaslopez2015@gmail.com',1,1),(2,'m_vargas','4e27d9aea8ae4568209513661f5f5d220e20fc0b','system','system','system',1,1),(6,'t_temporal','16cba8874664fe9b5c79f139dbcc9ed5977b66e7','system','system','system@gmail.com',1,0);
+INSERT INTO `usuario` VALUES (1,'carlos','2dc1c1c59f2ae9c02311ac2092eb0134fba24694','Carlos Elias','Acuña Lopez','carloseliaslopez2015@gmail.com',1,1),(2,'m_vargas','4e27d9aea8ae4568209513661f5f5d220e20fc0b','system','system','system',1,1),(6,'admin_test','3f72bcb53fb301af20d78d152456d901c30a43b3','system','system','system@gmail.com',1,0);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4974,4 +5016,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-12 16:41:56
+-- Dump completed on 2023-12-14 13:54:57
