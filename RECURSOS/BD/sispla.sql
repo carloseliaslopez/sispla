@@ -214,7 +214,7 @@ CREATE TABLE `alertas_diarias` (
   CONSTRAINT `alertas_diarias_ibfk_2` FOREIGN KEY (`usuario_modificacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `alertas_diarias_ibfk_3` FOREIGN KEY (`usuario_eliminacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `alertas_diarias_ibfk_4` FOREIGN KEY (`idEstado`) REFERENCES `estado` (`idEstado`)
-) ENGINE=InnoDB AUTO_INCREMENT=6223 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6406 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1710,6 +1710,33 @@ INSERT INTO `informegeneralidd` VALUES (1,2,'LOREM IPSUM_V2','Juridico','ProfitP
 UNLOCK TABLES;
 
 --
+-- Table structure for table `intentos_permitido`
+--
+
+DROP TABLE IF EXISTS `intentos_permitido`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `intentos_permitido` (
+  `id_intentos_permitido` int NOT NULL AUTO_INCREMENT,
+  `idUsuario` int DEFAULT NULL,
+  `num_intentos` int DEFAULT NULL,
+  PRIMARY KEY (`id_intentos_permitido`),
+  KEY `idUsuario` (`idUsuario`),
+  CONSTRAINT `intentos_permitido_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `intentos_permitido`
+--
+
+LOCK TABLES `intentos_permitido` WRITE;
+/*!40000 ALTER TABLE `intentos_permitido` DISABLE KEYS */;
+INSERT INTO `intentos_permitido` VALUES (1,1,5),(2,2,5),(3,6,5);
+/*!40000 ALTER TABLE `intentos_permitido` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `interesinfo`
 --
 
@@ -2357,7 +2384,7 @@ CREATE TABLE `posibles_list` (
   CONSTRAINT `posibles_list_ibfk_2` FOREIGN KEY (`usuario_modificacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `posibles_list_ibfk_3` FOREIGN KEY (`usuario_eliminacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `posibles_list_ibfk_4` FOREIGN KEY (`idEstado`) REFERENCES `estado` (`idEstado`)
-) ENGINE=InnoDB AUTO_INCREMENT=12842 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13505 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3299,7 +3326,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'carlos','2dc1c1c59f2ae9c02311ac2092eb0134fba24694','Carlos Elias','Acuña Lopez','carloseliaslopez2015@gmail.com',1,1),(2,'m_vargas','4e27d9aea8ae4568209513661f5f5d220e20fc0b','system','system','system',1,1),(6,'admin_test','3f72bcb53fb301af20d78d152456d901c30a43b3','system','system','system@gmail.com',1,0);
+INSERT INTO `usuario` VALUES (1,'carlos','2dc1c1c59f2ae9c02311ac2092eb0134fba24694','Carlos Elias','Acuña Lopez','carloseliaslopez2015@gmail.com',1,1),(2,'m_vargas','4e27d9aea8ae4568209513661f5f5d220e20fc0b','Marvin Noel','Vargas Macías','mvargas@versateclatam.com',1,1),(6,'admin_test','3f72bcb53fb301af20d78d152456d901c30a43b3','system','system','system@gmail.com',1,0);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4194,7 +4221,8 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `idEstado`,
  1 AS `firt_time`,
  1 AS `rolDescripcion`,
- 1 AS `opcionDescripcion`*/;
+ 1 AS `opcionDescripcion`,
+ 1 AS `num_intentos`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -5001,8 +5029,8 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vw_usuario_per_opc` AS select `ru`.`idRolUsuario` AS `idRolUsuario`,`ru`.`idUsuario` AS `idUsuario`,`ru`.`idRol` AS `idRol`,`ro`.`idOpciones` AS `idOpciones`,`u`.`usuario` AS `usuario`,`u`.`pwd` AS `pwd`,`u`.`nombres` AS `nombres`,`u`.`apellidos` AS `apellidos`,`u`.`correo` AS `correo`,`u`.`idEstado` AS `idEstado`,`u`.`firt_time` AS `firt_time`,`r`.`rolDescripcion` AS `rolDescripcion`,`o`.`opcionDescripcion` AS `opcionDescripcion` from ((((`rolusuario` `ru` join `rolopciones` `ro` on((`ru`.`idRol` = `ro`.`idRol`))) join `usuario` `u` on((`ru`.`idUsuario` = `u`.`idUsuario`))) join `rol` `r` on((`ru`.`idRol` = `r`.`idRol`))) join `opciones` `o` on(((`ro`.`idOpciones` = `o`.`idOpciones`) and (`u`.`idEstado` <> 3)))) */;
+/*!50013 DEFINER=`admin`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `vw_usuario_per_opc` AS select `ru`.`idRolUsuario` AS `idRolUsuario`,`ru`.`idUsuario` AS `idUsuario`,`ru`.`idRol` AS `idRol`,`ro`.`idOpciones` AS `idOpciones`,`u`.`usuario` AS `usuario`,`u`.`pwd` AS `pwd`,`u`.`nombres` AS `nombres`,`u`.`apellidos` AS `apellidos`,`u`.`correo` AS `correo`,`u`.`idEstado` AS `idEstado`,`u`.`firt_time` AS `firt_time`,`r`.`rolDescripcion` AS `rolDescripcion`,`o`.`opcionDescripcion` AS `opcionDescripcion`,`ip`.`num_intentos` AS `num_intentos` from (((((`rolusuario` `ru` join `rolopciones` `ro` on((`ru`.`idRol` = `ro`.`idRol`))) join `usuario` `u` on((`ru`.`idUsuario` = `u`.`idUsuario`))) join `rol` `r` on((`ru`.`idRol` = `r`.`idRol`))) join `opciones` `o` on((`ro`.`idOpciones` = `o`.`idOpciones`))) join `intentos_permitido` `ip` on(((`ip`.`idUsuario` = `u`.`idUsuario`) and (`u`.`idEstado` <> 3)))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -5016,4 +5044,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-14 13:54:57
+-- Dump completed on 2023-12-20 16:46:45
