@@ -3,7 +3,6 @@
 error_reporting(0);
 require "../Datos/Conexion.php";
 
-
 session_start();
 
 if ($_POST){
@@ -17,7 +16,7 @@ if ($_POST){
 
     }else{
 
-        $sql = "SELECT idRolUsuario, idUsuario, idRol, idOpciones, usuario, pwd, nombres, apellidos, correo, idEstado,firt_time, RolDescripcion, opcionDescripcion
+        $sql = "SELECT idRolUsuario, idUsuario, idRol, idOpciones, usuario, pwd, nombres, apellidos, correo, idEstado,firt_time, RolDescripcion, opcionDescripcion, num_intentos
             from vw_usuario_per_opc where usuario = '$username' and idEstado<>3";
             
         $resultado = $conexion -> query($sql);
@@ -25,12 +24,18 @@ if ($_POST){
 
 
         if ($num>0){
+
             $row = $resultado -> fetch_assoc();
             $password_bd = $row['pwd'];
             $pass_c = sha1($password);
 
+            $_SESSION ['idUsuario'] = $row['idUsuario'];
+            $_SESSION ['num_intentos'] = $row['num_intentos'];
+
+            $idUsuario = $_SESSION ['idUsuario'];
+            $intentos = $_SESSION ['num_intentos'];
+
                 if ($password_bd == $pass_c){
-                    $_SESSION ['idUsuario'] = $row['idUsuario'];
                     $_SESSION ['usuario'] = $row['usuario'];
                     $_SESSION ['idRol'] = $row['idRol'];
                     $_SESSION ['idOpciones'] = $row['idOpciones'];
@@ -39,17 +44,33 @@ if ($_POST){
                     session_start();
 
                     $first_time = $_SESSION ['firt_time'];
+                    
+                    
 
                     if ($first_time == 0){
                         header("Location: password.php");
                     }else{
-                        header("Location: index.php");
+                        //header("Location: index.php");                    
                     }
                     
                 }else{
                     
-                    echo ("Credenciales incorrectas - Intentos permitidos [] antes que la cuenta se bloquee.");
+                        $cont_int =  $intentos -1;
+                        $sql2 = "UPDATE intentos_permitido SET num_intentos  = '$cont_int' WHERE idUsuario = '$idUsuario' ";
+                            
+                        $resultado = $conexion -> query($sql2);
 
+                    if($intentos == 0){
+                           
+                        $smg_error = "EL USUARIO HA SIDO BLOQUEADO CONTACTARSE CON SU ADMINISTRADOR  ";
+                        echo "<script> alert('".$smg_error."'); </script>";
+
+                    }else{
+
+                                            
+                        $smg_error = "Credenciales incorrectas - Intentos permitidos [".$cont_int."] antes que la cuenta se bloquee.";
+                        echo "<script> alert('".$smg_error."'); </script>";
+                    }  
                 }
 
         }else{
@@ -74,7 +95,7 @@ if ($_POST){
         <title>Inicio de Sesión</title>
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body style="background-color: #808080;">
+    <body style="background-color: #606060;">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -96,8 +117,8 @@ if ($_POST){
                                             <span span style="color:Red" id="smg_error"></span>                                          
 
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="#">¿Olvidó su Contraseña?</a>
-                                                <a ></a>
+                                                <!--<a class="small" href="#">¿Olvidó su Contraseña?</a>
+                                                <a ></a>-->
                                                 <button type = "submit" class="btn btn-primary" >Acceder</button>                                                
                                             </div>
                                             
