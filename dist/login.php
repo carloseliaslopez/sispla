@@ -23,6 +23,7 @@ if ($_POST){
         $num = $resultado -> num_rows;
 
 
+
         if ($num>0){
 
             $row = $resultado -> fetch_assoc();
@@ -34,6 +35,13 @@ if ($_POST){
 
             $idUsuario = $_SESSION ['idUsuario'];
             $intentos = $_SESSION ['num_intentos'];
+
+            if($intentos == 0){
+
+                session_destroy();
+                header("Location: ../dist/401.html");
+
+            }else{
 
                 if ($password_bd == $pass_c){
                     $_SESSION ['usuario'] = $row['usuario'];
@@ -50,7 +58,11 @@ if ($_POST){
                     if ($first_time == 0){
                         header("Location: password.php");
                     }else{
-                        //header("Location: index.php");                    
+                        $cont_int =  3;
+                        $sql3 = "UPDATE intentos_permitido SET num_intentos  = '$cont_int' WHERE idUsuario = '$idUsuario' ";
+                        $resultado = $conexion -> query($sql3);
+
+                        header("Location: index.php");                    
                     }
                     
                 }else{
@@ -60,25 +72,27 @@ if ($_POST){
                             
                         $resultado = $conexion -> query($sql2);
 
-                    if($intentos == 0){
-                           
-                        $smg_error = "EL USUARIO HA SIDO BLOQUEADO CONTACTARSE CON SU ADMINISTRADOR  ";
-                        echo "<script> alert('".$smg_error."'); </script>";
+                        if ($cont_int == 0){
+                            
+                            $smg_error = "Ha alcanzado el limite de intentos, por seguridad la cuenta ha sido bloqueada";
+                            echo "<script> alert('".$smg_error."'); </script>";
+                                
+                        }else{
+                            $smg_error = "Credenciales incorrectas - Intentos permitidos [".$cont_int."] antes que la cuenta se bloquee.";
+                            echo "<script> alert('".$smg_error."'); </script>";
+                        }
 
-                    }else{
+                          
 
-                                            
-                        $smg_error = "Credenciales incorrectas - Intentos permitidos [".$cont_int."] antes que la cuenta se bloquee.";
-                        echo "<script> alert('".$smg_error."'); </script>";
-                    }  
+
                 }
+            }
 
         }else{
             echo ("Credenciales incorrectas");
 
         }
     }
-   
 }
 
 ?>
@@ -91,7 +105,7 @@ if ($_POST){
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <link href="./dist/images/VERSATEC.svg" rel="icon" >
+        <link href="../dist/images/icon_versatec.png" rel="icon" >
         <title>Inicio de Sesión</title>
         <link href="css/styles.css" rel="stylesheet" />
     </head>
@@ -114,7 +128,7 @@ if ($_POST){
                                                 <label class="small mb-1" for="password">Contraseña</label>
                                                 <input class="form-control py-4" id="password" name="password"type="password" placeholder="Contraseña" />
                                             </div>
-                                            <span span style="color:Red" id="smg_error"></span>                                          
+                                                                                      
 
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <!--<a class="small" href="#">¿Olvidó su Contraseña?</a>

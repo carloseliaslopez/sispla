@@ -17,6 +17,7 @@ $nombre = $_SESSION['idUsuario'];
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Inicio de Sesión</title>
+        <link href="../dist/images/icon_versatec.png" rel="icon" >
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/pwdInfoBox.css" rel="stylesheet" />
         <style type="text/css">
@@ -24,9 +25,7 @@ $nombre = $_SESSION['idUsuario'];
             .confirmacion{background:#C6FFD5;border:1px solid green;}
             .negacion{background:#ffcccc;
                 border:1px solid red;
-               
-        
-        
+            
         }
             
         </style>

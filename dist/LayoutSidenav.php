@@ -100,16 +100,18 @@
                             </nav>
                         </div>
 
-                        
+                        <?php } ?>
+                        <!--end sidebar-->
                         
                     </div>
-                    <?php } ?>
-                     <!--end sidebar-->
+                    
+                     
                 </div>
-
                 <div class="sb-sidenav-footer" style="background-color:#606060;">
                     <div class="small">Registrado como:</div>
                     <?php echo $nombre; ?>
-                </div>
+                 </div>
+                
             </nav>
+            
         </div>

@@ -10,7 +10,7 @@ $nombre = $_SESSION['usuario'];
 
 $rol = $_SESSION['idRol'];
 if ($rol <> 1){
-    header("Location: ../dist/401.html");
+    header("Location: ../dist/403.html");
 }
 
 //entidades y datps
