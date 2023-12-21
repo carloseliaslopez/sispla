@@ -241,10 +241,9 @@ if(isset($varMsjDelEmp)){
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    
                                                         <div class="form-row">
                                                             <div class="col-md-12" >
-                                                                
+
                                                                 <div class="form-group">
                                                                      <input type="hidden" id="txtaccion" name="txtaccion" value="2"/>
                                                                     <input type="hidden" id="idRolUsuario" name="idRolUsuario"/>
@@ -266,8 +265,6 @@ if(isset($varMsjDelEmp)){
                                                                     </select>
                                                                 </div>
 
-                                                                
-                                                                
                                                                 <div class="form-group">
                                                                     <input class="btn btn-primary btn-block" type="submit" value="Guardar"/> &nbsp;
                                                                     <input class="btn btn-danger btn-block" type="reset" value="Cancelar" data-dismiss="modal"/> &nbsp;
@@ -308,10 +305,11 @@ if(isset($varMsjDelEmp)){
             </div>
         </div>
 
-        
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
+        
         <!-- PLUGIN FONTAWESOME -->
         <script src="fontawesome5.15.1/js/all.min.js"></script>
         <!-- DATATABLE -->
@@ -428,9 +426,6 @@ if(isset($varMsjDelEmp)){
             $('#apt_rol').val(idRol);
 
 
-
-            
-            
             } );
         </script>
 
