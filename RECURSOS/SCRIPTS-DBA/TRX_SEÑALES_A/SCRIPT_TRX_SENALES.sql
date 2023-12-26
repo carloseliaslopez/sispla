@@ -93,8 +93,8 @@ FOREIGN KEY (idOficina) REFERENCES Trx_oficina(idOficina)
 
 
 /*TABLA-OFICINAS DONDE SE GENERAN SEÑALES DE ALERTAS*/
-DROP TABLE IF EXISTS Trx_oficina;
-CREATE TABLE Trx_oficina(
+DROP TABLE IF EXISTS trx_oficina;
+CREATE TABLE trx_oficina(
  idOficina int auto_increment not null primary key,
  nombreOficina varchar (50),
  paisOficina varchar (50),
@@ -109,7 +109,7 @@ CREATE TABLE Trx_oficina(
 FOREIGN KEY (usuario_creacion) REFERENCES Usuario(idUsuario),
 FOREIGN KEY (usuario_modificacion) REFERENCES Usuario(idUsuario),
 FOREIGN KEY (usuario_eliminacion) REFERENCES Usuario(idUsuario),
-FOREIGN KEY (idEstado) REFERENCES Estado(idEstado)
+FOREIGN KEY (idEstado) REFERENCES estado(idEstado)
 );
 
 

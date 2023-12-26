@@ -1,5 +1,6 @@
 <?php
-$conexion = new mysqli('localhost','admin','adminCump123.','monitoreo');
+//$conexion = new mysqli('localhost','admin','adminCump123.','monitoreo');
+$conexion = new mysqli('localhost','admin','root','monitoreo');
 
 $tipo       = $_FILES['dataCliente']['type'];
 $tamanio    = $_FILES['dataCliente']['size'];
@@ -9,40 +10,40 @@ $lineas     = file($archivotmp);
 $i = 0;
 
 foreach ($lineas as $linea) {
-    $cantidad_registros = count($lineas);
-    $cantidad_regist_agregados =  ($cantidad_registros - 1);
+    //$cantidad_registros = count($lineas);
+    //$cantidad_regist_agregados =  ($cantidad_registros - 1);
 
     if ($i != 0) {
 
-        $datos = explode(";", $linea);
+        $datos = explode(",", $linea);
        
-        $moneda               = !empty($datos[0])  ? ($datos[0]) : '';
-		$tipo_transaccion     = !empty($datos[1])  ? ($datos[1]) : '';
-        $afiliado             = !empty($datos[2])  ? ($datos[2]) : '';
-        $usuario              = !empty($datos[3])  ? ($datos[3]) : '';
-        $autorizacion         = !empty($datos[4])  ? ($datos[4]) : '';
-        $cod_plan             = !empty($datos[5])  ? ($datos[5]) : '';
-        $plan                 = !empty($datos[6])  ? ($datos[6]) : '';
-        $codigo_mcc           = !empty($datos[7])  ? ($datos[7]) : '';
-        $tipo_comercio        = !empty($datos[8])  ? ($datos[8]) : '';
-        $comercio             = !empty($datos[9])  ? ($datos[9]) : '';
-        $ciudad               = !empty($datos[10])  ? ($datos[10]) : '';
-        $cod_concepto         = !empty($datos[11])  ? ($datos[11]) : '';
-        $fecha_transaccion    = !empty($datos[12])  ? ($datos[12]) : '';
-        $fecha_proceso        = !empty($datos[13])  ? ($datos[13]) : '';
-        $monto                = !empty($datos[14])  ? ($datos[14]) : '';
-        $tipo_entr_tarjeta    = !empty($datos[15])  ? ($datos[15]) : '';
-        $plastico             = !empty($datos[16])  ? ($datos[15]) : '';
-        $nombre_cliente       = !empty($datos[17])  ? ($datos[16]) : '';
-        $riesgo_pais          = !empty($datos[18])  ? ($datos[17]) : '';
-        $empresa              = !empty($datos[19])  ? ($datos[18]) : '';
-        $cuenta_equivalente   = !empty($datos[20])  ? ($datos[19]) : '';
-        $pais                 = !empty($datos[20])  ? ($datos[20]) : '';
-        $moneda_origen        = !empty($datos[21])  ? ($datos[21]) : '';
-        $monto_origen         = !empty($datos[22])  ? ($datos[22]) : '';
-        $moneda_destino       = !empty($datos[23])  ? ($datos[23]) : '';
-        $monto_destino        = !empty($datos[24])  ? ($datos[24]) : '';
-        $cod_pais             = !empty($datos[25])  ? ($datos[25]) : '';
+        $moneda               = $datos[0] ? $datos[0]: '';
+		$tipo_transaccion     = $datos[1] ? $datos[1]: '';
+        $afiliado             = $datos[2] ? $datos[2]: '';
+        $usuario              = $datos[3] ? $datos[3]: '';
+        $autorizacion         = $datos[4] ? $datos[4]: '';
+        $cod_plan             = $datos[5] ? $datos[5]: '';
+        $plan                 = $datos[6] ? $datos[6]: '';
+        $codigo_mcc           = $datos[7] ? $datos[7]: '';
+        $tipo_comercio        = $datos[8] ? $datos[8]: '';
+        $comercio             = $datos[9] ? $datos[9]: '';
+        $ciudad               = $datos[10] ? $datos[10]: '';
+        $cod_concepto         = $datos[11] ? $datos[11]: '';
+        $fecha_transaccion    = $datos[12] ? $datos[12]: '';
+        $fecha_proceso        = $datos[13] ? $datos[13]: '';
+        $monto                = $datos[14] ? $datos[14]: '';
+        $tipo_entr_tarjeta    = $datos[15] ? $datos[15]: '';
+        $plastico             = $datos[16] ? $datos[16]: '';
+        $nombre_cliente       = $datos[17] ? $datos[17]: '';
+        $riesgo_pais          = $datos[18] ? $datos[18]: '';
+        $empresa              = $datos[19] ? $datos[19]: '';
+        $cuenta_equivalente   = $datos[20] ? $datos[20]: '';
+        $pais                 = $datos[21] ? $datos[21]: '';
+        $moneda_origen        = $datos[22] ? $datos[22]: '';
+        $monto_origen         = $datos[23] ? $datos[23]: '';
+        $moneda_destino       = $datos[24] ? $datos[24]: '';
+        $monto_destino        = $datos[25] ? $datos[25]: '';
+        $cod_pais             = $datos[26] ? $datos[26]: '';
 
         if( !empty($plastico) ){
             $duplicidad = ("SELECT autorizacion,monto  FROM trx_incoming_dsy WHERE autorizacion ='".($autorizacion)."' and  monto ='".($monto)."'");

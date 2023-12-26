@@ -18,7 +18,7 @@ class Conexion
         $userName = 'admin';
         $pwd = 'adminCump123.';
         //$userName = 'root';
-        //$pwd = 'CEal2000!';
+        //$pwd = 'root';
         
 		try
 		{
