@@ -1,10 +1,11 @@
 <?php
+//error_reporting(0);
 require_once 'dompdf/autoload.inc.php';
 
 use Dompdf\Dompdf;
 $dompdf = new Dompdf(['chroot' => __DIR__]);
 ob_start();
-include "./printMatrizEvaluacion2.php";
+include "../dist/reportes/templates/printMatrizEvaluacion.php";
 $html = ob_get_clean();
 $dompdf->loadHtml($html);
 $dompdf->render();
