@@ -57,7 +57,7 @@
                         <!-- end sub-menu Busquedas-->
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#trx_menu" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-exclamation-circle"></i></i></div>
-                                Señales de alerta
+                                Monitoreo
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         
