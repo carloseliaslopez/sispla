@@ -214,7 +214,7 @@ CREATE TABLE `alertas_diarias` (
   CONSTRAINT `alertas_diarias_ibfk_2` FOREIGN KEY (`usuario_modificacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `alertas_diarias_ibfk_3` FOREIGN KEY (`usuario_eliminacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `alertas_diarias_ibfk_4` FOREIGN KEY (`idEstado`) REFERENCES `estado` (`idEstado`)
-) ENGINE=InnoDB AUTO_INCREMENT=6406 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7870 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1732,7 +1732,7 @@ CREATE TABLE `intentos_permitido` (
 
 LOCK TABLES `intentos_permitido` WRITE;
 /*!40000 ALTER TABLE `intentos_permitido` DISABLE KEYS */;
-INSERT INTO `intentos_permitido` VALUES (1,1,5),(2,2,5),(3,6,5);
+INSERT INTO `intentos_permitido` VALUES (1,1,3),(2,2,3),(3,6,3);
 /*!40000 ALTER TABLE `intentos_permitido` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2384,7 +2384,7 @@ CREATE TABLE `posibles_list` (
   CONSTRAINT `posibles_list_ibfk_2` FOREIGN KEY (`usuario_modificacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `posibles_list_ibfk_3` FOREIGN KEY (`usuario_eliminacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `posibles_list_ibfk_4` FOREIGN KEY (`idEstado`) REFERENCES `estado` (`idEstado`)
-) ENGINE=InnoDB AUTO_INCREMENT=13505 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13726 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3326,7 +3326,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'carlos','2dc1c1c59f2ae9c02311ac2092eb0134fba24694','Carlos Elias','Acuña Lopez','carloseliaslopez2015@gmail.com',1,1),(2,'m_vargas','4e27d9aea8ae4568209513661f5f5d220e20fc0b','Marvin Noel','Vargas Macías','mvargas@versateclatam.com',1,1),(6,'admin_test','3f72bcb53fb301af20d78d152456d901c30a43b3','system','system','system@gmail.com',1,0);
+INSERT INTO `usuario` VALUES (1,'carlos','2dc1c1c59f2ae9c02311ac2092eb0134fba24694','Carlos Elias','Acuña Lopez','carloseliaslopez2015@gmail.com',1,1),(2,'m_vargas','4e27d9aea8ae4568209513661f5f5d220e20fc0b','Marvin Noel','Vargas Macías','mvargas@versateclatam.com',1,1),(6,'z_jarquin','fb1ac2fd3a74cc9bd1610689265063ddf181147f','Zuleyma','Jarquin','zjarquin@versateclatam.com',1,1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5044,4 +5044,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-20 16:46:45
+-- Dump completed on 2023-12-28 16:34:45
