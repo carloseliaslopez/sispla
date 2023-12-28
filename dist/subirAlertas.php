@@ -54,7 +54,6 @@ $rol = $_SESSION ['idRol'];
                                 <img src="./images/logo_versatec.png" style="max-width:100%;width:auto;height:auto;" />
                             </div>
 -->
-                            
                         </div>
                     </div>
                     <!--logos de VERSATEC-->
@@ -153,6 +152,53 @@ $rol = $_SESSION ['idRol'];
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-12" >
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <div class="card mb-4">
+                                    <div class="card-header bg-alerts text-center">
+                                        <b>PROFIT COSTA RICA</b>
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="./validacionMonit/recibe_cvs_dsy.php" method="POST" enctype="multipart/form-data">
+                                            <div class="file-input text-center">
+                                                <input  type="file" name="dataCliente" id="file-input" class="file-input__input" accept=".csv"/>
+                                                <label class="file-input__label" for="file-input">
+                                                <i class="fas fa-file-upload "></i>
+                                                <span>Elegir Archivo</span> </label
+                                                >
+                                            </div>
+                                            <div class="text-center mt-3">
+                                                <input type="submit" name="subir" class="btn-enviar" value="Importar"/>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <div class="card mb-4">
+                                    <div class="card-header bg-alerts text-center">
+                                        <b>PROFIT GUATEMALA</b>
+                                    </div>
+                                    <div class="card-body">
+                                        <form action="recibe_excel_validando.php" method="POST" enctype="multipart/form-data">
+                                            <div class="file-input text-center">
+                                                <input  type="file" name="dataCliente" id="file-input" class="file-input__input" accept=".csv"/>
+                                                <label class="file-input__label" for="file-input">
+                                                <i class="fas fa-file-upload "></i>
+                                                <span>Elegir Archivo</span> </label
+                                                >
+                                            </div>
+                                            <div class="text-center mt-3">
+                                                <input type="submit" name="subir" class="btn-enviar" value="Importar"/>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
