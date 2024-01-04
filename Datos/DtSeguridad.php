@@ -268,6 +268,42 @@ class DtSeguridad extends Conexion
 		}
 	}
 
+	public function ExisteUsuario2($a)
+	{
+		try
+		{
+			$this->myCon = parent::conectar();
+			$querySQL = "SELECT idUsuario,usuario,pwd,nombres,apellidos,correo,idEstado FROM usuario WHERE idUsuario = ?  AND idEstado <>3;";
+			
+			$stm = $this->myCon->prepare($querySQL);
+			$stm->execute(array($a));
+
+			foreach($stm->fetchAll(PDO::FETCH_OBJ) as $r)
+			{
+				$emp = new Usuario();
+
+				//_SET(CAMPOBD, atributoEntidad)
+				$emp->__SET('idUsuario', $r->idUsuario);	
+				$emp->__SET('usuario', $r->usuario);	
+				$emp->__SET('pwd', $r->pwd);
+				$emp->__SET('nombres', $r->nombres);
+				$emp->__SET('apellidos', $r->apellidos);
+				$emp->__SET('correo', $r->correo);
+                $emp->__SET('idEstado', $r->idEstado);
+
+				$result = $emp;
+
+				//var_dump($result);
+			}
+			$this->myCon = parent::desconectar();
+			return $result;
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
+
 	public function actualizarPwdUsuario(Usuario $data)
 	{
 		try 
@@ -289,6 +325,82 @@ class DtSeguridad extends Conexion
 		catch (Exception $e) 
 		{
 			var_dump($e);
+			die($e->getMessage());
+		}
+	}
+	public function actualizarUsuario(Usuario $data)
+	{
+		try 
+		{
+			$this->myCon = parent::conectar();
+			$sql = "UPDATE usuario SET nombres = ?, apellidos = ?,correo = ? WHERE idUsuario = ?";
+
+				$this->myCon->prepare($sql)
+			     ->execute(
+				array(
+					
+					$data->__GET('nombres'),
+					$data->__GET('apellidos'),  
+					$data->__GET('correo'), 
+                    $data->__GET('idUsuario')
+					)
+				);
+				$this->myCon = parent::desconectar();
+		} 
+		catch (Exception $e) 
+		{
+			var_dump($e);
+			die($e->getMessage());
+		}
+	}
+
+	public function eliminarUsuario($id)
+	{
+		try 
+		{
+			$this->myCon = parent::conectar();
+			$querySQL = "UPDATE usuario SET idEstado = 3
+			WHERE idUsuario = ?";
+			$stm = $this->myCon->prepare($querySQL);
+			$stm->execute(array($id));
+			$this->myCon = parent::desconectar();
+		} 
+		catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+
+	public function bloquearUsuario($id)
+	{
+		try 
+		{
+			$this->myCon = parent::conectar();
+			$querySQL = "UPDATE intentos_permitido SET num_intentos = 0
+			WHERE idUsuario = ?";
+			$stm = $this->myCon->prepare($querySQL);
+			$stm->execute(array($id));
+			$this->myCon = parent::desconectar();
+		} 
+		catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+
+	public function desbloquearUsuario($id)
+	{
+		try 
+		{
+			$this->myCon = parent::conectar();
+			$querySQL = "UPDATE intentos_permitido SET num_intentos = 5
+			WHERE idUsuario = ?";
+			$stm = $this->myCon->prepare($querySQL);
+			$stm->execute(array($id));
+			$this->myCon = parent::desconectar();
+		} 
+		catch (Exception $e) 
+		{
 			die($e->getMessage());
 		}
 	}

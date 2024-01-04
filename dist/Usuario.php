@@ -20,26 +20,46 @@ include '../Datos/DtSeguridad.php';
 $datosEmp = new DtSeguridad();
 //variables de jalerts
 
-//variable de control msj Nuevo Empleado
+//variable de control msj Nuevo Usuario
 $varMsjNewEmp = 0;
 if(isset($varMsjNewEmp))
 { 
   $varMsjNewEmp = $_GET['msjNewEmp'];
 }
 
-//variable de control msj Actualizar Empleado
+//variable de control msj Actualizar Usuario
 $varMsjUpdEmp = 0;
 if(isset($varMsjUpdEmp))
 { 
   $varMsjUpdEmp = $_GET['msjEditEmp'];
 }
 
-//variable de control msj Eliminar Empleado
+//variable de control msj Eliminar Usuario
 $varMsjDelEmp = 0;
 if(isset($varMsjDelEmp))
 { 
   $varMsjDelEmp = $_GET['msjDelEmp'];
 }
+
+//variable de control msj Bloquear Usuario
+$varMsjbloEmp = 0;
+if(isset($varMsjbloEmp))
+{ 
+  $varMsjbloEmp = $_GET['msjbloEmp'];
+}
+
+//variable de control msj desbloquear Usuario
+$varMsjdbloEmp = 0;
+if(isset($varMsjdbloEmp))
+{ 
+  $varMsjdbloEmp = $_GET['msjdbloEmp'];
+}
+
+
+
+
+
+
 //fin jalerts
 ?>
 
@@ -118,8 +138,9 @@ if(isset($varMsjDelEmp))
                                                 <th>Usuario</th>
                                                 <th>Nombres </th>
                                                 <th>Apellidos</th>
-                                                <th>correo</th>
-                                                <th>opciones</th>
+                                                <th>Correo</th>
+                                                <th>Opciones</th>
+                                                <th>Seguridad</th>
                                                                                     
                                             </tr>
                                         </thead>
@@ -133,19 +154,34 @@ if(isset($varMsjDelEmp))
                                                     <td><?php echo $r->__GET('correo'); ?></td>
                                                                                                         
                                                     <td>
-                                                        <a href="#?editE=<?php echo $r->__GET('idEmpleados'); ?>" 
-                                                        title="Modificar un usuario">
+                                                        <a href="editUsuario.php?editE=<?php echo $r->__GET('idUsuario'); ?>" 
+                                                        title="Modificar datos del Usuario">
                                                             <i class="fas fa-pen-square"></i>
                                                             Editar
+                                                        </a>
+                                                        <br>
+                                                        <!-- SEGUNDA FORMA -->
+                                                        <a href="#" onclick="deleteUser(<?php echo $r->__GET('idUsuario'); ?>)" 
+                                                        title="Eliminar datos del Usuario">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                            Eliminar
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <!-- SEGUNDA FORMA -->
+                                                        <a href="#" onclick="blockUser(<?php echo $r->__GET('idUsuario'); ?>)" 
+                                                        title="Bloquear este Usuario">
+                                                            <i class="fas fa-lock"></i>
+                                                            Bloquear
                                                         </a>
 
                                                     
                                                         <br>
                                                         <!-- SEGUNDA FORMA -->
-                                                        <a href="#" onclick="#(<?php echo $r->__GET('idEmpleados'); ?>)" 
-                                                        title="Eliminar un usuario">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                            Eliminar
+                                                        <a href="#" onclick="dblockUser(<?php echo $r->__GET('idUsuario'); ?>)" 
+                                                        title="Desbloquear este usuario">
+                                                        <i class="fas fa-lock-open"></i>
+                                                            Desbloquear
                                                         </a>
                                                     </td>
 
@@ -160,6 +196,7 @@ if(isset($varMsjDelEmp))
                                                 <th>Apellidos</th>
                                                 <th>correo</th>
                                                 <th>opciones</th>
+                                                <th>Seguridad</th>
 
                                             </tr>
                                         </tfoot>
@@ -215,24 +252,57 @@ if(isset($varMsjDelEmp))
 
         <script>
           // SEGUNDA FORMA - INCLUYE EL API DE JALERT
-          function deleteEmp($r)
+          function deleteUser($r)
             {
-            
-            confirm(function(e,btn)
-            { //event + button clicked
-                e.preventDefault();
-                window.location.href = "../negocio/NgEmpleados.php?delEmp="+$r;
-                
-                //successAlert('Confirmed!');
-            }, 
-            function(e,btn)
+                confirm(function(e,btn)
+                { //event + button clicked
+                    e.preventDefault();
+                    window.location.href = "../negocio/Ng_Usuario.php?delUser="+$r;
+                    
+                    //successAlert('Confirmed!');
+                }, function(e,btn)
+                {
+                    e.preventDefault();
+                    //errorAlert('Denied!');
+                });
+
+            }
+
+            function blockUser($r)
             {
-                e.preventDefault();
-                //errorAlert('Denied!');
-            });
+                confirm(function(e,btn)
+                { //event + button clicked
+                    e.preventDefault();
+                    window.location.href = "../negocio/Ng_Usuario.php?blocUser="+$r;
+                    
+                    //successAlert('Confirmed!');
+                }, function(e,btn)
+                {
+                    e.preventDefault();
+                    //errorAlert('Denied!');
+                });
+
+            }
+
+            function dblockUser($r)
+            {
+                confirm(function(e,btn)
+                { //event + button clicked
+                    e.preventDefault();
+                    window.location.href = "../negocio/Ng_Usuario.php?dblocUser="+$r;
+                    
+                    //successAlert('Confirmed!');
+                }, function(e,btn)
+                {
+                    e.preventDefault();
+                    //errorAlert('Denied!');
+                });
 
             }
         </script>
+
+
+
         
 
         <script>
@@ -290,7 +360,33 @@ if(isset($varMsjDelEmp))
                 {
                     errorAlert('Error', 'Revise los datos del Usuario e intente nuevamente');
                 }
-               
+
+                var bloEmp = 0;
+                bloEmp = "<?php echo $varMsjbloEmp ?>";
+
+                if(bloEmp == "1")
+                {
+                    successAlert('Éxito', '¡El Usuario ha sido bloqueado!');
+                }
+                if(bloEmp == "2")
+                {
+                    errorAlert('Error', 'Al parecer hubo un error, intente nuevamente');
+                }
+
+                var dbloEmp = 0;
+                dbloEmp = "<?php echo $varMsjdbloEmp ?>";
+
+                if(dbloEmp == "1")
+                {
+                    successAlert('Éxito', '¡El Usuario ha sido desbloqueado!');
+                }
+                if(dbloEmp == "2")
+                {
+                    errorAlert('Error', 'Al parecer hubo un error, intente nuevamente');
+                }
+
+
+                
 
             });
         </script>

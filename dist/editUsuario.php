@@ -20,11 +20,17 @@ include '../Datos/DtSeguridad.php';
 $datosEmp = new DtSeguridad();
 //variables de jalerts
 
-// Generate Random Password
-$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@$%&*_";
-$password = substr( str_shuffle( $chars ), 0, 8 );
+//RECUPERAMOS EL VALOR DE NUESTRA VARIABLE PARA EDITAR EMPLEADO
+$varIdEmp = $_GET['editE'];
 
-
+$empEdit;
+$empEdit = $datosEmp->ExisteUsuario2($varIdEmp);
+session_start();
+if (!isset($_SESSION['idUsuario'])){
+    header("Location: ../dist/login.php");
+}
+$nombre = $_SESSION['usuario'];
+$rol = $_SESSION ['idRol'];
 
 ?>
 <!DOCTYPE html>
@@ -35,12 +41,10 @@ $password = substr( str_shuffle( $chars ), 0, 8 );
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Nuevo Empleado</title>
+        <title>Editar Usuario</title>
         <link rel="icon" href="./images/icon_versatec.png">
         <link href="css/styles.css" rel="stylesheet" />
-        <!-- <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" /> -->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script> -->
-        
+      
         <!-- DATATABLE -->
         <link href="DataTables/DataTables-1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
          <!-- DATATABLE buttons -->
@@ -49,26 +53,26 @@ $password = substr( str_shuffle( $chars ), 0, 8 );
        
     </head>
     <body class="sb-nav-fixed">
-        <?php require "../dist/navbar.php" ?>
+    <?php require "../dist/navbar.php" ?>
         <div id="layoutSidenav">
         <?php require "../dist/LayoutSidenav.php" ?>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Nuevo Usuario</h1>
+                        <h1 class="mt-4">Editar elemento</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="./Usuario.php">Lista de Usuarios</a></li>
-                            <li class="breadcrumb-item active">Nuevo Usuario</li>
+                            <li class="breadcrumb-item active">editar elemento</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                                Registrando un nuevo Usuario
+                                Editando un nuevo usuario
                             </div>
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
-                                Formulario para agregar un Usuario
+                                Formulario para editar un usuario
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -82,37 +86,24 @@ $password = substr( str_shuffle( $chars ), 0, 8 );
                                         <div class="form-row">
                                             <div class="col-md-12" >
                                                 <div class="form-group">
-                                                   <label class="small mb-1" > <b>Nombres:</b> </label>
-                                                    <input class="form-control py-4" name="nombre" id="nombre"
-                                                    type="text" placeholder="Nombres " autocomplete="off" required/>
-                                                    <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
-                                                    <input type="hidden" id="rand_pwd" name="rand_pwd"  value="<?php echo $password?>"/>
+                                                   <label class="small mb-1" > <b>Nombres </b> </label>
+                                                    <input class="form-control py-4" name="txt_nombre" id="txt_nombre"
+                                                    type="text" placeholder="Nombre completo del Usuario" autocomplete="off" required/>
+                                                    <input type="hidden" id="txtaccion" name="txtaccion" value="2"/>
+                                                    <input type="hidden" name="txt_id_usuario" id="txt_id_usuario" />
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="small mb-1" ><b>Apellidos:</b></label>
-                                                    <input class="form-control py-4" name="apellidos" id="apellidos"
+                                                    <input class="form-control py-4" name="txt_apellidos" id="txt_apellidos"
                                                     type="text" placeholder="Apellidos" autocomplete="off" required/>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label class="small mb-1" ><b>Usuario:</b> </label>
-                                                    <input class="form-control py-4" name="usuario" id="usuario"
-                                                    type="text" placeholder="Usuario" autocomplete="off" required/>
-                                                    
-                                                </div>
+                                               
                                                 <div class="form-group">
                                                     <label class="small mb-1" ><b>Correo corporativo:</b> </label>
-                                                    <input class="form-control py-4" name="correo" id="correo"
+                                                    <input class="form-control py-4" name="txt_correo" id="txt_correo"
                                                     type="email" placeholder="Correo corporativo" autocomplete="off" required/>
-                                                    
                                                 </div>
-                                                <!--
-                                                <div class="form-group">
-                                                    <label class="small mb-1" ><b>Contraseña:</b> </label>
-                                                    <input class="form-control py-4" name="password" id="password"
-                                                    type="text" placeholder="Contraseña" autocomplete="off" required/>
-                                                    
-                                                </div>
-                                                !-->
+
                                               
                                                 <div class="form-group">
                                                 <input class="btn btn-primary btn-block" type="submit" value="Guardar"/> &nbsp;
@@ -166,10 +157,37 @@ $password = substr( str_shuffle( $chars ), 0, 8 );
         <script src="DataTables/JSZip-2.5.0/jszip.min.js"></script>
 
 
+        <!-- <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script> -->
+        <!-- <script src="assets/demo/datatables-demo.js"></script> -->
+
+        <script>
+            function setValoresEmp()
+            {
+                $("#txt_id_usuario").val("<?php echo $varIdEmp ?>");
+                $("#txt_nombre").val("<?php echo $empEdit->__GET('nombres') ?>");
+                $("#txt_apellidos").val("<?php echo $empEdit->__GET('apellidos') ?>");
+                $("#txt_correo").val("<?php echo $empEdit->__GET('correo') ?>");
+            
+            }
+         
+        </script>
+
+        <script>
+            $(document).ready(function ()
+            {
+                ////// ASIGNAMOS LOS VALORES A EDITAR EN LOS CONTROLES DEL FORMULARIO
+                setValoresEmp();
+            });
+        </script>
+
         <script>
             function regresar(){
                 window.open ("Usuario.php","_self")
             }
         </script>
+
+
+
     </body>
 </html>
