@@ -133,7 +133,7 @@ if ($_GET)
 
     if(!empty($desblockUser)){
         try {
-            $mon->__SET('idUsuario', $_GET['blocUser']);
+            $mon->__SET('idUsuario', $_GET['dblocUser']);
             $dtMon->desbloquearUsuario($mon->__GET('idUsuario'));
             header("Location: ../dist/Usuario.php?msjdbloEmp=1");
         }
