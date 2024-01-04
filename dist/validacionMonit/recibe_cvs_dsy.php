@@ -8,10 +8,11 @@ $archivotmp = $_FILES['dataCliente']['tmp_name'];
 $lineas     = file($archivotmp);
 
 $i = 0;
-
+$j = 0;
+$k = 0;
 foreach ($lineas as $linea) {
-    //$cantidad_registros = count($lineas);
-    //$cantidad_regist_agregados =  ($cantidad_registros - 1);
+    $cantidad_registros = count($lineas);
+    $cantidad_regist_agregados =  ($cantidad_registros - 1);
 
     if ($i != 0) {
 
@@ -74,12 +75,14 @@ foreach ($lineas as $linea) {
                 
             )";
             mysqli_query($conexion, $insertarData);
-            echo ("Registro Insertado");
+            $insert = $cantidad_regist_agregados;
+            
+
 
         } 
         /**Caso Contrario actualizo el o los Registros ya existentes*/
         else{
-            echo ("Registro Duplicado");
+            $duplicate = $k+1;
         } 
     }
 
@@ -88,4 +91,68 @@ foreach ($lineas as $linea) {
 
 ?>
 
-<a href="index.php">Atras</a>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Resumen de Registros</title>
+    <link rel="icon" href="./images/icon_versatec.png">
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/NewStyles.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="fontawesome5.15.1/js/all.min.js"></script>
+
+</head>
+
+<body class="sb-nav-fixed">
+            <div class="card text-center">
+                <div class="card-header">
+                    Control de registros
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Resumen de datos </h5>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Registros insertados 
+                            <span class="badge badge-primary badge-pill"><?php echo $insert ?></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Registros Duplicados
+                            <span class="badge badge-primary badge-pill"><?php echo $duplicate ?></span>
+                        </li>
+                    
+                    </ul>
+                    
+                </div>
+                <div class="card-footer text-muted">
+                    Bitacoras de transacciones de incomin Panamá
+                </div>
+            </div>
+            
+            <a href="../index.php"> Atras</a>
+
+
+
+    <!-- PLUGIN FONTAWESOME -->
+    <script src="fontawesome5.15.1/js/all.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/datatables-demo.js"></script>
+
+
+</body>
+
+</html>
