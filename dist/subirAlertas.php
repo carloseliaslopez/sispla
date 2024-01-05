@@ -49,11 +49,7 @@ $rol = $_SESSION ['idRol'];
                             <div class="form-group col-md-2">
                                 
                             </div> 
-                            <!--
-                            <div class="form-group col-md-4"  style="align-content: center; ">
-                                <img src="./images/logo_versatec.png" style="max-width:100%;width:auto;height:auto;" />
-                            </div>
--->
+
                         </div>
                     </div>
                     <!--logos de VERSATEC-->
@@ -74,14 +70,14 @@ $rol = $_SESSION ['idRol'];
                                     <div class="card-body">
                                         <form action="./validacionMonit/recibe_cvs_dsy.php" method="POST" enctype="multipart/form-data">
                                             <div class="file-input text-center">
-                                                <input  type="file" name="dataCliente" id="file-input" class="file-input__input" accept=".csv"/>
+                                                <input  type="file" name="dataCliente" id="file-input" class="file-input__input" accept=".csv" required/>
                                                 <label class="file-input__label" for="file-input">
                                                 <i class="fas fa-file-upload "></i>
                                                 <span>Elegir Archivo</span> </label
                                                 >
                                             </div>
                                             <div class="text-center mt-3">
-                                                <input type="submit" name="subir" class="btn-enviar" value="Importar"/>
+                                                <input type="submit" name="subir" class="btn-enviar" value="Importar" />
                                             </div>
                                         </form>
                                     </div>
@@ -95,7 +91,7 @@ $rol = $_SESSION ['idRol'];
                                     <div class="card-body">
                                         <form action="recibe_excel_validando.php" method="POST" enctype="multipart/form-data">
                                             <div class="file-input text-center">
-                                                <input  type="file" name="dataCliente" id="file-input" class="file-input__input" accept=".csv"/>
+                                                <input  type="file" name="dataCliente" id="file-input" class="file-input__input" accept=".csv" required/>
                                                 <label class="file-input__label" for="file-input">
                                                 <i class="fas fa-file-upload "></i>
                                                 <span>Elegir Archivo</span> </label
