@@ -1,7 +1,6 @@
 <?php
-//error_reporting(0);
-$conexion_2 = new mysqli('localhost','admin','adminCump123.','monitoreo');
-
+session_start();
+$conexion = new mysqli('localhost','admin','adminCump123.','monitoreo');
 
 $tipo       = $_FILES['dataCliente']['type'];
 $tamanio    = $_FILES['dataCliente']['size'];
@@ -11,6 +10,7 @@ $lineas     = file($archivotmp);
 $i = 0;
 $j = 0;
 $k = 0;
+
 foreach ($lineas as $linea) {
     $cantidad_registros = count($lineas);
     $cantidad_regist_agregados =  ($cantidad_registros - 1);
@@ -48,8 +48,9 @@ foreach ($lineas as $linea) {
         $cod_pais             = $datos[26] ? $datos[26]: '';
 
         if( !empty($plastico) ){
-            $duplicidad = ("SELECT autorizacion,monto  FROM trx_incoming_dsy WHERE autorizacion ='".($autorizacion)."' and  monto ='".($monto)."'");
-            $ca_dupli = mysqli_query($conexion_2, $duplicidad);
+            $query = "SELECT autorizacion,monto  FROM trx_incoming_dsy WHERE autorizacion ='".($autorizacion)."' and  monto ='".($monto)."'";
+           
+            $ca_dupli = $conexion->query($query);
             $cant_duplicidad = mysqli_num_rows($ca_dupli);
         }   
          
@@ -75,7 +76,7 @@ foreach ($lineas as $linea) {
                 '$monto_destino','$cod_pais'
                 
             )";
-            mysqli_query($conexion_2, $insertarData);
+           $result2 = $conexion->query($insertarData);
             $j++;
             
         } 
@@ -88,6 +89,7 @@ foreach ($lineas as $linea) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
