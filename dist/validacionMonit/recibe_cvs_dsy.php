@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 $conexion = new mysqli('localhost','admin','adminCump123.','monitoreo');
 
 $tipo       = $_FILES['dataCliente']['type'];
