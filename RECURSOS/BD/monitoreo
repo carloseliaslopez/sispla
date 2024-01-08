@@ -1,0 +1,473 @@
+-- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
+--
+-- Host: localhost    Database: monitoreo
+-- ------------------------------------------------------
+-- Server version	8.0.32
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Temporary view structure for view `central_trx`
+--
+
+DROP TABLE IF EXISTS `central_trx`;
+/*!50001 DROP VIEW IF EXISTS `central_trx`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `central_trx` AS SELECT 
+ 1 AS `nombre_cliente`,
+ 1 AS `plastico`,
+ 1 AS `tipo_transaccion`,
+ 1 AS `codigo_mcc`,
+ 1 AS `riesgo_pais`,
+ 1 AS `empresa`,
+ 1 AS `pais`,
+ 1 AS `cod_pais`,
+ 1 AS `fecha_proceso`,
+ 1 AS `monto`,
+ 1 AS `Estado`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Table structure for table `estado`
+--
+
+DROP TABLE IF EXISTS `estado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `estado` (
+  `idEstado` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`idEstado`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `estado`
+--
+
+LOCK TABLES `estado` WRITE;
+/*!40000 ALTER TABLE `estado` DISABLE KEYS */;
+/*!40000 ALTER TABLE `estado` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `trx_incoming_cra`
+--
+
+DROP TABLE IF EXISTS `trx_incoming_cra`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `trx_incoming_cra` (
+  `id_trx_incoming_cra` int NOT NULL AUTO_INCREMENT,
+  `moneda` varchar(25) DEFAULT NULL,
+  `tipo_transaccion` varchar(30) DEFAULT NULL,
+  `afiliado` varchar(30) DEFAULT NULL,
+  `plastico` varchar(30) DEFAULT NULL,
+  `nombre_cliente` varchar(60) DEFAULT NULL,
+  `usuario` varchar(15) DEFAULT NULL,
+  `autorizacion` varchar(30) DEFAULT NULL,
+  `cod_concepto` int DEFAULT NULL,
+  `comercio` varchar(255) DEFAULT NULL,
+  `ciudad` varchar(25) DEFAULT NULL,
+  `cod_pais` varchar(5) DEFAULT NULL,
+  `fecha_proceso` date DEFAULT NULL,
+  `monto_usd` double DEFAULT NULL,
+  `monto` double DEFAULT NULL,
+  `tipo_entr_tarjeta` varchar(5) DEFAULT NULL,
+  `riesgo_pais` varchar(15) DEFAULT NULL,
+  `fecha_transaccion` date DEFAULT NULL,
+  `empresa` varchar(50) DEFAULT NULL,
+  `cuenta_equivalente` varchar(50) DEFAULT NULL,
+  `pais` varchar(50) DEFAULT NULL,
+  `moneda_origen` varchar(25) DEFAULT NULL,
+  `monto_origen` double DEFAULT NULL,
+  `moneda_destino` varchar(25) DEFAULT NULL,
+  `monto_destino` double DEFAULT NULL,
+  PRIMARY KEY (`id_trx_incoming_cra`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `trx_incoming_cra`
+--
+
+LOCK TABLES `trx_incoming_cra` WRITE;
+/*!40000 ALTER TABLE `trx_incoming_cra` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trx_incoming_cra` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `trx_incoming_dsy`
+--
+
+DROP TABLE IF EXISTS `trx_incoming_dsy`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `trx_incoming_dsy` (
+  `id_trx_incoming_dsy` int NOT NULL AUTO_INCREMENT,
+  `moneda` varchar(25) DEFAULT NULL,
+  `tipo_transaccion` varchar(30) DEFAULT NULL,
+  `afiliado` varchar(30) DEFAULT NULL,
+  `usuario` varchar(15) DEFAULT NULL,
+  `autorizacion` varchar(30) DEFAULT NULL,
+  `cod_plan` varchar(5) DEFAULT NULL,
+  `plan` varchar(150) DEFAULT NULL,
+  `codigo_mcc` varchar(10) DEFAULT NULL,
+  `tipo_comercio` varchar(100) DEFAULT NULL,
+  `cod_concepto` int DEFAULT NULL,
+  `comercio` varchar(255) DEFAULT NULL,
+  `ciudad` varchar(25) DEFAULT NULL,
+  `fecha_transaccion` date DEFAULT NULL,
+  `fecha_proceso` date DEFAULT NULL,
+  `monto` double DEFAULT NULL,
+  `tipo_entr_tarjeta` varchar(5) DEFAULT NULL,
+  `plastico` varchar(30) DEFAULT NULL,
+  `nombre_cliente` varchar(60) DEFAULT NULL,
+  `riesgo_pais` varchar(15) DEFAULT NULL,
+  `empresa` varchar(50) DEFAULT NULL,
+  `cuenta_equivalente` varchar(50) DEFAULT NULL,
+  `pais` varchar(50) DEFAULT NULL,
+  `moneda_origen` varchar(25) DEFAULT NULL,
+  `monto_origen` double DEFAULT NULL,
+  `moneda_destino` varchar(25) DEFAULT NULL,
+  `monto_destino` double DEFAULT NULL,
+  `cod_pais` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`id_trx_incoming_dsy`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `trx_incoming_dsy`
+--
+
+LOCK TABLES `trx_incoming_dsy` WRITE;
+/*!40000 ALTER TABLE `trx_incoming_dsy` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trx_incoming_dsy` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `trx_incoming_gt`
+--
+
+DROP TABLE IF EXISTS `trx_incoming_gt`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `trx_incoming_gt` (
+  `id_trx_incoming_gt` int NOT NULL AUTO_INCREMENT,
+  `moneda` varchar(25) DEFAULT NULL,
+  `tipo_transaccion` varchar(30) DEFAULT NULL,
+  `afiliado` varchar(30) DEFAULT NULL,
+  `plastico` varchar(30) DEFAULT NULL,
+  `nombre_cliente` varchar(60) DEFAULT NULL,
+  `usuario` varchar(15) DEFAULT NULL,
+  `autorizacion` varchar(30) DEFAULT NULL,
+  `cod_concepto` int DEFAULT NULL,
+  `comercio` varchar(50) DEFAULT NULL,
+  `ciudad` varchar(25) DEFAULT NULL,
+  `cod_pais` varchar(5) DEFAULT NULL,
+  `fecha_proceso` date DEFAULT NULL,
+  `monto_usd` double DEFAULT NULL,
+  `monto` double DEFAULT NULL,
+  `tipo_entr_tarjeta` varchar(5) DEFAULT NULL,
+  `riesgo_cliente` varchar(15) DEFAULT NULL,
+  `fecha_transaccion` date DEFAULT NULL,
+  PRIMARY KEY (`id_trx_incoming_gt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `trx_incoming_gt`
+--
+
+LOCK TABLES `trx_incoming_gt` WRITE;
+/*!40000 ALTER TABLE `trx_incoming_gt` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trx_incoming_gt` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `trx_incoming_gtm`
+--
+
+DROP TABLE IF EXISTS `trx_incoming_gtm`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `trx_incoming_gtm` (
+  `id_trx_incoming_gtm` int NOT NULL AUTO_INCREMENT,
+  `moneda` varchar(25) DEFAULT NULL,
+  `tipo_transaccion` varchar(30) DEFAULT NULL,
+  `afiliado` varchar(30) DEFAULT NULL,
+  `plastico` varchar(30) DEFAULT NULL,
+  `nombre_cliente` varchar(60) DEFAULT NULL,
+  `usuario` varchar(15) DEFAULT NULL,
+  `autorizacion` varchar(30) DEFAULT NULL,
+  `cod_concepto` int DEFAULT NULL,
+  `comercio` varchar(255) DEFAULT NULL,
+  `ciudad` varchar(25) DEFAULT NULL,
+  `cod_pais` varchar(5) DEFAULT NULL,
+  `fecha_proceso` date DEFAULT NULL,
+  `monto_usd` double DEFAULT NULL,
+  `monto` double DEFAULT NULL,
+  `tipo_entr_tarjeta` varchar(5) DEFAULT NULL,
+  `riesgo_pais` varchar(15) DEFAULT NULL,
+  `fecha_transaccion` date DEFAULT NULL,
+  `pais` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_trx_incoming_gtm`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `trx_incoming_gtm`
+--
+
+LOCK TABLES `trx_incoming_gtm` WRITE;
+/*!40000 ALTER TABLE `trx_incoming_gtm` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trx_incoming_gtm` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `trx_incoming_gtm_vsy`
+--
+
+DROP TABLE IF EXISTS `trx_incoming_gtm_vsy`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `trx_incoming_gtm_vsy` (
+  `id_trx_incoming_gtm_vsy` int NOT NULL AUTO_INCREMENT,
+  `moneda` varchar(25) DEFAULT NULL,
+  `tipo_transaccion` varchar(30) DEFAULT NULL,
+  `afiliado` varchar(30) DEFAULT NULL,
+  `plastico` varchar(30) DEFAULT NULL,
+  `nombre_cliente` varchar(60) DEFAULT NULL,
+  `usuario` varchar(15) DEFAULT NULL,
+  `autorizacion` varchar(30) DEFAULT NULL,
+  `cod_concepto` int DEFAULT NULL,
+  `comercio` varchar(255) DEFAULT NULL,
+  `ciudad` varchar(25) DEFAULT NULL,
+  `cod_pais` varchar(5) DEFAULT NULL,
+  `fecha_transaccion` date DEFAULT NULL,
+  `fecha_proceso` date DEFAULT NULL,
+  `monto_usd` double DEFAULT NULL,
+  `monto` double DEFAULT NULL,
+  `tipo_entr_tarjeta` varchar(5) DEFAULT NULL,
+  `riesgo_pais` varchar(15) DEFAULT NULL,
+  `pais` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_trx_incoming_gtm_vsy`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `trx_incoming_gtm_vsy`
+--
+
+LOCK TABLES `trx_incoming_gtm_vsy` WRITE;
+/*!40000 ALTER TABLE `trx_incoming_gtm_vsy` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trx_incoming_gtm_vsy` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `trx_incoming_pro`
+--
+
+DROP TABLE IF EXISTS `trx_incoming_pro`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `trx_incoming_pro` (
+  `id_trx_incoming_pro` int NOT NULL AUTO_INCREMENT,
+  `moneda` varchar(25) DEFAULT NULL,
+  `tipo_transaccion` varchar(30) DEFAULT NULL,
+  `afiliado` varchar(30) DEFAULT NULL,
+  `plastico` varchar(30) DEFAULT NULL,
+  `nombre_cliente` varchar(60) DEFAULT NULL,
+  `usuario` varchar(15) DEFAULT NULL,
+  `autorizacion` varchar(30) DEFAULT NULL,
+  `cod_plan` varchar(5) DEFAULT NULL,
+  `plan` varchar(150) DEFAULT NULL,
+  `codigo_mcc` varchar(10) DEFAULT NULL,
+  `tipo_comercio` varchar(100) DEFAULT NULL,
+  `cod_concepto` int DEFAULT NULL,
+  `comercio` varchar(255) DEFAULT NULL,
+  `ciudad` varchar(25) DEFAULT NULL,
+  `fecha_proceso` date DEFAULT NULL,
+  `monto` double DEFAULT NULL,
+  `tipo_entr_tarjeta` varchar(5) DEFAULT NULL,
+  `riesgo_pais` varchar(15) DEFAULT NULL,
+  `fecha_transaccion` date DEFAULT NULL,
+  `empresa` varchar(50) DEFAULT NULL,
+  `cuenta_equivalente` varchar(50) DEFAULT NULL,
+  `pais` varchar(50) DEFAULT NULL,
+  `moneda_origen` varchar(25) DEFAULT NULL,
+  `monto_origen` double DEFAULT NULL,
+  `moneda_destino` varchar(25) DEFAULT NULL,
+  `monto_destino` double DEFAULT NULL,
+  `cod_pais` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`id_trx_incoming_pro`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `trx_incoming_pro`
+--
+
+LOCK TABLES `trx_incoming_pro` WRITE;
+/*!40000 ALTER TABLE `trx_incoming_pro` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trx_incoming_pro` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `trx_incoming_pro_col`
+--
+
+DROP TABLE IF EXISTS `trx_incoming_pro_col`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `trx_incoming_pro_col` (
+  `id_trx_incoming_pro_col` int NOT NULL AUTO_INCREMENT,
+  `moneda` varchar(25) DEFAULT NULL,
+  `tipo_transaccion` varchar(30) DEFAULT NULL,
+  `afiliado` varchar(30) DEFAULT NULL,
+  `plastico` varchar(30) DEFAULT NULL,
+  `nombre_cliente` varchar(60) DEFAULT NULL,
+  `usuario` varchar(15) DEFAULT NULL,
+  `autorizacion` varchar(30) DEFAULT NULL,
+  `cod_plan` varchar(5) DEFAULT NULL,
+  `plan` varchar(150) DEFAULT NULL,
+  `codigo_mcc` varchar(10) DEFAULT NULL,
+  `tipo_comercio` varchar(100) DEFAULT NULL,
+  `cod_concepto` int DEFAULT NULL,
+  `comercio` varchar(255) DEFAULT NULL,
+  `ciudad` varchar(25) DEFAULT NULL,
+  `fecha_proceso` date DEFAULT NULL,
+  `monto` double DEFAULT NULL,
+  `tipo_entr_tarjeta` varchar(5) DEFAULT NULL,
+  `riesgo_pais` varchar(15) DEFAULT NULL,
+  `fecha_transaccion` date DEFAULT NULL,
+  `empresa` varchar(50) DEFAULT NULL,
+  `cuenta_equivalente` varchar(50) DEFAULT NULL,
+  `pais` varchar(50) DEFAULT NULL,
+  `moneda_origen` varchar(25) DEFAULT NULL,
+  `monto_origen` double DEFAULT NULL,
+  `moneda_destino` varchar(25) DEFAULT NULL,
+  `monto_destino` double DEFAULT NULL,
+  `cod_pais` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`id_trx_incoming_pro_col`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `trx_incoming_pro_col`
+--
+
+LOCK TABLES `trx_incoming_pro_col` WRITE;
+/*!40000 ALTER TABLE `trx_incoming_pro_col` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trx_incoming_pro_col` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `vw_alertas`
+--
+
+DROP TABLE IF EXISTS `vw_alertas`;
+/*!50001 DROP VIEW IF EXISTS `vw_alertas`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `vw_alertas` AS SELECT 
+ 1 AS `nombre_cliente`,
+ 1 AS `plastico`,
+ 1 AS `fecha_proceso`,
+ 1 AS `monto`,
+ 1 AS `regla`,
+ 1 AS `oficina`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `vw_alertas_`
+--
+
+DROP TABLE IF EXISTS `vw_alertas_`;
+/*!50001 DROP VIEW IF EXISTS `vw_alertas_`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `vw_alertas_` AS SELECT 
+ 1 AS `cod_alert_temp`,
+ 1 AS `nombre_cliente`,
+ 1 AS `plastico`,
+ 1 AS `monto`,
+ 1 AS `fecha_proceso`,
+ 1 AS `regla`,
+ 1 AS `oficina`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `central_trx`
+--
+
+/*!50001 DROP VIEW IF EXISTS `central_trx`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`admin`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `central_trx` AS select `trx_incoming_dsy`.`nombre_cliente` AS `nombre_cliente`,`trx_incoming_dsy`.`plastico` AS `plastico`,`trx_incoming_dsy`.`tipo_transaccion` AS `tipo_transaccion`,`trx_incoming_dsy`.`codigo_mcc` AS `codigo_mcc`,`trx_incoming_dsy`.`riesgo_pais` AS `riesgo_pais`,`trx_incoming_dsy`.`empresa` AS `empresa`,`trx_incoming_dsy`.`pais` AS `pais`,`trx_incoming_dsy`.`cod_pais` AS `cod_pais`,`trx_incoming_dsy`.`fecha_proceso` AS `fecha_proceso`,sum(`trx_incoming_dsy`.`monto`) AS `monto`,'Abierta ' AS `Estado` from `trx_incoming_dsy` group by `trx_incoming_dsy`.`plastico`,month(`trx_incoming_dsy`.`fecha_proceso`) order by `monto` desc */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `vw_alertas`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vw_alertas`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`admin`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `vw_alertas` AS select `central_trx`.`nombre_cliente` AS `nombre_cliente`,`central_trx`.`plastico` AS `plastico`,`central_trx`.`fecha_proceso` AS `fecha_proceso`,format(`central_trx`.`monto`,2) AS `monto`,'Compras Mayores a 100K' AS `regla`,'DSYSTEM' AS `oficina` from `central_trx` where (`central_trx`.`monto` >= 100000) union all select `central_trx`.`nombre_cliente` AS `nombre_cliente`,`central_trx`.`plastico` AS `plastico`,`central_trx`.`fecha_proceso` AS `fecha_proceso`,format(`central_trx`.`monto`,2) AS `monto`,'Retiros Mayores a 10K' AS `regla`,'DSYSTEM' AS `oficina` from `central_trx` where ((`central_trx`.`monto` >= 20000) and (`central_trx`.`tipo_transaccion` = '07| RETIROS')) union all select `trx_incoming_dsy`.`nombre_cliente` AS `nombre_cliente`,`trx_incoming_dsy`.`plastico` AS `plastico`,`trx_incoming_dsy`.`fecha_proceso` AS `fecha_proceso`,format(sum(`trx_incoming_dsy`.`monto`),2) AS `monto`,'Transacciones en Paises de riesgo Alto' AS `regla`,'DSYSTEM' AS `oficina` from `trx_incoming_dsy` where (`trx_incoming_dsy`.`riesgo_pais` = 'Alto') group by `trx_incoming_dsy`.`plastico` union all select `trx_incoming_dsy`.`nombre_cliente` AS `nombre_cliente`,`trx_incoming_dsy`.`plastico` AS `plastico`,`trx_incoming_dsy`.`fecha_proceso` AS `fecha_proceso`,format(sum(`trx_incoming_dsy`.`monto`),2) AS `monto`,'Operaciones de criptoactivos' AS `regla`,'DSYSTEM' AS `oficina` from `trx_incoming_dsy` where (`trx_incoming_dsy`.`codigo_mcc` = '6051') group by `trx_incoming_dsy`.`plastico` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `vw_alertas_`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vw_alertas_`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`admin`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `vw_alertas_` AS select concat_ws('',`central_trx`.`nombre_cliente`,'-',`central_trx`.`plastico`,'-',`central_trx`.`monto`) AS `cod_alert_temp`,`central_trx`.`nombre_cliente` AS `nombre_cliente`,`central_trx`.`plastico` AS `plastico`,`central_trx`.`monto` AS `monto`,`central_trx`.`fecha_proceso` AS `fecha_proceso`,'Compras Mayores a 100K' AS `regla`,'VSYSTEM_PANAMA' AS `oficina` from `central_trx` where (`central_trx`.`monto` >= 100000) union all select concat_ws('',`central_trx`.`nombre_cliente`,'-',`central_trx`.`plastico`,'-',`central_trx`.`monto`) AS `cod_alert_temp`,`central_trx`.`nombre_cliente` AS `nombre_cliente`,`central_trx`.`plastico` AS `plastico`,`central_trx`.`monto` AS `monto`,`central_trx`.`fecha_proceso` AS `fecha_proceso`,'Retiros Mayores a 10K' AS `regla`,'VSYSTEM_PANAMA' AS `oficina` from `central_trx` where ((`central_trx`.`monto` >= 20000) and (`central_trx`.`tipo_transaccion` = '07| RETIROS')) union all select concat_ws('',`trx_incoming_dsy`.`nombre_cliente`,'-',`trx_incoming_dsy`.`plastico`,'-',`trx_incoming_dsy`.`monto`) AS `cod_alert_temp`,`trx_incoming_dsy`.`nombre_cliente` AS `nombre_cliente`,`trx_incoming_dsy`.`plastico` AS `plastico`,sum(`trx_incoming_dsy`.`monto`) AS `monto`,`trx_incoming_dsy`.`fecha_proceso` AS `fecha_proceso`,'Transacciones en Paises de riesgo Alto' AS `regla`,'VSYSTEM_PANAMA' AS `oficina` from `trx_incoming_dsy` where (`trx_incoming_dsy`.`riesgo_pais` = 'Alto') group by `trx_incoming_dsy`.`plastico` union all select concat_ws('',`trx_incoming_dsy`.`nombre_cliente`,'-',`trx_incoming_dsy`.`plastico`,'-',`trx_incoming_dsy`.`monto`) AS `cod_alert_temp`,`trx_incoming_dsy`.`nombre_cliente` AS `nombre_cliente`,`trx_incoming_dsy`.`plastico` AS `plastico`,sum(`trx_incoming_dsy`.`monto`) AS `monto`,`trx_incoming_dsy`.`fecha_proceso` AS `fecha_proceso`,'Operaciones de criptoactivos' AS `regla`,'VSYSTEM_PANAMA' AS `oficina` from `trx_incoming_dsy` where (`trx_incoming_dsy`.`codigo_mcc` = '6051') group by `trx_incoming_dsy`.`plastico` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-01-08 15:49:42

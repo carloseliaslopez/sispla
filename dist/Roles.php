@@ -122,46 +122,35 @@ if(isset($varMsjDelEmp)){
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            
-                                                <div class="form-row">
-                                                    <div class="col-md-12" >
-                                                        
-                                                        <div class="form-group">
-                                                        <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
-                                                            <label class="small mb-1" for="Usuario_Rol"><b>Usuario</b></label>
-                                                            <select  class="form-control py-4" id="Usuario_Rol" name="Usuario_Rol" >
-                                                                <option disabled selected>Elegir..</option>
-                                                                <?php foreach($datosEmp->listarUsuario() as $r): ?>
-                                                                    <option value="<?php echo $r->__GET('idUsuario') ?>"> <?php echo $r->__GET('usuario') ?></option>
-                                                                <?php endforeach; ?>
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="small mb-1" for="Rol"><b>Rol</b></label>
-                                                            <select  class="form-control py-4" id="Rol" name="Rol" >
-                                                                <option disabled selected>Elegir..</option>
-                                                                <?php foreach($datosEmp->listarRol() as $r): ?>
-                                                                    <option value="<?php echo $r->__GET('idRol') ?>"> <?php echo $r->__GET('rolDescripcion') ?></option>
-                                                                <?php endforeach; ?>
-                                                            </select>
-                                                        </div>
-                                                        
-                                                        <div class="form-group">
-                                                            <input class="btn btn-primary btn-block" type="submit" value="Guardar"/> &nbsp;
-                                                            <input class="btn btn-danger btn-block" type="reset" value="Cancelar" data-dismiss="modal"/> &nbsp;
-                                                        </div>
-                                                                                                        
-                                                        
+                                            <div class="form-row">
+                                                <div class="col-md-12" >
+                                                    <div class="form-group">
+                                                    <input type="hidden" id="txtaccion" name="txtaccion" value="1"/>
+                                                        <label class="small mb-1" for="Usuario_Rol"><b>Usuario</b></label>
+                                                        <select  class="form-control py-4" id="Usuario_Rol" name="Usuario_Rol" >
+                                                            <option disabled selected>Elegir..</option>
+                                                            <?php foreach($datosEmp->listarUsuario() as $r): ?>
+                                                                <option value="<?php echo $r->__GET('idUsuario') ?>"> <?php echo $r->__GET('usuario') ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
                                                     </div>
-
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="Rol"><b>Rol</b></label>
+                                                        <select  class="form-control py-4" id="Rol" name="Rol" >
+                                                            <option disabled selected>Elegir..</option>
+                                                            <?php foreach($datosEmp->listarRol() as $r): ?>
+                                                                <option value="<?php echo $r->__GET('idRol') ?>"> <?php echo $r->__GET('rolDescripcion') ?></option>
+                                                            <?php endforeach; ?>
+                                                        </select>
+                                                    </div>
+                                                    
+                                                    <div class="form-group">
+                                                        <input class="btn btn-primary btn-block" type="submit" value="Guardar"/> &nbsp;
+                                                        <input class="btn btn-danger btn-block" type="reset" value="Cancelar" data-dismiss="modal"/> &nbsp;
+                                                    </div>
                                                 </div>
-                                        
+                                            </div>
                                         </div>
-                                    <!--
-                                        <div class="modal-footer">
-                                            
-                                        </div>
-                                    -->
                                     </form>
                                 </div>
                             </div>
@@ -171,7 +160,7 @@ if(isset($varMsjDelEmp)){
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
-                                Gestion de país
+                                Gestión de roles
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -210,11 +199,7 @@ if(isset($varMsjDelEmp)){
                                                             <i class="fas fa-trash-alt"></i>
                                                             Eliminar
                                                         </a>
-
-                                                        
                                                     </td>
-
-                                                    
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
@@ -235,7 +220,7 @@ if(isset($varMsjDelEmp)){
                                             <div class="modal-content">
                                             <form method="POST" action="../negocio/Ng_Seguridad.php">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel2">Calibrar un Departamento</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel2">Administración de roles</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -243,13 +228,11 @@ if(isset($varMsjDelEmp)){
                                                 <div class="modal-body">
                                                         <div class="form-row">
                                                             <div class="col-md-12" >
-
                                                                 <div class="form-group">
                                                                      <input type="hidden" id="txtaccion" name="txtaccion" value="2"/>
                                                                     <input type="hidden" id="idRolUsuario" name="idRolUsuario"/>
                                                                     <label class="small mb-1" for="apt_UsuarioRol"><b>usuario</b></label>
                                                                     <select  class="form-control py-4" id="apt_UsuarioRol" name="apt_UsuarioRol" disabled>
-                                                                        
                                                                         <?php foreach($datosEmp->listarUsuario() as $u): ?>
                                                                             <option value="<?php echo $u->__GET('idUsuario') ?>"> <?php echo $u->__GET('usuario') ?></option>
                                                                         <?php endforeach; ?>

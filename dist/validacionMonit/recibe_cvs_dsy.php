@@ -1,6 +1,7 @@
 <?php
+error_reporting(0);
 $conexion = new mysqli('localhost','admin','adminCump123.','monitoreo');
-//$conexion = new mysqli('localhost','admin','root','monitoreo');
+
 
 $tipo       = $_FILES['dataCliente']['type'];
 $tamanio    = $_FILES['dataCliente']['size'];

@@ -214,7 +214,7 @@ CREATE TABLE `alertas_diarias` (
   CONSTRAINT `alertas_diarias_ibfk_2` FOREIGN KEY (`usuario_modificacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `alertas_diarias_ibfk_3` FOREIGN KEY (`usuario_eliminacion`) REFERENCES `usuario` (`idUsuario`),
   CONSTRAINT `alertas_diarias_ibfk_4` FOREIGN KEY (`idEstado`) REFERENCES `estado` (`idEstado`)
-) ENGINE=InnoDB AUTO_INCREMENT=7870 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8114 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5044,4 +5044,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-28 16:34:45
+-- Dump completed on 2024-01-08 15:48:31
