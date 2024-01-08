@@ -1,6 +1,6 @@
 <?php
 //error_reporting(0);
-$conexion = new mysqli('localhost','admin','adminCump123.','monitoreo');
+$conexion_2 = new mysqli('localhost','admin','adminCump123.','monitoreo');
 
 
 $tipo       = $_FILES['dataCliente']['type'];
@@ -49,7 +49,7 @@ foreach ($lineas as $linea) {
 
         if( !empty($plastico) ){
             $duplicidad = ("SELECT autorizacion,monto  FROM trx_incoming_dsy WHERE autorizacion ='".($autorizacion)."' and  monto ='".($monto)."'");
-            $ca_dupli = mysqli_query($conexion, $duplicidad);
+            $ca_dupli = mysqli_query($conexion_2, $duplicidad);
             $cant_duplicidad = mysqli_num_rows($ca_dupli);
         }   
          
@@ -75,7 +75,7 @@ foreach ($lineas as $linea) {
                 '$monto_destino','$cod_pais'
                 
             )";
-            mysqli_query($conexion, $insertarData);
+            mysqli_query($conexion_2, $insertarData);
             $j++;
             
         } 
