@@ -175,7 +175,7 @@ $rol = $_SESSION ['idRol'];
                                     <div class="card-body">
                                         <form action="./validacionMonit/recibe_cvs_gtm.php" method="POST" enctype="multipart/form-data">
                                             <div class="file-input text-center">
-                                                <input  type="file" name="dataCliente_gtm" id="dataCliente_gtm" class="file-input__input" accept=".csv"/>
+                                                <input  type="file" name="dataCliente_gtm" id="dataCliente_gtm" class="file-input__input" accept=".csv" required />
                                                 <label class="file-input__label" for="dataCliente_gtm">
                                                 <i class="fas fa-file-upload "></i>
                                                 <span>Elegir Archivo</span> </label
