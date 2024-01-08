@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 if (!isset($_SESSION['idUsuario'])){
@@ -53,7 +52,6 @@ $rol = $_SESSION ['idRol'];
                         </div>
                     </div>
                     <!--logos de VERSATEC-->
-
                     <h3 class="text-center">
                         Importar Archivo CSV correspondiente a cada Oficina 
                     </h3>
@@ -68,7 +66,7 @@ $rol = $_SESSION ['idRol'];
                                         <b>V_SYSTEM PANAMA</b>
                                     </div>
                                     <div class="card-body">
-                                        <form action="./validacionMonit/recibe_cvs_dsy.php" method="POST" enctype="multipart/form-data">
+                                        <form action="./validacionMonit/recibe_cvs_dsy.php" method="POST" enctype="multipart/form-data" >
                                             <div class="file-input text-center">
                                                 <input  type="file" name="dataCliente" id="file-input" class="file-input__input" accept=".csv" required/>
                                                 <label class="file-input__label" for="file-input">
@@ -77,28 +75,27 @@ $rol = $_SESSION ['idRol'];
                                                 >
                                             </div>
                                             <div class="text-center mt-3">
-                                                <input type="submit" name="subir" class="btn-enviar" value="Importar" />
+                                                <input type="submit" class="btn-enviar" value="Importar" />
                                             </div>
                                         </form>
                                     </div>
                                 </div>
-                            </div>
+                            </div>                           
                             <div class="form-group col-md-3">
                                 <div class="card mb-4">
                                     <div class="card-header bg-alerts text-center">
                                         <b>PROFIT PANAMA</b>
                                     </div>
                                     <div class="card-body">
-                                        <form action="recibe_excel_validando.php" method="POST" enctype="multipart/form-data">
+                                        <form action="./validacionMonit/recibe_cvs_pro.php" method="POST" enctype="multipart/form-data" >
                                             <div class="file-input text-center">
-                                                <input  type="file" name="dataCliente" id="file-input" class="file-input__input" accept=".csv" required/>
-                                                <label class="file-input__label" for="file-input">
+                                                <input  type="file" name="dataCliente_pro" id="dataCliente_pro" class="file-input__input" accept=".csv" required/>
+                                                <label class="file-input__label" for="dataCliente_pro">
                                                 <i class="fas fa-file-upload "></i>
-                                                <span>Elegir Archivo</span> </label
-                                                >
+                                                <span>Elegir Archivo</span> </label>
                                             </div>
                                             <div class="text-center mt-3">
-                                                <input type="submit" name="subir" class="btn-enviar" value="Importar"/>
+                                                <input type="submit"  class="btn-enviar" value="Importar" />
                                             </div>
                                         </form>
                                     </div>
@@ -110,16 +107,16 @@ $rol = $_SESSION ['idRol'];
                                         <b>PROFIT COLATERIZADA</b>
                                     </div>
                                     <div class="card-body">
-                                        <form action="recibe_excel_validando.php" method="POST" enctype="multipart/form-data">
+                                        <form action="./validacionMonit/recibe_cvs_pro_col.php" method="POST" enctype="multipart/form-data">
                                             <div class="file-input text-center">
-                                                <input  type="file" name="dataCliente" id="file-input" class="file-input__input" accept=".csv"/>
-                                                <label class="file-input__label" for="file-input">
+                                                <input  type="file" name="dataCliente_procol" id="dataCliente_procol" class="file-input__input" accept=".csv" required/>
+                                                <label class="file-input__label" for="dataCliente_procol">
                                                 <i class="fas fa-file-upload "></i>
                                                 <span>Elegir Archivo</span> </label
                                                 >
                                             </div>
                                             <div class="text-center mt-3">
-                                                <input type="submit" name="subir" class="btn-enviar" value="Importar"/>
+                                                <input type="submit"  class="btn-enviar" value="Importar"/>
                                             </div>
                                         </form>
                                     </div>
@@ -128,19 +125,18 @@ $rol = $_SESSION ['idRol'];
                             <div class="form-group col-md-3">
                                 <div class="card mb-4">
                                     <div class="card-header bg-alerts text-center">
-                                        <b class="bg-alerts-label">VSYSTEM GUATEMALA</b>
+                                        <b>VSYSTEM GUATEMALA</b>
                                     </div>
                                     <div class="card-body">
-                                        <form action="recibe_excel_validando.php" method="POST" enctype="multipart/form-data">
+                                        <form action="./validacionMonit/recibe_cvs_gtm_vsy.php" method="POST" enctype="multipart/form-data">
                                             <div class="file-input text-center">
-                                                <input  type="file" name="dataCliente" id="file-input" class="file-input__input" accept=".csv"/>
-                                                <label class="file-input__label" for="file-input">
+                                                <input  type="file" name="dataCliente_gtm_vsy" id="dataCliente_gtm_vsy" class="file-input__input" accept=".csv" required/>
+                                                <label class="file-input__label" for="dataCliente_gtm_vsy">
                                                 <i class="fas fa-file-upload "></i>
-                                                <span>Elegir Archivo</span> </label
-                                                >
+                                                <span>Elegir Archivo</span> </label>
                                             </div>
                                             <div class="text-center mt-3">
-                                                <input type="submit" name="subir" class="btn-enviar" value="Importar"/>
+                                                <input type="submit"  class="btn-enviar" value="Importar"/>
                                             </div>
                                         </form>
                                     </div>
@@ -156,16 +152,16 @@ $rol = $_SESSION ['idRol'];
                                         <b>PROFIT COSTA RICA</b>
                                     </div>
                                     <div class="card-body">
-                                        <form action="./validacionMonit/recibe_cvs_dsy.php" method="POST" enctype="multipart/form-data">
+                                        <form action="./validacionMonit/recibe_cvs_cra.php" method="POST" enctype="multipart/form-data">
                                             <div class="file-input text-center">
-                                                <input  type="file" name="dataCliente" id="file-input" class="file-input__input" accept=".csv"/>
-                                                <label class="file-input__label" for="file-input">
+                                                <input  type="file" name="dataCliente_cra" id="dataCliente_cra" class="file-input__input" accept=".csv" required/>
+                                                <label class="file-input__label" for="dataCliente_cra">
                                                 <i class="fas fa-file-upload "></i>
                                                 <span>Elegir Archivo</span> </label
                                                 >
                                             </div>
                                             <div class="text-center mt-3">
-                                                <input type="submit" name="subir" class="btn-enviar" value="Importar"/>
+                                                <input type="submit" class="btn-enviar" value="Importar"/>
                                             </div>
                                         </form>
                                     </div>
@@ -177,10 +173,10 @@ $rol = $_SESSION ['idRol'];
                                         <b>PROFIT GUATEMALA</b>
                                     </div>
                                     <div class="card-body">
-                                        <form action="recibe_excel_validando.php" method="POST" enctype="multipart/form-data">
+                                        <form action="./validacionMonit/recibe_cvs_gtm.php" method="POST" enctype="multipart/form-data">
                                             <div class="file-input text-center">
-                                                <input  type="file" name="dataCliente" id="file-input" class="file-input__input" accept=".csv"/>
-                                                <label class="file-input__label" for="file-input">
+                                                <input  type="file" name="dataCliente_gtm" id="dataCliente_gtm" class="file-input__input" accept=".csv"/>
+                                                <label class="file-input__label" for="dataCliente_gtm">
                                                 <i class="fas fa-file-upload "></i>
                                                 <span>Elegir Archivo</span> </label
                                                 >
@@ -223,7 +219,20 @@ $rol = $_SESSION ['idRol'];
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <script src="assets/demo/datatables-demo.js"></script>
 
+    <script>
+          // Tratatando de realizar el cambio 
+          function archivos($ct)
+            {
+               if ($ct == 1){
+                window.open("./validacionMonit/recibe_cvs_dsy.php", "self");
+               }
 
+               if ($ct == 2){
+                window.open("./validacionMonit/recibe_cvs_pro.php", "self");
+               }
+
+            }
+        </script>
 </body>
 
 </html>

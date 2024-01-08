@@ -10,9 +10,9 @@ CREATE TABLE trx_incoming_dsy(
  plan varchar (150),
  codigo_mcc varchar (10),
  tipo_comercio varchar (100),
- comercio varchar (100),
- ciudad varchar (25),
  cod_concepto int,
+ comercio varchar (255),
+ ciudad varchar (25),
  fecha_transaccion 	date,
  fecha_proceso date,
  monto double,
@@ -28,6 +28,145 @@ CREATE TABLE trx_incoming_dsy(
  moneda_destino varchar (25), 
  monto_destino double,
  cod_pais varchar (5)
+);
+
+DROP TABLE IF EXISTS trx_incoming_pro;
+CREATE TABLE trx_incoming_pro(
+ id_trx_incoming_pro int auto_increment not null primary key,
+ moneda varchar (25),
+ tipo_transaccion varchar (30),
+ afiliado varchar (30),
+ plastico varchar (30),
+ nombre_cliente varchar (60),
+ usuario varchar (15),
+ autorizacion varchar (30),
+ cod_plan varchar (5),
+ plan varchar (150),
+ codigo_mcc varchar (10),
+ tipo_comercio varchar (100),
+ cod_concepto int,
+ comercio varchar (255),
+ ciudad varchar (25),
+ fecha_proceso date,
+ monto double,
+ tipo_entr_tarjeta varchar (5),
+ riesgo_pais varchar (15),
+ fecha_transaccion 	date,
+ empresa varchar (50),
+ cuenta_equivalente varchar (50),
+ pais varchar (50), 
+ moneda_origen varchar (25), 
+ monto_origen double,
+ moneda_destino varchar (25), 
+ monto_destino double,
+ cod_pais varchar (5)
+);
+
+DROP TABLE IF EXISTS trx_incoming_pro_col;
+CREATE TABLE trx_incoming_pro_col(
+ id_trx_incoming_pro_col int auto_increment not null primary key,
+ moneda varchar (25),
+ tipo_transaccion varchar (30),
+ afiliado varchar (30),
+ plastico varchar (30),
+ nombre_cliente varchar (60),
+ usuario varchar (15),
+ autorizacion varchar (30),
+ cod_plan varchar (5),
+ plan varchar (150),
+ codigo_mcc varchar (10),
+ tipo_comercio varchar (100),
+ cod_concepto int,
+ comercio varchar (255),
+ ciudad varchar (25),
+ fecha_proceso date,
+ monto double,
+ tipo_entr_tarjeta varchar (5),
+ riesgo_pais varchar (15),
+ fecha_transaccion 	date,
+ empresa varchar (50),
+ cuenta_equivalente varchar (50),
+ pais varchar (50), 
+ moneda_origen varchar (25), 
+ monto_origen double,
+ moneda_destino varchar (25), 
+ monto_destino double,
+ cod_pais varchar (5)
+);
+
+DROP TABLE IF EXISTS trx_incoming_gtm_vsy;
+CREATE TABLE trx_incoming_gtm_vsy(
+ id_trx_incoming_gtm_vsy int auto_increment not null primary key,
+ moneda varchar (25),
+ tipo_transaccion varchar (30),
+ afiliado varchar (30),
+ plastico varchar (30),
+ nombre_cliente varchar (60),
+ usuario varchar (15),
+ autorizacion varchar (30),
+ cod_concepto int,
+ comercio varchar (255),
+ ciudad varchar (25),
+ cod_pais varchar (5),
+ fecha_transaccion 	date,
+ fecha_proceso date,
+ monto_usd double,
+ monto double,
+ tipo_entr_tarjeta varchar (5),
+ riesgo_pais varchar (15),
+ pais varchar (50)
+);
+
+DROP TABLE IF EXISTS trx_incoming_cra;
+CREATE TABLE trx_incoming_cra(
+ id_trx_incoming_cra int auto_increment not null primary key,
+ moneda varchar (25),
+ tipo_transaccion varchar (30),
+ afiliado varchar (30),
+ plastico varchar (30),
+ nombre_cliente varchar (60),
+ usuario varchar (15),
+ autorizacion varchar (30), 
+ cod_concepto int,
+ comercio varchar (255),
+ ciudad varchar (25),
+ cod_pais varchar (5),
+ fecha_proceso date,
+ monto_usd double,
+ monto double,
+ tipo_entr_tarjeta varchar (5),
+ riesgo_pais varchar (15),
+ fecha_transaccion 	date,
+ empresa varchar (50),
+ cuenta_equivalente varchar (50),
+ pais varchar (50), 
+ moneda_origen varchar (25), 
+ monto_origen double,
+ moneda_destino varchar (25), 
+ monto_destino double
+);
+
+DROP TABLE IF EXISTS trx_incoming_gtm;
+CREATE TABLE trx_incoming_gtm(
+ id_trx_incoming_gtm int auto_increment not null primary key,
+ moneda varchar (25),
+ tipo_transaccion varchar (30),
+ afiliado varchar (30),
+ plastico varchar (30),
+ nombre_cliente varchar (60),
+ usuario varchar (15),
+ autorizacion varchar (30),
+ cod_concepto int,
+ comercio varchar (255),
+ ciudad varchar (25),
+ cod_pais varchar (5),
+ fecha_proceso date,
+ monto_usd double,
+ monto double,
+ tipo_entr_tarjeta varchar (5),
+ riesgo_pais varchar (15),
+ fecha_transaccion 	date,
+ pais varchar (50)
 );
 
 DROP TABLE IF EXISTS trx_incoming_gt;

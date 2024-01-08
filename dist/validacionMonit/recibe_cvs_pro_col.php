@@ -1,10 +1,9 @@
 <?php
 $conexion = new mysqli('localhost','admin','adminCump123.','monitoreo');
-//$conexion = new mysqli('localhost','admin','root','monitoreo');
 
-$tipo       = $_FILES['dataCliente']['type'];
-$tamanio    = $_FILES['dataCliente']['size'];
-$archivotmp = $_FILES['dataCliente']['tmp_name'];
+$tipo       = $_FILES['dataCliente_procol']['type'];
+$tamanio    = $_FILES['dataCliente_procol']['size'];
+$archivotmp = $_FILES['dataCliente_procol']['tmp_name'];
 $lineas     = file($archivotmp);
 
 $i = 0;
@@ -16,27 +15,27 @@ foreach ($lineas as $linea) {
 
     if ($i != 0) {
 
-        $datos = explode(",", $linea);
+        $datos = explode(",", $linea);        
 
         $moneda               = $datos[0] ? $datos[0]: '';
 		$tipo_transaccion     = $datos[1] ? $datos[1]: '';
         $afiliado             = $datos[2] ? $datos[2]: '';
-        $usuario              = $datos[3] ? $datos[3]: '';
-        $autorizacion         = $datos[4] ? $datos[4]: '';
-        $cod_plan             = $datos[5] ? $datos[5]: '';
-        $plan                 = $datos[6] ? $datos[6]: '';
-        $codigo_mcc           = $datos[7] ? $datos[7]: '';
-        $tipo_comercio        = $datos[8] ? $datos[8]: '';
-        $cod_concepto         = $datos[9] ? $datos[9]: '';
-        $comercio             = $datos[10] ? $datos[10]: '';
-        $ciudad               = $datos[11] ? $datos[11]: '';
-        $fecha_transaccion    = $datos[12] ? $datos[12]: '';
-        $fecha_proceso        = $datos[13] ? $datos[13]: '';
-        $monto                = $datos[14] ? $datos[14]: '';
-        $tipo_entr_tarjeta    = $datos[15] ? $datos[15]: '';
-        $plastico             = $datos[16] ? $datos[16]: '';
-        $nombre_cliente       = $datos[17] ? $datos[17]: '';
-        $riesgo_pais          = $datos[18] ? $datos[18]: '';
+        $plastico             = $datos[3] ? $datos[3]: '';
+        $nombre_cliente       = $datos[4] ? $datos[4]: '';
+        $usuario              = $datos[5] ? $datos[5]: '';
+        $autorizacion         = $datos[6] ? $datos[6]: '';
+        $cod_plan             = $datos[7] ? $datos[7]: '';
+        $plan                 = $datos[8] ? $datos[8]: '';
+        $codigo_mcc           = $datos[9] ? $datos[9]: '';
+        $tipo_comercio        = $datos[10] ? $datos[10]: '';
+        $cod_concepto         = $datos[11] ? $datos[11]: '';
+        $comercio             = $datos[12] ? $datos[12]: '';
+        $ciudad               = $datos[13] ? $datos[13]: '';
+        $fecha_proceso        = $datos[14] ? $datos[14]: '';
+        $monto                = $datos[15] ? $datos[15]: '';
+        $tipo_entr_tarjeta    = $datos[16] ? $datos[16]: '';
+        $riesgo_pais          = $datos[17] ? $datos[17]: '';
+        $fecha_transaccion    = $datos[18] ? $datos[18]: '';
         $empresa              = $datos[19] ? $datos[19]: '';
         $cuenta_equivalente   = $datos[20] ? $datos[20]: '';
         $pais                 = $datos[21] ? $datos[21]: '';
@@ -47,31 +46,29 @@ foreach ($lineas as $linea) {
         $cod_pais             = $datos[26] ? $datos[26]: '';
 
         if( !empty($plastico) ){
-            $duplicidad = ("SELECT autorizacion,monto  FROM trx_incoming_dsy WHERE autorizacion ='".($autorizacion)."' and  monto ='".($monto)."'");
+            $duplicidad = ("SELECT autorizacion,monto  FROM trx_incoming_pro_col WHERE autorizacion ='".($autorizacion)."' and  monto ='".($monto)."'");
             $ca_dupli = mysqli_query($conexion, $duplicidad);
             $cant_duplicidad = mysqli_num_rows($ca_dupli);
         }   
          
         if ( $cant_duplicidad == 0 ) { 
 
-            $insertarData = "INSERT INTO trx_incoming_dsy( 
-            moneda, tipo_transaccion, afiliado, usuario, 
-            autorizacion, cod_plan, plan, codigo_mcc, 
-            tipo_comercio, cod_concepto, comercio, ciudad, 
-            fecha_transaccion, fecha_proceso, monto, 
-            tipo_entr_tarjeta, plastico, nombre_cliente, 
-            riesgo_pais, empresa, cuenta_equivalente, pais, 
-            moneda_origen, monto_origen, moneda_destino, 
-            monto_destino, cod_pais
+            $insertarData = "INSERT INTO trx_incoming_pro_col( 
+            moneda, tipo_transaccion, afiliado, plastico, 
+            nombre_cliente, usuario, autorizacion, cod_plan, 
+            plan, codigo_mcc, tipo_comercio, cod_concepto,
+            comercio, ciudad, fecha_proceso, monto,
+            tipo_entr_tarjeta, riesgo_pais, fecha_transaccion,
+            empresa, cuenta_equivalente, pais, moneda_origen,
+            monto_origen, moneda_destino, monto_destino,cod_pais 
             ) VALUES(
-                '$moneda','$tipo_transaccion','$afiliado','$usuario',
-                '$autorizacion','$cod_plan','$plan','$codigo_mcc',
-                '$tipo_comercio','$cod_concepto','$comercio','$ciudad',
-                '$fecha_transaccion','$fecha_proceso','$monto',
-                '$tipo_entr_tarjeta','$plastico','$nombre_cliente',
-                '$riesgo_pais','$empresa','$cuenta_equivalente','$pais',
-                '$moneda_origen','$monto_origen','$moneda_destino',
-                '$monto_destino','$cod_pais'
+                '$moneda','$tipo_transaccion','$afiliado','$plastico',
+                '$nombre_cliente','$usuario','$autorizacion','$cod_plan',
+                '$plan','$codigo_mcc','$tipo_comercio','$cod_concepto',
+                '$comercio','$ciudad','$fecha_proceso','$monto',
+                '$tipo_entr_tarjeta','$riesgo_pais','$fecha_transaccion',
+                '$empresa','$cuenta_equivalente','$pais','$moneda_origen',
+                '$monto_origen','$moneda_destino','$monto_destino','$cod_pais'
                 
             )";
             mysqli_query($conexion, $insertarData);
@@ -139,7 +136,7 @@ foreach ($lineas as $linea) {
                                 <a href="../subirAlertas.php" class="btn btn-primary">Regresar</a>
                             </div>
                             <div class="card-footer text-muted">
-                                Bitacoras de transacciones de reportes de VSYSTEM-PANAMA
+                                Bitacoras de transacciones de reportes de incoming  PROFIT-PANAMÁ-COLATERIZADA
                             </div>
                         </div>
                     </div>
