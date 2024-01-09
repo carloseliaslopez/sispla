@@ -1,10 +1,12 @@
 <?php
 
 $con= mysqli_connect("localhost","admin","adminCump123.","monitoreo");
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+
+if (mysqli_connect_errno()){
+   echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}else{
+    echo "Conexión exitosas ";
+}
 
 
 $tipo       = $_FILES['dataCliente']['type'];
@@ -54,9 +56,7 @@ foreach ($lineas as $linea) {
 
         if( !empty($plastico) ){
             $sql = "SELECT autorizacion,monto  FROM trx_incoming_dsy WHERE autorizacion ='".($autorizacion)."' and  monto ='".($monto)."'";
-            
             $result = mysqli_query($con,$sql);
-
             $rowcount = mysqli_num_rows($result);
         }   
          
