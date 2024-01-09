@@ -10,7 +10,7 @@ $tipo       = $_FILES['dataCliente']['type'];
 $tamanio    = $_FILES['dataCliente']['size'];
 $archivotmp = $_FILES['dataCliente']['tmp_name'];
 $lineas     = file($archivotmp);
-var_dump($_FILES);
+var_dump($lineas);
 
 $i = 0;
 $j = 0;
