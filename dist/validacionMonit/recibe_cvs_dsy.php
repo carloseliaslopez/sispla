@@ -1,5 +1,5 @@
 <?php
-
+/*
 $con= mysqli_connect("localhost","admin","adminCump123.","monitoreo");
 
 if (mysqli_connect_errno()){
@@ -83,7 +83,7 @@ foreach ($lineas as $linea) {
             $j++;
             
         } 
-        /**Caso Contrario actualizo el o los Registros ya existentes*/
+       
         else{
             $k++; 
         } 
@@ -91,7 +91,9 @@ foreach ($lineas as $linea) {
  $i++;
 }
 mysqli_close($con);
+*/
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
