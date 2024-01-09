@@ -137,10 +137,10 @@ mysqli_close($con);
                                 <h5 class="card-title">Resumen de datos </h5>
                                 <ul class="list-group">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Registros insertados <span class="badge badge-primary badge-pill"><?php echo $j ?></span>
+                                        Registros insertados <span class="badge badge-primary badge-pill"><//?php echo $j ?></span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Registros Duplicados <span class="badge badge-primary badge-pill"><?php echo $k ?></span>
+                                        Registros Duplicados <span class="badge badge-primary badge-pill"><//?php echo $k ?></span>
                                     </li>
                                 </ul>
                                 <br>
