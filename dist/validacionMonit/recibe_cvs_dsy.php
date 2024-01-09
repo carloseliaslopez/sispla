@@ -52,10 +52,10 @@ foreach ($lineas as $linea) {
         $cod_pais             = $datos[26] ? $datos[26]: '';
 
         if( !empty($plastico) ){
-            $sql = "SELECT autorizacion,monto  FROM trx_incoming_dsy WHERE autorizacion ='".($autorizacion)."' and  monto ='".($monto)."'";
+            $sql = "SELECT autorizacion,monto  FROM trx_incoming_dsy WHERE autorizacion ='".($autorizacion)."' and  monto =".($monto)." ";
             $result = mysqli_query($con,$sql);
             $rowcount = mysqli_num_rows($result);
-            var_dump($rowcount);
+           
         }   
          
         if ( $rowcount == 0 ) { 
