@@ -4,15 +4,13 @@ $con= mysqli_connect("localhost","admin","adminCump123.","monitoreo");
 
 if (mysqli_connect_errno()){
    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}else{
-    echo "Conexión exitosas ";
 }
-
 
 $tipo       = $_FILES['dataCliente']['type'];
 $tamanio    = $_FILES['dataCliente']['size'];
 $archivotmp = $_FILES['dataCliente']['tmp_name'];
 $lineas     = file($archivotmp);
+var_dump($_FILES);
 
 $i = 0;
 $j = 0;
