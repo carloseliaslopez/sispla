@@ -11,7 +11,6 @@ $tamanio    = $_FILES['dataCliente']['size'];
 $archivotmp = $_FILES['dataCliente']['tmp_name'];
 $lineas     = file($archivotmp);
 
-var_dump($tamanio);
 
 $i = 0;
 $j = 0;
