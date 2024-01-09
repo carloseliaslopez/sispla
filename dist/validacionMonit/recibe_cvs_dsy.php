@@ -10,7 +10,6 @@ $tipo       = $_FILES['dataCliente']['type'];
 $tamanio    = $_FILES['dataCliente']['size'];
 $archivotmp = $_FILES['dataCliente']['tmp_name'];
 $lineas     = file($archivotmp);
-var_dump($lineas);
 
 $i = 0;
 $j = 0;
@@ -21,7 +20,7 @@ foreach ($lineas as $linea) {
     $cantidad_regist_agregados =  ($cantidad_registros - 1);
 
     if ($i != 0) {
-
+       
         $datos = explode(",", $linea);
 
         $moneda               = $datos[0] ? $datos[0]: '';
@@ -56,6 +55,7 @@ foreach ($lineas as $linea) {
             $sql = "SELECT autorizacion,monto  FROM trx_incoming_dsy WHERE autorizacion ='".($autorizacion)."' and  monto ='".($monto)."'";
             $result = mysqli_query($con,$sql);
             $rowcount = mysqli_num_rows($result);
+            var_dump($rowcount);
         }   
          
         if ( $rowcount == 0 ) { 
